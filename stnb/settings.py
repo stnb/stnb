@@ -40,16 +40,16 @@ if 'DISABLED_APPS' in locals():
     except(NameError):
         DATABASE_ROUTERS = []
 
-    TEMPLATE_CONTEXT_PROCESSORS = list(TEMPLATE_CONTEXT_PROCESSORS)
+#    TEMPLATE_CONTEXT_PROCESSORS = list(TEMPLATE_CONTEXT_PROCESSORS)
 
     for a in DISABLED_APPS:
         for x, m in enumerate(MIDDLEWARE_CLASSES):
             if m.startswith(a):
                 MIDDLEWARE_CLASSES.pop(x)
 
-        for x, m in enumerate(TEMPLATE_CONTEXT_PROCESSORS):
-            if m.startswith(a):
-                TEMPLATE_CONTEXT_PROCESSORS.pop(x)
+#        for x, m in enumerate(TEMPLATE_CONTEXT_PROCESSORS):
+#            if m.startswith(a):
+#                TEMPLATE_CONTEXT_PROCESSORS.pop(x)
 
         for x, m in enumerate(DATABASE_ROUTERS):
             if m.startswith(a):

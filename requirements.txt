@@ -5,4 +5,5 @@ pil
 pycrypto
 raven
 south
+django-admin-bootstrapped
 

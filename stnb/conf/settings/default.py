@@ -18,6 +18,11 @@ MANAGERS = ADMINS
 
 TIME_ZONE = 'Europe/Madrid'
 LANGUAGE_CODE = 'ca'
+LANGUAGES = (
+    ('ca', 'Català'),
+    ('es', 'Castellano'),
+    ('en', 'English'),
+)
 
 USE_I18N = True
 USE_L10N = True
@@ -75,8 +80,11 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django_admin_bootstrapped',
+    'django.contrib.admin',
+    'south',
+    'hvad',
+    'stnb.institucions',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
