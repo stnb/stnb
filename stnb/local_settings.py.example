@@ -1,0 +1,19 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from stnb.conf.settings.dev import *  # NOQA
+
+DISABLED_APPS = ['raven.contrib.django']
+
+## Fill out these details
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'stnb',
+#         'USER': 'stnb-dev',
+#         'PASSWORD': 'notarealpassword',
+#         'HOST': '127.0.0.1',
+#         'PORT': '3306',
+#     }
+# }
+
