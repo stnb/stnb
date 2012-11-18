@@ -1,10 +1,20 @@
+# -*- coding: utf-8 -*-
 from django.conf.urls.defaults import patterns, url
 
-from .models import Seminari
+from .views import SeminariDetailView, TemaListView, DiaListView, DiaDetailView, XerradaListView
 
 urlpatterns = patterns('',
-    url(r'(?P<slug>[a-z0-9\-]+)/$',
-        'django.views.generic.list_detail.object_detail',
-        { 'queryset': Seminari.objects.all(), 'slug_field': 'slug' },
+    url(r'(?P<slug>[a-z0-9\-]+)/$', SeminariDetailView.as_view(),
         name='seminari-detall'),
+
+    url(r'(?P<seminari_slug>[a-z0-9\-]+)/temes/',
+        TemaListView.as_view(), name='seminari-tema-llista'),
+    url(r'(?P<seminari_slug>[a-z0-9\-]+)/programa/',
+        DiaListView.as_view(), name='seminari-dia-llista'),
+    url(r'(?P<seminari_slug>[a-z0-9\-]+)/programa/(?P<dia_slug>[a-z0-9\-]+)/',
+        DiaDetailView.as_view(), name='seminari-dia-detall'),
+    
+    url(r'(?P<seminari_slug>[a-z0-9\-]+)/xerrades/',
+        XerradaListView.as_view(), name='seminari-xerrada-llista'),
+
 )

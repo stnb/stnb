@@ -9,6 +9,7 @@ from hvad.models import TranslatableModel, TranslatedFields
 
 class Seminari(TranslatableModel):
     nom = models.CharField(max_length=50)
+    slug = models.SlugField(max_length=50)
     data_inici = models.DateField()
     data_finalizacio = models.DateField()
     actiu = models.BooleanField(default=False)
