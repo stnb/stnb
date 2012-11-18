@@ -1,10 +1,10 @@
 from django.conf.urls.defaults import patterns, url
 
-from .models import Institucio
+from .views import InstitucioListView, InstitucioDetailView
 
 urlpatterns = patterns('',
-    url(r'(?P<slug>[a-z0-9\-]+)/$',
-        'django.views.generic.list_detail.object_detail',
-        { 'queryset': Institucio.objects.all(), 'slug_field': 'nom_curt' },
+    url(r'^$', InstitucioListView.as_view(),
         name='institucio-llista'),
+    url(r'^(?P<slug>[a-z0-9\-]+)/$', InstitucioDetailView.as_view(),
+        name='institucio-detall'),
 )

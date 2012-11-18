@@ -1,0 +1,68 @@
+{% load i18n %}
+{% get_available_languages as languages %}
+{% get_current_language as lang %}
+{% get_current_language_bidi as lang_bidi %}
+{% block dummy %}{% endblock %}
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ lang }}" lang="{{ lang }}">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" media="screen" type="text/css" href="{{ STATIC_URL }}css/stnb-main.css" />
+	</head>
+
+	<body class="{% block body-class %}{% endblock body-class %}">
+		<div id="stnb-outer-wrap">
+			<div id="navigation">
+
+				<div id="site-titles">
+					<div class="year site-title">2012</div>
+					<div class="active-year year site-title">2013</div>
+					<h1 class="site-title">STNB</h1>
+					<h2 class="site-title">Seminari de Teoria de Nombres Barcelona</h2>
+				</div>
+
+				<div id="menu">
+					<ul>
+						<li><a href="#">{% trans "Home" %}</a></li>
+						<li><a href="#">{% trans "Active Seminar" %}</a></li>
+						<li><a href="#">{% trans "Seminar Archive" %}</a></li>
+						<li><a href="#">{% trans "About STNB" %}</a></li>
+						<li><a href="#">{% trans "Members" %}</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+			<div id="content-wrap">
+				<p>
+					Aquia quid mo quia as moluptas quis rem que omnime dolendi nonet es ea consequatis es incipsam cus solore num quiam ea cum faces imagnam harum velitas platent, sum fugiae volor maios explabor sim imus.
+				</p>
+
+				<p>
+					<span class="stnb">The 2013 Seminar</span> exerum et audio eumquidio. Eveliti quatem sit il iditam ea si officim olen- ducid qui ommodit is simuscidelit verionsequam di nobis sandi cum et abo.
+				</p>
+
+				<p>
+					Et que ditatem hil ilignis ut lacider speraerest earum quianih illam, que perferferro eseque nonsequi aut asinto bea volupti od utet auda quate sectium faccum facepra que iundaerro iusaped qui autae nus ad ma experesed que magnis eaquiae nis seditae.
+				</p>
+
+				<p>
+					Illore cus eati atur aboreperum vel inihiti iscita arit invel magnis es ere, quiamus et quiamen torereriatem qui repedis ad ullabore es eos aut aliae odigenimo od quam voluptatios si ip- sam, aligendam quam illaborro mollab ipsam, te odiscias adigenissus elicturias estioriosse quidenim dolorerae dolorro tem as aut volut lab imi.
+				</p>
+				{% blocktrans %}
+				{% endblocktrans %}
+				{% block "content" %}
+				{% endblock %}
+			</div>
+
+			<div id="language-chooser">
+				{% trans "Language" %}:
+				<ul>
+					{% for lang_code, lang_name in languages %}
+						<li><a href="/setlang/?language={{ lang_code }}&next={{ redirect_to }}">{{ lang_name }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

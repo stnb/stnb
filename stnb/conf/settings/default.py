@@ -15,13 +15,14 @@ ADMINS = (
 )
 MANAGERS = ADMINS
 
+ugettext = lambda s: s
 
 TIME_ZONE = 'Europe/Madrid'
 LANGUAGE_CODE = 'ca'
 LANGUAGES = (
-    ('ca', 'Català'),
-    ('es', 'Castellano'),
-    ('en', 'English'),
+    ('ca', ugettext('Catalan')),
+    ('es', ugettext('Spanish')),
+    ('en', ugettext('English')),
 )
 
 USE_I18N = True
@@ -36,7 +37,7 @@ SITE_ID = 1
 MEDIA_ROOT = ''
 MEDIA_URL = ''
 
-STATIC_ROOT = ''
+STATIC_ROOT = '' #os.path.join(DIRNAME, 'static/')
 STATIC_URL = '/static/'
 
 # Additional locations of static files
@@ -44,6 +45,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(DIRNAME, 'static/'),
 )
 
 TEMPLATE_LOADERS = (
@@ -53,8 +55,9 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -68,9 +71,7 @@ ROOT_URLCONF = 'stnb.urls'
 WSGI_APPLICATION = 'stnb.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+    os.path.join(DIRNAME, 'templates/'),
 )
 
 INSTALLED_APPS = (
