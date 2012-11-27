@@ -1,30 +1,280 @@
+/* **** BEGIN: Reset **** */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* **** END: Reset **** */
+
+/* **** BEGIN: Outer level **** */
 
 body  {
 	font-family: Helvetica, sans-serif;
+	background: #e4e4e5 none;
 }
 
-#site-titles  {
+#stnb-outer-wrap  {
+	position: relative;
+	width: 1050px;	
+}
+
+#stnb-outer-wrap .main-block  {
+	float: left;
+}
+
+#navigation  {
+	width: 150px;
+}
+
+#content-wrap  {
+	width: 600px;
+	margin: 30px 20px 20px 20px;
+	padding: 0 40px 0 0;
+	border-right: 3px dashed #333;
+}
+
+#secondary-column  {
+	width: 150px;
+	float: left;
+	margin: 30px 20px 20px 10px;
+}
+
+
+/* **** END: Outer level **** */
+
+/* **** BEGIN: Titles **** */
+
+/*#site-titles  {
 	width: 220px;
 	background: none #5f5f5f;
-}
+}*/
 
 #site-titles h1, #site-titles .year  {
-	color: #232323;
+	display: table;
+	margin: 8px 8px 8px 26px;
+}
+
+#site-titles h1 a, #site-titles .year span  {
+/*	color: #232323;
 	font-size: 58pt;
 	font-weight: bold;
+	text-align: center;*/
+	display: block;
+	width: 90px;
+	height: 90px;
+	
+	border-radius: 50%;
+	background: #425716 none;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	
+	display: table-cell;
+	vertical-align: middle;
 	text-align: center;
-	padding: 0;
-	margin: 0;
+}
+
+#site-titles h1 a  {
+	font-size: 22pt;
+	background-color: #333;
+}
+
+#site-titles .year span  {
+	font-size: 22pt;
+	background-color: #1e660e;
 }
 
 #site-titles .active-year  {
 	color: #f26813;
 }
 
-#site-titles h2  {
-	color: #ffffff;
-	font-size: 14pt;
-	padding: 0;
-	margin: 0;
+h2  {
+	color: #000;
+	font-size: 16pt;
+	margin: 10px 0 30px 0;
 }
 
+/* **** END: Titles **** */
+
+/* **** BEGIN: Navigation **** */
+
+#menu ul  {
+	margin-top: 20px;
+}
+
+#menu li  {
+	list-style: none;
+	display: table;
+	margin: 8px 8px 8px 26px;
+}
+
+#menu li a  {
+	width: 90px;
+	height: 90px;
+	
+	border-radius: 50%;
+	background: #425716 none;
+	color: #fff;
+	text-decoration: none;
+	
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#menu .inici  {
+	background-color: #769F23;
+}
+
+#menu .seminari-actual  {
+	background-color: #89A750;
+}
+
+#menu .arxiu-seminaris  {
+	background-color: #659A90;
+}
+
+#menu .sobre-stnb  {
+	background-color: #31649B;
+}
+
+#menu .miembres  {
+	background-color: #5C80B0;
+}
+
+/* **** END: Navigation **** */
+
+/* **** BEGIN: Secondary Column **** */
+
+#search .outer  {
+	width: 120px;
+	
+	height: 20px;
+	border-radius: 10px;
+	background: #fff none;
+	
+	padding: 0 10px 0 10px;
+}
+
+#search .search-box  {
+	width: 120px;
+	border: none;
+	background: transparent none;
+}
+
+#institution-links  {
+	margin: 20px 0 20px 0;
+}
+
+#institution-links li  {
+	margin: 8px 0 8px 0;
+}
+
+#institution-links li a  {
+	font-size: 11pt;
+	text-decoration: none;
+	color: #666;
+}
+
+#institution-links li a:hover  {
+	text-decoration: underline;
+}
+
+/* **** END: Secondary Column **** */
+
+/* **** BEGIN: Languages **** */
+
+#language-chooser  {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	
+	width: 100%;
+	background: #e4e4e5 none;
+	font-size: 10pt;
+}
+
+#language-chooser .title, #language-chooser li  {
+	float: left;
+	padding: 4px 2px 18px 12px;
+
+	color: #666;
+}
+
+#language-chooser li  {
+	float: left;
+	margin: 0 2px 0 8px;
+	border-left: 1px solid #fff;
+}
+
+#language-chooser li a  {
+	text-decoration: none;
+	color: #666;
+}
+
+#language-chooser li a:hover  {
+	text-decoration: underline;
+}
+
+/* **** END: Languages **** */
+
+/* **** BEGIN: Footer **** */
+
+#footer  {
+	clear: both;
+	padding: 40px 0 40px 0;
+	
+	color:  #666;
+	font-size: 10pt;
+	text-align: center;
+}
+
+/* **** END: Footer **** */
+
+/* **** BEGIN: Main Content **** */
+
+#content-wrap p {
+	margin: 20px 0 20px 0;
+}
+
+/* **** END: Main Content **** */

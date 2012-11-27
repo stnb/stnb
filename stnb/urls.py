@@ -22,7 +22,8 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += i18n_patterns('',
-    url(r'^$', TemplateView.as_view(template_name='base.html')),
+    url(r'^$', TemplateView.as_view(template_name='base.html'), name='inici'),
+    url(r'^sobre-stnb/$', TemplateView.as_view(template_name='sobre-stnb/sobre-stnb.html'), name='sobre-stnb'),
     url(r'^institucions/', include('stnb.institucions.urls')),
 )
 
