@@ -1,3 +1,44 @@
+/* **** FONTS **** */
+
+/*@font-face {
+	font-family: Wire-One;
+	src: url('../fonts/wire-one/wire-one.ttf') format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: Ubuntu-Condensed;
+	src: url('../fonts/ubuntu/ubuntu-c.ttf') format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}*/
+/*@font-face {
+	font-family: Averia;
+	src: url('../font-family/averia/Averia-Italic.ttf') format("truetype");
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: Averia;
+	src: url('../font-family/averia/Averia-Bold.ttf') format("truetype");
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: Averia;
+	src: url('../font-family/averia/Averia-BoldItalic.ttf') format("truetype");
+	font-weight: bold;
+	font-style: italic;
+}
+@font-face {
+	font-family: Averia;
+	src: url('../font-family/averia/Averia-FakeSmallCaps.ttf') format("truetype");
+	font-weight: 100;
+	font-style: normal;
+}*/
+
+
 /* **** BEGIN: Reset **** */
 
 html, body, div, span, applet, object, iframe,
@@ -49,13 +90,15 @@ table {
 /* **** BEGIN: Outer level **** */
 
 body  {
-	font-family: Helvetica, sans-serif;
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 12pt;
+	letter-spacing: 0.085em;
 	background: #e4e4e5 none;
 }
 
 #stnb-outer-wrap  {
 	position: relative;
-	width: 1050px;	
+	width: 1100px;	
 }
 
 #stnb-outer-wrap .main-block  {
@@ -74,7 +117,7 @@ body  {
 }
 
 #secondary-column  {
-	width: 150px;
+	width: 200px;
 	float: left;
 	margin: 30px 20px 20px 10px;
 }
@@ -89,7 +132,14 @@ body  {
 	background: none #5f5f5f;
 }*/
 
+#site-titles h1, #site-titles .year, #menu li, #content-wrap h2  {
+	font-family: 'Oswald', sans-serif;
+}
+
 #site-titles h1, #site-titles .year  {
+	letter-spacing: 0.085em;
+	font-size: 24pt;
+
 	display: table;
 	margin: 8px 8px 8px 26px;
 }
@@ -115,12 +165,12 @@ body  {
 }
 
 #site-titles h1 a  {
-	font-size: 22pt;
+/*	font-size: 22pt;*/
 	background-color: #333;
 }
 
 #site-titles .year span  {
-	font-size: 22pt;
+/*	font-size: 22pt;*/
 	background-color: #1e660e;
 }
 
@@ -128,9 +178,12 @@ body  {
 	color: #f26813;
 }
 
-h2  {
+#content-wrap h2  {
+	letter-spacing: 0.085em;
+	font-size: 30px;
+
 	color: #000;
-	font-size: 16pt;
+/*	font-size: 16pt;*/
 	margin: 10px 0 30px 0;
 }
 
@@ -143,6 +196,10 @@ h2  {
 }
 
 #menu li  {
+	letter-spacing: 0.105em;
+	font-size: 12pt;
+	line-height: 18pt;
+
 	list-style: none;
 	display: table;
 	margin: 8px 8px 8px 26px;
@@ -187,7 +244,7 @@ h2  {
 /* **** BEGIN: Secondary Column **** */
 
 #search .outer  {
-	width: 120px;
+	width: 200px;
 	
 	height: 20px;
 	border-radius: 10px;

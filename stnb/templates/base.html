@@ -7,7 +7,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ lang }}" lang="{{ lang }}">
 	<head>
 		<meta charset="utf-8" />
+		<link href='http://fonts.googleapis.com/css?family=Titillium+Web:300|Oswald' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" media="screen" type="text/css" href="{{ STATIC_URL }}css/stnb-main.css" />
+		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+			MathJax.Hub.Config({
+			  tex2jax: {
+			    inlineMath: [['$','$'], ['\\(','\\)']],
+			    processEscapes: true
+			  }
+			});
+		</script>
 	</head>
 
 	<body class="{% block body-class %}{% endblock body-class %}">
@@ -15,7 +24,7 @@
 			<div id="navigation" class="main-block">
 
 				<div id="site-titles">
-					<h1 class="site-title"><a href="#">STNB</a></h1>
+					<h1 class="site-title"><a href="{% url inici %}">STNB</a></h1>
 					<div class="year"><span>2013</span></div>
 				</div>
 
@@ -33,10 +42,11 @@
 
 			<div id="content-wrap" class="main-block">
 				<div id="inner-content-wrap">
-					<h2>Seminari de Teoria de Nombres Barcelona</h2>
+					<h2>{% block "titol-pagina" %}Seminari de Teoria de Nombres Barcelona{% endblock "titol-pagina" %}</h2>
 			
-					{% block "content" %}
+					{% block "contingut" %}
 					<p>
+						Let $K$ be a number field with $\mathfrak{O}_{K}$ its ring of integers.
 						Aquia quid mo quia as moluptas quis rem que omnime dolendi nonet es ea consequatis es incipsam cus solore num quiam ea cum faces imagnam harum velitas platent, sum fugiae volor maios explabor sim imus.
 					</p>
 	
@@ -51,7 +61,7 @@
 					<p>
 						Illore cus eati atur aboreperum vel inihiti iscita arit invel magnis es ere, quiamus et quiamen torereriatem qui repedis ad ullabore es eos aut aliae odigenimo od quam voluptatios si ip- sam, aligendam quam illaborro mollab ipsam, te odiscias adigenissus elicturias estioriosse quidenim dolorerae dolorro tem as aut volut lab imi.
 					</p>
-					{% endblock %}
+					{% endblock "contingut" %}
 				</div>
 			</div>
 
@@ -67,7 +77,7 @@
 					<ul>
 						<li><a href="#">UB</a></li>
 						<li><a href="#">UAB</a></li>
-						<li><a href="#">UPC</a></li>
+						<li><a href="#">Universitat Politècnica de Catalunya</a></li>
 						<li><a href="#">CRM</a></li>
 					</ul>
 				</div>
