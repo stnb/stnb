@@ -390,3 +390,42 @@ body  {
 }
 
 /* **** END: Main Content **** */
+
+
+/* ******** SPECIFIC PAGES ******** */
+
+/* **** BEGIN: Login/Logout **** */
+
+.camp-compte  {
+	margin: 14px 0 14px 0;
+}
+
+.camp-compte label, .camp-login input  {
+	display: block;
+}
+
+.camp-compte label  {
+	font-size: 11pt;
+}
+
+.camp-compte input  {
+	margin: 4px 0 4px 0;
+	
+	width: 400px;
+	height: 36px;
+	
+	font-size: 16pt;
+}
+
+.compte .submit input  {
+/*	width: 60px;*/
+	height: 40px;
+	
+	font-size: 14pt;
+}
+
+.compte-errors  {
+	color: #A94F0D;
+}
+
+/* **** END: Login/Logout **** */

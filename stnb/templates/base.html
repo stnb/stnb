@@ -79,9 +79,9 @@
 					<ul>
 					{% if user.is_authenticated %}
 						<li><a href="#">{% if user.get_full_name %}{{ user.get_full_name }}{% else %}{% trans "Profile page" %}{% endif %}</a></li>
-						<li><a href="#">{% trans "Logout" %}</a></li>
+						<li><a href="{% url comptes-logout %}">{% trans "Logout" %}</a></li>
 					{% else %}
-						<li><a href="#">{% trans "Login" %}</a></li>
+						<li><a href="{% url comptes-login %}">{% trans "Login" %}</a></li>
 					{% endif %}
 					</ul>
 				</div>
