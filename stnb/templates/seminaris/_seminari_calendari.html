@@ -1,0 +1,18 @@
+{% load i18n %}
+
+<div class="calendar">
+{% for dia in dies %}
+	<div class="dia">
+		<h4>{{ dia }}</h4>
+
+		<div class="dia-items">
+		{% for item in dia.items_programa.all %}
+			<p><strong>{{ item.duracio }}</strong>:<br />{{ item.titol }}{% if item.xerrada %} ({{ item.xerrada.altres_presentadors }}){% endif %}</p>
+		{% endfor %}
+		</div>
+		
+	</div>
+
+{% endfor %}
+</div>
+

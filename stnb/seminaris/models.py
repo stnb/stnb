@@ -3,8 +3,9 @@ import datetime
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models import permalink
 from django.core.urlresolvers import reverse
-from django.utils.translation import ugettext_lazy as _, ugettext
+from django.utils.translation import ugettext as _
 from hvad.models import TranslatableModel, TranslatedFields
 
 class Seminari(TranslatableModel):
@@ -18,8 +19,35 @@ class Seminari(TranslatableModel):
         lloc = models.TextField(),
     )
 
+    class Meta:
+        ordering = ['-data_inici']
+
     def __unicode__(self):
         return self.nom
+
+    @permalink
+    def get_absolute_url(self):
+        return ('seminari-detall', (), {'slug': self.slug})
+
+    def duracio(self):
+        dstr = ''
+        if self.data_inici.year == self.data_finalizacio.year:
+            if self.data_inici.month == self.data_finalizacio.month:
+                dstr= _('%(idia)s %(idata)d to %(fdia)s %(fdata)d of %(imes)s, %(iany)d')
+            else:
+                dstr= _('%(idia)s %(idata)d of %(fmes)s to %(fdia)s %(fdata)d of %(fmes)s, %(iany)d')
+        else:
+            dstr= _('%(idia)s %(idata)d of %(imes)s, %(iany)s %(fdata)d to %(fdia)d of %(fmes)s, %(fany)d')
+
+        return dstr % { 'idia': _(self.data_inici.strftime('%A')),
+                        'idata': self.data_inici.day,
+                        'imes': _(self.data_inici.strftime('%B')),
+                        'iany': self.data_inici.year,
+                        'fdia': _(self.data_finalizacio.strftime('%A')),
+                        'fdata': self.data_finalizacio.day,
+                        'fmes': _(self.data_finalizacio.strftime('%B')),
+                        'fany': self.data_finalizacio.year, }
+
 
     def save(self, *args, **kwargs):
         super(Seminari, self).save(*args, **kwargs)
@@ -43,6 +71,7 @@ class Tema(TranslatableModel):
 
     class Meta:
         verbose_name_plural = 'temes'
+        ordering = ['translations__nom']
 
     def __unicode__(self):
         return self.nom
@@ -55,9 +84,10 @@ class Dia(TranslatableModel):
 
     class Meta:
         verbose_name_plural = 'dies'
+        ordering = ['seminari__data_inici', 'data',]
 
     def __unicode__(self):
-        return '%s %d' % (ugettext(self.data.strftime('%A')), self.data.day,)
+        return '%s %d' % (_(self.data.strftime('%A')), self.data.day,)
 
     def modifica_seminari(self):
         admin_url = reverse('admin:seminaris_seminari_change',
@@ -83,6 +113,7 @@ class Xerrada(TranslatableModel):
 
     class Meta:
         verbose_name_plural = 'xerrades'
+        ordering = ['translations__nom']
 
     def __unicode__(self):
         return self.nom
@@ -106,11 +137,12 @@ class ItemPrograma(TranslatableModel):
     class Meta:
         verbose_name = 'ìtem del programa'
         verbose_name_plural = 'ìtems del programa'
+        ordering = ['dia', 'hora_inici']
 
     def __unicode__(self):
         duracio = self.duracio()
         if duracio:
-            return duracio
+            return '%s (%s): %s' % (self.dia, duracio, self.titol(),)
         else:
             return '<ItemPrograma>'
 

@@ -5,53 +5,37 @@
 {% block "titol-pagina" %}{{ seminari.nom }}{% endblock "titol-pagina" %}
 
 {% block "contingut" %}
+<p>
+	{{ seminari.descripcio }}
+</p>
 
 <ul>
 	<li><a href="#temes">{% trans "Themes" %}</a></li>
 	<li><a href="#calendari">{% trans "Calendar" %}</a></li>
 </ul>
 
+<a name="dates"></a>
+<h3>{% trans "Dates" %}</h3>
+
+<p>
+	{{ seminari.duracio|capfirst }}
+</p>
+
+<a name="lloc"></a>
+<h3>{% trans "Location" %}</h3>
+
+<p>
+	{{ seminari.lloc }}
+</p>
+
 <a name="temes"></a>
 <h3>{% trans "Themes" %}</h3>
 
-<div class="temas">
-{% for tema in seminari.temes.all %}
-	<div class="tema">
-		<h4>{{ tema.nom }}</h4>
-
-		<p>
-			{{ tema.descripcio }}
-		</p>
-
-		<ol class="tema-xerrades">
-			{% for xerrada in tema.xerrades.all %}
-				<li>{{ xerrada.nom }}, {{ xerrada.altres_presentadors }}</li>
-			{% endfor %}
-		</ol>
-	</div>
-{% endfor %}
-</div>
+{% include "seminaris/_seminari_temes.html" with temes=seminari.temes.all %}
 
 <a name="calendari"></a>
 <h3>{% trans "Calendar" %}</h3>
 
-<div class="calendar">
-{% for dia in seminari.dies.all %}
-	<div class="dia">
-		<h4>{{ dia }}</h4>
+{% include "seminaris/_seminari_calendari.html" with dies=seminari.dies.all %}
 
-		<ul class="dia-items">
-		{% for item in dia.items_programa.all %}
-			<li>{{ item.duracio }}: {{ item.titol }}</li>
-		{% endfor %}
-		</ul>
-		
-	</div>
-
-{% endfor %}
-</div>
-
-<p>
-	{{ seminari.descripcio }}
-</p>
 {% endblock "contingut" %}

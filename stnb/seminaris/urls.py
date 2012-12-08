@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls.defaults import patterns, url
 
-from .views import SeminariDetailView, TemaListView, DiaListView, DiaDetailView, XerradaListView
+from .views import SeminariActualView, SeminariListView, SeminariDetailView, TemaListView, DiaListView, DiaDetailView, XerradaListView
 
 urlpatterns = patterns('',
+    url(r'actual/$', SeminariActualView.as_view(),
+        name='seminari-actual'),
+    url(r'arxiu/$', SeminariListView.as_view(),
+        name='seminari-llista'),
     url(r'(?P<slug>[a-z0-9\-]+)/$', SeminariDetailView.as_view(),
         name='seminari-detall'),
 

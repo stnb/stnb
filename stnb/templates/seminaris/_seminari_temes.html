@@ -1,0 +1,20 @@
+{% load i18n %}
+
+<div class="temas">
+{% for tema in temes %}
+	<div class="tema">
+		<h4>{{ tema.nom }}</h4>
+
+		<p>
+			{{ tema.descripcio }}
+		</p>
+
+		<ol class="tema-xerrades">
+			{% for xerrada in tema.xerrades.all %}
+				<li>{{ xerrada.nom }}, {{ xerrada.altres_presentadors }}</li>
+			{% endfor %}
+		</ol>
+	</div>
+{% endfor %}
+</div>
+

@@ -1,7 +1,28 @@
 # -*- coding: utf-8 -*-
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, RedirectView
+from django.core.urlresolvers import reverse
+from django.http import Http404
 
 from .models import Seminari, Tema, Dia, Xerrada, ItemPrograma
+
+class SeminariActualView(RedirectView):
+
+    permanent = False
+    queryset = True
+
+    def get_redirect_url(self):
+        try:
+            seminari= Seminari.objects.filter(actiu=True)[0]
+        except IndexError:
+            raise Http404
+        return reverse('seminari-detall', kwargs={ 'slug': seminari.slug })
+
+class SeminariListView(ListView):
+    model = Seminari
+    context_object_name = 'seminaris'
+    template_name = 'seminaris/seminari_llista.html'
+
+    queryset = Seminari.objects.filter(actiu=True)
 
 class SeminariDetailView(DetailView):
     model = Seminari

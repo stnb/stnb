@@ -368,10 +368,15 @@ body  {
 /* **** BEGIN: Main Content **** */
 
 #content-wrap p {
-	margin: 6px 0 6px 0;
+	margin: 10px 0 6px 0;
+	line-height: 16pt;
 }
 
-#content-wrap p.extended-text {
+#content-wrap strong  {
+	text-decoration: underline;
+}
+
+#content-wrap .extended-text p {
 	margin: 20px 0 20px 0;
 }
 

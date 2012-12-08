@@ -1,14 +1,20 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load l10n %}
 
+{% block "titol-pagina" %}{% trans "Seminar archive" %}{% endblock "titol-pagina" %}
 
-{% block "content" %}
-<h3>{{ institucio.nom }}</h3>
-<div class="institucio-llista">
-	{% for institucio in institucions %}
-	<p>
-		<a href="{% url institucio-detall slug=institucio.nom_curt %}">{{ institucio.nom }}</a>
-	</p>
-	{% endfor %}
+{% block "contingut" %}
+<div class="seminari-llista">
+{% for seminari in seminaris %}
+	<div class="seminari">
+		<h3><a href="{{ seminari.get_absolute_url }}">{{ seminari.nom }}</a></h3>
+
+		<p>{% trans "Dates" %}: {{ seminari.duracio }}</p>	
+		<p>{% trans "Location" %}: {{ seminari.lloc }}</p>	
+	</div>
+
+{% endfor %}
 </div>
+
 {% endblock %}
