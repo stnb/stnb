@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ lang }}" lang="{{ lang }}">
 	<head>
 		<meta charset="utf-8" />
-		<link href='http://fonts.googleapis.com/css?family=Titillium+Web:300|Oswald' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Titillium+Web:300|Oswald:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" media="screen" type="text/css" href="{{ STATIC_URL }}css/stnb-main.css" />
 		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 			MathJax.Hub.Config({
@@ -45,22 +45,24 @@
 					<h2>{% block "titol-pagina" %}Seminari de Teoria de Nombres Barcelona{% endblock "titol-pagina" %}</h2>
 			
 					{% block "contingut" %}
-					<p>
-						Let $K$ be a number field with $\mathfrak{O}_{K}$ its ring of integers.
-						Aquia quid mo quia as moluptas quis rem que omnime dolendi nonet es ea consequatis es incipsam cus solore num quiam ea cum faces imagnam harum velitas platent, sum fugiae volor maios explabor sim imus.
-					</p>
-	
-					<p>
-						<span class="stnb">The 2013 Seminar</span> exerum et audio eumquidio. Eveliti quatem sit il iditam ea si officim olen- ducid qui ommodit is simuscidelit verionsequam di nobis sandi cum et abo.
-					</p>
-	
-					<p>
-						Et que ditatem hil ilignis ut lacider speraerest earum quianih illam, que perferferro eseque nonsequi aut asinto bea volupti od utet auda quate sectium faccum facepra que iundaerro iusaped qui autae nus ad ma experesed que magnis eaquiae nis seditae.
-					</p>
-	
-					<p>
-						Illore cus eati atur aboreperum vel inihiti iscita arit invel magnis es ere, quiamus et quiamen torereriatem qui repedis ad ullabore es eos aut aliae odigenimo od quam voluptatios si ip- sam, aligendam quam illaborro mollab ipsam, te odiscias adigenissus elicturias estioriosse quidenim dolorerae dolorro tem as aut volut lab imi.
-					</p>
+					<div class="extended-text">
+						<p>
+							Let $K$ be a number field with $\mathfrak{O}_{K}$ its ring of integers.
+							Aquia quid mo quia as moluptas quis rem que omnime dolendi nonet es ea consequatis es incipsam cus solore num quiam ea cum faces imagnam harum velitas platent, sum fugiae volor maios explabor sim imus.
+						</p>
+		
+						<p>
+							<span class="stnb">The 2013 Seminar</span> exerum et audio eumquidio. Eveliti quatem sit il iditam ea si officim olen- ducid qui ommodit is simuscidelit verionsequam di nobis sandi cum et abo.
+						</p>
+		
+						<p>
+							Et que ditatem hil ilignis ut lacider speraerest earum quianih illam, que perferferro eseque nonsequi aut asinto bea volupti od utet auda quate sectium faccum facepra que iundaerro iusaped qui autae nus ad ma experesed que magnis eaquiae nis seditae.
+						</p>
+		
+						<p>
+							Illore cus eati atur aboreperum vel inihiti iscita arit invel magnis es ere, quiamus et quiamen torereriatem qui repedis ad ullabore es eos aut aliae odigenimo od quam voluptatios si ip- sam, aligendam quam illaborro mollab ipsam, te odiscias adigenissus elicturias estioriosse quidenim dolorerae dolorro tem as aut volut lab imi.
+						</p>
+					</div>
 					{% endblock "contingut" %}
 				</div>
 			</div>
@@ -68,16 +70,28 @@
 			<div id="secondary-column">
 				<div id="search">
 					<div class="outer">
-						<input class="search-box" type="text" name="q" />
+						<input class="search-box" type="text" name="q" value="Search" />
 					</div>
 				</div>
 				
-				<div id="institution-links">
-					<div class="title">{% trans "Institutions" %}</div>
+				<div id="account" class="block">
+					<div class="title">{% trans "Account " %}</div>
+					<ul>
+					{% if user.is_authenticated %}
+						<li><a href="#">{% if user.get_full_name %}{{ user.get_full_name }}{% else %}{% trans "Profile page" %}{% endif %}</a></li>
+						<li><a href="#">{% trans "Logout" %}</a></li>
+					{% else %}
+						<li><a href="#">{% trans "Login" %}</a></li>
+					{% endif %}
+					</ul>
+				</div>
+				
+				<div id="institution-links" class="block">
+					<div class="title">{% trans "Affiliated Institutions" %}</div>
 					<ul>
 						<li><a href="#">UB</a></li>
 						<li><a href="#">UAB</a></li>
-						<li><a href="#">Universitat Politècnica de Catalunya</a></li>
+						<li><a href="#">UPC</a></li>
 						<li><a href="#">CRM</a></li>
 					</ul>
 				</div>

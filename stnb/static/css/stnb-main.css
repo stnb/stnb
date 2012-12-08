@@ -93,7 +93,7 @@ body  {
 	font-family: 'Titillium Web', sans-serif;
 	font-size: 12pt;
 	letter-spacing: 0.085em;
-	background: #e4e4e5 none;
+	background: #e4e4e5 url(../img/background-dot.png) repeat-y 0 0;
 }
 
 #stnb-outer-wrap  {
@@ -113,7 +113,6 @@ body  {
 	width: 600px;
 	margin: 30px 20px 20px 20px;
 	padding: 0 40px 0 0;
-	border-right: 3px dashed #333;
 }
 
 #secondary-column  {
@@ -187,7 +186,44 @@ body  {
 	margin: 10px 0 30px 0;
 }
 
+#content-wrap h3, #content-wrap h4  {
+	font-family: "Oswald";
+	font-weight: 700;
+}
+
+#content-wrap h3  {
+/*	letter-spacing: 0.085em;*/
+	font-size: 16px;
+
+	color: #000;
+	margin: 34px 0 16px 0;
+}
+
+
+#content-wrap h4  {
+/*	letter-spacing: 0.085em;*/
+	font-size: 14px;
+
+	color: #000;
+	margin: 24px 0 14px 0;
+}
+
+
 /* **** END: Titles **** */
+
+/* **** BEGIN: Links **** */
+
+#content-wrap a, #secondary-column a  {
+	color: #89A750;
+	text-decoration: none;
+}
+
+#content-wrap a:hover, #secondary-column a:hover  {
+	color: #6B7627;
+	text-decoration: underline;
+}
+
+/* **** END: Links **** */
 
 /* **** BEGIN: Navigation **** */
 
@@ -244,7 +280,7 @@ body  {
 /* **** BEGIN: Secondary Column **** */
 
 #search .outer  {
-	width: 200px;
+	width: 140px;
 	
 	height: 20px;
 	border-radius: 10px;
@@ -254,28 +290,29 @@ body  {
 }
 
 #search .search-box  {
-	width: 120px;
+	width: 130px;
 	border: none;
 	background: transparent none;
+	color: #999;
 }
 
-#institution-links  {
+#secondary-column .block  {
 	margin: 20px 0 20px 0;
 }
 
-#institution-links li  {
-	margin: 8px 0 8px 0;
+#secondary-column .block li  {
+	margin: 8px 0 8px 16px;
 }
 
-#institution-links li a  {
+#secondary-column .block li a  {
 	font-size: 11pt;
-	text-decoration: none;
-	color: #666;
+/*	text-decoration: none;
+	color: #666;*/
 }
 
-#institution-links li a:hover  {
+/*#institution-links li a:hover  {
 	text-decoration: underline;
-}
+}*/
 
 /* **** END: Secondary Column **** */
 
@@ -331,7 +368,20 @@ body  {
 /* **** BEGIN: Main Content **** */
 
 #content-wrap p {
+	margin: 6px 0 6px 0;
+}
+
+#content-wrap p.extended-text {
 	margin: 20px 0 20px 0;
+}
+
+#content-wrap li  {
+	margin: 14px 0 14px 0;
+}
+
+#content-wrap ol  {
+	list-style: decimal;
+	padding-left: 40px;
 }
 
 /* **** END: Main Content **** */

@@ -8,6 +8,9 @@ from .models import Seminari, Tema, Dia, Xerrada, ItemPrograma
 class TemaInline(TranslatableStackedInline):
     model = Tema
 
+class XerradaInline(TranslatableStackedInline):
+    model = Xerrada
+
 class SeminariAdmin(TranslatableAdmin):
    inlines = [
         TemaInline,
@@ -30,7 +33,8 @@ class DiaAdmin(TranslatableAdmin):
     ]
 
 class XerradaAdmin(TranslatableAdmin):
-    pass
+    list_display = ('__unicode__', 'tema', 'seminari',)
+    list_filter = ('tema',)
 
 class ItemProgramaAdmin(TranslatableAdmin):
     pass

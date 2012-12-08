@@ -4,17 +4,17 @@ import datetime
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, ugettext
 from hvad.models import TranslatableModel, TranslatedFields
 
 class Seminari(TranslatableModel):
-    nom = models.CharField(max_length=50)
     slug = models.SlugField(max_length=50)
     data_inici = models.DateField()
     data_finalizacio = models.DateField()
     actiu = models.BooleanField(default=False)
     
     translations = TranslatedFields(
+        nom = models.CharField(max_length=50),
         lloc = models.TextField(),
     )
 
@@ -33,6 +33,8 @@ class Seminari(TranslatableModel):
 
 class Tema(TranslatableModel):
     seminari = models.ForeignKey(Seminari, related_name='temes')
+    organitzadors = models.ManyToManyField(User, related_name='temes',
+                                          blank=True, null=True)
 
     translations = TranslatedFields(
         nom = models.CharField(max_length=255),
@@ -55,7 +57,7 @@ class Dia(TranslatableModel):
         verbose_name_plural = 'dies'
 
     def __unicode__(self):
-        return self.data.strftime('%A ') + unicode(self.data.day)
+        return '%s %d' % (ugettext(self.data.strftime('%A')), self.data.day,)
 
     def modifica_seminari(self):
         admin_url = reverse('admin:seminaris_seminari_change',
@@ -68,7 +70,7 @@ class Xerrada(TranslatableModel):
                                blank=True, null=True)
     presentadors = models.ManyToManyField(User, related_name='xerrades',
                                           blank=True, null=True)
-    altre_presentadors = models.CharField(max_length=100, blank=True, null=True)
+    altres_presentadors = models.CharField(max_length=100, blank=True, null=True)
 
     presentacio = models.FileField(upload_to='presentacions',
                                    blank=True, null=True)
@@ -76,7 +78,7 @@ class Xerrada(TranslatableModel):
 
     translations = TranslatedFields(
         nom = models.CharField(max_length=255),
-        descripcio = models.TextField(),
+        descripcio = models.TextField(blank=True, null=True),
     )
 
     class Meta:
@@ -84,6 +86,10 @@ class Xerrada(TranslatableModel):
 
     def __unicode__(self):
         return self.nom
+    
+    def seminari(self):
+        return self.tema.seminari
+    seminari.allow_tags = True
 
 class ItemPrograma(TranslatableModel):
     xerrada = models.ForeignKey(Xerrada, related_name='items_programa',
@@ -107,6 +113,14 @@ class ItemPrograma(TranslatableModel):
             return duracio
         else:
             return '<ItemPrograma>'
+
+    def titol(self):
+        if self.xerrada is not None:
+            print self.xerrada.nom
+            return self.xerrada.nom
+        else:
+            print self.descripcio
+            return self.descripcio
 
     def duracio(self):
         duracio = None

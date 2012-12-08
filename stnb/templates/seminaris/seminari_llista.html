@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+{% block "content" %}
+<h3>{{ institucio.nom }}</h3>
+<div class="institucio-llista">
+	{% for institucio in institucions %}
+	<p>
+		<a href="{% url institucio-detall slug=institucio.nom_curt %}">{{ institucio.nom }}</a>
+	</p>
+	{% endfor %}
+</div>
+{% endblock %}

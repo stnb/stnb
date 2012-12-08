@@ -4,11 +4,11 @@ from django.views.generic import ListView, DetailView
 from .models import Seminari, Tema, Dia, Xerrada, ItemPrograma
 
 class SeminariDetailView(DetailView):
-    model = Institucio
+    model = Seminari
     context_object_name = 'seminari'
     template_name = 'seminaris/seminari_detall.html'
 
-    queryset = Seminari.objects.all()
+    queryset = Seminari.objects.filter(actiu=True)
     slug_field = 'slug'
 
 class TemaListView(ListView):

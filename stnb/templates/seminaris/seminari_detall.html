@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load l10n %}
+
+{% block "titol-pagina" %}{{ seminari.nom }}{% endblock "titol-pagina" %}
+
+{% block "contingut" %}
+
+<ul>
+	<li><a href="#temes">{% trans "Themes" %}</a></li>
+	<li><a href="#calendari">{% trans "Calendar" %}</a></li>
+</ul>
+
+<a name="temes"></a>
+<h3>{% trans "Themes" %}</h3>
+
+<div class="temas">
+{% for tema in seminari.temes.all %}
+	<div class="tema">
+		<h4>{{ tema.nom }}</h4>
+
+		<p>
+			{{ tema.descripcio }}
+		</p>
+
+		<ol class="tema-xerrades">
+			{% for xerrada in tema.xerrades.all %}
+				<li>{{ xerrada.nom }}, {{ xerrada.altres_presentadors }}</li>
+			{% endfor %}
+		</ol>
+	</div>
+{% endfor %}
+</div>
+
+<a name="calendari"></a>
+<h3>{% trans "Calendar" %}</h3>
+
+<div class="calendar">
+{% for dia in seminari.dies.all %}
+	<div class="dia">
+		<h4>{{ dia }}</h4>
+
+		<ul class="dia-items">
+		{% for item in dia.items_programa.all %}
+			<li>{{ item.duracio }}: {{ item.titol }}</li>
+		{% endfor %}
+		</ul>
+		
+	</div>
+
+{% endfor %}
+</div>
+
+<p>
+	{{ seminari.descripcio }}
+</p>
+{% endblock "contingut" %}
