@@ -7,6 +7,8 @@ from stnb.conf.settings.default import *  # NOQA
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+SITE_ID = 2
+
 NORMAL_DOMAIN = 'http://127.0.0.1:2013'
 #SSL_DOMAIN = 'https://stnb.heliohost.org'
 
