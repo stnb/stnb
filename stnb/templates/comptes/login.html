@@ -5,24 +5,11 @@
 
 {% block "contingut" %}
 <div class="compte">
-{% if form.errors %}
-<div class="compte-errors">
-	<p>Your username and password didn't match. Please try again.</p>
-</div>
-{% endif %}
 
 	<form method="post" action="{% url comptes-login %}">
 		{% csrf_token %}
 
-		<div class="camp-compte">
-			<label for="id_username">Username:</label>
-			<input id="id_username" type="text" name="username" maxlength="30" />
-		</div>
-
-		<div class="camp-compte">
-			<label for="id_password">Password:</label>
-			<input type="password" name="password" id="id_password" />
-		</div>
+    {{ form.as_p }}
 
 		<div class="submit">
 			<input type="submit" value="{% trans "Log in" %}" />
@@ -39,7 +26,7 @@
 	<h4>{% trans "Don't have an account?" %}</h4>
 
 	<p>
-		{% trans "You can" %} <a href="#">{% trans "sign up for an account" %}</a> now.
+  {% trans "You can" %} <a href="{% url comptes-registre %}">{% trans "sign up for an account" %}</a> now.
 	</p>
 </div>
 {% endblock "contingut" %}

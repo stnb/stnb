@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block "titol-pagina" %}{% trans "Register" %}{% endblock "titol-pagina" %}
+
+{% block "contingut" %}
+<div class="compte">
+
+	<form method="post" action=".">
+		{% csrf_token %}
+
+		{{ form.as_p }}
+
+		<div class="submit">
+			<input type="submit" value="{% trans "Sign up" %}" />
+		</div>
+		<input type="hidden" name="next" value="{% url inici %}" />
+	</form>
+
+	<h4>{% trans "Already have an account?" %}</h4>
+		
+	<p>
+	{% trans "If you already have an account, you can," %} <a href="{% url comptes-login %}">{% trans "Log in" %}</a>.
+	</p>
+
+</div>
+{% endblock "contingut" %}

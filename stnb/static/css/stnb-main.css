@@ -389,6 +389,10 @@ body  {
 	padding-left: 40px;
 }
 
+#content-wrap em  {
+	font-style: italic;
+}
+
 /* **** END: Main Content **** */
 
 
@@ -396,19 +400,19 @@ body  {
 
 /* **** BEGIN: Login/Logout **** */
 
-.camp-compte  {
+.compte p, .camp-compte  {
 	margin: 14px 0 14px 0;
 }
 
-.camp-compte label, .camp-login input  {
+.compte p label, .compte p input, .camp-compte label, .camp-login input  {
 	display: block;
 }
 
-.camp-compte label  {
+.compte p label, .camp-compte label  {
 	font-size: 11pt;
 }
 
-.camp-compte input  {
+.compte p input, .camp-compte input  {
 	margin: 4px 0 4px 0;
 	
 	width: 400px;
@@ -424,8 +428,12 @@ body  {
 	font-size: 14pt;
 }
 
-.compte-errors  {
+.compte .errorlist, .compte-errors  {
 	color: #A94F0D;
+}
+
+#content-wrap .compte .edit  {
+	margin-top: 26px;
 }
 
 /* **** END: Login/Logout **** */

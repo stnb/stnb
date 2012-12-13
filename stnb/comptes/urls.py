@@ -1,9 +1,19 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls.defaults import patterns, url
+from django.views.generic import TemplateView
+from django.core.urlresolvers import reverse
+from emailusernames.forms import EmailAuthenticationForm
+
+from .decorators import login_required
+#from django.contrib.auth.decorators import login_required
+from .views import RegistreView, PerfilUpdateView, PerfilDetallView
+
 
 urlpatterns = patterns('',
     url(r'^login/$', 'django.contrib.auth.views.login',
-        {'template_name': 'comptes/login.html'}, name='comptes-login'),
+        { 'template_name': 'comptes/login.html',
+          'authentication_form': EmailAuthenticationForm},
+        name='comptes-login'),
     url(r'^logout/$', 'django.contrib.auth.views.logout',
         {'template_name': 'comptes/logged_out.html'}, name='comptes-logout'),
     url(r'^restablir-contrasenya/$', 'django.contrib.auth.views.password_reset',
@@ -20,5 +30,12 @@ urlpatterns = patterns('',
         {'template_name': 'comptes/password_reset_complete.html'},
         name='comptes-restablir-contrasenya-fet'),
 
-
+    url(r'registre/$', RegistreView.as_view(), name='comptes-registre'),
+    url(r'registre/fet/$', TemplateView.as_view(template_name='comptes/registre_fet.html'),
+        name='comptes-registre-fet'),
+    
+    url(r'perfil/$', login_required(PerfilDetallView.as_view()),
+        name='comptes-perfil-detall'),
+    url(r'perfil/actualizar/$', login_required(PerfilUpdateView.as_view()),
+        name='comptes-perfil-actualizar'),
 )

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block "titol-pagina" %}{% trans 'Registration' %}{% endblock "titol-pagina" %}
+
+{% block "contingut" %}
+<div class="compte">
+
+	<h4>{% trans "Registration complete" %}</h4>
+
+	<p>{% trans "You have registered successfully." %} {% trans "Now would be a good time to" %} <a href="{% url compte-perfil-actualizar %}">{% trans "add your details" %}</a>.</p>
+
+</div>
+{% endblock "contingut" %}

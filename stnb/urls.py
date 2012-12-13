@@ -1,7 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.conf.urls.i18n import i18n_patterns
 from django.views.generic import TemplateView
-from django.contrib.auth.views import logout, login
 from django.contrib import admin
 
 
@@ -27,6 +26,8 @@ urlpatterns += i18n_patterns('',
     
 
     url(r'^sobre-stnb/$', TemplateView.as_view(template_name='sobre-stnb/sobre-stnb.html'), name='sobre-stnb'),
+    url(r'^accounts/', include('registration.backends.default.urls')),
+    
     url(r'^comptes/', include('stnb.comptes.urls')),
     url(r'^institucions/', include('stnb.institucions.urls')),
     url(r'^seminaris/', include('stnb.seminaris.urls')),

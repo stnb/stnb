@@ -6,4 +6,5 @@ pycrypto
 raven
 south
 django-admin-bootstrapped
+django-email-as-username
 

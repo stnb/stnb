@@ -40,6 +40,9 @@ MEDIA_URL = ''
 STATIC_ROOT = '' #os.path.join(DIRNAME, 'static/')
 STATIC_URL = '/static/'
 
+# One-week activation window; you may, of course, use a different value.
+ACCOUNT_ACTIVATION_DAYS = 7
+
 # Additional locations of static files
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
@@ -65,6 +68,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+AUTHENTICATION_BACKENDS = (
+    'emailusernames.backends.EmailAuthBackend',
+)
+
 ROOT_URLCONF = 'stnb.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
@@ -85,6 +92,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'south',
     'hvad',
+    'emailusernames',
+    'stnb.comptes',
     'stnb.institucions',
     'stnb.seminaris',
     # Uncomment the next line to enable admin documentation:
