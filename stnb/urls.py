@@ -3,6 +3,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.views.generic import TemplateView
 from django.contrib import admin
 
+from stnb.noticies.views import IniciView
 
 admin.autodiscover()
 
@@ -22,7 +23,7 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += i18n_patterns('',
-    url(r'^$', TemplateView.as_view(template_name='base.html'), name='inici'),
+    #url(r'^$', TemplateView.as_view(template_name='base.html'), name='inici'),
     
 
     url(r'^sobre-stnb/$', TemplateView.as_view(template_name='sobre-stnb/sobre-stnb.html'), name='sobre-stnb'),
@@ -31,5 +32,8 @@ urlpatterns += i18n_patterns('',
     url(r'^comptes/', include('stnb.comptes.urls')),
     url(r'^institucions/', include('stnb.institucions.urls')),
     url(r'^seminaris/', include('stnb.seminaris.urls')),
+    url(r'^noticies/', include('stnb.noticies.urls')),
+    
+    url(r'^$', IniciView.as_view(), name='inici'),
 )
 

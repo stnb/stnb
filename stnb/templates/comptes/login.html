@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block "titol-pagina" %}{% trans "Log in" %}{% endblock "titol-pagina" %}
+{% block titol-pagina %}{% trans "Log in" %}{% endblock titol-pagina %}
 
-{% block "contingut" %}
+{% block contingut %}
 <div class="compte">
 
 	<form method="post" action="{% url comptes-login %}">
@@ -29,4 +29,4 @@
   {% trans "You can" %} <a href="{% url comptes-registre %}">{% trans "sign up for an account" %}</a> now.
 	</p>
 </div>
-{% endblock "contingut" %}
+{% endblock contingut %}

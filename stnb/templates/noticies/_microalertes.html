@@ -1,0 +1,7 @@
+{% load i18n %}
+
+<div class="microalertes">
+	{% for microalerta in microalertes %}
+	<div class="microalerta">{{ microalerta.alerta }}</div>
+	{% endfor %}
+</div>

@@ -2,9 +2,9 @@
 {% load i18n %}
 {% load l10n %}
 
-{% block "titol-pagina" %}{% trans "Seminar archive" %}{% endblock "titol-pagina" %}
+{% block titol-pagina %}{% trans "Seminar archive" %}{% endblock titol-pagina %}
 
-{% block "contingut" %}
+{% block contingut %}
 <div class="seminari-llista">
 {% for seminari in seminaris %}
 	<div class="seminari">

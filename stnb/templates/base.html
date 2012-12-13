@@ -2,11 +2,12 @@
 {% get_available_languages as languages %}
 {% get_current_language as lang %}
 {% get_current_language_bidi as lang_bidi %}
-{% block dummy %}{% endblock %}
+{% block dummy %}{% endblock dummy %}
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ lang }}" lang="{{ lang }}">
 	<head>
 		<meta charset="utf-8" />
+		<title>STNB - {% trans "Seminari de Teoria de Nombres Barcelona" %} - {% block titol-head %}2013{% endblock titol-head %}</title>
 		<link href='http://fonts.googleapis.com/css?family=Titillium+Web:300|Oswald:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" media="screen" type="text/css" href="{{ STATIC_URL }}css/stnb-main.css" />
 		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -42,9 +43,11 @@
 
 			<div id="content-wrap" class="main-block">
 				<div id="inner-content-wrap">
-					<h2>{% block "titol-pagina" %}Seminari de Teoria de Nombres Barcelona{% endblock "titol-pagina" %}</h2>
-			
-					{% block "contingut" %}
+					<h2>{% block titol-pagina %}Seminari de Teoria de Nombres Barcelona{% endblock titol-pagina %}</h2>
+					
+					{% block microalerta %}{% endblock microalerta %}
+					
+					{% block contingut %}
 					<div class="extended-text">
 						<p>
 							Let $K$ be a number field with $\mathfrak{O}_{K}$ its ring of integers.
@@ -63,7 +66,7 @@
 							Illore cus eati atur aboreperum vel inihiti iscita arit invel magnis es ere, quiamus et quiamen torereriatem qui repedis ad ullabore es eos aut aliae odigenimo od quam voluptatios si ip- sam, aligendam quam illaborro mollab ipsam, te odiscias adigenissus elicturias estioriosse quidenim dolorerae dolorro tem as aut volut lab imi.
 						</p>
 					</div>
-					{% endblock "contingut" %}
+					{% endblock contingut %}
 				</div>
 			</div>
 
@@ -79,6 +82,7 @@
 					<ul>
 					{% if user.is_authenticated %}
 						<li><a href="{% url comptes-perfil-actualizar %}">{% if user.get_full_name %}{{ user.get_full_name }}{% else %}{% trans "Profile page" %}{% endif %}</a></li>
+						{% if user.is_superuser %}<li><a href="{% url admin:index %}">{% trans "Admin console" %}</a></li>{% endif %}
 						<li><a href="{% url comptes-logout %}">{% trans "Logout" %}</a></li>
 					{% else %}
 						<li><a href="{% url comptes-login %}">{% trans "Login" %}</a></li>

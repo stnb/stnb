@@ -2,9 +2,9 @@
 {% load i18n %}
 {% load l10n %}
 
-{% block "titol-pagina" %}{{ seminari.nom }}{% endblock "titol-pagina" %}
+{% block titol-pagina %}{{ seminari.nom }}{% endblock titol-pagina %}
 
-{% block "contingut" %}
+{% block contingut %}
 <p>
 	{{ seminari.descripcio }}
 </p>
@@ -38,4 +38,4 @@
 
 {% include "seminaris/_seminari_calendari.html" with dies=seminari.dies.all %}
 
-{% endblock "contingut" %}
+{% endblock contingut %}

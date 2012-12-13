@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block "titol-pagina" %}{% trans "Register" %}{% endblock "titol-pagina" %}
+{% block titol-pagina %}{% trans "Register" %}{% endblock titol-pagina %}
 
-{% block "contingut" %}
+{% block contingut %}
 <div class="compte">
 
 	<form method="post" action=".">
@@ -24,4 +24,4 @@
 	</p>
 
 </div>
-{% endblock "contingut" %}
+{% endblock contingut %}

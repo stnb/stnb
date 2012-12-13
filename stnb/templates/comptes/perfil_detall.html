@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block "titol-pagina" %}{% trans "Profile" %}{% endblock "titol-pagina" %}
+{% block titol-pagina %}{% trans "Profile" %}{% endblock titol-pagina %}
 
-{% block "contingut" %}
+{% block contingut %}
 <div class="compte">
 
 
@@ -18,4 +18,4 @@
 	<p class="edit"><a href="{% url comptes-perfil-actualizar %}">Edit your profile</a>.</p>
 
 </div>
-{% endblock "contingut" %}
+{% endblock contingut %}

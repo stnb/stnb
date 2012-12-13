@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block "titol-pagina" %}{% trans "Logged out" %}{% endblock "titol-pagina" %}
+{% block titol-pagina %}{% trans "Logged out" %}{% endblock titol-pagina %}
 
-{% block "contingut" %}
+{% block contingut %}
 <div class="compte">
 	<h4>{% trans "Successfully logged out" %}</h4>
 		
@@ -11,5 +11,5 @@
 		{% trans "You have successfully logged out." %} {% trans "You can" %} <a href="{% url comptes-login %}">{% trans "log in again" %}</a> {% trans "or return to the" %} <a href="{% url inici %}">{% trans "home page" %}</a>.
 	</p>
 </div>
-{% endblock "contingut" %}
+{% endblock contingut %}
 

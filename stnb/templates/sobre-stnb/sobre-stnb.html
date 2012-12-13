@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block "titol-pagina" %}{% trans "About STNB" %}{% endblock "titol-pagina" %}
+{% block titol-pagina %}{% trans "About STNB" %}{% endblock titol-pagina %}
 
-{% block "contingut" %}
+{% block contingut %}
 
 <p>{% blocktrans %}
 This text is not the real copy, the real copy will be much better written and describe a little bit about the history of the Barcelona Number Theory Seminar (STNB). It will perhaps mention some important dates (how long the seminar has been running) and mention that it's held in Barcelona every year.
@@ -12,5 +12,5 @@ This text is not the real copy, the real copy will be much better written and de
 <p>{% blocktrans %}
 A second paragraph may go into some depth on the fact that STNB is a collaboration of all number theory groups in Barcelona, yet often includes talks from groups from other universities and centres.
 {% endblocktrans %}</p>
-{% endblock "contingut" %}
+{% endblock contingut %}
 

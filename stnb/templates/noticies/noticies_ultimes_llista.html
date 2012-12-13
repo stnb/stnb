@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load l10n %}
+
+{% block titol-head %}{% trans "Latest news" %}{% endblock titol-head%}
+{% block titol-pagina %}{% trans "Latest news" %}{% endblock titol-pagina %}
+
+{% block contingut %}
+<div class="noticies-llista noticies-ultimes">
+{% for noticia in noticies %}
+	<div class="noticia">
+		<h4>{{ noticia.titol }}</a></h4>
+		<div class="data">{{ noticia.data }}</div>
+		<div class="descripcio">
+			{{ noticia.descripcio }}
+		</div>
+
+	</div>
+
+{% endfor %}
+</div>
+
+{% endblock %}
+

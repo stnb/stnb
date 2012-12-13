@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block "titol-pagina" %}{% trans "Update Profile" %}{% endblock "titol-pagina" %}
+{% block titol-pagina %}{% trans "Update Profile" %}{% endblock titol-pagina %}
 
-{% block "contingut" %}
+{% block contingut %}
 <div class="compte">
 
 	<form method="post" action="{% url comptes-perfil-actualizar %}">
@@ -18,4 +18,4 @@
 	</form>
 
 </div>
-{% endblock "contingut" %}
+{% endblock contingut %}

@@ -96,6 +96,7 @@ INSTALLED_APPS = (
     'stnb.comptes',
     'stnb.institucions',
     'stnb.seminaris',
+    'stnb.noticies',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
