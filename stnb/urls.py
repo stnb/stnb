@@ -4,6 +4,7 @@ from django.views.generic import TemplateView
 from django.contrib import admin
 
 from stnb.noticies.views import IniciView
+from stnb.pagines.views import PaginaPlanaDetallView
 
 admin.autodiscover()
 
@@ -18,6 +19,7 @@ urlpatterns = patterns('',
 
     url(r'^setlang/', 'stnb.i18n.views.set_language', name='set-language'),
     (r'^i18n/', include('django.conf.urls.i18n')),
+    (r'^tinymce/', include('tinymce.urls')),
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 )
@@ -26,7 +28,8 @@ urlpatterns += i18n_patterns('',
     #url(r'^$', TemplateView.as_view(template_name='base.html'), name='inici'),
     
 
-    url(r'^sobre-stnb/$', TemplateView.as_view(template_name='sobre-stnb/sobre-stnb.html'), name='sobre-stnb'),
+    url(r'^(?P<slug>sobre-stnb)/$', PaginaPlanaDetallView.as_view(),
+        name='pagina-plana'),
     url(r'^accounts/', include('registration.backends.default.urls')),
     
     url(r'^comptes/', include('stnb.comptes.urls')),

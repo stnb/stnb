@@ -8,7 +8,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>STNB - {% trans "Seminari de Teoria de Nombres Barcelona" %} - {% block titol-head %}2013{% endblock titol-head %}</title>
-		<link href='http://fonts.googleapis.com/css?family=Titillium+Web:300|Oswald:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Titillium+Web:300,700|Oswald:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" media="screen" type="text/css" href="{{ STATIC_URL }}css/stnb-main.css" />
 		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 			MathJax.Hub.Config({
@@ -26,7 +26,7 @@
 
 				<div id="site-titles">
 					<h1 class="site-title"><a href="{% url inici %}">STNB</a></h1>
-					<div class="year"><span>2013</span></div>
+          <div class="year"><a href="{% url seminari-actual %}"><span>2013</span></a></div>
 				</div>
 
 				<div id="menu">
@@ -34,7 +34,7 @@
 						<li><a class="inici" href="{% url inici %}">{% trans "Home" %}</a></li>
 						<li><a class="seminari-actual" href="{% url seminari-actual %}">{% trans "Active<br />Seminar" %}</a></li>
 						<li><a class="arxiu-seminaris" href="{% url seminari-llista %}">{% trans "Seminar<br />Archive" %}</a></li>
-						<li><a class="sobre-stnb" href="{% url sobre-stnb %}">{% trans "About<br />STNB" %}</a></li>
+						<li><a class="sobre-stnb" href="{% url pagina-plana slug='sobre-stnb' %}">{% trans "About<br />STNB" %}</a></li>
 						<li><a class="miembres" href="#">{% trans "Members" %}</a></li>
 					</ul>
 				</div>
@@ -81,7 +81,7 @@
 					<div class="title">{% trans "Account " %}</div>
 					<ul>
 					{% if user.is_authenticated %}
-						<li><a href="{% url comptes-perfil-actualizar %}">{% if user.get_full_name %}{{ user.get_full_name }}{% else %}{% trans "Profile page" %}{% endif %}</a></li>
+						<li><a href="{% url comptes-perfil-detall %}">{% if user.get_full_name %}{{ user.get_full_name }}{% else %}{% trans "Profile page" %}{% endif %}</a></li>
 						{% if user.is_superuser %}<li><a href="{% url admin:index %}">{% trans "Admin console" %}</a></li>{% endif %}
 						<li><a href="{% url comptes-logout %}">{% trans "Logout" %}</a></li>
 					{% else %}
@@ -116,7 +116,7 @@
 			</div>
 			
 			<div id="footer">
-				{% blocktrans %}Copyright STNB 2012, some rights reserved.{% endblocktrans %}
+        {% trans "Copyright STNB" %} {% now "Y" %}, {% trans "some rights reserved" %}.
 			</div>
 		</div>
 	</body>

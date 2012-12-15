@@ -20,6 +20,7 @@ class Seminari(TranslatableModel):
     )
 
     class Meta:
+        verbose_name_plural = 'seminaris'
         ordering = ['-data_inici']
 
     def __unicode__(self):
@@ -65,16 +66,16 @@ class Tema(TranslatableModel):
                                           blank=True, null=True)
 
     translations = TranslatedFields(
-        nom = models.CharField(max_length=255),
+        titol = models.CharField(max_length=255),
         descripcio = models.TextField(),
     )
 
     class Meta:
         verbose_name_plural = 'temes'
-        ordering = ['translations__nom']
+        ordering = ['translations__titol']
 
     def __unicode__(self):
-        return self.nom
+        return self.titol
 
 class Dia(TranslatableModel):
     data = models.DateField()
@@ -107,16 +108,16 @@ class Xerrada(TranslatableModel):
     article = models.FileField(upload_to='articles', blank=True, null=True)
 
     translations = TranslatedFields(
-        nom = models.CharField(max_length=255),
-        descripcio = models.TextField(blank=True, null=True),
+        titol = models.CharField(max_length=255),
+        abstracte = models.TextField(blank=True, null=True),
     )
 
     class Meta:
         verbose_name_plural = 'xerrades'
-        ordering = ['translations__nom']
+        ordering = ['translations__titol']
 
     def __unicode__(self):
-        return self.nom
+        return self.titol
     
     def seminari(self):
         return self.tema.seminari
@@ -148,10 +149,8 @@ class ItemPrograma(TranslatableModel):
 
     def titol(self):
         if self.xerrada is not None:
-            print self.xerrada.nom
-            return self.xerrada.nom
+            return self.xerrada.titol
         else:
-            print self.descripcio
             return self.descripcio
 
     def duracio(self):

@@ -5,5 +5,5 @@ from .views import NoticiesUltimesView
 
 urlpatterns = patterns('',
     url(r'ultimes/$', NoticiesUltimesView.as_view(),
-        name='seminari-llista'),
+        name='noticies-ultimes'),
 )

@@ -42,7 +42,7 @@ class MicroAlerta(TranslatableModel):
         verbose_name = 'microalerta'
         verbose_name_plural = 'microalertes'
 
-    def __unicdoe__(self):
+    def __unicode__(self):
         return self.alerta
 
 

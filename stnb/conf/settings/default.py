@@ -93,10 +93,12 @@ INSTALLED_APPS = (
     'south',
     'hvad',
     'emailusernames',
+    'tinymce',
     'stnb.comptes',
     'stnb.institucions',
     'stnb.seminaris',
     'stnb.noticies',
+    'stnb.pagines',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
@@ -106,6 +108,9 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+
+#TINYMCE_JS_URL = MEDIA_URL + 'js/tiny_mce/tiny_mce.js'
+
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

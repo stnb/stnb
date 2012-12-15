@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load l10n %}
+
+{% block titol-head %}{{ pagina_plana.titol }}{% endblock titol-head %}
+{% block titol-pagina %}{{ pagina_plana.titol }}{% endblock titol-pagina %}
+
+{% block contingut %}
+<div class="descripcio pagina-plana">
+	{{ pagina_plana.descripcio|safe }}
+</div>
+{% endblock %}
+
+

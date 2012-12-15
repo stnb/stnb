@@ -7,11 +7,11 @@ from .models import Noticia, MicroAlerta
 
 class NoticiaAdmin(TranslatableAdmin):
     model = Noticia
-    pass
+    list_display = ('__unicode__', 'data',)
 
 class MicroAlertaAdmin(TranslatableAdmin):
     model = MicroAlerta
-    pass
+    list_display = ('__unicode__', 'data',)
 
 
 admin.site.register(Noticia, NoticiaAdmin)
