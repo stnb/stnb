@@ -17,7 +17,7 @@ class SeminariAdmin(TranslatableAdmin):
     ]
 
 class TemaAdmin(TranslatableAdmin):
-    pass
+    list_display = ('__unicode__', 'seminari',)
 
 class ItemProgramaInline(TranslatableTabularInline):
     model = ItemPrograma

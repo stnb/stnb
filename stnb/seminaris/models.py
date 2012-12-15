@@ -62,6 +62,7 @@ class Seminari(TranslatableModel):
 
 class Tema(TranslatableModel):
     seminari = models.ForeignKey(Seminari, related_name='temes')
+    ordre = models.IntegerField(default=0)
     organitzadors = models.ManyToManyField(User, related_name='temes',
                                           blank=True, null=True)
 
@@ -72,7 +73,7 @@ class Tema(TranslatableModel):
 
     class Meta:
         verbose_name_plural = 'temes'
-        ordering = ['translations__titol']
+        ordering = ['seminari', 'ordre']
 
     def __unicode__(self):
         return self.titol
@@ -99,6 +100,7 @@ class Dia(TranslatableModel):
 class Xerrada(TranslatableModel):
     tema = models.ForeignKey(Tema, related_name='xerrades',
                                blank=True, null=True)
+    ordre = models.IntegerField(default=0)
     presentadors = models.ManyToManyField(User, related_name='xerrades',
                                           blank=True, null=True)
     altres_presentadors = models.CharField(max_length=100, blank=True, null=True)
@@ -114,7 +116,7 @@ class Xerrada(TranslatableModel):
 
     class Meta:
         verbose_name_plural = 'xerrades'
-        ordering = ['translations__titol']
+        ordering = ['tema', 'ordre']
 
     def __unicode__(self):
         return self.titol

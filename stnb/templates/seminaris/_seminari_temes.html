@@ -3,7 +3,7 @@
 <div class="temas">
 {% for tema in temes %}
 	<div class="tema">
-		<h4>{{ tema.nom }}</h4>
+		<h4>{{ tema.titol }}</h4>
 
 		<p>
 			{{ tema.descripcio }}
@@ -11,7 +11,7 @@
 
 		<ol class="tema-xerrades">
 			{% for xerrada in tema.xerrades.all %}
-				<li>{{ xerrada.nom }}, {{ xerrada.altres_presentadors }}</li>
+				<li>{{ xerrada.titol }}, {{ xerrada.altres_presentadors }}</li>
 			{% endfor %}
 		</ol>
 	</div>
