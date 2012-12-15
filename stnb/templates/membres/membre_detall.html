@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block titol-head %}{% trans "Member profile" %}{% endblock titol-head %}
+{% block titol-pagina %}{% trans "Member profile" %}{% endblock titol-pagina %}
+
+{% block contingut %}
+<div class="compte">
+	
+	<div class="compte-foto">
+		<img src="{{ MEDIA_URL }}{{ membre.foto_petita }}" alt="{% trans "profile photo of" %} {{ membre.nom_complet }}" border="0" /> 
+	</div>
+
+	<h3>{{ membre.nom_complet }}</h3>
+
+	<h4>{% trans "Email" %}:</h4>
+
+	<p>{{ membre.user.email }}</p>
+
+	<h4>{% trans "Profile" %}</h4>
+
+	<p>{{ membre.text|safe }}</p>
+
+	{% if user.get_profile == membre %}<p class="edit"><a href="{% url membre-actualizar slug=membre.slug %}">Edit your profile</a>.</p>{% endif %}
+
+</div>
+{% endblock contingut %}

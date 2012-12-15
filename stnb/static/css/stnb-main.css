@@ -451,11 +451,23 @@ body  {
 	font-size: 16pt;
 }
 
+.compte p input[type=file]  {
+	font-size: 12pt;
+}
+
+.compte p input.year-field  {
+	width: 80px;
+}
+
 .compte .submit input  {
 /*	width: 60px;*/
 	height: 40px;
 	
 	font-size: 14pt;
+}
+
+.compte .compte-foto  {
+	float: right;
 }
 
 .compte .errorlist, .compte-errors  {

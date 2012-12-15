@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from hvad.admin import TranslatableAdmin, TranslatableStackedInline, TranslatableTabularInline
+from hvad.admin import TranslatableAdmin
 
 
 from .models import Noticia, MicroAlerta

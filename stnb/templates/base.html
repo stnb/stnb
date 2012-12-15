@@ -10,6 +10,7 @@
 		<title>STNB - {% trans "Seminari de Teoria de Nombres Barcelona" %} - {% block titol-head %}2013{% endblock titol-head %}</title>
 		<link href='http://fonts.googleapis.com/css?family=Titillium+Web:300,700|Oswald:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" media="screen" type="text/css" href="{{ STATIC_URL }}css/stnb-main.css" />
+		{% block extra-head %}{% endblock extra-head %}
 		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 			MathJax.Hub.Config({
 			  tex2jax: {
@@ -81,7 +82,7 @@
 					<div class="title">{% trans "Account " %}</div>
 					<ul>
 					{% if user.is_authenticated %}
-						<li><a href="{% url comptes-perfil-detall %}">{% if user.get_full_name %}{{ user.get_full_name }}{% else %}{% trans "Profile page" %}{% endif %}</a></li>
+						<li><a href="{% url membre-detall slug=user.get_profile.slug %}">{% if user.get_full_name %}{{ user.get_profile.nom_complet }}{% else %}{% trans "Profile page" %}{% endif %}</a></li>
 						{% if user.is_superuser %}<li><a href="{% url admin:index %}">{% trans "Admin console" %}</a></li>{% endif %}
 						<li><a href="{% url comptes-logout %}">{% trans "Logout" %}</a></li>
 					{% else %}

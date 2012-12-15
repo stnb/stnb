@@ -34,14 +34,12 @@ SECRET_KEY = 'f%-(30mhl1qlj$$ah808vn(!fo68pfo6ykwxo)wjzg4rz^psi#'
 
 SITE_ID = 1
 
+SERVE_MEDIA = False
 MEDIA_ROOT = ''
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 
 STATIC_ROOT = '' #os.path.join(DIRNAME, 'static/')
 STATIC_URL = '/static/'
-
-# One-week activation window; you may, of course, use a different value.
-ACCOUNT_ACTIVATION_DAYS = 7
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -72,6 +70,8 @@ AUTHENTICATION_BACKENDS = (
     'emailusernames.backends.EmailAuthBackend',
 )
 
+AUTH_PROFILE_MODULE = 'membres.Membre'
+
 ROOT_URLCONF = 'stnb.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
@@ -98,6 +98,7 @@ INSTALLED_APPS = (
     'stnb.institucions',
     'stnb.seminaris',
     'stnb.noticies',
+    'stnb.membres',
     'stnb.pagines',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
