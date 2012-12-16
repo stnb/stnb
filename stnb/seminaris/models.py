@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import re
 import datetime
 
 from django.db import models
@@ -8,6 +9,7 @@ from django.utils.translation import ugettext as _
 from hvad.models import TranslatableModel, TranslatedFields
 
 from stnb.membres.models import Membre
+from stnb.membres.utils import cognoms_lexic
 
 class Seminari(TranslatableModel):
     slug = models.SlugField(max_length=50)
@@ -131,12 +133,48 @@ class Xerrada(TranslatableModel):
     def __unicode__(self):
         return self.titol
 
+    @permalink
+    def get_absolute_url(self):
+        return ('seminari-xerrada-detall', (), {'xerrada_id': self.pk,
+            'seminari_slug': self.seminari().slug})
+
     def seminari(self):
-        return self.tema.seminari
+        seminari = None
+        if self.tema:
+            seminari = self.tema.seminari
+        elif len(self.items_programa.all()) > 0:
+            seminari = self.items_programa.all()[0].seminari()
+        return seminari
     seminari.allow_tags = True
 
+    def altres_presentadors_nom_cognoms(self):
+        presentadors = [ ]
+        for p in re.split(r'\s*,\s*', self.altres_presentadors):
+            div = re.split(r'\s+', p)
+            if len(div) == 2: # Fàcil
+                presentadors.append({'nom': div[0],
+                                     'cognoms': div[1],})
+            else:
+                presentadors.append({'nom': div[0],
+                                     'cognoms': ' '.join(div[1:])})
+        
+        return presentadors
+
     def presentadors_html(self):
-        return self.altres_presentadors
+        presentadors = list(self.presentadors.all()) + self.altres_presentadors_nom_cognoms()
+        presentadors.sort(key=lambda p: cognoms_lexic(p))
+
+        presentadors_html = [ ]
+        for p in presentadors:
+            if isinstance(p, dict):
+                presentadors_html.append('%s %s' % (p['nom'], p['cognoms']))
+            elif p.amagar_perfil:
+                presentadors_html.append('%s %s' % (p.nom, p.cognoms))
+            else:
+                presentadors_html.append('<a href="%s">%s %s</a>' %
+                        (p.get_absolute_url(), p.nom, p.cognoms))
+
+        return ', '.join(presentadors_html)
 
 class ItemPrograma(TranslatableModel):
     xerrada = models.ForeignKey(Xerrada, related_name='items_programa',

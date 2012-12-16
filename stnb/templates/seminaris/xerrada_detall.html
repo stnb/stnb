@@ -40,5 +40,9 @@
 {% else %}
 <p>{% trans "No files available for download" %}</p>
 {% endif %}
+
+<div class="back-link">
+	<p><a href="{{ seminari.get_absolute_url }}">{% trans "Return to seminar" %}</a></p>
+</div>
 {% endblock contingut %}
 

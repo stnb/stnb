@@ -76,9 +76,11 @@ class XerradaDetallView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(XerradaDetallView, self).get_context_data(**kwargs)
-
+        
         seminari = get_object_or_404(Seminari, slug=kwargs['seminari_slug'])
-        xerrada = get_object_or_404(Xerrada, pk=kwargs['xerrada_id'], tema__seminari=seminari)
+        xerrada = get_object_or_404(Xerrada, pk=kwargs['xerrada_id'])
+        if xerrada.seminari() != seminari:
+            raise Http404
 
         context.update({ 'seminari': seminari, 'xerrada': xerrada })
 
