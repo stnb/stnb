@@ -2,12 +2,14 @@
 import datetime
 import os
 import re
+import uuid
 
 from django.db import models
-from django.conf import settings
-from django.contrib.auth.models import User
+from django.db import IntegrityError
 from django.db.models import permalink
 from django.db.models import signals
+from django.conf import settings
+from django.contrib.auth.models import User
 from hvad.models import TranslatableModel, TranslatedFields
 
 from stnb.institucions.models import Institucio
@@ -46,11 +48,18 @@ class Membre(TranslatableModel):
         if nom_complet:
             self.slug = re.sub(r'\s', '-', nom_complet).lower()
         elif not self.slug:
-            import uuid
             self.slug = uuid.uuid4()
         if self.foto:
             self.creat_foto_petita()
-        return super(Membre, self).save(*args, **kwargs)
+        try:
+            obj = super(Membre, self).save(*args, **kwargs)
+        except IntegrityError, e:
+            if nom_complet:
+                self.slug = re.sub(r'\s', '-', nom_complet+'-'+unicode(uuid.uuid4())[0:4]).lower()
+            else:
+                raise e
+        obj = super(Membre, self).save(*args, **kwargs)
+        return obj
 
     def nom_complet(self):
         if self.nom or self.cognoms:
@@ -85,6 +94,7 @@ def user_post_save(sender, instance, created, *args, **kwargs):
         nou_membre = Membre.objects.create(user=instance)
         nou_membre.save()
 
-signals.post_save.connect(user_post_save, sender=User,
-                          dispatch_uid='crear_nou_membre')
+#signals.post_save.connect(user_post_save, sender=User,
+#                          dispatch_uid='crear_nou_membre')
+
 #User.profile = property(lambda u: Membre.objects.get_or_create(user=u)[0])

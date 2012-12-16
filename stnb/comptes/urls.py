@@ -6,7 +6,7 @@ from emailusernames.forms import EmailAuthenticationForm
 
 from .decorators import login_required
 #from django.contrib.auth.decorators import login_required
-from .views import RegistreView, PerfilUpdateView, PerfilDetallView
+from .views import RegistreView
 
 
 urlpatterns = patterns('',
@@ -34,8 +34,8 @@ urlpatterns = patterns('',
     url(r'registre/fet/$', TemplateView.as_view(template_name='comptes/registre_fet.html'),
         name='comptes-registre-fet'),
     
-    url(r'perfil/$', login_required(PerfilDetallView.as_view()),
-        name='comptes-perfil-detall'),
-    url(r'perfil/actualizar/$', login_required(PerfilUpdateView.as_view()),
-        name='comptes-perfil-actualizar'),
+#    url(r'perfil/$', login_required(PerfilDetallView.as_view()),
+#        name='comptes-perfil-detall'),
+#    url(r'perfil/actualizar/$', login_required(PerfilUpdateView.as_view()),
+#        name='comptes-perfil-actualizar'),
 )

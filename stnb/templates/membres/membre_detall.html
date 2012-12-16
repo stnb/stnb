@@ -8,18 +8,22 @@
 <div class="compte">
 	
 	<div class="compte-foto">
+		{% if membre.foto %}
 		<img src="{{ MEDIA_URL }}{{ membre.foto_petita }}" alt="{% trans "profile photo of" %} {{ membre.nom_complet }}" border="0" /> 
+		{% endif %}
 	</div>
 
 	<h3>{{ membre.nom_complet }}</h3>
 
 	<h4>{% trans "Email" %}:</h4>
 
-	<p>{{ membre.user.email }}</p>
+	<p>{% if user.is_authenticated %}{{ membre.user.email }}{% else %}{% trans "Please log in to see member email addresses." %}{% endif %}</p>
 
+	{% if membre.text %}
 	<h4>{% trans "Profile" %}</h4>
 
 	<p>{{ membre.text|safe }}</p>
+	{% endif %}
 
 	{% if user.get_profile == membre %}<p class="edit"><a href="{% url membre-actualizar slug=membre.slug %}">Edit your profile</a>.</p>{% endif %}
 
