@@ -16,7 +16,8 @@
 
 <h3>{% trans "Latest news" %}</h3>
 
-{% for noticia in noticies %}
+{% if noticies %}
+	{% for noticia in noticies %}
 	<div class="noticia">
 		<h4>{{ noticia.titol }}</a></h4>
 		<div class="data">{{ noticia.data }}</div>
@@ -25,8 +26,10 @@
 		</div>
 
 	</div>
-
-{% endfor %}
+	{% endfor %}
+{% else %}
+	<p><em>{% trans "There are currently no news items." %}</em></p>
+{% endif %}
 </div>
 
 {% endblock %}

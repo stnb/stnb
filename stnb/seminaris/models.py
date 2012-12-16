@@ -2,15 +2,17 @@
 import datetime
 
 from django.db import models
-from django.contrib.auth.models import User
 from django.db.models import permalink
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 from hvad.models import TranslatableModel, TranslatedFields
 
+from stnb.membres.models import Membre
+
 class Seminari(TranslatableModel):
     slug = models.SlugField(max_length=50)
     data_inici = models.DateField()
+    organitzadors = models.ManyToManyField(Membre, related_name='seminaris')
     data_finalizacio = models.DateField()
     actiu = models.BooleanField(default=False)
     
@@ -49,6 +51,13 @@ class Seminari(TranslatableModel):
                         'fmes': _(self.data_finalizacio.strftime('%B')),
                         'fany': self.data_finalizacio.year, }
 
+    def calendari_definit(self):
+        items = sum([dia.items_programa.count() for dia in self.dies.all()])
+        if items > 0:
+            return True
+        else:
+            return False
+    
 
     def save(self, *args, **kwargs):
         super(Seminari, self).save(*args, **kwargs)
@@ -63,12 +72,12 @@ class Seminari(TranslatableModel):
 class Tema(TranslatableModel):
     seminari = models.ForeignKey(Seminari, related_name='temes')
     ordre = models.IntegerField(default=0)
-    organitzadors = models.ManyToManyField(User, related_name='temes',
+    organitzadors = models.ManyToManyField(Membre, related_name='temes',
                                           blank=True, null=True)
 
     translations = TranslatedFields(
         titol = models.CharField(max_length=255),
-        descripcio = models.TextField(),
+        descripcio = models.TextField(blank=True, null=True),
     )
 
     class Meta:
@@ -101,13 +110,14 @@ class Xerrada(TranslatableModel):
     tema = models.ForeignKey(Tema, related_name='xerrades',
                                blank=True, null=True)
     ordre = models.IntegerField(default=0)
-    presentadors = models.ManyToManyField(User, related_name='xerrades',
+    presentadors = models.ManyToManyField(Membre, related_name='xerrades',
                                           blank=True, null=True)
     altres_presentadors = models.CharField(max_length=100, blank=True, null=True)
 
-    presentacio = models.FileField(upload_to='presentacions',
+    presentacio = models.FileField(upload_to='xerrades/presentacions',
                                    blank=True, null=True)
-    article = models.FileField(upload_to='articles', blank=True, null=True)
+    article = models.FileField(upload_to='xerrades/articles',
+                               blank=True, null=True)
 
     translations = TranslatedFields(
         titol = models.CharField(max_length=255),
@@ -120,10 +130,13 @@ class Xerrada(TranslatableModel):
 
     def __unicode__(self):
         return self.titol
-    
+
     def seminari(self):
         return self.tema.seminari
     seminari.allow_tags = True
+
+    def presentadors_html(self):
+        return self.altres_presentadors
 
 class ItemPrograma(TranslatableModel):
     xerrada = models.ForeignKey(Xerrada, related_name='items_programa',
@@ -148,6 +161,10 @@ class ItemPrograma(TranslatableModel):
             return '%s (%s): %s' % (self.dia, duracio, self.titol(),)
         else:
             return '<ItemPrograma>'
+
+    def seminari(self):
+        return self.dia.seminari
+    seminari.allow_tags = True
 
     def titol(self):
         if self.xerrada is not None:

@@ -1,7 +1,9 @@
 {% load i18n %}
 
+{% if microalertes %}
 <div class="microalertes">
 	{% for microalerta in microalertes %}
 	<div class="microalerta">{{ microalerta.alerta }}</div>
 	{% endfor %}
 </div>
+{% endif %}

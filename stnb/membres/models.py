@@ -24,6 +24,7 @@ class Membre(TranslatableModel):
     foto = models.ImageField(upload_to='membres/fotos/', blank=True, null=True)
     membre_des_de = models.IntegerField(blank=True, null=True)
     membre_actual = models.BooleanField(default=True)
+    amagar_perfil = models.BooleanField(default=False)
 
     translations = TranslatedFields(
         text = models.TextField(blank=True, null=True),

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load l10n %}
+
+{% block titol-head %}{% trans "Error 404" %}{% endblock titol-head%}
+{% block titol-pagina %}{% trans "Error 404" %}{% endblock titol-pagina %}
+
+{% block contingut %}
+
+<h3>{% trans "Page not found" %}</h3>
+
+<p>{% trans "The page you are looking for could not be found." %} {% trans "Return" %} <a href="{% url inici %}">{% trans "Home" %}</a>.</p>
+
+{% endblock %}
+

@@ -7,7 +7,7 @@
 
 		<div class="dia-items">
 		{% for item in dia.items_programa.all %}
-			<p><strong>{{ item.duracio }}</strong>:<br />{{ item.titol }}{% if item.xerrada %} ({{ item.xerrada.altres_presentadors }}){% endif %}</p>
+		<p><strong>{{ item.duracio }}</strong>:<br />{% if item.xerrada %}<a href="{% url seminari-xerrada-detall seminari_slug=item.seminari.slug xerrada_id=item.xerrada.id %}">{{ item.xerrada.titol }}</a> ({{ item.xerrada.presentadors_html|safe }}){% else %}{{ item.titol }}{% endif %}</p>
 		{% endfor %}
 		</div>
 		

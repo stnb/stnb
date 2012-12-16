@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load l10n %}
+
+{% block titol-head %}{{ seminari.nom}} {% trans "Talks" %}{% endblock titol-head %}
+{% block titol-pagina %}{{ seminari.nom }} {% trans "Talks" %}{% endblock titol-pagina %}
+
+{% block contingut %}
+
+{% include "seminaris/_seminari_xerrades.html" %}
+
+{% endblock contingut %}
+

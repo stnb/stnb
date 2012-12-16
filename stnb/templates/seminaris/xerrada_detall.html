@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load l10n %}
+
+{% block titol-head %}{{ seminari.nom}} - {{ xerrada.titol }}{% endblock titol-head %}
+{% block titol-pagina %}{{ seminari.nom }}{% endblock titol-pagina %}
+
+{% block contingut %}
+
+<h3>{{ xerrada.titol }}</h3>
+
+<h4>{% trans "Presenters" %}</h4>
+
+<p>{{ xerrada.presentadors_html|safe }}</p>
+
+<h4>{% trans "Abstract" %}</h4>
+
+<p>
+{% if xerrada.abstracte %}
+	{{ xerrada.abstracte }}
+{% else %}
+	<em>{% trans "No abstract available" %}</em>
+{% endif %}
+</p>
+
+<h4>{% trans "Files" %}</h4>
+
+{% if xerrada.article or xerrada.presentacio %}
+{% if xerrada.presentacio %}
+<p>
+<a href="{{ MEDIA_URL }}{{ xerrada.presentacio }}">{% trans "Download presentation" %}</a>.
+</p>
+{% endif %}
+{% if xerrada.article %}
+<p>
+<a href="{{ MEDIA_URL }}{{ xerrada.article }}">{% trans "Download article" %}</a>.
+</p>
+{% endif %}
+
+{% else %}
+<p>{% trans "No files available for download" %}</p>
+{% endif %}
+{% endblock contingut %}
+

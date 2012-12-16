@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from django.views.generic import ListView, DetailView, RedirectView
+from django.views.generic import ListView, DetailView, TemplateView, RedirectView
+from django.shortcuts import get_object_or_404
 from django.core.urlresolvers import reverse
 from django.http import Http404
 
@@ -57,11 +58,28 @@ class DiaDetailView(DetailView):
     # FIXME: Select only from *this* Seminari.
     queryset = Dia.objects.all()
 
-class XerradaListView(ListView):
-    model = Xerrada
-    context_object_name = 'xerrada'
+class XerradaLlistaView(TemplateView):
     template_name = 'seminaris/xerrada_llista.html'
 
-    # FIXME: Select only from *this* Seminari.
-    queryset = Xerrada.objects.all()
+    def get_context_data(self, **kwargs):
+        context = super(XerradaLlistaView, self).get_context_data(**kwargs)
 
+        seminari = get_object_or_404(Seminari, slug=kwargs['seminari_slug'])
+        xerrades  = Xerrada.objects.filter(tema__seminari=seminari).distinct()
+
+        context.update({ 'seminari': seminari, 'xerrades': xerrades })
+
+        return context
+   
+class XerradaDetallView(TemplateView):
+    template_name = 'seminaris/xerrada_detall.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(XerradaDetallView, self).get_context_data(**kwargs)
+
+        seminari = get_object_or_404(Seminari, slug=kwargs['seminari_slug'])
+        xerrada = get_object_or_404(Xerrada, pk=kwargs['xerrada_id'], tema__seminari=seminari)
+
+        context.update({ 'seminari': seminari, 'xerrada': xerrada })
+
+        return context

@@ -31,11 +31,20 @@
 <a name="temes"></a>
 <h3>{% trans "Themes" %}</h3>
 
+{% if seminari.temes.all %}
 {% include "seminaris/_seminari_temes.html" with temes=seminari.temes.all %}
+{% else %}
+<p><em>{% trans "Themes have not yet been chosen." %}</em></p>
+{% endif %}
+
 
 <a name="calendari"></a>
 <h3>{% trans "Calendar" %}</h3>
 
+{% if seminari.calendari_definit %}
 {% include "seminaris/_seminari_calendari.html" with dies=seminari.dies.all %}
+{% else %}
+<p><em>{% trans "The calendar has not yet been set." %}</em></p>
+{% endif %}
 
 {% endblock contingut %}

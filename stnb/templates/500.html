@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load l10n %}
+
+{% block titol-head %}{% trans "Error 500" %}{% endblock titol-head%}
+{% block titol-pagina %}{% trans "Error 500" %}{% endblock titol-pagina %}
+
+{% block contingut %}
+
+<h3>{% trans "Internal server error" %}</h3>
+
+<p>{% trans "An internal server error has occurred." %} {% trans "If this error persists, please contact the" %} <a href="mailto:webmaster@stnb.tk">webmaster</a>.</p>
+
+<p>{% trans "Return" %} <a href="{% url inici %}">{% trans "Home" %}</a>.</p>
+
+{% endblock %}
+

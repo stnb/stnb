@@ -11,7 +11,7 @@
 
 		<ol class="tema-xerrades">
 			{% for xerrada in tema.xerrades.all %}
-				<li>{{ xerrada.titol }}, {{ xerrada.altres_presentadors }}</li>
+			<li><a href="{% url seminari-xerrada-detall seminari_slug=seminari.slug xerrada_id=xerrada.id %}">{{ xerrada.titol }}</a> ({{ xerrada.presentadors_html|safe }})</li>
 			{% endfor %}
 		</ol>
 	</div>

@@ -36,7 +36,7 @@
 						<li><a class="seminari-actual" href="{% url seminari-actual %}">{% trans "Active<br />Seminar" %}</a></li>
 						<li><a class="arxiu-seminaris" href="{% url seminari-llista %}">{% trans "Seminar<br />Archive" %}</a></li>
 						<li><a class="sobre-stnb" href="{% url pagina-plana slug='sobre-stnb' %}">{% trans "About<br />STNB" %}</a></li>
-						<li><a class="miembres" href="#">{% trans "Members" %}</a></li>
+						<li><a class="miembres" href="{% url pagina-plana slug='membres' %}">{% trans "Members" %}</a></li>
 					</ul>
 				</div>
 
@@ -72,11 +72,11 @@
 			</div>
 
 			<div id="secondary-column">
-				<div id="search">
+				<!--<div id="search">
 					<div class="outer">
 						<input class="search-box" type="text" name="q" value="Search" />
 					</div>
-				</div>
+				</div>-->
 				
 				<div id="account" class="block">
 					<div class="title">{% trans "Account " %}</div>
