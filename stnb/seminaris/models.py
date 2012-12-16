@@ -14,8 +14,8 @@ from stnb.membres.utils import cognoms_lexic
 class Seminari(TranslatableModel):
     slug = models.SlugField(max_length=50)
     data_inici = models.DateField()
-    organitzadors = models.ManyToManyField(Membre, related_name='seminaris')
     data_finalizacio = models.DateField()
+    organitzadors = models.ManyToManyField(Membre, related_name='seminaris')
     actiu = models.BooleanField(default=False)
     
     translations = TranslatedFields(

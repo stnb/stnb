@@ -37,7 +37,6 @@ urlpatterns += i18n_patterns('',
 
     url(r'^(?P<slug>sobre-stnb)/$', PaginaPlanaDetallView.as_view(),
         name='pagina-plana'),
-    url(r'^accounts/', include('registration.backends.default.urls')),
     
     url(r'^comptes/', include('stnb.comptes.urls')),
     url(r'^institucions/', include('stnb.institucions.urls')),

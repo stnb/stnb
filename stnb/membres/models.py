@@ -50,8 +50,6 @@ class Membre(TranslatableModel):
             self.slug = re.sub(r'\s', '-', nom_complet).lower()
         elif not self.slug:
             self.slug = uuid.uuid4()
-        if self.foto:
-            self.creat_foto_petita()
         try:
             obj = super(Membre, self).save(*args, **kwargs)
         except IntegrityError, e:
@@ -60,6 +58,10 @@ class Membre(TranslatableModel):
             else:
                 raise e
         obj = super(Membre, self).save(*args, **kwargs)
+        
+        if self.foto:
+            self.creat_foto_petita()
+        
         return obj
 
     def nom_complet(self):
