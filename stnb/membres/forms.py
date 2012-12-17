@@ -11,7 +11,7 @@ class MembreActualizarForm(TranslatableModelForm):
             required=False,
             widget=forms.TextInput(attrs={'placeholder': _('Year'),
                                           'class': 'year-field'}))
-    text = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 12}),
+    text = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 16}),
                            required=False)
 
     class Meta:

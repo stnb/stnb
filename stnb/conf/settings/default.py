@@ -123,6 +123,18 @@ STATICFILES_FINDERS = (
 )
 
 #TINYMCE_JS_URL = MEDIA_URL + 'js/tiny_mce/tiny_mce.js'
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+    'relative_urls': False,
+    'theme_advanced_toolbar_location': 'top',
+    'theme_advanced_toolbar_align': 'center',
+    'theme_advanced_buttons1': 'bold,italic,underline,strikethrough,separator,bullist,numlist,link,unlink,separator,undo,redo',
+    'plugins': 'inlinepopups',
+    'content_css': STATIC_URL + '/css/stnb-editor.css',
+    'body_id': 'editor-content',
+    
+}
+#}
 
 
 # A sample logging configuration. The only tangible logging

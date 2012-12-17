@@ -1,0 +1,32 @@
+body  {
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 12pt;
+	letter-spacing: 0.085em;
+	color: #333;
+}
+
+#editor-content p {
+	margin: 14px 0 10px 0;
+	line-height: 1.4;
+}
+
+#editor-content strong  {
+  font-weight: 700;
+}
+
+#editor-content .extended-text p {
+	margin: 20px 0 20px 0;
+}
+
+#editor-content li  {
+	margin: 14px 0 14px 0;
+}
+
+#editor-content ol  {
+	list-style: decimal;
+	padding-left: 40px;
+}
+
+#editor-content em  {
+	font-style: italic;
+}
