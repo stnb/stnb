@@ -341,7 +341,7 @@ body  {
 	color: #666;
 }
 
-#language-chooser li a:hover  {
+#language-chooser li a:hover, #language-chooser li a.current  {
 	text-decoration: underline;
 }
 
@@ -429,21 +429,25 @@ body  {
 	margin: 14px 0 14px 0;
 }
 
+.registre input#id_cognoms, .registre input#id_email  {
+	margin-bottom: 28px;
+}
+
 .compte p label, .compte p input, .camp-compte label, .camp-login input  {
 	display: block;
 }
 
 .compte p label, .camp-compte label  {
-	font-size: 11pt;
+	font-size: 10.5pt;
 }
 
 .compte p input, .camp-compte input  {
 	margin: 4px 0 4px 0;
 	
-	width: 400px;
-	height: 36px;
+	width: 340px;
+	height: 28px;
 	
-	font-size: 16pt;
+	font-size: 13pt;
 }
 
 .compte p input[type=file]  {
@@ -456,6 +460,7 @@ body  {
 
 .compte .submit input  {
 /*	width: 60px;*/
+	margin-top: 16px;
 	height: 40px;
 	
 	font-size: 14pt;

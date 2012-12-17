@@ -94,10 +94,10 @@
 				<div id="institution-links" class="block">
 					<div class="title">{% trans "Affiliated Institutions" %}</div>
 					<ul>
-						<li><a href="#">UB</a></li>
-						<li><a href="#">UAB</a></li>
-						<li><a href="#">UPC</a></li>
-						<li><a href="#">CRM</a></li>
+						<li><a href="http://www.ub.edu/">UB</a></li>
+						<li><a href="http://www.uab.es/">UAB</a></li>
+						<li><a href="http://www.upc.edu/">UPC</a></li>
+						<li><a href="http://www.crm.es/">CRM</a></li>
 					</ul>
 				</div>
 			</div>
@@ -105,9 +105,9 @@
 			<div id="language-chooser">
 				<div class="title">{% trans "Languages" %}:</div>
 				<ul>
-					<li><a href="/setlang/?language=ca&next={{ redirect_to }}">Català</a></li>
-					<li><a href="/setlang/?language=es&next={{ redirect_to }}">Castellano</a></li>
-					<li><a href="/setlang/?language=en&next={{ redirect_to }}">English</a></li>
+					<li><a{% if lang == "ca" %} class="current"{% endif %} href="/setlang/?language=ca&next={{ redirect_to }}">Català</a></li>
+					<li><a{% if lang == "es" %} class="current"{% endif %} href="/setlang/?language=es&next={{ redirect_to }}">Castellano</a></li>
+					<li><a{% if lang == "en" %} class="current"{% endif %} href="/setlang/?language=en&next={{ redirect_to }}">English</a></li>
 				</ul>
 			</div>
 			
