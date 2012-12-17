@@ -19,8 +19,8 @@
 			  }
 			});
 		</script>
+    {{ ganalytics_js }}
 	</head>
-
 	<body class="{% block body-class %}{% endblock body-class %}">
 		<div id="stnb-outer-wrap">
 			<div id="navigation" class="main-block">
@@ -103,16 +103,11 @@
 			</div>
 
 			<div id="language-chooser">
-				<div class="title">{% trans "Language" %}:</div>
+				<div class="title">{% trans "Languages" %}:</div>
 				<ul>
 					<li><a href="/setlang/?language=ca&next={{ redirect_to }}">Català</a></li>
 					<li><a href="/setlang/?language=es&next={{ redirect_to }}">Castellano</a></li>
 					<li><a href="/setlang/?language=en&next={{ redirect_to }}">English</a></li>
-					{% comment %}
-					{% for lang_code, lang_name in languages %}
-						<li><a href="/setlang/?language={{ lang_code }}&next={{ redirect_to }}">{{ lang_name }}</a></li>
-					{% endfor %}
-					{% endcomment %}
 				</ul>
 			</div>
 			

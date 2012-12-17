@@ -38,11 +38,11 @@ class Seminari(TranslatableModel):
         dstr = ''
         if self.data_inici.year == self.data_finalizacio.year:
             if self.data_inici.month == self.data_finalizacio.month:
-                dstr= _('%(idia)s %(idata)d to %(fdia)s %(fdata)d of %(imes)s, %(iany)d')
+                dstr= _('%(idia)s %(idata)d to %(fdia)s %(fdata)d %(imes)s, %(iany)d')
             else:
-                dstr= _('%(idia)s %(idata)d of %(fmes)s to %(fdia)s %(fdata)d of %(fmes)s, %(iany)d')
+                dstr= _('%(idia)s %(idata)d %(imes)s to %(fdia)s %(fdata)d %(fmes)s, %(iany)d')
         else:
-            dstr= _('%(idia)s %(idata)d of %(imes)s, %(iany)s %(fdata)d to %(fdia)d of %(fmes)s, %(fany)d')
+            dstr= _('%(idia)s %(idata)d %(imes)s, %(iany)s %(fdata)d to %(fdia)d %(fmes)s, %(fany)d')
 
         return dstr % { 'idia': _(self.data_inici.strftime('%A')),
                         'idata': self.data_inici.day,

@@ -33,6 +33,7 @@ SECRET_KEY = 'f%-(30mhl1qlj$$ah808vn(!fo68pfo6ykwxo)wjzg4rz^psi#'
 
 
 SITE_ID = 1
+GA_TRACKER = 'UA-36931377-1'
 
 SERVE_MEDIA = False
 MEDIA_ROOT = ''
@@ -53,6 +54,17 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
+    'stnb.utils.context_processors.ganalytics_js',
 )
 
 MIDDLEWARE_CLASSES = (

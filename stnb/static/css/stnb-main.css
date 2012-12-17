@@ -93,12 +93,13 @@ body  {
 	font-family: 'Titillium Web', sans-serif;
 	font-size: 12pt;
 	letter-spacing: 0.085em;
+	color: #333;
 	background: #e4e4e5 url(../img/background-dot.png) repeat-y 0 0;
 }
 
 #stnb-outer-wrap  {
 	position: relative;
-	width: 1100px;	
+	width: 1110px;	
 }
 
 #stnb-outer-wrap .main-block  {
@@ -110,13 +111,13 @@ body  {
 }
 
 #content-wrap  {
-	width: 600px;
+	width: 680px;
 	margin: 30px 20px 20px 20px;
 	padding: 0 40px 0 0;
 }
 
 #secondary-column  {
-	width: 200px;
+	width: 170px;
 	float: left;
 	margin: 30px 20px 20px 10px;
 }
@@ -177,34 +178,24 @@ body  {
 	color: #f26813;
 }
 
-#content-wrap h2  {
-	letter-spacing: 0.085em;
-	font-size: 30px;
+#content-wrap h2, #content-wrap h3, #content-wrap h4  {
+	font-family: "Oswald";
+	font-weight: 700;
+	color: #333;
+}
 
-	color: #000;
-/*	font-size: 16pt;*/
+#content-wrap h2  {
+	font-size: 30px;
 	margin: 10px 0 30px 0;
 }
 
-#content-wrap h3, #content-wrap h4  {
-	font-family: "Oswald";
-	font-weight: 700;
-}
-
 #content-wrap h3  {
-/*	letter-spacing: 0.085em;*/
 	font-size: 18px;
-
-	color: #000;
 	margin: 34px 0 16px 0;
 }
 
-
 #content-wrap h4  {
-/*	letter-spacing: 0.085em;*/
 	font-size: 15px;
-
-	color: #000;
 	margin: 24px 0 14px 0;
 }
 
@@ -330,9 +321,13 @@ body  {
 
 #language-chooser .title, #language-chooser li  {
 	float: left;
-	padding: 4px 2px 18px 12px;
+	padding: 6px 2px 16px 12px;
 
 	color: #666;
+}
+
+#language-chooser .title  {
+	font-weight: 700;
 }
 
 #language-chooser li  {
