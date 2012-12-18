@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-11 09:12+0100\n"
+"POT-Creation-Date: 2012-12-17 22:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,192 +18,255 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
+#: comptes/forms.py:8
+msgid "First name"
+msgstr "Nombre"
+
+#: comptes/forms.py:9
+msgid "Surname"
+msgstr "Apellido"
+
 #: conf/settings/default.py:23
 msgid "Catalan"
-msgstr ""
+msgstr "catalán"
 
 #: conf/settings/default.py:24
 msgid "Spanish"
-msgstr ""
+msgstr "castellano"
 
 #: conf/settings/default.py:25
 msgid "English"
-msgstr ""
+msgstr "inglés"
 
-#: seminaris/models.py:36
+#: membres/forms.py:12
+msgid "Year"
+msgstr "Año"
+
+#: membres/models.py:41
+msgid "Unnamed"
+msgstr "Sin nombre"
+
+#: pagines/models.py:22
+msgid "flat page"
+msgstr "página plana"
+
+#: pagines/models.py:23
+msgid "flat pages"
+msgstr "páginas planas"
+
+#: seminaris/models.py:41
 #, python-format
-msgid "%(idia)s %(idata)d to %(fdia)s %(fdata)d of %(imes)s, %(iany)d"
-msgstr ""
+msgid "%(idia)s %(idata)d to %(fdia)s %(fdata)d %(imes)s, %(iany)d"
+msgstr "del %(idia)s %(idata)d al %(fdia)s %(fdata)d %(imes)s, %(iany)d"
 
-#: seminaris/models.py:38
+#: seminaris/models.py:43
+#, python-format
+msgid "%(idia)s %(idata)d %(imes)s to %(fdia)s %(fdata)d %(fmes)s, %(iany)d"
+msgstr "del %(idia)s %(idata)d de %(imes)s al %(fdia)s %(fdata)d de %(fmes)s de %(iany)d"
+
+#: seminaris/models.py:45
 #, python-format
 msgid ""
-"%(idia)s %(idata)d of %(fmes)s to %(fdia)s %(fdata)d of %(fmes)s, %(iany)d"
-msgstr ""
-
-#: seminaris/models.py:40
-#, python-format
-msgid ""
-"%(idia)s %(idata)d of %(imes)s, %(iany)s %(fdata)d to %(fdia)d of %(fmes)s, "
+"%(idia)s %(idata)d %(imes)s, %(iany)s %(fdata)d to %(fdia)d %(fmes)s, "
 "%(fany)d"
-msgstr ""
+msgstr "del %(idia)s %(idata)d de %(imes)s de %(iany)s al %(fdata)d %(fdia)d de %(fmes)s de %(fany)d"
 
-#: seminaris/models.py:133
+#: seminaris/models.py:187
 msgid "Only necessary if a talk isn't chosen."
-msgstr ""
+msgstr "Solo necesario cuando una charla no está elegida."
 
-#: templates/base.html:33
+#: templates/404.html:5 templates/404.html.py:6
+msgid "Error 404"
+msgstr "Error 404"
+
+#: templates/404.html:10
+msgid "Page not found"
+msgstr "Página no encontrado"
+
+#: templates/404.html:12
+msgid "The page you are looking for could not be found."
+msgstr "La página que buscas no se podía encontrar."
+
+#: templates/404.html:12 templates/500.html:14
+msgid "Return"
+msgstr "Volver"
+
+#: templates/404.html:12 templates/500.html:14 templates/base.html:35
+#: templates/inici/inici.html:5
 msgid "Home"
-msgstr ""
+msgstr "Inicio"
 
-#: templates/base.html:34
-msgid "Active<br />Seminar"
-msgstr ""
+#: templates/500.html:5 templates/500.html.py:6
+msgid "Error 500"
+msgstr "Error 500"
 
-#: templates/base.html:35
-msgid "Seminar<br />Archive"
-msgstr ""
+#: templates/500.html:10
+msgid "Internal server error"
+msgstr "Error interno del servidor"
+
+#: templates/500.html:12
+msgid "An internal server error has occurred."
+msgstr "Un error interno del servido ha ocurrido."
+
+#: templates/500.html:12
+msgid "If this error persists, please contact the"
+msgstr "Si ese error sigue, por favor contacte con el"
+
+#: templates/base.html:10 templates/inici/inici.html:6
+msgid "Seminari de Teoria de Nombres Barcelona"
+msgstr "Seminari de Teoria de Nombres Barcelona"
 
 #: templates/base.html:36
-msgid "About<br />STNB"
-msgstr ""
+msgid "Active<br />Seminar"
+msgstr "Seminar<br />Actual"
 
 #: templates/base.html:37
+msgid "Seminar<br />Archive"
+msgstr "Archivo de<br />Seminarios"
+
+#: templates/base.html:38
+msgid "About<br />STNB"
+msgstr "Sobre<br />STNB"
+
+#: templates/base.html:39
 msgid "Members"
-msgstr ""
-
-#: templates/base.html:78
-msgid "Account "
-msgstr ""
-
-#: templates/base.html:81
-msgid "Profile page"
-msgstr ""
+msgstr "Miembros"
 
 #: templates/base.html:82
+msgid "Account "
+msgstr "Cuenta "
+
+#: templates/base.html:85
+msgid "Profile page"
+msgstr "Perfil"
+
+#: templates/base.html:86
+msgid "Admin console"
+msgstr "Administración"
+
+#: templates/base.html:87
 msgid "Logout"
-msgstr ""
+msgstr "Salir"
 
-#: templates/base.html:84
-msgid "Login"
-msgstr ""
+#: templates/base.html:89 templates/comptes/login.html:4
+#: templates/comptes/login.html.py:15
+#: templates/comptes/password_reset_complete.html:13
+#: templates/comptes/registration_form.html:23
+msgid "Log in"
+msgstr "Iniciar sesión"
 
-#: templates/base.html:90
+#: templates/base.html:95
 msgid "Affiliated Institutions"
+msgstr "Instituciones afiliadas"
+
+#: templates/base.html:106
+msgid "Languages"
+msgstr "Idiomas"
+
+#: templates/base.html:115
+msgid "Copyright STNB"
 msgstr ""
 
-#: templates/base.html:101
-msgid "Language"
-msgstr ""
-
-#: templates/base.html:116
-msgid "Copyright STNB 2012, some rights reserved."
-msgstr ""
+#: templates/base.html:115
+msgid "some rights reserved"
+msgstr "algunos derechos reservados"
 
 #: templates/comptes/logged_out.html:4
 msgid "Logged out"
-msgstr ""
+msgstr "Sesión cerrado"
 
 #: templates/comptes/logged_out.html:8
 msgid "Successfully logged out"
-msgstr ""
+msgstr "Sesión cerrado con éxito"
 
 #: templates/comptes/logged_out.html:11
 msgid "You have successfully logged out."
-msgstr ""
+msgstr "Ha terminado la sesión con éxito."
 
-#: templates/comptes/logged_out.html:11 templates/comptes/login.html:42
+#: templates/comptes/logged_out.html:11 templates/comptes/login.html:29
 msgid "You can"
-msgstr ""
+msgstr "Puede"
 
 #: templates/comptes/logged_out.html:11
 msgid "log in again"
-msgstr ""
+msgstr "iniciar otra sesión"
 
 #: templates/comptes/logged_out.html:11
 msgid "or return to the"
-msgstr ""
+msgstr "o volver al"
 
 #: templates/comptes/logged_out.html:11
 msgid "home page"
-msgstr ""
+msgstr "inicio "
 
-#: templates/comptes/login.html:4 templates/comptes/login.html.py:28
-msgid "Log in"
-msgstr ""
-
-#: templates/comptes/login.html:33
+#: templates/comptes/login.html:20
 msgid "Forgotten password?"
-msgstr ""
+msgstr "¿Ha olvidado tu contraseña?"
 
-#: templates/comptes/login.html:36
+#: templates/comptes/login.html:23
 msgid "If you've forgotten your password,"
-msgstr ""
+msgstr "Si ha olvidado su contraseña,"
 
-#: templates/comptes/login.html:36
+#: templates/comptes/login.html:23
 msgid "click here to reset it"
-msgstr ""
+msgstr "haz clic aquí para reiniciarla"
 
-#: templates/comptes/login.html:39
+#: templates/comptes/login.html:26
 msgid "Don't have an account?"
-msgstr ""
+msgstr "¿No tiene una cuenta?"
 
-#: templates/comptes/login.html:42
+#: templates/comptes/login.html:29
 msgid "sign up for an account"
-msgstr ""
+msgstr "crear una cuenta"
 
 #: templates/comptes/password_reset_complete.html:4
 #: templates/comptes/password_reset_confirm.html:4
 #: templates/comptes/password_reset_done.html:4
 #: templates/comptes/password_reset_form.html:4
 msgid "Reset password"
-msgstr ""
+msgstr "Restablecer contraseña"
 
 #: templates/comptes/password_reset_complete.html:9
 msgid "Password reset complete"
-msgstr ""
+msgstr "Contraseña restablecido"
 
 #: templates/comptes/password_reset_complete.html:11
-msgid "Your password has been set. You may go ahead and log in now."
-msgstr ""
-
-#: templates/comptes/password_reset_complete.html:13
-msgid "Sign in"
-msgstr ""
+msgid "Your new password has been set. You may go ahead and log in now."
+msgstr "Su nueva contraseña ha sido actualizado. Ahora puede iniciar una sesión."
 
 #: templates/comptes/password_reset_confirm.html:9
 msgid "Enter new password"
-msgstr ""
+msgstr "Entre nueva contraseña"
 
 #: templates/comptes/password_reset_confirm.html:9
 msgid "Password reset unsuccessful"
-msgstr ""
+msgstr "Contraseña no restablecido"
 
 #: templates/comptes/password_reset_confirm.html:12
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
-msgstr ""
+msgstr "Por favor entre la nueva contraseña dos veces, para verificación"
 
 #: templates/comptes/password_reset_confirm.html:19
 msgid "Password"
-msgstr ""
+msgstr "Contraseña"
 
 #: templates/comptes/password_reset_confirm.html:22
 msgid "New password:"
-msgstr ""
+msgstr "Nueva contraseña:"
 
 #: templates/comptes/password_reset_confirm.html:26
 msgid "Confirm password"
-msgstr ""
+msgstr "Confirmar contraseña"
 
 #: templates/comptes/password_reset_confirm.html:29
 msgid "Confirm password:"
-msgstr ""
+msgstr "Confirmar contraseña:"
 
 #: templates/comptes/password_reset_confirm.html:30
 msgid "Change my password"
-msgstr ""
+msgstr "Combiar mi contraseña"
 
 #: templates/comptes/password_reset_confirm.html:33
 msgid ""
@@ -224,11 +287,112 @@ msgstr ""
 #: templates/comptes/password_reset_form.html:11
 msgid ""
 "Enter your e-mail address below, and we'll e-mail instructions for setting a "
-"new one."
+"new password."
 msgstr ""
 
 #: templates/comptes/password_reset_form.html:22
 msgid "Reset my password"
+msgstr ""
+
+#: templates/comptes/perfil_actualizar.html:4
+msgid "Update Profile"
+msgstr ""
+
+#: templates/comptes/perfil_actualizar.html:15
+#: templates/membres/membre_actualizar_form.html:18
+msgid "Update"
+msgstr ""
+
+#: templates/comptes/perfil_detall.html:4
+#: templates/membres/membre_detall.html:23
+msgid "Profile"
+msgstr ""
+
+#: templates/comptes/perfil_detall.html:10
+msgid "Name"
+msgstr ""
+
+#: templates/comptes/perfil_detall.html:12
+msgid "empty"
+msgstr ""
+
+#: templates/comptes/perfil_detall.html:12
+msgid "Add your name"
+msgstr ""
+
+#: templates/comptes/perfil_detall.html:14
+#: templates/membres/membre_detall.html:18
+msgid "Email"
+msgstr ""
+
+#: templates/comptes/registration_form.html:4
+msgid "Register"
+msgstr ""
+
+#: templates/comptes/registration_form.html:15
+msgid "Sign up"
+msgstr ""
+
+#: templates/comptes/registration_form.html:20
+msgid "Already have an account?"
+msgstr ""
+
+#: templates/comptes/registration_form.html:23
+msgid "If you already have an account, you can,"
+msgstr ""
+
+#: templates/comptes/registre_fet.html:4
+msgid "Registration"
+msgstr ""
+
+#: templates/comptes/registre_fet.html:9
+msgid "Registration complete"
+msgstr ""
+
+#: templates/comptes/registre_fet.html:11
+msgid "You have registered successfully."
+msgstr ""
+
+#: templates/comptes/registre_fet.html:11
+msgid "Now would be a good time to"
+msgstr ""
+
+#: templates/comptes/registre_fet.html:11
+msgid "add your details"
+msgstr ""
+
+#: templates/inici/inici.html:11
+msgid ""
+"\n"
+"\tThis is a very brief introduction explaining what STNB is.\n"
+msgstr ""
+
+#: templates/inici/inici.html:17
+#: templates/noticies/noticies_ultimes_llista.html:5
+#: templates/noticies/noticies_ultimes_llista.html:6
+msgid "Latest news"
+msgstr ""
+
+#: templates/inici/inici.html:31
+msgid "There are currently no news items."
+msgstr ""
+
+#: templates/membres/membre_actualizar_form.html:6
+#: templates/membres/membre_actualizar_form.html:7
+msgid "Update member profile"
+msgstr ""
+
+#: templates/membres/membre_detall.html:4
+#: templates/membres/membre_detall.html:5
+msgid "Member profile"
+msgstr ""
+
+#: templates/membres/membre_detall.html:12
+msgid "profile photo of"
+msgstr ""
+
+#: templates/membres/membre_detall.html:20
+msgid "Please log in to see member email addresses."
 msgstr ""
 
 #: templates/seminaris/seminari_detall.html:13
@@ -237,7 +401,7 @@ msgid "Themes"
 msgstr ""
 
 #: templates/seminaris/seminari_detall.html:14
-#: templates/seminaris/seminari_detall.html:37
+#: templates/seminaris/seminari_detall.html:42
 msgid "Calendar"
 msgstr ""
 
@@ -251,8 +415,54 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
+#: templates/seminaris/seminari_detall.html:37
+msgid "Themes have not yet been chosen."
+msgstr ""
+
+#: templates/seminaris/seminari_detall.html:47
+msgid "The calendar has not yet been set."
+msgstr ""
+
 #: templates/seminaris/seminari_llista.html:5
 msgid "Seminar archive"
+msgstr ""
+
+#: templates/seminaris/xerrada_detall.html:12
+msgid "Presenters"
+msgstr ""
+
+#: templates/seminaris/xerrada_detall.html:16
+msgid "Abstract"
+msgstr ""
+
+#: templates/seminaris/xerrada_detall.html:22
+msgid "No abstract available"
+msgstr ""
+
+#: templates/seminaris/xerrada_detall.html:26
+msgid "Files"
+msgstr ""
+
+#: templates/seminaris/xerrada_detall.html:31
+msgid "Download presentation"
+msgstr ""
+
+#: templates/seminaris/xerrada_detall.html:36
+msgid "Download article"
+msgstr ""
+
+#: templates/seminaris/xerrada_detall.html:41
+msgid "No files available for download"
+msgstr ""
+
+#: templates/seminaris/xerrada_detall.html:45
+#: templates/seminaris/xerrada_llista.html:13
+msgid "Return to seminar"
+msgstr ""
+
+#: templates/seminaris/xerrada_llista.html:5
+#: templates/seminaris/xerrada_llista.html:6
+msgid "Talks"
 msgstr ""
 
 #: templates/sobre-stnb/sobre-stnb.html:4
