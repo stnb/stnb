@@ -87,7 +87,7 @@ class Tema(TranslatableModel):
         ordering = ['seminari', 'ordre']
 
     def __unicode__(self):
-        return self.titol
+        return '%s (%s)' % (self.titol, self.seminari.nom,)
 
 class Dia(TranslatableModel):
     data = models.DateField()
