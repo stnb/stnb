@@ -18,7 +18,7 @@ class PaginaPlana(TranslatableModel):
     )
 
     class Meta:
-        ordering = ['translations__titol']
+        ordering = ['slug']
         verbose_name = _('flat page') #'pàgina plana'
         verbose_name_plural = _('flat pages') #'pàgines planes'
 
