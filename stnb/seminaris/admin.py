@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 from hvad.admin import TranslatableAdmin, TranslatableStackedInline, TranslatableTabularInline
+from tinymce.widgets import TinyMCE
 
 
 from .models import Seminari, Tema, Dia, Xerrada, ItemPrograma
@@ -24,7 +25,7 @@ class TemaAdmin(TranslatableAdmin):
             return db_field.formfield(widget=TinyMCE(
                 attrs={'cols': 80, 'rows': 20},
             ))
-        return super(PaginaPlanaAdmin, self).formfield_for_dbfield(db_field, **kwargs)
+        return super(TemaAdmin, self).formfield_for_dbfield(db_field, **kwargs)
 
 class ItemProgramaInline(TranslatableTabularInline):
     model = ItemPrograma
@@ -48,7 +49,7 @@ class XerradaAdmin(TranslatableAdmin):
             return db_field.formfield(widget=TinyMCE(
                 attrs={'cols': 80, 'rows': 20},
             ))
-        return super(PaginaPlanaAdmin, self).formfield_for_dbfield(db_field, **kwargs)
+        return super(XerradaAdmin, self).formfield_for_dbfield(db_field, **kwargs)
 
 class ItemProgramaAdmin(TranslatableAdmin):
     pass
