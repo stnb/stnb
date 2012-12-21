@@ -126,6 +126,7 @@ STATICFILES_FINDERS = (
 TINYMCE_DEFAULT_CONFIG = {
     'theme': 'advanced',
     'relative_urls': False,
+    'invalid_elements': 'span',
     'theme_advanced_toolbar_location': 'top',
     'theme_advanced_toolbar_align': 'center',
     'theme_advanced_buttons1': 'bold,italic,underline,strikethrough,separator,bullist,numlist,link,unlink,separator,undo,redo',

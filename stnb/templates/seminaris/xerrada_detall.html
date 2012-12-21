@@ -17,7 +17,7 @@
 
 <p>
 {% if xerrada.abstracte %}
-	{{ xerrada.abstracte }}
+	{{ xerrada.abstracte|safe }}
 {% else %}
 	<em>{% trans "No abstract available" %}</em>
 {% endif %}
