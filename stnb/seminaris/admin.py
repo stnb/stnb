@@ -19,6 +19,13 @@ class SeminariAdmin(TranslatableAdmin):
 class TemaAdmin(TranslatableAdmin):
     list_display = ('__unicode__', 'seminari',)
 
+    def formfield_for_dbfield(self, db_field, **kwargs):
+        if db_field.name == 'descripcio':
+            return db_field.formfield(widget=TinyMCE(
+                attrs={'cols': 80, 'rows': 20},
+            ))
+        return super(PaginaPlanaAdmin, self).formfield_for_dbfield(db_field, **kwargs)
+
 class ItemProgramaInline(TranslatableTabularInline):
     model = ItemPrograma
 
@@ -35,6 +42,13 @@ class DiaAdmin(TranslatableAdmin):
 class XerradaAdmin(TranslatableAdmin):
     list_display = ('__unicode__', 'tema', 'seminari',)
     list_filter = ('tema',)
+
+    def formfield_for_dbfield(self, db_field, **kwargs):
+        if db_field.name == 'abstracte':
+            return db_field.formfield(widget=TinyMCE(
+                attrs={'cols': 80, 'rows': 20},
+            ))
+        return super(PaginaPlanaAdmin, self).formfield_for_dbfield(db_field, **kwargs)
 
 class ItemProgramaAdmin(TranslatableAdmin):
     pass
