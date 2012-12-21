@@ -76,6 +76,7 @@ class Tema(TranslatableModel):
     ordre = models.IntegerField(default=0)
     organitzadors = models.ManyToManyField(Membre, related_name='temes',
                                           blank=True, null=True)
+    referencies = models.TextField(blank=True, null=True)
 
     translations = TranslatedFields(
         titol = models.CharField(max_length=255),
@@ -88,6 +89,11 @@ class Tema(TranslatableModel):
 
     def __unicode__(self):
         return '%s (%s)' % (self.titol, self.seminari.nom,)
+    
+    @permalink
+    def get_absolute_url(self):
+        return ('seminari-tema-detall', (), {'tema_id': self.pk,
+            'seminari_slug': self.seminari.slug})
 
 class Dia(TranslatableModel):
     data = models.DateField()

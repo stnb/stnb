@@ -42,6 +42,21 @@ class TemaListView(ListView):
     queryset = Tema.objects.all()
     slug_field = 'slug'
 
+class TemaDetallView(TemplateView):
+    template_name = 'seminaris/tema_detall.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(TemaDetallView, self).get_context_data(**kwargs)
+        
+        seminari = get_object_or_404(Seminari, slug=kwargs['seminari_slug'])
+        tema = get_object_or_404(Tema, pk=kwargs['tema_id'])
+        if tema.seminari != seminari:
+            raise Http404
+
+        context.update({ 'seminari': seminari, 'tema': tema})
+
+        return context
+
 class DiaListView(ListView):
     model = Dia
     context_obejct_name = 'dies'

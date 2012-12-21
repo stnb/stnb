@@ -6,7 +6,7 @@
 		<h4>{{ tema.titol }}</h4>
 
 		<p>
-			{{ tema.descripcio }}
+			<a href="{{ tema.get_absolute_url }}">{% trans "Full details" %}</a>.
 		</p>
 
 		<ol class="tema-xerrades">

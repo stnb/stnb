@@ -19,9 +19,10 @@ class SeminariAdmin(TranslatableAdmin):
 
 class TemaAdmin(TranslatableAdmin):
     list_display = ('__unicode__', 'seminari',)
+    #fields = ('seminari', 'translations__titol', 'order', 'organitzadors', 'translations__descripcio', 'referencies',)
 
     def formfield_for_dbfield(self, db_field, **kwargs):
-        if db_field.name == 'descripcio':
+        if db_field.name in ['descripcio', 'referencies']:
             return db_field.formfield(widget=TinyMCE(
                 attrs={'cols': 80, 'rows': 20},
             ))

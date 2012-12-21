@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load l10n %}
+
+{% block titol-head %}{{ seminari.nom}} - {{ xerrada.titol }}{% endblock titol-head %}
+{% block titol-pagina %}{{ seminari.nom }}{% endblock titol-pagina %}
+
+{% block contingut %}
+	<h3>{{ tema.titol }}</h3>
+
+	<h4>{% trans "Description" %}</h4>
+
+	<p>
+		{{ tema.descripcio|safe }}
+	</p>
+
+	<h4>{% trans "Talks" %}</h4>
+
+	<ol class="tema-xerrades">
+		{% for xerrada in tema.xerrades.all %}
+		<li><a href="{% url seminari-xerrada-detall seminari_slug=seminari.slug xerrada_id=xerrada.id %}">{{ xerrada.titol }}</a> ({{ xerrada.presentadors_html|safe }})</li>
+		{% endfor %}
+	</ol>
+
+	{% if tema.referencies %}
+	<h4>{% trans "References" %}</h4>
+
+	<p>
+		{{ tema.referencies|safe }}
+	</p>
+	{% endif %}
+
+	<div class="back-link">
+		<p><a href="{{ seminari.get_absolute_url }}">{% trans "Return to seminar" %}</a></p>
+	</div>
+{% endblock contingut %}
