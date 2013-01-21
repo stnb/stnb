@@ -3,6 +3,7 @@ import datetime
 import os
 import re
 import uuid
+import unicodedata
 
 from django.db import models
 from django.db import IntegrityError
@@ -44,17 +45,25 @@ class Membre(TranslatableModel):
     def get_absolute_url(self):
         return ('membre-detall', (), {'slug': self.slug})
 
+    def slug_de_nom_complet(self):
+        nom_complet = self.nom_complet()
+        if nom_complet:
+            nfd_nom = ''.join((c for c in unicodedata.normalize('NFD', nom_complet) if unicodedata.category(c) != 'Mn'))
+            return re.sub(r'\s', '-', nfd_nom).lower()
+        else:
+            return ''
+
     def save(self, *args, **kwargs):
         nom_complet = self.nom_complet()
         if nom_complet:
-            self.slug = re.sub(r'\s', '-', nom_complet).lower()
+            self.slug = self.slug_de_nom_complet()
         elif not self.slug:
             self.slug = uuid.uuid4()
         try:
             obj = super(Membre, self).save(*args, **kwargs)
         except IntegrityError, e:
             if nom_complet:
-                self.slug = re.sub(r'\s', '-', nom_complet+'-'+unicode(uuid.uuid4())[0:4]).lower()
+                self.slug = re.sub(r'\s', '-', self.slug_de_nom_complet()+'-'+unicode(uuid.uuid4())[0:4]).lower()
             else:
                 raise e
         obj = super(Membre, self).save(*args, **kwargs)
