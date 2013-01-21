@@ -8,4 +8,5 @@ south
 django-admin-bootstrapped
 django-email-as-username
 django-tinymce
-
+gunicorn
+gevent

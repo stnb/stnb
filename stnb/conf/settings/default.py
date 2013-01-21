@@ -112,6 +112,7 @@ INSTALLED_APPS = (
     'stnb.noticies',
     'stnb.membres',
     'stnb.pagines',
+    'gunicorn',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )

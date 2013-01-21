@@ -1,0 +1,41 @@
+server  {
+	listen		80;
+	server_name	stnb.tk gin.voo-du.net;
+
+	access_log	/var/log/nginx/stnb.tk/access.log;
+	error_log	/var/log/nginx/stnb.tk/error.log;
+
+	location /media/  {
+		alias	/var/www/stnb.tk/media/;
+
+#		gzip		on;
+#		gzip_comp_level	7;
+#		gzip_vary	on;
+#		gzip_types	text/css text/javascript application/x-javascript;
+#		expires		2h;
+#		add_header	Cache-Control public;
+#		add_header	Cache-Control no-transform;
+	}
+
+	location /static/  {
+		alias	/var/www/stnb.tk/static/;
+
+#		gzip		on;
+#		gzip_comp_level	7;
+#		gzip_vary	on;
+#		gzip_types	text/css text/javascript application/x-javascript;
+#		expires		2h;
+#		add_header	Cache-Control public;
+#		add_header	Cache-Control no-transform;
+	}
+
+	location /  {
+		proxy_set_header	Host		$host;
+		proxy_set_header	X-Real-IP	$remote_addr;
+		proxy_set_header	X-Forward-For	$proxy_add_x_forwarded_for;
+
+		# Port must match that in gunicorn config
+		proxy_pass		http://127.0.0.1:8181;
+	}
+
+}
