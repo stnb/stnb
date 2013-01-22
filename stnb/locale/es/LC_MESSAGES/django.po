@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-17 22:57+0100\n"
+"POT-Creation-Date: 2012-12-20 20:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,14 +62,18 @@ msgstr "del %(idia)s %(idata)d al %(fdia)s %(fdata)d %(imes)s, %(iany)d"
 #: seminaris/models.py:43
 #, python-format
 msgid "%(idia)s %(idata)d %(imes)s to %(fdia)s %(fdata)d %(fmes)s, %(iany)d"
-msgstr "del %(idia)s %(idata)d de %(imes)s al %(fdia)s %(fdata)d de %(fmes)s de %(iany)d"
+msgstr ""
+"del %(idia)s %(idata)d de %(imes)s al %(fdia)s %(fdata)d de %(fmes)s de "
+"%(iany)d"
 
 #: seminaris/models.py:45
 #, python-format
 msgid ""
 "%(idia)s %(idata)d %(imes)s, %(iany)s %(fdata)d to %(fdia)d %(fmes)s, "
 "%(fany)d"
-msgstr "del %(idia)s %(idata)d de %(imes)s de %(iany)s al %(fdata)d %(fdia)d de %(fmes)s de %(fany)d"
+msgstr ""
+"del %(idia)s %(idata)d de %(imes)s de %(iany)s al %(fdata)d %(fdia)d de "
+"%(fmes)s de %(fany)d"
 
 #: seminaris/models.py:187
 msgid "Only necessary if a talk isn't chosen."
@@ -165,7 +169,7 @@ msgstr "Idiomas"
 
 #: templates/base.html:115
 msgid "Copyright STNB"
-msgstr ""
+msgstr "Copyright STNB"
 
 #: templates/base.html:115
 msgid "some rights reserved"
@@ -232,7 +236,8 @@ msgstr "Contraseña restablecido"
 
 #: templates/comptes/password_reset_complete.html:11
 msgid "Your new password has been set. You may go ahead and log in now."
-msgstr "Su nueva contraseña ha sido actualizado. Ahora puede iniciar una sesión."
+msgstr ""
+"Tu nueva contraseña ha sido actualizado. Ahora puede iniciar una sesión."
 
 #: templates/comptes/password_reset_confirm.html:9
 msgid "Enter new password"
@@ -272,202 +277,205 @@ msgstr "Combiar mi contraseña"
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset."
-msgstr ""
+msgstr "El enlace para restablecer la contraseña es inválido, posiblemente porque "
+"ya ha sido utilizado. Por favor, pide un restablecimiento de tu contraseña otra vez."
 
 #: templates/comptes/password_reset_done.html:9
 msgid ""
 "We've e-mailed you instructions for setting your password to the e-mail "
 "address you submitted. You should be receiving it shortly."
-msgstr ""
+msgstr "Te hemos enviado instrucciones para restablecer tu contraseña a la "
+"dirección especificado. Deberías recibirlo dentro de unos minutos."
 
 #: templates/comptes/password_reset_form.html:9
 msgid "Forgotten your password?"
-msgstr ""
+msgstr "¿Has olvidado tu contraseña?"
 
 #: templates/comptes/password_reset_form.html:11
 msgid ""
 "Enter your e-mail address below, and we'll e-mail instructions for setting a "
 "new password."
-msgstr ""
+msgstr "Entrar tu dirección de correo electrónico y te mandaremos instrucciones "
+"para restablecer tu contraseña."
 
 #: templates/comptes/password_reset_form.html:22
 msgid "Reset my password"
-msgstr ""
+msgstr "Restablecer mi contraseña"
 
 #: templates/comptes/perfil_actualizar.html:4
 msgid "Update Profile"
-msgstr ""
+msgstr "Actualizar Perfil"
 
 #: templates/comptes/perfil_actualizar.html:15
 #: templates/membres/membre_actualizar_form.html:18
 msgid "Update"
-msgstr ""
+msgstr "Actualizar"
 
 #: templates/comptes/perfil_detall.html:4
 #: templates/membres/membre_detall.html:23
 msgid "Profile"
-msgstr ""
+msgstr "Perfil"
 
 #: templates/comptes/perfil_detall.html:10
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #: templates/comptes/perfil_detall.html:12
 msgid "empty"
-msgstr ""
+msgstr "vacio"
 
 #: templates/comptes/perfil_detall.html:12
 msgid "Add your name"
-msgstr ""
+msgstr "Añadir tu nombre"
 
 #: templates/comptes/perfil_detall.html:14
 #: templates/membres/membre_detall.html:18
 msgid "Email"
-msgstr ""
+msgstr "Correo electrónico"
 
 #: templates/comptes/registration_form.html:4
 msgid "Register"
-msgstr ""
+msgstr "Registrar"
 
 #: templates/comptes/registration_form.html:15
 msgid "Sign up"
-msgstr ""
+msgstr "Registrar"
 
 #: templates/comptes/registration_form.html:20
 msgid "Already have an account?"
-msgstr ""
+msgstr "¿Ya tienes una cuenta?"
 
 #: templates/comptes/registration_form.html:23
 msgid "If you already have an account, you can,"
-msgstr ""
+msgstr "Si ya tienes una cuenta, puedes"
 
 #: templates/comptes/registre_fet.html:4
 msgid "Registration"
-msgstr ""
+msgstr "Registro"
 
 #: templates/comptes/registre_fet.html:9
 msgid "Registration complete"
-msgstr ""
+msgstr "Registro completa"
 
 #: templates/comptes/registre_fet.html:11
 msgid "You have registered successfully."
-msgstr ""
+msgstr "Has registrado con éxito"
 
 #: templates/comptes/registre_fet.html:11
 msgid "Now would be a good time to"
-msgstr ""
+msgstr "Ahora sería un buen momento para"
 
 #: templates/comptes/registre_fet.html:11
 msgid "add your details"
-msgstr ""
+msgstr "añadir tus detalles"
 
 #: templates/inici/inici.html:11
 msgid ""
 "\n"
 "\tThis is a very brief introduction explaining what STNB is.\n"
-msgstr ""
+msgstr "Este es una muy breve introducción, explicando que es STNB."
 
 #: templates/inici/inici.html:17
 #: templates/noticies/noticies_ultimes_llista.html:5
 #: templates/noticies/noticies_ultimes_llista.html:6
 msgid "Latest news"
-msgstr ""
+msgstr "Últimas noticias"
 
 #: templates/inici/inici.html:31
 msgid "There are currently no news items."
-msgstr ""
+msgstr "Ahora mismo no hay noticias nuevas."
 
 #: templates/membres/membre_actualizar_form.html:6
 #: templates/membres/membre_actualizar_form.html:7
 msgid "Update member profile"
-msgstr ""
+msgstr "Actualizar perfil"
 
 #: templates/membres/membre_detall.html:4
 #: templates/membres/membre_detall.html:5
 msgid "Member profile"
-msgstr ""
+msgstr "Perfil de miembro"
 
 #: templates/membres/membre_detall.html:12
 msgid "profile photo of"
-msgstr ""
+msgstr "foto de perfil de"
 
 #: templates/membres/membre_detall.html:20
 msgid "Please log in to see member email addresses."
-msgstr ""
+msgstr "Por favor, iniciar sesión para ver el correo electrónico de un miembro."
 
 #: templates/seminaris/seminari_detall.html:13
 #: templates/seminaris/seminari_detall.html:32
 msgid "Themes"
-msgstr ""
+msgstr "Temas"
 
 #: templates/seminaris/seminari_detall.html:14
 #: templates/seminaris/seminari_detall.html:42
 msgid "Calendar"
-msgstr ""
+msgstr "Calendario"
 
 #: templates/seminaris/seminari_detall.html:18
 #: templates/seminaris/seminari_llista.html:13
 msgid "Dates"
-msgstr ""
+msgstr "Fechas"
 
 #: templates/seminaris/seminari_detall.html:25
 #: templates/seminaris/seminari_llista.html:14
 msgid "Location"
-msgstr ""
+msgstr "Ubicación"
 
 #: templates/seminaris/seminari_detall.html:37
 msgid "Themes have not yet been chosen."
-msgstr ""
+msgstr "Temas todavía no han sido elegidas."
 
 #: templates/seminaris/seminari_detall.html:47
 msgid "The calendar has not yet been set."
-msgstr ""
+msgstr "El calendario todavía no está oficial."
 
 #: templates/seminaris/seminari_llista.html:5
 msgid "Seminar archive"
-msgstr ""
+msgstr "Archivo de seminarios"
 
 #: templates/seminaris/xerrada_detall.html:12
 msgid "Presenters"
-msgstr ""
+msgstr "Presentadores"
 
 #: templates/seminaris/xerrada_detall.html:16
 msgid "Abstract"
-msgstr ""
+msgstr "Resumen"
 
 #: templates/seminaris/xerrada_detall.html:22
 msgid "No abstract available"
-msgstr ""
+msgstr "Resumen no disponible"
 
 #: templates/seminaris/xerrada_detall.html:26
 msgid "Files"
-msgstr ""
+msgstr "Ficheros"
 
 #: templates/seminaris/xerrada_detall.html:31
 msgid "Download presentation"
-msgstr ""
+msgstr "Descargar presentación"
 
 #: templates/seminaris/xerrada_detall.html:36
 msgid "Download article"
-msgstr ""
+msgstr "Descargar artículo"
 
 #: templates/seminaris/xerrada_detall.html:41
 msgid "No files available for download"
-msgstr ""
+msgstr "No hay ficheros disponibles para descargar"
 
 #: templates/seminaris/xerrada_detall.html:45
 #: templates/seminaris/xerrada_llista.html:13
 msgid "Return to seminar"
-msgstr ""
+msgstr "Volver al seminario"
 
 #: templates/seminaris/xerrada_llista.html:5
 #: templates/seminaris/xerrada_llista.html:6
 msgid "Talks"
-msgstr ""
+msgstr "Charlas"
 
 #: templates/sobre-stnb/sobre-stnb.html:4
 msgid "About STNB"
-msgstr ""
+msgstr "Sobre STNB"
 
 #: templates/sobre-stnb/sobre-stnb.html:8
 msgid ""
