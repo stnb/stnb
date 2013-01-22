@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-20 20:19+0100\n"
+"POT-Creation-Date: 2013-01-22 23:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,7 @@ msgstr ""
 msgid "Year"
 msgstr ""
 
-#: membres/models.py:41
+#: membres/models.py:42
 msgid "Unnamed"
 msgstr ""
 
@@ -53,24 +53,24 @@ msgstr ""
 msgid "flat pages"
 msgstr ""
 
-#: seminaris/models.py:41
+#: seminaris/models.py:44
 #, python-format
 msgid "%(idia)s %(idata)d to %(fdia)s %(fdata)d %(imes)s, %(iany)d"
 msgstr ""
 
-#: seminaris/models.py:43
+#: seminaris/models.py:46
 #, python-format
 msgid "%(idia)s %(idata)d %(imes)s to %(fdia)s %(fdata)d %(fmes)s, %(iany)d"
 msgstr ""
 
-#: seminaris/models.py:45
+#: seminaris/models.py:48
 #, python-format
 msgid ""
 "%(idia)s %(idata)d %(imes)s, %(iany)s %(fdata)d to %(fdia)d %(fmes)s, "
 "%(fany)d"
 msgstr ""
 
-#: seminaris/models.py:187
+#: seminaris/models.py:205
 msgid "Only necessary if a talk isn't chosen."
 msgstr ""
 
@@ -131,42 +131,42 @@ msgstr ""
 msgid "Members"
 msgstr ""
 
-#: templates/base.html:82
+#: templates/base.html:85
 msgid "Account "
 msgstr ""
 
-#: templates/base.html:85
+#: templates/base.html:88
 msgid "Profile page"
 msgstr ""
 
-#: templates/base.html:86
+#: templates/base.html:89
 msgid "Admin console"
 msgstr ""
 
-#: templates/base.html:87
+#: templates/base.html:90
 msgid "Logout"
 msgstr ""
 
-#: templates/base.html:89 templates/comptes/login.html:4
+#: templates/base.html:92 templates/comptes/login.html:4
 #: templates/comptes/login.html.py:15
 #: templates/comptes/password_reset_complete.html:13
 #: templates/comptes/registration_form.html:23
 msgid "Log in"
 msgstr ""
 
-#: templates/base.html:95
-msgid "Affiliated Institutions"
+#: templates/base.html:98
+msgid "Links"
 msgstr ""
 
-#: templates/base.html:106
+#: templates/base.html:111
 msgid "Languages"
 msgstr ""
 
-#: templates/base.html:115
+#: templates/base.html:120
 msgid "Copyright STNB"
 msgstr ""
 
-#: templates/base.html:115
+#: templates/base.html:120
 msgid "some rights reserved"
 msgstr ""
 
@@ -394,6 +394,10 @@ msgstr ""
 msgid "Please log in to see member email addresses."
 msgstr ""
 
+#: templates/seminaris/_seminari_temes.html:9
+msgid "Full details"
+msgstr ""
+
 #: templates/seminaris/seminari_detall.html:13
 #: templates/seminaris/seminari_detall.html:32
 msgid "Themes"
@@ -426,6 +430,26 @@ msgstr ""
 msgid "Seminar archive"
 msgstr ""
 
+#: templates/seminaris/tema_detall.html:11
+msgid "Description"
+msgstr ""
+
+#: templates/seminaris/tema_detall.html:17
+#: templates/seminaris/xerrada_llista.html:5
+#: templates/seminaris/xerrada_llista.html:6
+msgid "Talks"
+msgstr ""
+
+#: templates/seminaris/tema_detall.html:26
+msgid "References"
+msgstr ""
+
+#: templates/seminaris/tema_detall.html:34
+#: templates/seminaris/xerrada_detall.html:45
+#: templates/seminaris/xerrada_llista.html:13
+msgid "Return to seminar"
+msgstr ""
+
 #: templates/seminaris/xerrada_detall.html:12
 msgid "Presenters"
 msgstr ""
@@ -452,16 +476,6 @@ msgstr ""
 
 #: templates/seminaris/xerrada_detall.html:41
 msgid "No files available for download"
-msgstr ""
-
-#: templates/seminaris/xerrada_detall.html:45
-#: templates/seminaris/xerrada_llista.html:13
-msgid "Return to seminar"
-msgstr ""
-
-#: templates/seminaris/xerrada_llista.html:5
-#: templates/seminaris/xerrada_llista.html:6
-msgid "Talks"
 msgstr ""
 
 #: templates/sobre-stnb/sobre-stnb.html:4
