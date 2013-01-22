@@ -8,6 +8,7 @@ from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 from hvad.models import TranslatableModel, TranslatedFields
 
+from .utils import persones_nom_cognoms, persones_html
 from stnb.membres.models import Membre
 from stnb.membres.utils import cognoms_lexic
 
@@ -16,6 +17,8 @@ class Seminari(TranslatableModel):
     data_inici = models.DateField()
     data_finalizacio = models.DateField()
     organitzadors = models.ManyToManyField(Membre, related_name='seminaris')
+    altres_organitzadors = models.CharField(max_length=250, blank=True,
+                                            null=True)
     actiu = models.BooleanField(default=False)
     
     translations = TranslatedFields(
@@ -53,6 +56,9 @@ class Seminari(TranslatableModel):
                         'fmes': _(self.data_finalizacio.strftime('%B')),
                         'fany': self.data_finalizacio.year, }
 
+    def organitzadors_html(self):
+        return persones_html(list(self.organitzadors.all()) + persones_nom_cognoms(self.altres_organitzadors))
+
     def calendari_definit(self):
         items = sum([dia.items_programa.count() for dia in self.dies.all()])
         if items > 0:
@@ -76,6 +82,8 @@ class Tema(TranslatableModel):
     ordre = models.IntegerField(default=0)
     organitzadors = models.ManyToManyField(Membre, related_name='temes',
                                           blank=True, null=True)
+    altres_organitzadors = models.CharField(max_length=250, blank=True,
+                                            null=True)
     referencies = models.TextField(blank=True, null=True)
 
     translations = TranslatedFields(
@@ -94,6 +102,9 @@ class Tema(TranslatableModel):
     def get_absolute_url(self):
         return ('seminari-tema-detall', (), {'tema_id': self.pk,
             'seminari_slug': self.seminari.slug})
+    
+    def organitzadors_html(self):
+        return persones_html(list(self.organitzadors.all()) + persones_nom_cognoms(self.altres_organitzadors))
 
 class Dia(TranslatableModel):
     data = models.DateField()
@@ -120,7 +131,8 @@ class Xerrada(TranslatableModel):
     ordre = models.IntegerField(default=0)
     presentadors = models.ManyToManyField(Membre, related_name='xerrades',
                                           blank=True, null=True)
-    altres_presentadors = models.CharField(max_length=100, blank=True, null=True)
+    altres_presentadors = models.CharField(max_length=250, blank=True,
+                                           null=True)
 
     presentacio = models.FileField(upload_to='xerrades/presentacions',
                                    blank=True, null=True)
