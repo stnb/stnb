@@ -8,9 +8,13 @@
 {% block microalerta %}{% include "noticies/_microalertes.html" %}{% endblock microalerta %}
 
 {% block contingut %}
+{% if inici %}
+<div class="introduccio">{{ inici.descripcio|safe }}</div>
+{% else %}
 <div class="introduccio">{% blocktrans %}
 	This is a very brief introduction explaining what STNB is.
 {% endblocktrans %}</div>
+{% endif %}
 
 <div class="noticies-llista noticies-ultimes">
 
