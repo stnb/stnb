@@ -59,6 +59,20 @@ class Seminari(TranslatableModel):
     def organitzadors_html(self):
         return persones_html(list(self.organitzadors.all()) + persones_nom_cognoms(self.altres_organitzadors))
 
+    def presentadors_comunicacions_html(self):
+        items = ItemPrograma.objects.filter(dia__in=self.dies.all(), xerrada__isnull=False, xerrada__tema__isnull=True).distinct()
+        p_dict = {}
+        for xerrada in [i.xerrada for i in items]:
+            for p in xerrada.tots_presentadors():
+                print p
+                if isinstance(p, dict):
+                    nom_cognoms = p['nom'] + ' ' + p['cognoms']
+                else:
+                    nom_cognoms = p.nom + ' ' + p.cognoms
+                p_dict[nom_cognoms] = p
+        return persones_html(p_dict.values())
+
+
     def calendari_definit(self):
         items = sum([dia.items_programa.count() for dia in self.dies.all()])
         if items > 0:
@@ -177,6 +191,9 @@ class Xerrada(TranslatableModel):
                                      'cognoms': ' '.join(div[1:])})
         
         return presentadors
+
+    def tots_presentadors(self):
+        return list(self.presentadors.all()) + self.altres_presentadors_nom_cognoms()
 
     def presentadors_html(self):
         presentadors = list(self.presentadors.all()) + self.altres_presentadors_nom_cognoms()

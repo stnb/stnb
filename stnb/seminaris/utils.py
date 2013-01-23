@@ -17,6 +17,8 @@ def persones_nom_cognoms(persones_str):
     return persones
 
 def persones_html(persones):
+    if len(persones) == 0:
+        return ''
     persones.sort(key=lambda p: cognoms_lexic(p))
 
     persones_html = [ ]

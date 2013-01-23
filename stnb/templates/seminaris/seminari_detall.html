@@ -44,6 +44,13 @@
 <p><em>{% trans "Themes have not yet been chosen." %}</em></p>
 {% endif %}
 
+{% if seminari.presentadors_comunicacions_html %}
+<a name="comunicacions"></a>
+<h3>{% trans "Communications" %}</h3>
+
+<p>{{ seminari.presentadors_comunicacions_html|safe }}</p>
+{% endif %}
+
 
 <a name="calendari"></a>
 <h3>{% trans "Calendar" %}</h3>
