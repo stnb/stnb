@@ -16,7 +16,8 @@ class Seminari(TranslatableModel):
     slug = models.SlugField(max_length=50)
     data_inici = models.DateField()
     data_finalizacio = models.DateField()
-    organitzadors = models.ManyToManyField(Membre, related_name='seminaris')
+    organitzadors = models.ManyToManyField(Membre, related_name='seminaris',
+                                           blank=True, null=True)
     altres_organitzadors = models.CharField(max_length=250, blank=True,
                                             null=True)
     actiu = models.BooleanField(default=False)
