@@ -1,9 +1,13 @@
 {% load i18n %}
 
-<div class="temas">
+<div class="temes">
 {% for tema in temes %}
 	<div class="tema">
 		<h4>{{ tema.titol }}</h4>
+
+		<p class="organitzadors">
+			<strong>{% trans "Co-ordinators" %}:</strong> {{ tema.organitzadors_html|safe }}
+		</p>
 
 		<p>
 			<a href="{{ tema.get_absolute_url }}">{% trans "Full details" %}</a>.

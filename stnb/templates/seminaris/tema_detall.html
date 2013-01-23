@@ -8,11 +8,19 @@
 {% block contingut %}
 	<h3>{{ tema.titol }}</h3>
 
+	<h4>{% trans "Co-ordinators" %}</h4>
+
+	<p>
+		{{ tema.organitzadors_html|safe }}
+	</p>
+
+	{% if tema.descripcio %}
 	<h4>{% trans "Description" %}</h4>
 
 	<p>
 		{{ tema.descripcio|safe }}
 	</p>
+	{% endif %}
 
 	<h4>{% trans "Talks" %}</h4>
 
