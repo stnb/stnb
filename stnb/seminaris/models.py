@@ -64,7 +64,6 @@ class Seminari(TranslatableModel):
         p_dict = {}
         for xerrada in [i.xerrada for i in items]:
             for p in xerrada.tots_presentadors():
-                print p
                 if isinstance(p, dict):
                     nom_cognoms = p['nom'] + ' ' + p['cognoms']
                 else:
