@@ -39,3 +39,14 @@ server  {
 	}
 
 }
+
+server  {
+	listen		80;
+	server_name	*.stnb.tk;
+
+	location ~ /google(?:[a-f0-9]+).html  {
+		root /var/www/google_verify/stnb.tk;
+	}
+
+	rewrite ^/(.*) http://stnb.tk/$1 permanent;
+}
