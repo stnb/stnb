@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-22 23:04+0100\n"
+"POT-Creation-Date: 2013-01-23 13:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,7 +70,7 @@ msgid ""
 "%(fany)d"
 msgstr ""
 
-#: seminaris/models.py:205
+#: seminaris/models.py:222
 msgid "Only necessary if a talk isn't chosen."
 msgstr ""
 
@@ -158,15 +158,15 @@ msgstr ""
 msgid "Links"
 msgstr ""
 
-#: templates/base.html:111
+#: templates/base.html:112
 msgid "Languages"
 msgstr ""
 
-#: templates/base.html:120
+#: templates/base.html:121
 msgid "Copyright STNB"
 msgstr ""
 
-#: templates/base.html:120
+#: templates/base.html:121
 msgid "some rights reserved"
 msgstr ""
 
@@ -360,19 +360,19 @@ msgstr ""
 msgid "add your details"
 msgstr ""
 
-#: templates/inici/inici.html:11
+#: templates/inici/inici.html:14
 msgid ""
 "\n"
 "\tThis is a very brief introduction explaining what STNB is.\n"
 msgstr ""
 
-#: templates/inici/inici.html:17
+#: templates/inici/inici.html:21
 #: templates/noticies/noticies_ultimes_llista.html:5
 #: templates/noticies/noticies_ultimes_llista.html:6
 msgid "Latest news"
 msgstr ""
 
-#: templates/inici/inici.html:31
+#: templates/inici/inici.html:35
 msgid "There are currently no news items."
 msgstr ""
 
@@ -395,16 +395,21 @@ msgid "Please log in to see member email addresses."
 msgstr ""
 
 #: templates/seminaris/_seminari_temes.html:9
+#: templates/seminaris/tema_detall.html:11
+msgid "Co-ordinators"
+msgstr ""
+
+#: templates/seminaris/_seminari_temes.html:13
 msgid "Full details"
 msgstr ""
 
 #: templates/seminaris/seminari_detall.html:13
-#: templates/seminaris/seminari_detall.html:32
+#: templates/seminaris/seminari_detall.html:39
 msgid "Themes"
 msgstr ""
 
 #: templates/seminaris/seminari_detall.html:14
-#: templates/seminaris/seminari_detall.html:42
+#: templates/seminaris/seminari_detall.html:56
 msgid "Calendar"
 msgstr ""
 
@@ -418,11 +423,19 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
-#: templates/seminaris/seminari_detall.html:37
+#: templates/seminaris/seminari_detall.html:32
+msgid "Organising committee"
+msgstr ""
+
+#: templates/seminaris/seminari_detall.html:44
 msgid "Themes have not yet been chosen."
 msgstr ""
 
-#: templates/seminaris/seminari_detall.html:47
+#: templates/seminaris/seminari_detall.html:49
+msgid "Communications"
+msgstr ""
+
+#: templates/seminaris/seminari_detall.html:61
 msgid "The calendar has not yet been set."
 msgstr ""
 
@@ -430,21 +443,21 @@ msgstr ""
 msgid "Seminar archive"
 msgstr ""
 
-#: templates/seminaris/tema_detall.html:11
+#: templates/seminaris/tema_detall.html:18
 msgid "Description"
 msgstr ""
 
-#: templates/seminaris/tema_detall.html:17
+#: templates/seminaris/tema_detall.html:25
 #: templates/seminaris/xerrada_llista.html:5
 #: templates/seminaris/xerrada_llista.html:6
 msgid "Talks"
 msgstr ""
 
-#: templates/seminaris/tema_detall.html:26
+#: templates/seminaris/tema_detall.html:34
 msgid "References"
 msgstr ""
 
-#: templates/seminaris/tema_detall.html:34
+#: templates/seminaris/tema_detall.html:42
 #: templates/seminaris/xerrada_detall.html:45
 #: templates/seminaris/xerrada_llista.html:13
 msgid "Return to seminar"

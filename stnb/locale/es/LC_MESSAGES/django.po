@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-22 23:04+0100\n"
+"POT-Creation-Date: 2013-01-23 13:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,7 +75,7 @@ msgstr ""
 "del %(idia)s %(idata)d de %(imes)s de %(iany)s al %(fdata)d %(fdia)d de "
 "%(fmes)s de %(fany)d"
 
-#: seminaris/models.py:205
+#: seminaris/models.py:222
 msgid "Only necessary if a talk isn't chosen."
 msgstr "Solo necesario cuando una charla no está elegida."
 
@@ -163,15 +163,15 @@ msgstr "Iniciar sesión"
 msgid "Links"
 msgstr "Enlaces"
 
-#: templates/base.html:111
+#: templates/base.html:112
 msgid "Languages"
 msgstr "Idiomas"
 
-#: templates/base.html:120
+#: templates/base.html:121
 msgid "Copyright STNB"
 msgstr "Copyright STNB"
 
-#: templates/base.html:120
+#: templates/base.html:121
 msgid "some rights reserved"
 msgstr "algunos derechos reservados"
 
@@ -373,19 +373,21 @@ msgstr "Ahora sería un buen momento para"
 msgid "add your details"
 msgstr "añadir tus detalles"
 
-#: templates/inici/inici.html:11
+#: templates/inici/inici.html:14
 msgid ""
 "\n"
 "\tThis is a very brief introduction explaining what STNB is.\n"
-msgstr "\n\tEste es una muy breve introducción, explicando que es STNB.\n"
+msgstr ""
+"\n"
+"\tEste es una muy breve introducción, explicando que es STNB.\n"
 
-#: templates/inici/inici.html:17
+#: templates/inici/inici.html:21
 #: templates/noticies/noticies_ultimes_llista.html:5
 #: templates/noticies/noticies_ultimes_llista.html:6
 msgid "Latest news"
 msgstr "Últimas noticias"
 
-#: templates/inici/inici.html:31
+#: templates/inici/inici.html:35
 msgid "There are currently no news items."
 msgstr "Ahora mismo no hay noticias nuevas."
 
@@ -409,17 +411,22 @@ msgstr ""
 "Por favor, iniciar sesión para ver el correo electrónico de un miembro."
 
 #: templates/seminaris/_seminari_temes.html:9
+#: templates/seminaris/tema_detall.html:11
+msgid "Co-ordinators"
+msgstr "Coordinadores"
+
+#: templates/seminaris/_seminari_temes.html:13
 #, fuzzy
 msgid "Full details"
 msgstr "añadir tus detalles"
 
 #: templates/seminaris/seminari_detall.html:13
-#: templates/seminaris/seminari_detall.html:32
+#: templates/seminaris/seminari_detall.html:39
 msgid "Themes"
 msgstr "Temas"
 
 #: templates/seminaris/seminari_detall.html:14
-#: templates/seminaris/seminari_detall.html:42
+#: templates/seminaris/seminari_detall.html:56
 msgid "Calendar"
 msgstr "Calendario"
 
@@ -433,11 +440,20 @@ msgstr "Fechas"
 msgid "Location"
 msgstr "Ubicación"
 
-#: templates/seminaris/seminari_detall.html:37
+#: templates/seminaris/seminari_detall.html:32
+msgid "Organising committee"
+msgstr "Comité organizador"
+
+#: templates/seminaris/seminari_detall.html:44
 msgid "Themes have not yet been chosen."
 msgstr "Temas todavía no han sido elegidas."
 
-#: templates/seminaris/seminari_detall.html:47
+#: templates/seminaris/seminari_detall.html:49
+#, fuzzy
+msgid "Communications"
+msgstr "Ubicación"
+
+#: templates/seminaris/seminari_detall.html:61
 msgid "The calendar has not yet been set."
 msgstr "El calendario todavía no está oficial."
 
@@ -445,22 +461,22 @@ msgstr "El calendario todavía no está oficial."
 msgid "Seminar archive"
 msgstr "Archivo de seminarios"
 
-#: templates/seminaris/tema_detall.html:11
+#: templates/seminaris/tema_detall.html:18
 #, fuzzy
 msgid "Description"
 msgstr "Registro"
 
-#: templates/seminaris/tema_detall.html:17
+#: templates/seminaris/tema_detall.html:25
 #: templates/seminaris/xerrada_llista.html:5
 #: templates/seminaris/xerrada_llista.html:6
 msgid "Talks"
 msgstr "Charlas"
 
-#: templates/seminaris/tema_detall.html:26
+#: templates/seminaris/tema_detall.html:34
 msgid "References"
 msgstr "Referencias"
 
-#: templates/seminaris/tema_detall.html:34
+#: templates/seminaris/tema_detall.html:42
 #: templates/seminaris/xerrada_detall.html:45
 #: templates/seminaris/xerrada_llista.html:13
 msgid "Return to seminar"
@@ -506,7 +522,9 @@ msgid ""
 "Seminar (STNB). It will perhaps mention some important dates (how long the "
 "seminar has been running) and mention that it's held in Barcelona every "
 "year.\n"
-msgstr "\nTexto aquí que no es el texto verdadero.\n"
+msgstr ""
+"\n"
+"Texto aquí que no es el texto verdadero.\n"
 
 #: templates/sobre-stnb/sobre-stnb.html:12
 msgid ""
@@ -514,7 +532,12 @@ msgid ""
 "A second paragraph may go into some depth on the fact that STNB is a "
 "collaboration of all number theory groups in Barcelona, yet often includes "
 "talks from groups from other universities and centres.\n"
-msgstr "\nTexto aquí que no es el texto verdadero.\n"
+msgstr ""
+"\n"
+"Texto aquí que no es el texto verdadero.\n"
+
+#~ msgid "Organisers"
+#~ msgstr "Comité organizador"
 
 #~ msgid "Affiliated Institutions"
 #~ msgstr "Instituciones afiliadas"
