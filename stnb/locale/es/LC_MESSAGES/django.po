@@ -185,7 +185,7 @@ msgstr "Sesión cerrado con éxito"
 
 #: templates/comptes/logged_out.html:11
 msgid "You have successfully logged out."
-msgstr "Ha terminado la sesión con éxito."
+msgstr "Has terminado la sesión con éxito."
 
 #: templates/comptes/logged_out.html:11 templates/comptes/login.html:29
 msgid "You can"
@@ -462,9 +462,8 @@ msgid "Seminar archive"
 msgstr "Archivo de seminarios"
 
 #: templates/seminaris/tema_detall.html:18
-#, fuzzy
 msgid "Description"
-msgstr "Registro"
+msgstr "Descripció"
 
 #: templates/seminaris/tema_detall.html:25
 #: templates/seminaris/xerrada_llista.html:5
