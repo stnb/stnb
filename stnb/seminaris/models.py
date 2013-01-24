@@ -20,6 +20,8 @@ class Seminari(TranslatableModel):
                                            blank=True, null=True)
     altres_organitzadors = models.CharField(max_length=250, blank=True,
                                             null=True)
+    programa_pdf = models.FileField(upload_to='seminaris/programes',
+                                     blank=True, null=True)
     actiu = models.BooleanField(default=False)
     
     translations = TranslatedFields(
