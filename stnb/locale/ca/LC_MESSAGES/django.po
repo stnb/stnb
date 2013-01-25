@@ -77,7 +77,7 @@ msgstr ""
 
 #: seminaris/models.py:222
 msgid "Only necessary if a talk isn't chosen."
-msgstr "Només necessari si una xerrada no està elegit"
+msgstr "Necessari només si no s'ha seleccionat cap xerrada"
 
 #: templates/404.html:5 templates/404.html.py:6
 msgid "Error 404"
@@ -123,7 +123,7 @@ msgstr "Seminari de Teoria de Nombres de Barcelona"
 
 #: templates/base.html:36
 msgid "Active<br />Seminar"
-msgstr "Seminari<br />Actiu"
+msgstr "Seminari<br />Actual"
 
 #: templates/base.html:37
 msgid "Seminar<br />Archive"

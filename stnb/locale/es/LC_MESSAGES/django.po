@@ -70,7 +70,7 @@ msgstr "del %(idia)s %(idata)d de %(imes)s de %(iany)s al %(fdata)d %(fdia)d de 
 
 #: seminaris/models.py:222
 msgid "Only necessary if a talk isn't chosen."
-msgstr "Necesario sólo si una charla no está seleccionada."
+msgstr "Necesario sólo si no se ha seleccionado ninguna charla"
 
 #: templates/404.html:5 templates/404.html.py:6
 msgid "Error 404"
