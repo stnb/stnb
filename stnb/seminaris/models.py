@@ -142,6 +142,10 @@ class Dia(TranslatableModel):
         return '<a href="%s">%s</a>' % (admin_url, self.seminari,)
     modifica_seminari.allow_tags = True
 
+#    def dummy_days(self):
+#        return (_('Monday'), _('Tuesday'), _('Wednesday'), _('Thursday'), \
+#                _('Friday'), _('Saturday'), _('Sunday'),)
+
 class Xerrada(TranslatableModel):
     tema = models.ForeignKey(Tema, related_name='xerrades',
                                blank=True, null=True)
@@ -234,7 +238,7 @@ class ItemPrograma(TranslatableModel):
     def __unicode__(self):
         duracio = self.duracio()
         if duracio:
-            return '%s (%s): %s' % (self.dia, duracio, self.titol(),)
+            return '%s (%s): %s' % (unicode(self.dia), duracio, self.titol(),)
         else:
             return '<ItemPrograma>'
 
