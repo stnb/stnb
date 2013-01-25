@@ -110,15 +110,16 @@ msgstr "Error intern del servidor"
 
 #: templates/500.html:12
 msgid "An internal server error has occurred."
-msgstr "Un error intern del servidor s'ha produït "
+msgstr "S'ha produít  un error intern del servidor."
+
 
 #: templates/500.html:12
 msgid "If this error persists, please contact the"
-msgstr "Si aquest error sigui, sis plau contacta amb el"
+msgstr "Si aquest error persisteix, contacteu amb el"
 
 #: templates/base.html:10 templates/inici/inici.html:6
-msgid "Seminari de Teoria de Nombres Barcelona"
-msgstr "Seminari de Teoria de Nombres Barcelona"
+msgid "Seminari de Teoria de Nombres de Barcelona"
+msgstr "Seminari de Teoria de Nombres de Barcelona"
 
 #: templates/base.html:36
 msgid "Active<br />Seminar"
@@ -142,7 +143,7 @@ msgstr "Compte"
 
 #: templates/base.html:88
 msgid "Profile page"
-msgstr "Pàgina de perfil"
+msgstr "Pàgina del perfil"
 
 #: templates/base.html:89
 msgid "Admin console"
@@ -177,19 +178,19 @@ msgstr "alguns drets reservats"
 
 #: templates/comptes/logged_out.html:4
 msgid "Logged out"
-msgstr "Sessió tancat"
+msgstr "Sessió tancada"
 
 #: templates/comptes/logged_out.html:8
 msgid "Successfully logged out"
-msgstr "Sessió terminada amb èxit"
+msgstr "Sessió tancada amb èxit"
 
 #: templates/comptes/logged_out.html:11
 msgid "You have successfully logged out."
-msgstr "Has terminat la sessió amb èxit."
+msgstr "S'ha tancat la sessió amb èxit."
 
 #: templates/comptes/logged_out.html:11 templates/comptes/login.html:29
 msgid "You can"
-msgstr "Pots"
+msgstr "Podeu"
 
 #: templates/comptes/logged_out.html:11
 msgid "log in again"
@@ -197,7 +198,7 @@ msgstr "iniciar altra sessió"
 
 #: templates/comptes/logged_out.html:11
 msgid "or return to the"
-msgstr "ó tornar al"
+msgstr "o bé tornar a"
 
 #: templates/comptes/logged_out.html:11
 msgid "home page"
@@ -205,23 +206,23 @@ msgstr "inici"
 
 #: templates/comptes/login.html:20
 msgid "Forgotten password?"
-msgstr "Has oblidat la teva contrasenya?"
+msgstr "Heu oblidat la contrasenya?"
 
 #: templates/comptes/login.html:23
 msgid "If you've forgotten your password,"
-msgstr "Si has oblidat la teva contrasenya,"
+msgstr "Si heu oblidat la contrasenya,"
 
 #: templates/comptes/login.html:23
 msgid "click here to reset it"
-msgstr "fes clic aquí per a restablir-ho"
+msgstr "feu clic aquí per restablir-la"
 
 #: templates/comptes/login.html:26
 msgid "Don't have an account?"
-msgstr "No tens un compte?"
+msgstr "No teniu compte?"
 
 #: templates/comptes/login.html:29
 msgid "sign up for an account"
-msgstr "Registrar per a un compte"
+msgstr "Creeu un compte"
 
 #: templates/comptes/password_reset_complete.html:4
 #: templates/comptes/password_reset_confirm.html:4
@@ -232,25 +233,25 @@ msgstr "Restablir contrasenya"
 
 #: templates/comptes/password_reset_complete.html:9
 msgid "Password reset complete"
-msgstr "Contrasenya restablert"
+msgstr "Contrasenya restablerta"
 
 #: templates/comptes/password_reset_complete.html:11
 msgid "Your new password has been set. You may go ahead and log in now."
-msgstr "La teva nova contrasenya ha estat actualitzat. Ara pots iniciar una sessió"
+msgstr "La contrasenya ha estat actualitzada. Podeu iniciar  sessió"
 
 #: templates/comptes/password_reset_confirm.html:9
 msgid "Enter new password"
-msgstr "Entrar nova contrasenya"
+msgstr "Introduïu la nova contrasenya"
 
 #: templates/comptes/password_reset_confirm.html:9
 msgid "Password reset unsuccessful"
-msgstr "Contrasenya no restablert"
+msgstr "Contrasenya no restablerta"
 
 #: templates/comptes/password_reset_confirm.html:12
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
-msgstr "Sis plau entra la teva contrasenya dos vegades para verificació"
+msgstr "Si us plau, introduïu la contrasenya dues vegades per ser verificada"
 
 #: templates/comptes/password_reset_confirm.html:19
 msgid "Password"
@@ -262,50 +263,50 @@ msgstr "Nova contrasenya:"
 
 #: templates/comptes/password_reset_confirm.html:26
 msgid "Confirm password"
-msgstr "Confirmar contrasenya"
+msgstr "Confirmar la contrasenya"
 
 #: templates/comptes/password_reset_confirm.html:29
 msgid "Confirm password:"
-msgstr "Confirmar contrasenya"
+msgstr "Confirmar la contrasenya"
 
 #: templates/comptes/password_reset_confirm.html:30
 msgid "Change my password"
-msgstr "Canviar la meva contrasenya"
+msgstr "Canviar la contrasenya"
 
 #: templates/comptes/password_reset_confirm.html:33
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset."
-msgstr "El enllaç per a restablir la contrasenya és invàlid, possiblement perquè ja "
-"ha estat utilitzat. Sis plau, demanar el restabliment de la teva contrasenya "
-"altre vagada."
+msgstr "L'enllaç per  restablir la contrasenya és invàlid, possiblement perquÃ¨ ja "
+"ha estat utilitzat. Si us plau, demaneu el restabliment de la teva contrasenya "
+"una altra vegada."
 
 #: templates/comptes/password_reset_done.html:9
 msgid ""
 "We've e-mailed you instructions for setting your password to the e-mail "
 "address you submitted. You should be receiving it shortly."
-msgstr "T'hem enviat instruccions per a restablir la teva contrasenya a la"
-"adreça especificat. Hauries rebre'l aquí a uns minuts."
+msgstr "Les instruccions per restablir la contrasenya s'han enviat a"
+"l'adreça electrònica especificada."
 
 #: templates/comptes/password_reset_form.html:9
 msgid "Forgotten your password?"
-msgstr "Has oblidat la teva contrasenya?"
+msgstr "Heu oblidat la contrasenya?"
 
 #: templates/comptes/password_reset_form.html:11
 msgid ""
 "Enter your e-mail address below, and we'll e-mail instructions for setting a "
 "new password."
 msgstr ""
-"Entrar el teu e-mail abaix y t'enviem instruccions per a restablir la teva "
+"Introduïu la vostra adreça electrònica i rebreu instruccions per restablir la "
 "contrasenya"
 
 #: templates/comptes/password_reset_form.html:22
 msgid "Reset my password"
-msgstr "Restablir la meva contrasenya"
+msgstr "Restablir la contrasenya"
 
 #: templates/comptes/perfil_actualizar.html:4
 msgid "Update Profile"
-msgstr "Actualitzar perfil"
+msgstr "Actualitzar el perfil"
 
 #: templates/comptes/perfil_actualizar.html:15
 #: templates/membres/membre_actualizar_form.html:18
@@ -327,12 +328,12 @@ msgstr "buit"
 
 #: templates/comptes/perfil_detall.html:12
 msgid "Add your name"
-msgstr "Afegir el neu nom"
+msgstr "Afegiu el nom"
 
 #: templates/comptes/perfil_detall.html:14
 #: templates/membres/membre_detall.html:18
 msgid "Email"
-msgstr "Email"
+msgstr "Adreça electrònica"
 
 #: templates/comptes/registration_form.html:4
 msgid "Register"
@@ -344,11 +345,11 @@ msgstr "Registrar"
 
 #: templates/comptes/registration_form.html:20
 msgid "Already have an account?"
-msgstr "Ja tens un compte?"
+msgstr "Ja teniu un compte?"
 
 #: templates/comptes/registration_form.html:23
 msgid "If you already have an account, you can,"
-msgstr "Si ja tens un compte, pots"
+msgstr "Si ja teniu un compte, podeu"
 
 #: templates/comptes/registre_fet.html:4
 msgid "Registration"
@@ -356,19 +357,19 @@ msgstr "Registre"
 
 #: templates/comptes/registre_fet.html:9
 msgid "Registration complete"
-msgstr "Registre acabat"
+msgstr "Registre completat"
 
 #: templates/comptes/registre_fet.html:11
 msgid "You have registered successfully."
-msgstr "Has registrat amb èxit"
+msgstr "Us heu registrat amb éxit"
 
 #: templates/comptes/registre_fet.html:11
 msgid "Now would be a good time to"
-msgstr "Ara seria un bon moment per a"
+msgstr "Ara seria un bon moment per"
 
 #: templates/comptes/registre_fet.html:11
 msgid "add your details"
-msgstr "afegir els teus detalls"
+msgstr "afegiu els vostres detalls"
 
 #: templates/inici/inici.html:14
 msgid ""
@@ -376,17 +377,17 @@ msgid ""
 "\tThis is a very brief introduction explaining what STNB is.\n"
 msgstr ""
 "\n"
-"Aquest és una curta introducció explicant que és STNB.\n"
+"Aquesta és una breu introducció al STNB.\n"
 
 #: templates/inici/inici.html:21
 #: templates/noticies/noticies_ultimes_llista.html:5
 #: templates/noticies/noticies_ultimes_llista.html:6
 msgid "Latest news"
-msgstr "Últimes noticies"
+msgstr "Últimes noticíes"
 
 #: templates/inici/inici.html:35
 msgid "There are currently no news items."
-msgstr "Ara mateix no hi ha cap noticies"
+msgstr "Ara mateix no hi ha cap notícia"
 
 #: templates/membres/membre_actualizar_form.html:6
 #: templates/membres/membre_actualizar_form.html:7
@@ -400,20 +401,20 @@ msgstr "Perfil de membre"
 
 #: templates/membres/membre_detall.html:12
 msgid "profile photo of"
-msgstr "foto de perfil de"
+msgstr "foto del perfil de"
 
 #: templates/membres/membre_detall.html:20
 msgid "Please log in to see member email addresses."
-msgstr "Sis plau iniciar una sessió per a veure el correu electrònic d'un membre"
+msgstr "Si us plau, inicieu sessió per veure el correu electrònic d'un membre"
 
 #: templates/seminaris/_seminari_temes.html:9
 #: templates/seminaris/tema_detall.html:11
 msgid "Co-ordinators"
-msgstr "Coordinadors"
+msgstr "Coordinació"
 
 #: templates/seminaris/_seminari_temes.html:13
 msgid "Full details"
-msgstr "Detalls complets"
+msgstr "Detalls completats"
 
 #: templates/seminaris/seminari_detall.html:13
 #: templates/seminaris/seminari_detall.html:39
@@ -433,7 +434,7 @@ msgstr "Dates"
 #: templates/seminaris/seminari_detall.html:25
 #: templates/seminaris/seminari_llista.html:14
 msgid "Location"
-msgstr "Ubicació"
+msgstr "Lloc"
 
 #: templates/seminaris/seminari_detall.html:32
 msgid "Organising committee"
@@ -441,7 +442,7 @@ msgstr "Comitè organitzador"
 
 #: templates/seminaris/seminari_detall.html:44
 msgid "Themes have not yet been chosen."
-msgstr "Les temes encara no s'han elegit"
+msgstr "Els temes encara no s'han escollit"
 
 #: templates/seminaris/seminari_detall.html:49
 msgid "Communications"
@@ -467,7 +468,7 @@ msgstr "Xerrades"
 
 #: templates/seminaris/tema_detall.html:34
 msgid "References"
-msgstr "Referencies"
+msgstr "Referències"
 
 #: templates/seminaris/tema_detall.html:42
 #: templates/seminaris/xerrada_detall.html:45
@@ -477,7 +478,7 @@ msgstr "Tornar al seminari"
 
 #: templates/seminaris/xerrada_detall.html:12
 msgid "Presenters"
-msgstr "Presentadors"
+msgstr "Ponents"
 
 #: templates/seminaris/xerrada_detall.html:16
 msgid "Abstract"
@@ -493,7 +494,7 @@ msgstr "Fitxers"
 
 #: templates/seminaris/xerrada_detall.html:31
 msgid "Download presentation"
-msgstr "Descarregar presentació"
+msgstr "Descarregar presentaciÃ³"
 
 #: templates/seminaris/xerrada_detall.html:36
 msgid "Download article"
@@ -501,7 +502,7 @@ msgstr "Descarregar article"
 
 #: templates/seminaris/xerrada_detall.html:41
 msgid "No files available for download"
-msgstr "No hi ha fitxers per a descarregar"
+msgstr "No hi ha fitxers per descarregar"
 
 #: templates/sobre-stnb/sobre-stnb.html:4
 msgid "About STNB"
@@ -517,7 +518,7 @@ msgid ""
 "year.\n"
 msgstr ""
 "\n"
-"Text aquí que no és el text veritable.\n"
+"Text de mostra.\n"
 
 #: templates/sobre-stnb/sobre-stnb.html:12
 msgid ""
@@ -527,4 +528,4 @@ msgid ""
 "talks from groups from other universities and centres.\n"
 msgstr ""
 "\n"
-"Text aquí que no és el text veritable.\n"
+"Text de mostra.\n"
