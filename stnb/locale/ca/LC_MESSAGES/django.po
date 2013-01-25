@@ -277,7 +277,7 @@ msgstr "Canviar la contrasenya"
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset."
-msgstr "L'enllaç per  restablir la contrasenya és invàlid, possiblement perquÃ¨ ja "
+msgstr "L'enllaç per  restablir la contrasenya és invàlid, possiblement perquè¨ ja "
 "ha estat utilitzat. Si us plau, demaneu el restabliment de la teva contrasenya "
 "una altra vegada."
 
@@ -494,7 +494,7 @@ msgstr "Fitxers"
 
 #: templates/seminaris/xerrada_detall.html:31
 msgid "Download presentation"
-msgstr "Descarregar presentaciÃ³"
+msgstr "Descarregar presentació"
 
 #: templates/seminaris/xerrada_detall.html:36
 msgid "Download article"
