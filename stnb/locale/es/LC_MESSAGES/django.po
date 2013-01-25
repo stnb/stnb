@@ -3,20 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-01-23 13:51+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2013-01-25 13:39+0100\n"
+"Last-Translator: M. Alsina <montserrat.alsina@upc.edu>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: comptes/forms.py:8
 msgid "First name"
@@ -62,22 +61,16 @@ msgstr "del %(idia)s %(idata)d al %(fdia)s %(fdata)d %(imes)s, %(iany)d"
 #: seminaris/models.py:46
 #, python-format
 msgid "%(idia)s %(idata)d %(imes)s to %(fdia)s %(fdata)d %(fmes)s, %(iany)d"
-msgstr ""
-"del %(idia)s %(idata)d de %(imes)s al %(fdia)s %(fdata)d de %(fmes)s de "
-"%(iany)d"
+msgstr "del %(idia)s %(idata)d de %(imes)s al %(fdia)s %(fdata)d de %(fmes)s de %(iany)d"
 
 #: seminaris/models.py:48
 #, python-format
-msgid ""
-"%(idia)s %(idata)d %(imes)s, %(iany)s %(fdata)d to %(fdia)d %(fmes)s, "
-"%(fany)d"
-msgstr ""
-"del %(idia)s %(idata)d de %(imes)s de %(iany)s al %(fdata)d %(fdia)d de "
-"%(fmes)s de %(fany)d"
+msgid "%(idia)s %(idata)d %(imes)s, %(iany)s %(fdata)d to %(fdia)d %(fmes)s, %(fany)d"
+msgstr "del %(idia)s %(idata)d de %(imes)s de %(iany)s al %(fdata)d %(fdia)d de %(fmes)s de %(fany)d"
 
 #: seminaris/models.py:222
 msgid "Only necessary if a talk isn't chosen."
-msgstr "Solo necesario cuando una charla no está elegida."
+msgstr "Necesario sólo si una charla no está seleccionada."
 
 #: templates/404.html:5 templates/404.html.py:6
 msgid "Error 404"
@@ -85,11 +78,11 @@ msgstr "Error 404"
 
 #: templates/404.html:10
 msgid "Page not found"
-msgstr "Página no encontrado"
+msgstr "Página no encontrada"
 
 #: templates/404.html:12
 msgid "The page you are looking for could not be found."
-msgstr "La página que buscas no se podía encontrar."
+msgstr "La página buscada no se ha podido encontrar."
 
 #: templates/404.html:12 templates/500.html:14
 msgid "Return"
@@ -110,19 +103,19 @@ msgstr "Error interno del servidor"
 
 #: templates/500.html:12
 msgid "An internal server error has occurred."
-msgstr "Un error interno del servido ha ocurrido."
+msgstr "Ha ocurrido un error interno del servidor."
 
 #: templates/500.html:12
 msgid "If this error persists, please contact the"
-msgstr "Si ese error sigue, por favor contacte con el"
+msgstr "Si el error persiste, por favor contacte con el"
 
 #: templates/base.html:10 templates/inici/inici.html:6
 msgid "Seminari de Teoria de Nombres Barcelona"
-msgstr "Seminari de Teoria de Nombres Barcelona"
+msgstr "Seminari de Teoria de Nombres de Barcelona"
 
 #: templates/base.html:36
 msgid "Active<br />Seminar"
-msgstr "Seminar<br />Actual"
+msgstr "Seminario<br />Actual"
 
 #: templates/base.html:37
 msgid "Seminar<br />Archive"
@@ -130,7 +123,7 @@ msgstr "Archivo de<br />Seminarios"
 
 #: templates/base.html:38
 msgid "About<br />STNB"
-msgstr "Sobre<br />STNB"
+msgstr "Sobre<br /> el STNB"
 
 #: templates/base.html:39
 msgid "Members"
@@ -177,15 +170,15 @@ msgstr "algunos derechos reservados"
 
 #: templates/comptes/logged_out.html:4
 msgid "Logged out"
-msgstr "Sesión cerrado"
+msgstr "Sesión cerrada"
 
 #: templates/comptes/logged_out.html:8
 msgid "Successfully logged out"
-msgstr "Sesión cerrado con éxito"
+msgstr "Sesión cerrada con éxito"
 
 #: templates/comptes/logged_out.html:11
 msgid "You have successfully logged out."
-msgstr "Has terminado la sesión con éxito."
+msgstr "Se ha cerrado la sesión con éxito."
 
 #: templates/comptes/logged_out.html:11 templates/comptes/login.html:29
 msgid "You can"
@@ -205,7 +198,7 @@ msgstr "inicio "
 
 #: templates/comptes/login.html:20
 msgid "Forgotten password?"
-msgstr "¿Ha olvidado tu contraseña?"
+msgstr "¿Ha olvidado su contraseña?"
 
 #: templates/comptes/login.html:23
 msgid "If you've forgotten your password,"
@@ -213,7 +206,7 @@ msgstr "Si ha olvidado su contraseña,"
 
 #: templates/comptes/login.html:23
 msgid "click here to reset it"
-msgstr "haz clic aquí para reiniciarla"
+msgstr "Pulse aquí para reiniciarla"
 
 #: templates/comptes/login.html:26
 msgid "Don't have an account?"
@@ -232,26 +225,23 @@ msgstr "Restablecer contraseña"
 
 #: templates/comptes/password_reset_complete.html:9
 msgid "Password reset complete"
-msgstr "Contraseña restablecido"
+msgstr "Contraseña restablecida"
 
 #: templates/comptes/password_reset_complete.html:11
 msgid "Your new password has been set. You may go ahead and log in now."
-msgstr ""
-"Tu nueva contraseña ha sido actualizado. Ahora puede iniciar una sesión."
+msgstr "Su contraseña ha sido actualizada. Puede iniciar sesión."
 
 #: templates/comptes/password_reset_confirm.html:9
 msgid "Enter new password"
-msgstr "Entre nueva contraseña"
+msgstr "Introduzca una nueva contraseña"
 
 #: templates/comptes/password_reset_confirm.html:9
 msgid "Password reset unsuccessful"
-msgstr "Contraseña no restablecido"
+msgstr "Contraseña no restablecida"
 
 #: templates/comptes/password_reset_confirm.html:12
-msgid ""
-"Please enter your new password twice so we can verify you typed it in "
-"correctly."
-msgstr "Por favor entre la nueva contraseña dos veces, para verificación"
+msgid "Please enter your new password twice so we can verify you typed it in correctly."
+msgstr "Por favor introduzca la nueva contraseña dos veces, para verificación"
 
 #: templates/comptes/password_reset_confirm.html:19
 msgid "Password"
@@ -271,36 +261,23 @@ msgstr "Confirmar contraseña:"
 
 #: templates/comptes/password_reset_confirm.html:30
 msgid "Change my password"
-msgstr "Combiar mi contraseña"
+msgstr "Cambiar contraseña"
 
 #: templates/comptes/password_reset_confirm.html:33
-msgid ""
-"The password reset link was invalid, possibly because it has already been "
-"used. Please request a new password reset."
-msgstr ""
-"El enlace para restablecer la contraseña es inválido, posiblemente porque ya "
-"ha sido utilizado. Por favor, pide un restablecimiento de tu contraseña otra "
-"vez."
+msgid "The password reset link was invalid, possibly because it has already been used. Please request a new password reset."
+msgstr "El enlace para restablecer la contraseña es inválido, posiblemente porque ya ha sido utilizado. Por favor, solicite restablecer la constrasenya de nuevo."
 
 #: templates/comptes/password_reset_done.html:9
-msgid ""
-"We've e-mailed you instructions for setting your password to the e-mail "
-"address you submitted. You should be receiving it shortly."
-msgstr ""
-"Te hemos enviado instrucciones para restablecer tu contraseña a la dirección "
-"especificado. Deberías recibirlo dentro de unos minutos."
+msgid "We've e-mailed you instructions for setting your password to the e-mail address you submitted. You should be receiving it shortly."
+msgstr "Las instrucciones para restablecer su contraseña se han enviado a la dirección electrónica especificada. Pueden tardar unos minutos."
 
 #: templates/comptes/password_reset_form.html:9
 msgid "Forgotten your password?"
-msgstr "¿Has olvidado tu contraseña?"
+msgstr "¿Ha olvidado su contraseña?"
 
 #: templates/comptes/password_reset_form.html:11
-msgid ""
-"Enter your e-mail address below, and we'll e-mail instructions for setting a "
-"new password."
-msgstr ""
-"Entrar tu dirección de correo electrónico y te mandaremos instrucciones para "
-"restablecer tu contraseña."
+msgid "Enter your e-mail address below, and we'll e-mail instructions for setting a new password."
+msgstr "Introduzca su dirección de correo electrónico y le mandaremos instrucciones para restablecer su contraseña."
 
 #: templates/comptes/password_reset_form.html:22
 msgid "Reset my password"
@@ -326,11 +303,11 @@ msgstr "Nombre"
 
 #: templates/comptes/perfil_detall.html:12
 msgid "empty"
-msgstr "vacio"
+msgstr "vacío"
 
 #: templates/comptes/perfil_detall.html:12
 msgid "Add your name"
-msgstr "Añadir tu nombre"
+msgstr "Añadir nombre"
 
 #: templates/comptes/perfil_detall.html:14
 #: templates/membres/membre_detall.html:18
@@ -347,11 +324,11 @@ msgstr "Registrar"
 
 #: templates/comptes/registration_form.html:20
 msgid "Already have an account?"
-msgstr "¿Ya tienes una cuenta?"
+msgstr "¿Ya tiene una cuenta?"
 
 #: templates/comptes/registration_form.html:23
 msgid "If you already have an account, you can,"
-msgstr "Si ya tienes una cuenta, puedes"
+msgstr "Si ya tiene una cuenta, puede"
 
 #: templates/comptes/registre_fet.html:4
 msgid "Registration"
@@ -359,11 +336,11 @@ msgstr "Registro"
 
 #: templates/comptes/registre_fet.html:9
 msgid "Registration complete"
-msgstr "Registro completa"
+msgstr "Registro completado"
 
 #: templates/comptes/registre_fet.html:11
 msgid "You have registered successfully."
-msgstr "Has registrado con éxito"
+msgstr "Se ha registrado con éxito"
 
 #: templates/comptes/registre_fet.html:11
 msgid "Now would be a good time to"
@@ -371,7 +348,7 @@ msgstr "Ahora sería un buen momento para"
 
 #: templates/comptes/registre_fet.html:11
 msgid "add your details"
-msgstr "añadir tus detalles"
+msgstr "añadir sus detalles"
 
 #: templates/inici/inici.html:14
 msgid ""
@@ -379,7 +356,7 @@ msgid ""
 "\tThis is a very brief introduction explaining what STNB is.\n"
 msgstr ""
 "\n"
-"\tEste es una muy breve introducción, explicando que es STNB.\n"
+"\Esta es una breve introducción al STNB.\n"
 
 #: templates/inici/inici.html:21
 #: templates/noticies/noticies_ultimes_llista.html:5
@@ -403,17 +380,16 @@ msgstr "Perfil de miembro"
 
 #: templates/membres/membre_detall.html:12
 msgid "profile photo of"
-msgstr "foto de perfil de"
+msgstr "foto del perfil de"
 
 #: templates/membres/membre_detall.html:20
 msgid "Please log in to see member email addresses."
-msgstr ""
-"Por favor, iniciar sesión para ver el correo electrónico de un miembro."
+msgstr "Por favor, iniciar sesión para ver el correo electrónico de un miembro."
 
 #: templates/seminaris/_seminari_temes.html:9
 #: templates/seminaris/tema_detall.html:11
 msgid "Co-ordinators"
-msgstr "Coordinadores"
+msgstr "Coordinación"
 
 #: templates/seminaris/_seminari_temes.html:13
 #, fuzzy
@@ -446,7 +422,7 @@ msgstr "Comité organizador"
 
 #: templates/seminaris/seminari_detall.html:44
 msgid "Themes have not yet been chosen."
-msgstr "Temas todavía no han sido elegidas."
+msgstr "Los temas todavía no han sido elegidos."
 
 #: templates/seminaris/seminari_detall.html:49
 #, fuzzy
@@ -455,7 +431,7 @@ msgstr "Ubicación"
 
 #: templates/seminaris/seminari_detall.html:61
 msgid "The calendar has not yet been set."
-msgstr "El calendario todavía no está oficial."
+msgstr "El calendario todavía no está confirmado."
 
 #: templates/seminaris/seminari_llista.html:5
 msgid "Seminar archive"
@@ -463,7 +439,7 @@ msgstr "Archivo de seminarios"
 
 #: templates/seminaris/tema_detall.html:18
 msgid "Description"
-msgstr "Descripció"
+msgstr "Descripción"
 
 #: templates/seminaris/tema_detall.html:25
 #: templates/seminaris/xerrada_llista.html:5
@@ -511,29 +487,23 @@ msgstr "No hay ficheros disponibles para descargar"
 
 #: templates/sobre-stnb/sobre-stnb.html:4
 msgid "About STNB"
-msgstr "Sobre STNB"
+msgstr "Sobre el STNB"
 
 #: templates/sobre-stnb/sobre-stnb.html:8
 msgid ""
 "\n"
-"This text is not the real copy, the real copy will be much better written "
-"and describe a little bit about the history of the Barcelona Number Theory "
-"Seminar (STNB). It will perhaps mention some important dates (how long the "
-"seminar has been running) and mention that it's held in Barcelona every "
-"year.\n"
+"This text is not the real copy, the real copy will be much better written and describe a little bit about the history of the Barcelona Number Theory Seminar (STNB). It will perhaps mention some important dates (how long the seminar has been running) and mention that it's held in Barcelona every year.\n"
 msgstr ""
 "\n"
-"Texto aquí que no es el texto verdadero.\n"
+"Texto de prueba.\n"
 
 #: templates/sobre-stnb/sobre-stnb.html:12
 msgid ""
 "\n"
-"A second paragraph may go into some depth on the fact that STNB is a "
-"collaboration of all number theory groups in Barcelona, yet often includes "
-"talks from groups from other universities and centres.\n"
+"A second paragraph may go into some depth on the fact that STNB is a collaboration of all number theory groups in Barcelona, yet often includes talks from groups from other universities and centres.\n"
 msgstr ""
 "\n"
-"Texto aquí que no es el texto verdadero.\n"
+"Más texto de prueba.\n"
 
 #~ msgid "Organisers"
 #~ msgstr "Comité organizador"
