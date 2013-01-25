@@ -50,13 +50,13 @@ class Seminari(TranslatableModel):
         else:
             dstr= _('%(idia)s %(idata)d %(imes)s, %(iany)s %(fdata)d to %(fdia)d %(fmes)s, %(fany)d')
 
-        return dstr % { 'idia': _(self.data_inici.strftime('%A')),
+        return dstr % { 'idia': _(self.data_inici.strftime('%A').decode('utf-8')),
                         'idata': self.data_inici.day,
-                        'imes': _(self.data_inici.strftime('%B')),
+                        'imes': _(self.data_inici.strftime('%B').decode('utf-8')),
                         'iany': self.data_inici.year,
-                        'fdia': _(self.data_finalizacio.strftime('%A')),
+                        'fdia': _(self.data_finalizacio.strftime('%A').decode('utf-8')),
                         'fdata': self.data_finalizacio.day,
-                        'fmes': _(self.data_finalizacio.strftime('%B')),
+                        'fmes': _(self.data_finalizacio.strftime('%B').decode('utf-8')),
                         'fany': self.data_finalizacio.year, }
 
     def organitzadors_html(self):
@@ -133,7 +133,8 @@ class Dia(TranslatableModel):
         ordering = ['seminari__data_inici', 'data',]
 
     def __unicode__(self):
-        return '%s %d' % (_(self.data.strftime('%A')), self.data.day,)
+        return _(self.data.strftime('%A').decode('utf-8')) + ' ' + unicode(self.data.day)
+        #return str(self.data.day)
 
     def modifica_seminari(self):
         admin_url = reverse('admin:seminaris_seminari_change',
