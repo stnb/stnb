@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ lang }}" lang="{{ lang }}">
 	<head>
 		<meta charset="utf-8" />
-		<title>STNB - {% trans "Seminari de Teoria de Nombres Barcelona" %} - {% block titol-head %}2013{% endblock titol-head %}</title>
+		<title>STNB - {% trans "Seminari de Teoria de Nombres de Barcelona" %} - {% block titol-head %}2013{% endblock titol-head %}</title>
 		<link href='http://fonts.googleapis.com/css?family=Titillium+Web:300,700|Oswald:400,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" media="screen" type="text/css" href="{{ STATIC_URL }}css/stnb-main.css" />
 		{% block extra-head %}{% endblock extra-head %}
@@ -33,7 +33,7 @@
 				<div id="menu">
 					<ul>
 						<li><a class="inici" href="{% url inici %}">{% trans "Home" %}</a></li>
-						<li><a class="seminari-actual" href="{% url seminari-actual %}">{% trans "Active<br />Seminar" %}</a></li>
+						<li><a class="seminari-actual" href="{% url seminari-actual %}">{% trans "Current<br />Seminar" %}</a></li>
 						<li><a class="arxiu-seminaris" href="{% url seminari-llista %}">{% trans "Seminar<br />Archive" %}</a></li>
 						<li><a class="sobre-stnb" href="{% url pagina-plana slug='sobre-stnb' %}">{% trans "About<br />STNB" %}</a></li>
 						<li><a class="miembres" href="{% url pagina-plana slug='membres' %}">{% trans "Members" %}</a></li>
@@ -44,7 +44,7 @@
 
 			<div id="content-wrap" class="main-block">
 				<div id="inner-content-wrap">
-					<h2>{% block titol-pagina %}Seminari de Teoria de Nombres Barcelona{% endblock titol-pagina %}</h2>
+					<h2>{% block titol-pagina %}Seminari de Teoria de Nombres de Barcelona{% endblock titol-pagina %}</h2>
 					
 					{% block microalerta %}{% endblock microalerta %}
 					
@@ -78,7 +78,7 @@
 					</div>
 				</div>-->
 				<div id="stnb-logo">
-					<img src="/static/img/tnb-rectangle.png" alt="Teoria de Nombres Barcelona" border="0" />
+					<img src="/static/img/tnb-rectangle.png" alt="Teoria de Nombres de Barcelona" border="0" />
 				</div>
 				
 				<div id="account" class="block">

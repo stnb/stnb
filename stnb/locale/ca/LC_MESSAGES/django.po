@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-23 13:51+0100\n"
+"POT-Creation-Date: 2013-01-25 17:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,19 +54,19 @@ msgstr "pàgina plana"
 msgid "flat pages"
 msgstr "pàgines planes"
 
-#: seminaris/models.py:44
+#: seminaris/models.py:47
 #, python-format
 msgid "%(idia)s %(idata)d to %(fdia)s %(fdata)d %(imes)s, %(iany)d"
 msgstr "del %(idia)s %(idata)d al %(fdia)s %(fdata)d %(imes)s, %(iany)d"
 
-#: seminaris/models.py:46
+#: seminaris/models.py:49
 #, python-format
 msgid "%(idia)s %(idata)d %(imes)s to %(fdia)s %(fdata)d %(fmes)s, %(iany)d"
 msgstr ""
 "del %(idia)s %(idata)d de %(imes)s al %(fdia)s %(fdata)d de %(fmes)s de "
 "%(iany)d"
 
-#: seminaris/models.py:48
+#: seminaris/models.py:51
 #, python-format
 msgid ""
 "%(idia)s %(idata)d %(imes)s, %(iany)s %(fdata)d to %(fdia)d %(fmes)s, "
@@ -75,7 +75,7 @@ msgstr ""
 "del %(idia)s %(idata)d de %(imes)s de %(iany)s al %(fdata)d %(fdia)d de "
 "%(fmes)s de %(fany)d"
 
-#: seminaris/models.py:222
+#: seminaris/models.py:224
 msgid "Only necessary if a talk isn't chosen."
 msgstr "Necessari només si no s'ha seleccionat cap xerrada"
 
@@ -112,7 +112,6 @@ msgstr "Error intern del servidor"
 msgid "An internal server error has occurred."
 msgstr "S'ha produít  un error intern del servidor."
 
-
 #: templates/500.html:12
 msgid "If this error persists, please contact the"
 msgstr "Si aquest error persisteix, contacteu amb el"
@@ -122,7 +121,7 @@ msgid "Seminari de Teoria de Nombres de Barcelona"
 msgstr "Seminari de Teoria de Nombres de Barcelona"
 
 #: templates/base.html:36
-msgid "Active<br />Seminar"
+msgid "Current<br />Seminar"
 msgstr "Seminari<br />Actual"
 
 #: templates/base.html:37
@@ -277,16 +276,18 @@ msgstr "Canviar la contrasenya"
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset."
-msgstr "L'enllaç per  restablir la contrasenya és invàlid, possiblement perquè¨ ja "
-"ha estat utilitzat. Si us plau, demaneu el restabliment de la teva contrasenya "
-"una altra vegada."
+msgstr ""
+"L'enllaç per  restablir la contrasenya és invàlid, possiblement perquè¨ ja "
+"ha estat utilitzat. Si us plau, demaneu el restabliment de la teva "
+"contrasenya una altra vegada."
 
 #: templates/comptes/password_reset_done.html:9
 msgid ""
 "We've e-mailed you instructions for setting your password to the e-mail "
 "address you submitted. You should be receiving it shortly."
-msgstr "Les instruccions per restablir la contrasenya s'han enviat a"
-"l'adreça electrònica especificada."
+msgstr ""
+"Les instruccions per restablir la contrasenya s'han enviat al'adreça "
+"electrònica especificada."
 
 #: templates/comptes/password_reset_form.html:9
 msgid "Forgotten your password?"
@@ -297,8 +298,8 @@ msgid ""
 "Enter your e-mail address below, and we'll e-mail instructions for setting a "
 "new password."
 msgstr ""
-"Introduïu la vostra adreça electrònica i rebreu instruccions per restablir la "
-"contrasenya"
+"Introduïu la vostra adreça electrònica i rebreu instruccions per restablir "
+"la contrasenya"
 
 #: templates/comptes/password_reset_form.html:22
 msgid "Reset my password"
@@ -417,38 +418,42 @@ msgid "Full details"
 msgstr "Detalls completats"
 
 #: templates/seminaris/seminari_detall.html:13
-#: templates/seminaris/seminari_detall.html:39
+#: templates/seminaris/seminari_detall.html:40
 msgid "Themes"
 msgstr "Temes"
 
 #: templates/seminaris/seminari_detall.html:14
-#: templates/seminaris/seminari_detall.html:56
+#: templates/seminaris/seminari_detall.html:57
 msgid "Calendar"
 msgstr "Calendari"
 
-#: templates/seminaris/seminari_detall.html:18
+#: templates/seminaris/seminari_detall.html:15
+msgid "Download programme"
+msgstr "Descarregar programa"
+
+#: templates/seminaris/seminari_detall.html:19
 #: templates/seminaris/seminari_llista.html:13
 msgid "Dates"
 msgstr "Dates"
 
-#: templates/seminaris/seminari_detall.html:25
+#: templates/seminaris/seminari_detall.html:26
 #: templates/seminaris/seminari_llista.html:14
 msgid "Location"
 msgstr "Lloc"
 
-#: templates/seminaris/seminari_detall.html:32
+#: templates/seminaris/seminari_detall.html:33
 msgid "Organising committee"
 msgstr "Comitè organitzador"
 
-#: templates/seminaris/seminari_detall.html:44
+#: templates/seminaris/seminari_detall.html:45
 msgid "Themes have not yet been chosen."
 msgstr "Els temes encara no s'han escollit"
 
-#: templates/seminaris/seminari_detall.html:49
+#: templates/seminaris/seminari_detall.html:50
 msgid "Communications"
 msgstr "Comunicacions"
 
-#: templates/seminaris/seminari_detall.html:61
+#: templates/seminaris/seminari_detall.html:62
 msgid "The calendar has not yet been set."
 msgstr "El calendari encara no s'ha confirmat."
 
@@ -529,3 +534,4 @@ msgid ""
 msgstr ""
 "\n"
 "Text de mostra.\n"
+

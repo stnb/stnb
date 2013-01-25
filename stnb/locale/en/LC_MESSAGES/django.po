@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-23 13:51+0100\n"
+"POT-Creation-Date: 2013-01-25 17:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,24 +53,24 @@ msgstr ""
 msgid "flat pages"
 msgstr ""
 
-#: seminaris/models.py:44
+#: seminaris/models.py:47
 #, python-format
 msgid "%(idia)s %(idata)d to %(fdia)s %(fdata)d %(imes)s, %(iany)d"
 msgstr ""
 
-#: seminaris/models.py:46
+#: seminaris/models.py:49
 #, python-format
 msgid "%(idia)s %(idata)d %(imes)s to %(fdia)s %(fdata)d %(fmes)s, %(iany)d"
 msgstr ""
 
-#: seminaris/models.py:48
+#: seminaris/models.py:51
 #, python-format
 msgid ""
 "%(idia)s %(idata)d %(imes)s, %(iany)s %(fdata)d to %(fdia)d %(fmes)s, "
 "%(fany)d"
 msgstr ""
 
-#: seminaris/models.py:222
+#: seminaris/models.py:224
 msgid "Only necessary if a talk isn't chosen."
 msgstr ""
 
@@ -112,11 +112,11 @@ msgid "If this error persists, please contact the"
 msgstr ""
 
 #: templates/base.html:10 templates/inici/inici.html:6
-msgid "Seminari de Teoria de Nombres Barcelona"
+msgid "Seminari de Teoria de Nombres de Barcelona"
 msgstr ""
 
 #: templates/base.html:36
-msgid "Active<br />Seminar"
+msgid "Current<br />Seminar"
 msgstr ""
 
 #: templates/base.html:37
@@ -404,38 +404,42 @@ msgid "Full details"
 msgstr ""
 
 #: templates/seminaris/seminari_detall.html:13
-#: templates/seminaris/seminari_detall.html:39
+#: templates/seminaris/seminari_detall.html:40
 msgid "Themes"
 msgstr ""
 
 #: templates/seminaris/seminari_detall.html:14
-#: templates/seminaris/seminari_detall.html:56
+#: templates/seminaris/seminari_detall.html:57
 msgid "Calendar"
 msgstr ""
 
-#: templates/seminaris/seminari_detall.html:18
+#: templates/seminaris/seminari_detall.html:15
+msgid "Download programme"
+msgstr ""
+
+#: templates/seminaris/seminari_detall.html:19
 #: templates/seminaris/seminari_llista.html:13
 msgid "Dates"
 msgstr ""
 
-#: templates/seminaris/seminari_detall.html:25
+#: templates/seminaris/seminari_detall.html:26
 #: templates/seminaris/seminari_llista.html:14
 msgid "Location"
 msgstr ""
 
-#: templates/seminaris/seminari_detall.html:32
+#: templates/seminaris/seminari_detall.html:33
 msgid "Organising committee"
 msgstr ""
 
-#: templates/seminaris/seminari_detall.html:44
+#: templates/seminaris/seminari_detall.html:45
 msgid "Themes have not yet been chosen."
 msgstr ""
 
-#: templates/seminaris/seminari_detall.html:49
+#: templates/seminaris/seminari_detall.html:50
 msgid "Communications"
 msgstr ""
 
-#: templates/seminaris/seminari_detall.html:61
+#: templates/seminaris/seminari_detall.html:62
 msgid "The calendar has not yet been set."
 msgstr ""
 
