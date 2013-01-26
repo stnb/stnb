@@ -10,3 +10,5 @@ django-email-as-username
 django-tinymce
 gunicorn
 gevent
+johnny-cache
+python-memcached

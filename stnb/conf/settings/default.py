@@ -68,6 +68,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'johnny.middleware.LocalStoreClearMiddleware',
+    'johnny.middleware.QueryCacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -77,6 +79,17 @@ MIDDLEWARE_CLASSES = (
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'johnny.backends.memcached.MemcachedCache',
+        'LOCATION': ['127.0.0.1:11211'],
+        'JOHNNY_CACHE': True,
+    }
+}
+JOHNNY_MIDDLEWARE_KEY_PREFIX='jc_stnb'
+
 
 AUTHENTICATION_BACKENDS = (
     'emailusernames.backends.EmailAuthBackend',
@@ -106,6 +119,7 @@ INSTALLED_APPS = (
     'hvad',
     'emailusernames',
     'tinymce',
+    'raven.contrib.django',
     'stnb.comptes',
     'stnb.institucions',
     'stnb.seminaris',
