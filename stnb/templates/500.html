@@ -3,6 +3,7 @@
 {% load l10n %}
 
 {% block titol-head %}{% trans "Error 500" %}{% endblock titol-head%}
+{% block stylesheets %}<link rel="stylesheet" media="screen" type="text/css" href="/static/css/stnb-main.css" />{% endblock stylesheets %}
 {% block titol-pagina %}{% trans "Error 500" %}{% endblock titol-pagina %}
 
 {% block contingut %}
@@ -14,4 +15,10 @@
 <p>{% trans "Return" %} <a href="{% url inici %}">{% trans "Home" %}</a>.</p>
 
 {% endblock %}
+
+{% block stnb-logo %}
+				<div id="stnb-logo">
+					<img src="/static/img/tnb-rectangle.png" alt="Teoria de Nombres de Barcelona" border="0" />
+				</div>
+{% endblock stnb-logo %}
 

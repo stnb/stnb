@@ -9,7 +9,7 @@
 		<meta charset="utf-8" />
 		<title>STNB - {% trans "Seminari de Teoria de Nombres de Barcelona" %} - {% block titol-head %}2013{% endblock titol-head %}</title>
 		<link href='http://fonts.googleapis.com/css?family=Titillium+Web:300,700|Oswald:400,700' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" media="screen" type="text/css" href="{{ STATIC_URL }}css/stnb-main.css" />
+		{% block stylesheets %}<link rel="stylesheet" media="screen" type="text/css" href="{{ STATIC_URL }}css/stnb-main.css" />{% endblock stylesheets %}
 		{% block extra-head %}{% endblock extra-head %}
 		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 			MathJax.Hub.Config({
@@ -77,9 +77,11 @@
 						<input class="search-box" type="text" name="q" value="Search" />
 					</div>
 				</div>-->
+				{% block stnb-logo %}
 				<div id="stnb-logo">
-					<img src="/static/img/tnb-rectangle.png" alt="Teoria de Nombres de Barcelona" border="0" />
+					<img src="{{ STATIC_URL }}img/tnb-rectangle.png" alt="Teoria de Nombres de Barcelona" border="0" />
 				</div>
+				{% endblock stnb-logo %}
 				
 				<div id="account" class="block">
 					<div class="title">{% trans "Account " %}</div>
