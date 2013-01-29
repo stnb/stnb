@@ -23,6 +23,7 @@ class Membre(TranslatableModel):
     afiliacio = models.ForeignKey(Institucio, related_name='membres',
                                   blank=True, null=True)
     foto = models.ImageField(upload_to='membres/fotos/', blank=True, null=True)
+    enllac = models.CharField(max_length=250, blank=True, null=True)
     membre_des_de = models.IntegerField(blank=True, null=True)
     membre_actual = models.BooleanField(default=True)
     amagar_perfil = models.BooleanField(default=False)
