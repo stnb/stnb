@@ -8,7 +8,7 @@ from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 from hvad.models import TranslatableModel, TranslatedFields
 
-from .utils import persones_nom_cognoms, persones_html
+from .utils import persones_nom_cognoms, persones_html, persones_text
 from stnb.membres.models import Membre
 from stnb.membres.utils import cognoms_lexic
 
@@ -169,6 +169,9 @@ class Xerrada(TranslatableModel):
             seminari = self.items_programa.all()[0].seminari()
         return seminari
     seminari.allow_tags = True
+
+    def tots_presentadors(self):
+        return persones_text(list(self.presentadors.all()) + persones_nom_cognoms(self.altres_presentadors))
 
     def presentadors_html(self):
         return persones_html(list(self.presentadors.all()) + persones_nom_cognoms(self.altres_presentadors))

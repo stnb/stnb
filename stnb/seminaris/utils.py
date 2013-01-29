@@ -32,6 +32,15 @@ def persona_html(p):
 
     return html
 
+def persona_text(p):
+    text = ''
+    if isinstance(p, dict):
+        text = '%s %s' % (p['nom'], p['cognoms'])
+    else:
+        text = '%s %s' % (p.nom, p.cognoms)
+
+    return text
+
 def persones_html(persones):
     if len(persones) == 0:
         return ''
@@ -47,4 +56,20 @@ def persones_html(persones):
                              _('and'), persones_html[-1],)
 
     return html
+
+def persones_text(persones):
+    if len(persones) == 0:
+        return ''
+
+    text = ''
+    if len(persones) == 1:
+        text = persona_text(persones[0])
+    else:
+        persones.sort(key=lambda p: cognoms_lexic(p))
+        persones_text = [ persona_text(p) for p in persones ]
+       
+        text = '%s %s %s' % (', '.join(persones_text[0:-1]),
+                             _('and'), persones_text[-1],)
+
+    return text
 

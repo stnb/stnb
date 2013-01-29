@@ -42,7 +42,7 @@ class DiaAdmin(TranslatableAdmin):
     ]
 
 class XerradaAdmin(TranslatableAdmin):
-    list_display = ('__unicode__', 'tema', 'seminari',)
+    list_display = ('__unicode__', 'tema', 'tots_presentadors', 'seminari',)
     list_filter = ('tema',)
 
     def formfield_for_dbfield(self, db_field, **kwargs):
