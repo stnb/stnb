@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load l10n %}
+{% load seminari %}
 
 {% block titol-head %}{{ seminari.nom}} - {{ xerrada.titol }}{% endblock titol-head %}
 {% block titol-pagina %}{{ seminari.nom }}{% endblock titol-pagina %}
@@ -24,6 +25,10 @@
 </p>
 
 <h4>{% trans "Files" %}</h4>
+
+{% if request.user|is_owner:xerrada %}
+<p><a href="{% url seminari-xerrada-fitxer-actualitzar seminari_slug=seminari.slug xerrada_id=xerrada.id %}">{% trans "Upload files" %}</a></p>
+{% endif %}
 
 {% if xerrada.article or xerrada.presentacio %}
 {% if xerrada.presentacio %}

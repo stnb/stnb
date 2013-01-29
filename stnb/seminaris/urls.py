@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls.defaults import patterns, url
 
-from .views import SeminariActualView, SeminariListView, SeminariDetailView, TemaListView, TemaDetallView, DiaListView, DiaDetailView, XerradaLlistaView, XerradaDetallView
+from .views import SeminariActualView, SeminariListView, SeminariDetailView, \
+                   TemaListView, TemaDetallView, DiaListView, DiaDetailView, \
+                   XerradaLlistaView, XerradaDetallView, \
+                   XerradaFixterActualitzarView
 
 urlpatterns = patterns('',
     url(r'actual/$', SeminariActualView.as_view(),
@@ -21,6 +24,8 @@ urlpatterns = patterns('',
 #        XerradaLlistaView.as_view(), name='seminari-xerrada-llista'),
     url(r'(?P<seminari_slug>[a-z0-9\-]+)/xerrades/(?P<xerrada_id>\d+)/$',
         XerradaDetallView.as_view(), name='seminari-xerrada-detall'),
+    url(r'(?P<seminari_slug>[a-z0-9\-]+)/xerrades/(?P<xerrada_id>\d+)/fixter-actualitzar/$',
+        XerradaFixterActualitzarView.as_view(), name='seminari-xerrada-fitxer-actualitzar'),
     
     url(r'(?P<slug>[a-z0-9\-]+)/$', SeminariDetailView.as_view(),
         name='seminari-detall'),

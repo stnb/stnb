@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
-from django.views.generic import ListView, DetailView, TemplateView, RedirectView
+from django.views.generic import ListView, DetailView, TemplateView, \
+                                 RedirectView, UpdateView
 from django.shortcuts import get_object_or_404
+from django.utils.decorators import method_decorator
 from django.core.urlresolvers import reverse
 from django.http import Http404
 
+from stnb.comptes.decorators import login_required
 from .models import Seminari, Tema, Dia, Xerrada, ItemPrograma
+from .forms import XerradaFitxerForm
 
 class SeminariActualView(RedirectView):
 
@@ -100,3 +104,39 @@ class XerradaDetallView(TemplateView):
         context.update({ 'seminari': seminari, 'xerrada': xerrada })
 
         return context
+
+class XerradaFixterActualitzarView(UpdateView):
+    form_class = XerradaFitxerForm
+    model = Xerrada
+    template_name = 'seminaris/xerrada_fitxer_actualitzar_form.html'
+
+    queryset = Xerrada.objects.all()
+    pk_url_kwarg = 'xerrada_id'
+    
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(XerradaFixterActualitzarView, self).dispatch(*args, **kwargs)
+
+    def get_object(self, *args, **kwargs):
+        obj = super(XerradaFixterActualitzarView, self).get_object(*args, **kwargs)
+        if self.request.user not in obj.presentadors.all() and self.request.user.is_staff is False:
+            raise PermissionDenied
+        return obj
+
+#    def get(self, request, *args, **kwargs):
+#        form_class = self.get_form_class()
+#        form = self.get_form(form_class)
+#        return self.render_to_response(self.get_context_data(form=form), **kwargs) 
+
+    def get_context_data(self, **kwargs):
+        context = super(XerradaFixterActualitzarView, self).get_context_data(**kwargs)
+        
+        seminari = get_object_or_404(Seminari, slug=self.kwargs['seminari_slug'])
+        xerrada = self.object
+        if xerrada.seminari() != seminari:
+            raise Http404
+
+        context.update({ 'seminari': seminari, 'xerrada': xerrada })
+
+        return context
+
