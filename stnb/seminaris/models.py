@@ -106,7 +106,6 @@ class Tema(TranslatableModel):
             'seminari_slug': self.seminari.slug})
     
     def organitzadors_html(self):
-        print list(self.organitzadors.all()) + persones_nom_cognoms(self.altres_organitzadors)
         return persones_html(list(self.organitzadors.all()) + persones_nom_cognoms(self.altres_organitzadors))
 
 

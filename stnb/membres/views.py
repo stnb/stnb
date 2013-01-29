@@ -46,15 +46,3 @@ class MembreActualizarView(UpdateView):
             raise PermissionDenied
         return obj
 
-#    def post(self, request, *args, **kwargs):
-#        form = self.form_class(request.POST, request.FILES)
-#        if form.is_valid():
-#            # file is saved
-#            form.save()
-#            print self.get_object()
-#            return self.get_success_url()
-#
-#        return render(self.request, self.template_name,
-#                self.context_data(**kwargs))
-#
- 
