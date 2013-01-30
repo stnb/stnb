@@ -6,6 +6,6 @@ from .views import MembreDetallView, MembreActualizarView
 urlpatterns = patterns('',
     url(r'^(?P<slug>[a-z0-9\-]+)/$', MembreDetallView.as_view(),
         name='membre-detall'),
-    url(r'^(?P<slug>[a-z0-9\-]+)/actualizar/$', MembreActualizarView.as_view(),
-        name='membre-actualizar'),
+    url(r'^(?P<slug>[a-z0-9\-]+)/actualitzar/$', MembreActualizarView.as_view(),
+        name='membre-actualitzar'),
 )

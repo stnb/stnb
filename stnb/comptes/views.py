@@ -49,7 +49,7 @@ class RegistreView(FormView):
 #class PerfilUpdateView(UpdateView):
 #    form_class = PerfilUpdateForm
 #    model = User
-#    template_name = 'comptes/perfil_actualizar.html'
+#    template_name = 'comptes/perfil_actualitzar.html'
 #    success_url = reverse_lazy('comptes-perfil-detall')
 #
 #    def get_object(self, queryset=None):

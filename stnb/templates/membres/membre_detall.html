@@ -25,7 +25,7 @@
 	<p>{{ membre.text|safe }}</p>
 	{% endif %}
 
-	{% if user.get_profile == membre %}<p class="edit"><a href="{% url membre-actualizar slug=membre.slug %}">Edit your profile</a>.</p>{% endif %}
+	{% if user.get_profile == membre %}<p class="edit"><a href="{% url membre-actualitzar slug=membre.slug %}">Edit your profile</a>.</p>{% endif %}
 
 </div>
 {% endblock contingut %}

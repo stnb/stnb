@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.views.generic import ListView, DetailView, TemplateView, \
                                  RedirectView, UpdateView
+from django.core.exceptions import PermissionDenied
 from django.shortcuts import get_object_or_404
 from django.utils.decorators import method_decorator
 from django.core.urlresolvers import reverse
@@ -119,7 +120,7 @@ class XerradaFixterActualitzarView(UpdateView):
 
     def get_object(self, *args, **kwargs):
         obj = super(XerradaFixterActualitzarView, self).get_object(*args, **kwargs)
-        if self.request.user not in obj.presentadors.all() and self.request.user.is_staff is False:
+        if obj.is_owner(self.request.user) is False and self.request.user.is_staff is False:
             raise PermissionDenied
         return obj
 

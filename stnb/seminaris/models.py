@@ -170,6 +170,17 @@ class Xerrada(TranslatableModel):
         return seminari
     seminari.allow_tags = True
 
+    def is_owner(self, user):
+        is_owner = False
+        membre = user.get_profile()
+        if membre in self.presentadors.all():
+            is_owner = True
+        elif self.tema is not None and membre in self.tema.organitzadors.all():
+            is_owner = True
+        elif self.seminari() is not None and membre in self.seminari().organitzadors.all():
+            is_owner = True
+        return is_owner
+
     def tots_presentadors(self):
         return persones_text(list(self.presentadors.all()) + persones_nom_cognoms(self.altres_presentadors))
 

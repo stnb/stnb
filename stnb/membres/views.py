@@ -27,7 +27,7 @@ class MembreDetallView(DetailView):
 class MembreActualizarView(UpdateView):
     form_class = MembreActualizarForm
     model = Membre
-    template_name = 'membres/membre_actualizar_form.html'
+    template_name = 'membres/membre_actualitzar_form.html'
 
     queryset = Membre.objects.all()
     slug_field = 'slug'

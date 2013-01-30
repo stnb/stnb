@@ -9,7 +9,7 @@
 {% block contingut %}
 <div class="compte">
 
-	<form method="post" action="{% url membre-actualizar slug=form.instance.slug %}" enctype="multipart/form-data">
+	<form method="post" action="{% url membre-actualitzar slug=form.instance.slug %}" enctype="multipart/form-data">
 		{% csrf_token %}
 
     {{ form.as_p }}
