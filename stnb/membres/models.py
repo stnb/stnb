@@ -85,6 +85,22 @@ class Membre(TranslatableModel):
         else:
             return None
 
+    def enllac_a(self):
+        enllac_a = self.enllac
+        if enllac_a is not None:
+            if not re.match(r'^https?:\/\/', enllac_a):
+                enllac_a = 'http://' + enllac_a
+        return enllac_a
+
+    def text_qualsevol_llengua(self):
+        text = self.text
+        if text is None or len(text) == 0:
+            for code in [t[0] for t in settings.LANGUAGES]:
+                text = Membre.objects.language(code).get(pk=self.id).text
+                if text is not None and len(text) > 0:
+                    break
+        return text
+
     def creat_foto_petita(self):
         from PIL import Image
 

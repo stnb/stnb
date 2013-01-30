@@ -19,10 +19,16 @@
 
 	<p>{% if user.is_authenticated %}{{ membre.user.email }}{% else %}{% trans "Please log in to see member email addresses." %}{% endif %}</p>
 
-	{% if membre.text %}
+	{% if membre.enllac %}
+	<h4>{% trans "Link" %}</h4>
+
+	<p><a href="{{ membre.enllac_a }}">{{ membre.enllac }}</a></p>
+	{% endif %}
+
+	{% if membre.text_qualsevol_llengua %}
 	<h4>{% trans "Profile" %}</h4>
 
-	<p>{{ membre.text|safe }}</p>
+	<p>{{ membre.text_qualsevol_llengua|safe }}</p>
 	{% endif %}
 
 	{% if user.get_profile == membre %}<p class="edit"><a href="{% url membre-actualitzar slug=membre.slug %}">Edit your profile</a>.</p>{% endif %}

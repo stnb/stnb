@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-30 08:52+0100\n"
+"POT-Creation-Date: 2013-01-30 09:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -308,7 +308,7 @@ msgid "Update"
 msgstr ""
 
 #: templates/comptes/perfil_detall.html:4
-#: templates/membres/membre_detall.html:23
+#: templates/membres/membre_detall.html:29
 msgid "Profile"
 msgstr ""
 
@@ -397,6 +397,10 @@ msgstr ""
 
 #: templates/membres/membre_detall.html:20
 msgid "Please log in to see member email addresses."
+msgstr ""
+
+#: templates/membres/membre_detall.html:23
+msgid "Link"
 msgstr ""
 
 #: templates/seminaris/_seminari_temes.html:9

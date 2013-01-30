@@ -16,5 +16,5 @@ class MembreActualizarForm(TranslatableModelForm):
 
     class Meta:
         model = Membre
-        fields = ('nom', 'cognoms', 'foto', 'afiliacio',
-                  'membre_des_de', 'membre_actual', 'amagar_perfil', 'text')
+        fields = ('nom', 'cognoms', 'foto', 'afiliacio', 'membre_des_de',
+                  'membre_actual', 'amagar_perfil', 'enllac', 'text')

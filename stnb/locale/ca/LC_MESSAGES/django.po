@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-30 08:52+0100\n"
+"POT-Creation-Date: 2013-01-30 09:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -319,7 +319,7 @@ msgid "Update"
 msgstr "Actualitzar"
 
 #: templates/comptes/perfil_detall.html:4
-#: templates/membres/membre_detall.html:23
+#: templates/membres/membre_detall.html:29
 msgid "Profile"
 msgstr "Perfil"
 
@@ -411,6 +411,10 @@ msgstr "foto del perfil de"
 #: templates/membres/membre_detall.html:20
 msgid "Please log in to see member email addresses."
 msgstr "Si us plau, inicieu sessió per veure el correu electrònic d'un membre"
+
+#: templates/membres/membre_detall.html:23
+msgid "Link"
+msgstr "Enllaç"
 
 #: templates/seminaris/_seminari_temes.html:9
 #: templates/seminaris/tema_detall.html:11
@@ -523,8 +527,8 @@ msgid ""
 "You can upload files of the presentation and a separate full length article "
 "for others to download."
 msgstr ""
-"Podeu pujar fixters de la presentació i un article separat per que "
-"altres les puguin descarregar."
+"Podeu pujar fixters de la presentació i un article separat per que altres "
+"les puguin descarregar."
 
 #: templates/sobre-stnb/sobre-stnb.html:4
 msgid "About STNB"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-30 08:52+0100\n"
+"POT-Creation-Date: 2013-01-30 09:36+0100\n"
 "PO-Revision-Date: 2013-01-25 13:39+0100\n"
 "Last-Translator: M. Alsina <montserrat.alsina@upc.edu>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -319,7 +319,7 @@ msgid "Update"
 msgstr "Actualizar"
 
 #: templates/comptes/perfil_detall.html:4
-#: templates/membres/membre_detall.html:23
+#: templates/membres/membre_detall.html:29
 msgid "Profile"
 msgstr "Perfil"
 
@@ -412,6 +412,10 @@ msgstr "foto del perfil de"
 msgid "Please log in to see member email addresses."
 msgstr ""
 "Por favor, iniciar sesión para ver el correo electrónico de un miembro."
+
+#: templates/membres/membre_detall.html:23
+msgid "Link"
+msgstr "Enlace"
 
 #: templates/seminaris/_seminari_temes.html:9
 #: templates/seminaris/tema_detall.html:11
