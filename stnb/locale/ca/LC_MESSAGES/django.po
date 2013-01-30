@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-25 17:51+0100\n"
+"POT-Creation-Date: 2013-01-30 08:52+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +41,7 @@ msgstr "anglès"
 msgid "Year"
 msgstr "Any"
 
-#: membres/models.py:42
+#: membres/models.py:43
 msgid "Unnamed"
 msgstr "Sense nom"
 
@@ -75,9 +74,13 @@ msgstr ""
 "del %(idia)s %(idata)d de %(imes)s de %(iany)s al %(fdata)d %(fdia)d de "
 "%(fmes)s de %(fany)d"
 
-#: seminaris/models.py:224
+#: seminaris/models.py:199
 msgid "Only necessary if a talk isn't chosen."
 msgstr "Necessari només si no s'ha seleccionat cap xerrada"
+
+#: seminaris/utils.py:56 seminaris/utils.py:72
+msgid "and"
+msgstr "i"
 
 #: templates/404.html:5 templates/404.html.py:6
 msgid "Error 404"
@@ -91,28 +94,28 @@ msgstr "Pàgina no encontrat"
 msgid "The page you are looking for could not be found."
 msgstr "La pàgina que busques no es va poder trobar."
 
-#: templates/404.html:12 templates/500.html:14
+#: templates/404.html:12 templates/500.html:15
 msgid "Return"
 msgstr "Tornar"
 
-#: templates/404.html:12 templates/500.html:14 templates/base.html:35
+#: templates/404.html:12 templates/500.html:15 templates/base.html:35
 #: templates/inici/inici.html:5
 msgid "Home"
 msgstr "Inici"
 
-#: templates/500.html:5 templates/500.html.py:6
+#: templates/500.html:5 templates/500.html.py:7
 msgid "Error 500"
 msgstr "Error 500"
 
-#: templates/500.html:10
+#: templates/500.html:11
 msgid "Internal server error"
 msgstr "Error intern del servidor"
 
-#: templates/500.html:12
+#: templates/500.html:13
 msgid "An internal server error has occurred."
 msgstr "S'ha produít  un error intern del servidor."
 
-#: templates/500.html:12
+#: templates/500.html:13
 msgid "If this error persists, please contact the"
 msgstr "Si aquest error persisteix, contacteu amb el"
 
@@ -136,42 +139,42 @@ msgstr "Sobre<br />STNB"
 msgid "Members"
 msgstr "Membres"
 
-#: templates/base.html:85
+#: templates/base.html:87
 msgid "Account "
 msgstr "Compte"
 
-#: templates/base.html:88
+#: templates/base.html:90
 msgid "Profile page"
 msgstr "Pàgina del perfil"
 
-#: templates/base.html:89
+#: templates/base.html:91
 msgid "Admin console"
 msgstr "Administració"
 
-#: templates/base.html:90
+#: templates/base.html:92
 msgid "Logout"
 msgstr "Sortir"
 
-#: templates/base.html:92 templates/comptes/login.html:4
+#: templates/base.html:94 templates/comptes/login.html:4
 #: templates/comptes/login.html.py:15
 #: templates/comptes/password_reset_complete.html:13
 #: templates/comptes/registration_form.html:23
 msgid "Log in"
 msgstr "Iniciar sessió"
 
-#: templates/base.html:98
+#: templates/base.html:100
 msgid "Links"
 msgstr "Enllaços"
 
-#: templates/base.html:112
+#: templates/base.html:114
 msgid "Languages"
 msgstr "Llengües"
 
-#: templates/base.html:121
+#: templates/base.html:123
 msgid "Copyright STNB"
 msgstr "Copyright STNB"
 
-#: templates/base.html:121
+#: templates/base.html:123
 msgid "some rights reserved"
 msgstr "alguns drets reservats"
 
@@ -305,12 +308,13 @@ msgstr ""
 msgid "Reset my password"
 msgstr "Restablir la contrasenya"
 
-#: templates/comptes/perfil_actualizar.html:4
+#: templates/comptes/perfil_actualitzar.html:4
 msgid "Update Profile"
 msgstr "Actualitzar el perfil"
 
-#: templates/comptes/perfil_actualizar.html:15
-#: templates/membres/membre_actualizar_form.html:18
+#: templates/comptes/perfil_actualitzar.html:15
+#: templates/membres/membre_actualitzar_form.html:18
+#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:22
 msgid "Update"
 msgstr "Actualitzar"
 
@@ -390,8 +394,8 @@ msgstr "Últimes noticíes"
 msgid "There are currently no news items."
 msgstr "Ara mateix no hi ha cap notícia"
 
-#: templates/membres/membre_actualizar_form.html:6
-#: templates/membres/membre_actualizar_form.html:7
+#: templates/membres/membre_actualitzar_form.html:6
+#: templates/membres/membre_actualitzar_form.html:7
 msgid "Update member profile"
 msgstr "Actualitzar perfil"
 
@@ -423,7 +427,7 @@ msgid "Themes"
 msgstr "Temes"
 
 #: templates/seminaris/seminari_detall.html:14
-#: templates/seminaris/seminari_detall.html:57
+#: templates/seminaris/seminari_detall.html:49
 msgid "Calendar"
 msgstr "Calendari"
 
@@ -449,11 +453,7 @@ msgstr "Comitè organitzador"
 msgid "Themes have not yet been chosen."
 msgstr "Els temes encara no s'han escollit"
 
-#: templates/seminaris/seminari_detall.html:50
-msgid "Communications"
-msgstr "Comunicacions"
-
-#: templates/seminaris/seminari_detall.html:62
+#: templates/seminaris/seminari_detall.html:54
 msgid "The calendar has not yet been set."
 msgstr "El calendari encara no s'ha confirmat."
 
@@ -476,38 +476,55 @@ msgid "References"
 msgstr "Referències"
 
 #: templates/seminaris/tema_detall.html:42
-#: templates/seminaris/xerrada_detall.html:45
+#: templates/seminaris/xerrada_detall.html:50
 #: templates/seminaris/xerrada_llista.html:13
 msgid "Return to seminar"
 msgstr "Tornar al seminari"
 
-#: templates/seminaris/xerrada_detall.html:12
+#: templates/seminaris/xerrada_detall.html:13
 msgid "Presenters"
 msgstr "Ponents"
 
-#: templates/seminaris/xerrada_detall.html:16
+#: templates/seminaris/xerrada_detall.html:17
 msgid "Abstract"
 msgstr "Resum"
 
-#: templates/seminaris/xerrada_detall.html:22
+#: templates/seminaris/xerrada_detall.html:23
 msgid "No abstract available"
 msgstr "Resum no disponible"
 
-#: templates/seminaris/xerrada_detall.html:26
+#: templates/seminaris/xerrada_detall.html:27
 msgid "Files"
 msgstr "Fitxers"
 
-#: templates/seminaris/xerrada_detall.html:31
+#: templates/seminaris/xerrada_detall.html:30
+msgid "Upload files"
+msgstr "Pujar fixters"
+
+#: templates/seminaris/xerrada_detall.html:36
 msgid "Download presentation"
 msgstr "Descarregar presentació"
 
-#: templates/seminaris/xerrada_detall.html:36
+#: templates/seminaris/xerrada_detall.html:41
 msgid "Download article"
 msgstr "Descarregar article"
 
-#: templates/seminaris/xerrada_detall.html:41
+#: templates/seminaris/xerrada_detall.html:46
 msgid "No files available for download"
 msgstr "No hi ha fitxers per descarregar"
+
+#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:6
+#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:7
+msgid "Update talk files"
+msgstr "Actualitzar fixters de la xerrada"
+
+#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:14
+msgid ""
+"You can upload files of the presentation and a separate full length article "
+"for others to download."
+msgstr ""
+"Podeu pujar fixters de la presentació i un article separat per que "
+"altres les puguin descarregar."
 
 #: templates/sobre-stnb/sobre-stnb.html:4
 msgid "About STNB"
@@ -535,3 +552,5 @@ msgstr ""
 "\n"
 "Text de mostra.\n"
 
+#~ msgid "Communications"
+#~ msgstr "Comunicacions"
