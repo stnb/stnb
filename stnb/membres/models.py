@@ -50,7 +50,7 @@ class Membre(TranslatableModel):
         nom_complet = self.nom_complet()
         if nom_complet:
             nfd_nom = ''.join((c for c in unicodedata.normalize('NFD', nom_complet) if unicodedata.category(c) != 'Mn'))
-            return re.sub(r'\s', '-', nfd_nom).lower()
+            return re.sub(r'[^\w\-]+', '-', nfd_nom).lower()
         else:
             return ''
 
