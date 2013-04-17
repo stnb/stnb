@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import re
+import os
 import datetime
 
 from django.db import models
@@ -11,6 +12,7 @@ from hvad.models import TranslatableModel, TranslatedFields
 from .utils import persones_nom_cognoms, persones_html, persones_text
 from stnb.membres.models import Membre
 from stnb.membres.utils import cognoms_lexic
+from stnb.utils.text_processing import text_sense_accents
 
 class Seminari(TranslatableModel):
     slug = models.SlugField(max_length=50)
@@ -130,6 +132,20 @@ class Dia(TranslatableModel):
     modifica_seminari.allow_tags = True
 
 
+def nom_fitxer(ruta, nom):
+    fitxer_nom = text_sense_accents(nom)
+    return os.path.join(ruta, fitxer_nom)
+
+def presentacio_nom_fitxer(xerrada, nom):
+    ruta = 'xerrades/presentacions'
+    fitxer_nom = nom_fitxer(ruta, nom)
+    return fitxer_nom
+
+def article_nom_fitxer(xerrada, nom):
+    ruta = 'xerrades/articles'
+    fitxer_nom = nom_fitxer(ruta, nom)
+    return fitxer_nom
+
 class Xerrada(TranslatableModel):
     tema = models.ForeignKey(Tema, related_name='xerrades',
                                blank=True, null=True)
@@ -139,9 +155,9 @@ class Xerrada(TranslatableModel):
     altres_presentadors = models.CharField(max_length=250, blank=True,
                                            null=True)
 
-    presentacio = models.FileField(upload_to='xerrades/presentacions',
+    presentacio = models.FileField(upload_to=presentacio_nom_fitxer,
                                    blank=True, null=True)
-    article = models.FileField(upload_to='xerrades/articles',
+    article = models.FileField(upload_to=article_nom_fitxer,
                                blank=True, null=True)
 
     translations = TranslatedFields(
