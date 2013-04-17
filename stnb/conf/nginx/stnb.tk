@@ -1,6 +1,6 @@
 server  {
 	listen		80;
-	server_name	stnb.tk gin.voo-du.net;
+	server_name	stnb.tk;
 
 	access_log	/var/log/nginx/stnb.tk/access.log;
 	error_log	/var/log/nginx/stnb.tk/error.log;
