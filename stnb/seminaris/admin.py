@@ -12,8 +12,14 @@ class TemaInline(TranslatableStackedInline):
 class XerradaInline(TranslatableStackedInline):
     model = Xerrada
 
+class SeminariSenseTraduccioAdmin(admin.ModelAdmin):
+    inlines = [
+        TemaInline,
+    ]
+
 class SeminariAdmin(TranslatableAdmin):
-   inlines = [
+    list_display = ('__unicode__', 'data_inici', 'actiu',)
+    inlines = [
         TemaInline,
     ]
 
@@ -56,6 +62,7 @@ class ItemProgramaAdmin(TranslatableAdmin):
     pass
 
 admin.site.register(Seminari, SeminariAdmin)
+#admin.site.register(Seminari, SeminariSenseTraduccioAdmin)
 admin.site.register(Tema, TemaAdmin)
 admin.site.register(Dia, DiaAdmin)
 admin.site.register(Xerrada, XerradaAdmin)
