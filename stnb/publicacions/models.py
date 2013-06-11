@@ -21,12 +21,6 @@ def publicacio_nom_fitxer(xerrada, nom):
     return fitxer_nom
 
 class Publicacio(TranslatableModel):
-    translations = TranslatedFields(
-        nom = models.CharField(help_text=_('Publication name'),
-                               max_length=128),
-        descripcio = models.CharField(help_text=_('A short description.'),
-                                      max_length=255, blank=True, null=True),
-    )
     autors = models.ManyToManyField(Membre, related_name='publicacions',
                                     blank=True, null=True)
     altres_autors = models.CharField(max_length=250, blank=True, null=True)
@@ -38,6 +32,13 @@ class Publicacio(TranslatableModel):
     data_publicacio = models.DateField(blank=True, null=True)
     fitxer = models.FileField(upload_to=publicacio_nom_fitxer,
                                blank=True, null=True)
+
+    translations = TranslatedFields(
+        nom = models.CharField(help_text=_('Publication name'),
+                               max_length=128),
+        descripcio = models.CharField(help_text=_('A short description.'),
+                                      max_length=255, blank=True, null=True),
+    )
 
     class Meta:
         verbose_name = 'publicació'
