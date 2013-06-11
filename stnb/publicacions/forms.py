@@ -3,11 +3,11 @@ from django import forms
 from django.utils.translation import ugettext as _
 from hvad.forms import TranslatableModelForm
 
-from .models import Xerrada
+from .models import Publicacio
 
-class XerradaFitxerForm(forms.ModelForm):
-    
+class PublicacioNomFitxerForm(TranslatableModelForm):
+
     class Meta:
-        model = Xerrada
-        fields = ('presentacio', 'article',)
+        model = Publicacio
+        fields = ('nom', 'fitxer', 'isbn',)
 

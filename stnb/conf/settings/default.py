@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     'stnb.seminaris',
     'stnb.noticies',
     'stnb.membres',
+    'stnb.publicacions',
     'stnb.pagines',
     'gunicorn',
     # Uncomment the next line to enable admin documentation:

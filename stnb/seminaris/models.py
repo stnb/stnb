@@ -11,6 +11,7 @@ from hvad.models import TranslatableModel, TranslatedFields
 
 from .utils import persones_nom_cognoms, persones_html, persones_text
 from stnb.membres.models import Membre
+from stnb.publicacions.models import Publicacio
 from stnb.membres.utils import cognoms_lexic
 from stnb.utils.text_processing import text_sense_accents
 
@@ -24,6 +25,8 @@ class Seminari(TranslatableModel):
                                             null=True)
     programa_pdf = models.FileField(upload_to='seminaris/programes',
                                      blank=True, null=True)
+    publicacio = models.ForeignKey(Publicacio, related_name='seminaris',
+                                   blank=True, null=True)
     actiu = models.BooleanField(default=False)
     
     translations = TranslatedFields(

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from hvad.admin import TranslatableAdmin, TranslatableStackedInline, TranslatableTabularInline
+from django.utils.translation import ugettext as _
+from hvad.admin import TranslatableAdmin, TranslatableStackedInline, \
+                       TranslatableTabularInline
 from tinymce.widgets import TinyMCE
 
 
@@ -67,4 +69,3 @@ admin.site.register(Tema, TemaAdmin)
 admin.site.register(Dia, DiaAdmin)
 admin.site.register(Xerrada, XerradaAdmin)
 admin.site.register(ItemPrograma, ItemProgramaAdmin)
-
