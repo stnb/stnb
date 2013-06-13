@@ -475,6 +475,7 @@ body  {
 
 .compte .compte-foto  {
 	float: right;
+	margin: 0 0 40px 40px;
 }
 
 .compte .errorlist, .compte-errors  {
@@ -494,3 +495,34 @@ body  {
 }
 
 /* **** END: Login/Logout **** */
+
+/* **** BEGIN: Member pages **** */
+
+.membre-llista .membre  {
+	padding: 20px 0 30px 0;
+	clear: left;
+}
+
+.membre-llista .membre-info, .membre-llista .membre-foto  {
+	float: left;
+}
+
+.membre-llista .membre-foto .membre-sense-foto  {
+	width: 100px;
+	height: 100px;
+	border: 1px dashed #999;
+}
+
+.membre-llista .membre-info  {
+	margin-left: 20px;
+}
+
+#content-wrap .membre-llista .membre-info h4  {
+	margin: 8px 0 8px 0;
+}
+
+#content-wrap .membre-llista .membre-info p  {
+	margin: 4px 0 4px 0;
+}
+
+/* **** END: Member pages **** */

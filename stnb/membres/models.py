@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import datetime
 import os
 import re
 import uuid
@@ -13,6 +12,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from hvad.models import TranslatableModel, TranslatedFields
 
+from .utils import crear_imagen_petita
 from stnb.institucions.models import Institucio
 
 class Membre(TranslatableModel):
@@ -70,7 +70,7 @@ class Membre(TranslatableModel):
         obj = super(Membre, self).save(*args, **kwargs)
         
         if self.foto:
-            self.creat_foto_petita()
+            self.crear_totes_fotos()
         
         return obj
 
@@ -101,20 +101,25 @@ class Membre(TranslatableModel):
                     break
         return text
 
-    def creat_foto_petita(self):
-        from PIL import Image
-
+    def crear_foto_petita(self):
         path_complet = os.path.join(settings.MEDIA_ROOT, unicode(self.foto))
-        file, ext = os.path.splitext(path_complet)
-        im = Image.open(path_complet)
-        width = 200
-        height = im.size[1] * width / im.size[0]
-        im.thumbnail((width, height), Image.ANTIALIAS)
-        im.save(os.path.join(settings.MEDIA_ROOT, self.foto_petita()), "PNG")
+        crear_imagen_petita(path_complet, self.foto_petita(), 200)
 
     def foto_petita(self):
         base, ext = os.path.splitext(unicode(self.foto))
         return '%s-thumbnail.png' % (base,)
+
+    def crear_foto_llista(self):
+        path_complet = os.path.join(settings.MEDIA_ROOT, unicode(self.foto))
+        crear_imagen_petita(path_complet, self.foto_llista(), 100)
+
+    def foto_llista(self):
+        base, ext = os.path.splitext(unicode(self.foto))
+        return '%s-llista.png' % (base,)
+
+    def crear_totes_fotos(self):
+        self.crear_foto_petita()
+        self.crear_foto_llista()
 
 
 def user_post_save(sender, instance, created, *args, **kwargs):

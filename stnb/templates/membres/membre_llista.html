@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block titol-head %}{% trans "List of Members" %}{% endblock titol-head %}
+{% block titol-pagina %}{% trans "List of Members" %}{% endblock titol-pagina %}
+
+{% block contingut %}
+<div class="membre-llista">
+	
+	{% for membre in membres %}
+	<div class="membre">
+		<div class="membre-foto">
+			{% if membre.foto %}
+			<img src="{{ MEDIA_URL }}{{ membre.foto_llista }}" alt="{% trans "profile photo of" %} {{ membre.nom_complet }}" border="0" /> 
+			{% else %}
+				<div class="membre-sense-foto">&nbsp;</div>
+			{% endif %}
+		</div>
+		<div class="membre-info">
+			<h4><a href="{{ membre.get_absolute_url }}">{{ membre.nom_complet }}</a></h4>
+			{% if membre.afiliacio %}<p>{{ membre.afiliacio.nom }}</p>{% endif %}
+			{% if membre.membre_des_de %}<p>{% trans "Member since" %}: {{ membre.membre_des_de }}</p>{% endif %}
+		</div>
+	</div>
+
+	{% endfor %}
+
+</div>
+{% endblock contingut %}
+

@@ -11,7 +11,7 @@
 		<h3>{{ publicacio }}</h3>
 
 		<p><strong>{% trans "Download publication" %}</strong>: <a href="{{ MEDIA_URL }}{{ publicacio.fitxer }}">{{ publicacio.nom_fitxer }}</a></p>
-		{% if publicacio.data_publicacio %}<p><strong>{% trans "Publication Date" %}</strong>: {{ publicacio.data_publicacio }}</p>{% endif %}
+		{% if publicacio.data_publicacio %}<p><strong>{% trans "Publication Date" %}</strong>: {{ publicacio.mes_any_publicacio }}</p>{% endif %}
 		{% if publicacio.isbn %}<p><strong>{% trans "ISBN" %}</strong>: {{ publicacio.isbn }}</p>{% endif %}
 		{% if publicacio.temes.count > 0  or publicacio.seminaris.count > 0%}
 		<h4>{% trans "Related seminars" %}</h4>

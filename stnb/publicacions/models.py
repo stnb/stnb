@@ -29,7 +29,9 @@ class Publicacio(TranslatableModel):
                                      blank=True, null=True)
     altres_editors = models.CharField(max_length=250, blank=True, null=True)
     isbn = models.CharField('ISBN', max_length=20, blank=True, null=True)
-    data_publicacio = models.DateField(blank=True, null=True)
+    data_publicacio = models.DateField(\
+            help_text=_('Only the month and year are displayed'),
+            blank=True, null=True)
     fitxer = models.FileField(upload_to=publicacio_nom_fitxer,
                                blank=True, null=True)
 
@@ -47,6 +49,9 @@ class Publicacio(TranslatableModel):
 
     def __unicode__(self):
         return self.nom
+
+    def mes_any_publicacio(self):
+        return _(self.data_publicacio.strftime('%B').decode('utf-8')) + ' ' + unicode(self.data_publicacio.year)
 
     def nom_fitxer(self):
         return os.path.basename(self.fitxer.name)

@@ -6,8 +6,8 @@ from .models import Membre
 
 class MembreAdmin(TranslatableAdmin):
     model = Membre
-    list_display = ('nom_complet', 'membre_des_de',
-                    'membre_actual')
+    list_display = ('nom_complet', 'membre_des_de', 'afiliacio',
+                    'membre_actual', 'amagar_perfil')
 
 admin.site.register(Membre, MembreAdmin)
 
