@@ -44,6 +44,7 @@ urlpatterns += i18n_patterns('',
     url(r'^seminaris/', include('stnb.seminaris.urls')),
     url(r'^noticies/', include('stnb.noticies.urls')),
     url(r'^membres/', include('stnb.membres.urls')),
+    url(r'^publicacions/', include('stnb.publicacions.urls')),
     url(r'^(?P<slug>membres)/$', PaginaPlanaDetallView.as_view(),
         name='pagina-plana'),
     

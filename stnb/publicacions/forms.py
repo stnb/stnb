@@ -9,5 +9,5 @@ class PublicacioNomFitxerForm(TranslatableModelForm):
 
     class Meta:
         model = Publicacio
-        fields = ('nom', 'fitxer', 'isbn',)
+        fields = ('nom', 'fitxer', 'isbn', 'data_publicacio')
 

@@ -13,7 +13,10 @@
 	<li><a href="#temes">{% trans "Themes" %}</a></li>
 	<li><a href="#calendari">{% trans "Calendar" %}</a></li>
 	{% if seminari.programa_pdf %}<li><a href="{{ MEDIA_URL }}{{ seminari.programa_pdf }}">{% trans "Download programme" %}</a></li>{% endif %}
-	{% if seminari.publicacio %}<li><a href="{{ MEDIA_URL }}{{ seminari.publicacio.fitxer }}">{% trans "Download" %} {{ seminari.publicacio }}</a></li>{% endif %}
+	{% if seminari.publicacio %}<li><a href="{{ MEDIA_URL }}{{ seminari.publicacio.fitxer }}">{% trans "Download publication" %}: {{ seminari.publicacio }}</a></li>{% endif %}
+	{% for tema in seminari.temes.all %}
+		{% if tema.publicacio %}<li><a href="{{ MEDIA_URL }}{{ tema.publicacio.fitxer }}">{% trans "Download publication" %}: {{ tema.publicacio }}</a></li>{% endif %}
+	{% endfor %}
 </ul>
 
 <a name="dates"></a>

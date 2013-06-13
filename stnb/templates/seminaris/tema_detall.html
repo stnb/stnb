@@ -7,12 +7,25 @@
 
 {% block contingut %}
 	<h3>{{ tema.titol }}</h3>
+	
+	{% for tema in seminari.temes.all %}
+		{% if tema.publicacio %}<li><a href="{{ MEDIA_URL }}{{ tema.publicacio.fitxer }}">{% trans "Download publication" %}: {{ tema.publicacio }}</a></li>{% endif %}
+	{% endfor %}
 
 	<h4>{% trans "Co-ordinators" %}</h4>
 
 	<p>
 		{{ tema.organitzadors_html|safe }}
 	</p>
+
+	{% if tema.publicacio %}
+	<h4>{% trans "Publication download" %}</h4>
+
+	<p>
+		<a href="{{ MEDIA_URL }}{{ tema.publicacio.fitxer }}">{{ tema.publicacio }}</a>
+		
+	</p>
+	{% endif %}
 
 	{% if tema.descripcio %}
 	<h4>{% trans "Description" %}</h4>

@@ -255,7 +255,13 @@ body  {
 }
 
 #menu .arxiu-seminaris  {
-	background-color: #659A90;
+	background-color: #65ba80;
+}
+
+#menu .publicacions  {
+	font-size: 80%;
+	background-color: #659a90;
+	/*background-color: #4b8f95;*/
 }
 
 #menu .sobre-stnb  {

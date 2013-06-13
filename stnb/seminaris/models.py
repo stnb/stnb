@@ -91,6 +91,8 @@ class Tema(TranslatableModel):
                                           blank=True, null=True)
     altres_organitzadors = models.CharField(max_length=250, blank=True,
                                             null=True)
+    publicacio = models.ForeignKey(Publicacio, related_name='temes',
+                                   blank=True, null=True)
     referencies = models.TextField(blank=True, null=True)
 
     translations = TranslatedFields(

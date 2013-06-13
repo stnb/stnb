@@ -1,4 +1,4 @@
--e git+git://github.com/KristianOellegaard/django-hvad.git#egg=hvad
+-e git+git://github.com/hds/django-hvad.git#egg=hvad
 django==1.4.2
 mysql-python
 pil

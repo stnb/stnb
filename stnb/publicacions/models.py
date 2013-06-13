@@ -48,6 +48,9 @@ class Publicacio(TranslatableModel):
     def __unicode__(self):
         return self.nom
 
+    def nom_fitxer(self):
+        return os.path.basename(self.fitxer.name)
+
     def autors_html(self):
         return persones_html(list(self.autors.all()) + persones_nom_cognoms(self.altres_autors))
 
