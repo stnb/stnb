@@ -9,13 +9,13 @@
 
 	<h4>{% trans "Name" %}:</h4>
 
-	<p>{% if user.get_full_name %}{{ user.get_full_name }}{% else %}<em>({% trans "empty" %})</em> <a href="{% url comptes-perfil-actualitzar %}">{% trans "Add your name" %}</a>.{% endif %}</p>
+	<p>{% if user.get_full_name %}{{ user.get_full_name }}{% else %}<em>({% trans "empty" %})</em> <a href="{% url "comptes-perfil-actualitzar" %}">{% trans "Add your name" %}</a>.{% endif %}</p>
 
 	<h4>{% trans "Email" %}:</h4>
 
 	<p>{{ user.email }}</p>
 
-	<p class="edit"><a href="{% url comptes-perfil-actualitzar %}">Edit your profile</a>.</p>
+	<p class="edit"><a href="{% url "comptes-perfil-actualitzar" %}">Edit your profile</a>.</p>
 
 </div>
 {% endblock contingut %}

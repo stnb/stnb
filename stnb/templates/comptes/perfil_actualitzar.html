@@ -6,15 +6,15 @@
 {% block contingut %}
 <div class="compte">
 
-	<form method="post" action="{% url comptes-perfil-actualitzar %}">
+	<form method="post" action="{% url "comptes-perfil-actualitzar" %}">
 		{% csrf_token %}
 
     {{ form.as_p }}
 
 		<div class="submit">
-			<input type="submit" value="{% trans "Update" %}" /> <a href="{% url comptes-perfil-detall %}">Cancel</a>
+			<input type="submit" value="{% trans "Update" %}" /> <a href="{% url "comptes-perfil-detall" %}">Cancel</a>
 		</div>
-		<input type="hidden" name="next" value="{% url inici %}" />
+		<input type="hidden" name="next" value="{% url "inici" %}" />
 	</form>
 
 </div>

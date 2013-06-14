@@ -1,5 +1,5 @@
 -e git+git://github.com/hds/django-hvad.git#egg=hvad
-django==1.4.2
+django==1.5.1
 mysql-python
 pil
 pycrypto

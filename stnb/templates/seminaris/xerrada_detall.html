@@ -27,7 +27,7 @@
 <h4>{% trans "Files" %}</h4>
 
 {% if request.user|is_owner:xerrada %}
-<p><a href="{% url seminari-xerrada-fitxer-actualitzar seminari_slug=seminari.slug xerrada_id=xerrada.id %}">{% trans "Upload files" %}</a></p>
+<p><a href="{% url "seminari-xerrada-fitxer-actualitzar" seminari_slug=seminari.slug xerrada_id=xerrada.id %}">{% trans "Upload files" %}</a></p>
 {% endif %}
 
 {% if xerrada.article or xerrada.presentacio %}

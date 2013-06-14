@@ -26,18 +26,18 @@
 			<div id="navigation" class="main-block">
 
 				<div id="site-titles">
-					<h1 class="site-title"><a href="{% url inici %}">STNB</a></h1>
-          <div class="year"><a href="{% url seminari-actual %}"><span>2014</span></a></div>
+					<h1 class="site-title"><a href="{% url "inici" %}">STNB</a></h1>
+          <div class="year"><a href="{% url "seminari-actual" %}"><span>2014</span></a></div>
 				</div>
 
 				<div id="menu">
 					<ul>
-						<li><a class="inici" href="{% url inici %}">{% trans "Home" %}</a></li>
-						<li><a class="seminari-actual" href="{% url seminari-actual %}">{% trans "Current<br />Seminar" %}</a></li>
-						<li><a class="arxiu-seminaris" href="{% url seminari-llista %}">{% trans "Seminar<br />Archive" %}</a></li>
-						<li><a class="publicacions" href="{% url publicacio-llista %}">{% trans "Publications" %}</a></li>
-						<li><a class="sobre-stnb" href="{% url pagina-plana slug='sobre-stnb' %}">{% trans "About<br />STNB" %}</a></li>
-						<li><a class="miembres" href="{% url pagina-plana slug='membres' %}">{% trans "Members" %}</a></li>
+						<li><a class="inici" href="{% url "inici" %}">{% trans "Home" %}</a></li>
+						<li><a class="seminari-actual" href="{% url "seminari-actual" %}">{% trans "Current<br />Seminar" %}</a></li>
+						<li><a class="arxiu-seminaris" href="{% url "seminari-llista" %}">{% trans "Seminar<br />Archive" %}</a></li>
+						<li><a class="publicacions" href="{% url "publicacio-llista" %}">{% trans "Publications" %}</a></li>
+						<li><a class="sobre-stnb" href="{% url "pagina-plana" slug='sobre-stnb' %}">{% trans "About<br />STNB" %}</a></li>
+						<li><a class="miembres" href="{% url "pagina-plana" slug='membres' %}">{% trans "Members" %}</a></li>
 					</ul>
 				</div>
 
@@ -88,11 +88,11 @@
 					<div class="title">{% trans "Account " %}</div>
 					<ul>
 					{% if user.is_authenticated %}
-						<li><a href="{% url membre-detall slug=user.get_profile.slug %}">{% if user.get_profile.nom_complet %}{{ user.get_profile.nom_complet }}{% else %}{% trans "Profile page" %}{% endif %}</a></li>
-						{% if user.is_staff %}<li><a href="{% url admin:index %}">{% trans "Admin console" %}</a></li>{% endif %}
-						<li><a href="{% url comptes-logout %}">{% trans "Logout" %}</a></li>
+						<li><a href="{% url "membre-detall" slug=user.get_profile.slug %}">{% if user.get_profile.nom_complet %}{{ user.get_profile.nom_complet }}{% else %}{% trans "Profile page" %}{% endif %}</a></li>
+						{% if user.is_staff %}<li><a href="{% url "admin:index" %}">{% trans "Admin console" %}</a></li>{% endif %}
+						<li><a href="{% url "comptes-logout" %}">{% trans "Logout" %}</a></li>
 					{% else %}
-						<li><a href="{% url comptes-login %}">{% trans "Log in" %}</a></li>
+						<li><a href="{% url "comptes-login" %}">{% trans "Log in" %}</a></li>
 					{% endif %}
 					</ul>
 				</div>

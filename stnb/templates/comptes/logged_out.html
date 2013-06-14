@@ -8,7 +8,7 @@
 	<h4>{% trans "Successfully logged out" %}</h4>
 		
 	<p>
-		{% trans "You have successfully logged out." %} {% trans "You can" %} <a href="{% url comptes-login %}">{% trans "log in again" %}</a> {% trans "or return to the" %} <a href="{% url inici %}">{% trans "home page" %}</a>.
+		{% trans "You have successfully logged out." %} {% trans "You can" %} <a href="{% url "comptes-login" %}">{% trans "log in again" %}</a> {% trans "or return to the" %} <a href="{% url "inici" %}">{% trans "home page" %}</a>.
 	</p>
 </div>
 {% endblock contingut %}

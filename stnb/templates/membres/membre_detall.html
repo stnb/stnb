@@ -17,7 +17,7 @@
 
 	{% if user.get_profile == membre %}
 	<p>{% trans "This is you." %}</p>
-	{% if membre.amagar_perfil %}<p>{% trans "Your profile is hidden, only you can see it." %} {% trans "You can" %} <a href="{% url membre-actualitzar slug=membre.slug %}">{% trans "update your profile" %}</a> {% trans "to change this." %}</p>{% endif %}
+	{% if membre.amagar_perfil %}<p>{% trans "Your profile is hidden, only you can see it." %} {% trans "You can" %} <a href="{% url "membre-actualitzar" slug=membre.slug %}">{% trans "update your profile" %}</a> {% trans "to change this." %}</p>{% endif %}
 	{% endif %}
 
 	<h4>{% trans "Email" %}:</h4>
@@ -36,7 +36,7 @@
 	<p>{{ membre.text_qualsevol_llengua|safe }}</p>
 	{% endif %}
 
-	{% if user.get_profile == membre %}<p class="edit"><a href="{% url membre-actualitzar slug=membre.slug %}">{% trans "Edit your profile" %}</a>.</p>{% endif %}
+	{% if user.get_profile == membre %}<p class="edit"><a href="{% url "membre-actualitzar" slug=membre.slug %}">{% trans "Edit your profile" %}</a>.</p>{% endif %}
 
 </div>
 {% endblock contingut %}
