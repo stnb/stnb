@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-20 19:02+0200\n"
-"PO-Revision-Date: 2013-06-20 19:03+0100\n"
+"PO-Revision-Date: 2013-06-20 19:04+0100\n"
 "Last-Translator: Hayden Stainsby <hds@mat.uab.cat>\n"
 "Language-Team: STNB <stnbarcelona@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -234,7 +234,7 @@ msgstr "Si ha olvidado su contraseña,"
 
 #: templates/comptes/login.html:23
 msgid "click here to reset it"
-msgstr "Pulse aquí para reiniciarla"
+msgstr "pulse aquí para reiniciarla"
 
 #: templates/comptes/login.html:26
 msgid "Don't have an account?"
