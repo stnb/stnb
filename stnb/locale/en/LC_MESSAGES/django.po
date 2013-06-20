@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-30 09:36+0100\n"
+"POT-Creation-Date: 2013-06-20 19:02+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,24 +53,36 @@ msgstr ""
 msgid "flat pages"
 msgstr ""
 
-#: seminaris/models.py:47
+#: publicacions/models.py:33
+msgid "Only the month and year are displayed"
+msgstr ""
+
+#: publicacions/models.py:39
+msgid "Publication name"
+msgstr ""
+
+#: publicacions/models.py:41
+msgid "A short description."
+msgstr ""
+
+#: seminaris/models.py:52
 #, python-format
 msgid "%(idia)s %(idata)d to %(fdia)s %(fdata)d %(imes)s, %(iany)d"
 msgstr ""
 
-#: seminaris/models.py:49
+#: seminaris/models.py:54
 #, python-format
 msgid "%(idia)s %(idata)d %(imes)s to %(fdia)s %(fdata)d %(fmes)s, %(iany)d"
 msgstr ""
 
-#: seminaris/models.py:51
+#: seminaris/models.py:56
 #, python-format
 msgid ""
 "%(idia)s %(idata)d %(imes)s, %(iany)s %(fdata)d to %(fdia)d %(fmes)s, "
 "%(fany)d"
 msgstr ""
 
-#: seminaris/models.py:199
+#: seminaris/models.py:220
 msgid "Only necessary if a talk isn't chosen."
 msgstr ""
 
@@ -128,49 +140,53 @@ msgid "Seminar<br />Archive"
 msgstr ""
 
 #: templates/base.html:38
-msgid "About<br />STNB"
+msgid "Publications"
 msgstr ""
 
 #: templates/base.html:39
+msgid "About<br />STNB"
+msgstr ""
+
+#: templates/base.html:40
 msgid "Members"
 msgstr ""
 
-#: templates/base.html:87
+#: templates/base.html:88
 msgid "Account "
 msgstr ""
 
-#: templates/base.html:90
+#: templates/base.html:91
 msgid "Profile page"
 msgstr ""
 
-#: templates/base.html:91
+#: templates/base.html:92
 msgid "Admin console"
 msgstr ""
 
-#: templates/base.html:92
+#: templates/base.html:93
 msgid "Logout"
 msgstr ""
 
-#: templates/base.html:94 templates/comptes/login.html:4
+#: templates/base.html:95 templates/comptes/login.html:4
 #: templates/comptes/login.html.py:15
 #: templates/comptes/password_reset_complete.html:13
 #: templates/comptes/registration_form.html:23
 msgid "Log in"
 msgstr ""
 
-#: templates/base.html:100
+#: templates/base.html:101
 msgid "Links"
 msgstr ""
 
-#: templates/base.html:114
+#: templates/base.html:115
 msgid "Languages"
 msgstr ""
 
-#: templates/base.html:123
+#: templates/base.html:124
 msgid "Copyright STNB"
 msgstr ""
 
-#: templates/base.html:123
+#: templates/base.html:124
 msgid "some rights reserved"
 msgstr ""
 
@@ -187,6 +203,7 @@ msgid "You have successfully logged out."
 msgstr ""
 
 #: templates/comptes/logged_out.html:11 templates/comptes/login.html:29
+#: templates/membres/membre_detall.html:20
 msgid "You can"
 msgstr ""
 
@@ -220,6 +237,10 @@ msgstr ""
 
 #: templates/comptes/login.html:29
 msgid "sign up for an account"
+msgstr ""
+
+#: templates/comptes/login.html:29
+msgid "now"
 msgstr ""
 
 #: templates/comptes/password_reset_complete.html:4
@@ -308,7 +329,7 @@ msgid "Update"
 msgstr ""
 
 #: templates/comptes/perfil_detall.html:4
-#: templates/membres/membre_detall.html:29
+#: templates/membres/membre_detall.html:34
 msgid "Profile"
 msgstr ""
 
@@ -325,7 +346,7 @@ msgid "Add your name"
 msgstr ""
 
 #: templates/comptes/perfil_detall.html:14
-#: templates/membres/membre_detall.html:18
+#: templates/membres/membre_detall.html:23
 msgid "Email"
 msgstr ""
 
@@ -392,15 +413,67 @@ msgid "Member profile"
 msgstr ""
 
 #: templates/membres/membre_detall.html:12
+#: templates/membres/membre_llista.html:14
 msgid "profile photo of"
 msgstr ""
 
+#: templates/membres/membre_detall.html:19
+msgid "This is you."
+msgstr ""
+
 #: templates/membres/membre_detall.html:20
+msgid "Your profile is hidden, only you can see it."
+msgstr ""
+
+#: templates/membres/membre_detall.html:20
+msgid "update your profile"
+msgstr ""
+
+#: templates/membres/membre_detall.html:20
+msgid "to change this."
+msgstr ""
+
+#: templates/membres/membre_detall.html:25
 msgid "Please log in to see member email addresses."
 msgstr ""
 
-#: templates/membres/membre_detall.html:23
+#: templates/membres/membre_detall.html:28
 msgid "Link"
+msgstr ""
+
+#: templates/membres/membre_detall.html:39
+msgid "Edit your profile"
+msgstr ""
+
+#: templates/membres/membre_llista.html:4
+#: templates/membres/membre_llista.html:5
+msgid "List of Members"
+msgstr ""
+
+#: templates/membres/membre_llista.html:22
+msgid "Member since"
+msgstr ""
+
+#: templates/publicacions/publicacio_llista.html:5
+msgid "List of Publications"
+msgstr ""
+
+#: templates/publicacions/publicacio_llista.html:13
+#: templates/seminaris/seminari_detall.html:16
+#: templates/seminaris/seminari_detall.html:18
+msgid "Download publication"
+msgstr ""
+
+#: templates/publicacions/publicacio_llista.html:14
+msgid "Publication Date"
+msgstr ""
+
+#: templates/publicacions/publicacio_llista.html:15
+msgid "ISBN"
+msgstr ""
+
+#: templates/publicacions/publicacio_llista.html:17
+msgid "Related seminars"
 msgstr ""
 
 #: templates/seminaris/_seminari_temes.html:9
@@ -413,12 +486,12 @@ msgid "Full details"
 msgstr ""
 
 #: templates/seminaris/seminari_detall.html:13
-#: templates/seminaris/seminari_detall.html:40
+#: templates/seminaris/seminari_detall.html:44
 msgid "Themes"
 msgstr ""
 
 #: templates/seminaris/seminari_detall.html:14
-#: templates/seminaris/seminari_detall.html:49
+#: templates/seminaris/seminari_detall.html:53
 msgid "Calendar"
 msgstr ""
 
@@ -426,25 +499,25 @@ msgstr ""
 msgid "Download programme"
 msgstr ""
 
-#: templates/seminaris/seminari_detall.html:19
+#: templates/seminaris/seminari_detall.html:23
 #: templates/seminaris/seminari_llista.html:13
 msgid "Dates"
 msgstr ""
 
-#: templates/seminaris/seminari_detall.html:26
+#: templates/seminaris/seminari_detall.html:30
 #: templates/seminaris/seminari_llista.html:14
 msgid "Location"
 msgstr ""
 
-#: templates/seminaris/seminari_detall.html:33
+#: templates/seminaris/seminari_detall.html:37
 msgid "Organising committee"
 msgstr ""
 
-#: templates/seminaris/seminari_detall.html:45
+#: templates/seminaris/seminari_detall.html:49
 msgid "Themes have not yet been chosen."
 msgstr ""
 
-#: templates/seminaris/seminari_detall.html:54
+#: templates/seminaris/seminari_detall.html:58
 msgid "The calendar has not yet been set."
 msgstr ""
 
@@ -453,20 +526,24 @@ msgid "Seminar archive"
 msgstr ""
 
 #: templates/seminaris/tema_detall.html:18
+msgid "Publication download"
+msgstr ""
+
+#: templates/seminaris/tema_detall.html:27
 msgid "Description"
 msgstr ""
 
-#: templates/seminaris/tema_detall.html:25
+#: templates/seminaris/tema_detall.html:34
 #: templates/seminaris/xerrada_llista.html:5
 #: templates/seminaris/xerrada_llista.html:6
 msgid "Talks"
 msgstr ""
 
-#: templates/seminaris/tema_detall.html:34
+#: templates/seminaris/tema_detall.html:43
 msgid "References"
 msgstr ""
 
-#: templates/seminaris/tema_detall.html:42
+#: templates/seminaris/tema_detall.html:51
 #: templates/seminaris/xerrada_detall.html:50
 #: templates/seminaris/xerrada_llista.html:13
 msgid "Return to seminar"
