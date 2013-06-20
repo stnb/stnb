@@ -28,9 +28,14 @@ LANGUAGES = (
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+LOCALE_PATHS = (
+    #PROJECT_DIR.child(locale)
+    os.path.join(DIRNAME, 'locale/'),
+)
 
 SECRET_KEY = 'f%-(30mhl1qlj$$ah808vn(!fo68pfo6ykwxo)wjzg4rz^psi#'
 
+ALLOWED_HOSTS = ['stnb.tk']
 
 SITE_ID = 1
 GA_TRACKER = 'UA-36931377-1'
