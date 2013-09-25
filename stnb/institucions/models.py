@@ -12,7 +12,7 @@ class Institucio(TranslatableModel):
         descripcio = models.TextField(_('description')),
     )
 
-    def Meta:
+    class Meta:
         verbose_name = _('institution')
         verbose_name_plural = _('institutions')
 
