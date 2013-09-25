@@ -205,12 +205,12 @@ body  {
 /* **** BEGIN: Links **** */
 
 #content-wrap a, #secondary-column a  {
-	color: #89A750;
+	color: #ff6600;
 	text-decoration: none;
 }
 
 #content-wrap a:hover, #secondary-column a:hover  {
-	color: #6B7627;
+	/*color: #6B7627;*/
 	text-decoration: underline;
 }
 
@@ -247,29 +247,29 @@ body  {
 }
 
 #menu .inici  {
-	background-color: #769F23;
+	background-color: #993300;
 }
 
 #menu .seminari-actual  {
-	background-color: #89A750;
+	background-color: #cc6633;
 }
 
 #menu .arxiu-seminaris  {
-	background-color: #65ba80;
+	background-color: #ff6600;
 }
 
 #menu .publicacions  {
 	font-size: 80%;
-	background-color: #659a90;
+	background-color: #ff9966;
 	/*background-color: #4b8f95;*/
 }
 
 #menu .sobre-stnb  {
-	background-color: #31649B;
+	background-color: #999999;
 }
 
 #menu .miembres  {
-	background-color: #5C80B0;
+	background-color: #666666;
 }
 
 /* **** END: Navigation **** */
@@ -369,7 +369,7 @@ body  {
 /* **** BEGIN: Main Content **** */
 
 #content-wrap .microalertes  {
-	background: #7A9938 none;
+	background: #cc6633 none;
 	padding: 8px 4px 8px 4px;
 	margin: 10px 0 20px 0;
 	border-radius: 16px;
