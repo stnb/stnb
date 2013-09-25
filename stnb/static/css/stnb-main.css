@@ -421,6 +421,15 @@ body  {
 	line-height: 16pt;
 }
 
+#content-wrap .noticia .descripcio li  {
+	margin: 6px 0 6px 0;
+}
+
+#content-wrap .noticia .descripcio ul  {
+	list-style: disc;
+	padding-left: 40px;
+}
+
 #content-wrap .pagina-plana p  {
   margin: 10px 0 18px 0;
 }
