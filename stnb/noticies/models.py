@@ -4,43 +4,43 @@ import datetime
 from django.db import models
 from django.db.models import permalink
 from django.core.urlresolvers import reverse
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from hvad.models import TranslatableModel, TranslatedFields
 
 
 class Noticia(TranslatableModel):
-    data = models.DateTimeField()
+    data = models.DateTimeField(_('date'))
 
-    creat = models.DateTimeField(auto_now_add=True)
-    actualizat = models.DateTimeField(auto_now=True)
+    creat = models.DateTimeField(_('created'), auto_now_add=True)
+    actualizat = models.DateTimeField(_('updated'), auto_now=True)
 
     translations = TranslatedFields(
-        titol = models.CharField(max_length=255),
-        descripcio = models.TextField(),
+        titol = models.CharField(_('title'), max_length=255),
+        descripcio = models.TextField(_('description')),
     )
 
     class Meta:
+        verbose_name = _('news item')
+        verbose_name_plural = _('news items')
         ordering = ['-data']
-        verbose_name = 'notícia'
-        verbose_name_plural = 'notícies'
 
     def __unicode__(self):
         return self.titol
 
 class MicroAlerta(TranslatableModel):
-    data = models.DateTimeField()
+    data = models.DateTimeField(_('date'))
 
-    creat = models.DateTimeField(auto_now_add=True)
-    actualizat = models.DateTimeField(auto_now=True)
+    creat = models.DateTimeField(_('created'), auto_now_add=True)
+    actualizat = models.DateTimeField(_('updated'), auto_now=True)
 
     translations = TranslatedFields(
-        alerta = models.TextField(),
+        alerta = models.TextField(_('alert')),
     )
 
     class Meta:
+        verbose_name = _('microalert')
+        verbose_name_plural = _('microalerts')
         ordering = ['-data']
-        verbose_name = 'microalerta'
-        verbose_name_plural = 'microalertes'
 
     def __unicode__(self):
         return self.alerta

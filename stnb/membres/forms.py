@@ -9,11 +9,11 @@ from .models import Membre
 
 #class MembreActualizarForm(TranslatableModelForm):
 class MembreActualizarForm(TranslatableModelAllTranslationsForm):
-    membre_des_de = forms.IntegerField(min_value=1900, max_value=2100,
-            required=False,
-            widget=forms.TextInput(attrs={'placeholder': _('Year'),
+    membre_des_de = forms.IntegerField(label=_('member since'), min_value=1900,
+                                       max_value=2100, required=False,
+            widget=forms.TextInput(attrs={'placeholder': _('year'),
                                           'class': 'year-field'}))
-    text = forms.CharField(label=_('Biography'), required=False,
+    text = forms.CharField(label=_('biography') + ' (%(language)s)', required=False,
                            widget=TinyMCE(attrs={'cols': 80, 'rows': 16}))
 
     class Meta:

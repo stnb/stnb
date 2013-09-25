@@ -10,6 +10,7 @@ from django.db.models import permalink
 from django.db.models import signals
 from django.conf import settings
 from django.contrib.auth.models import User
+from django.utils.translation import ugettext_lazy as _
 from hvad.models import TranslatableModel, TranslatedFields
 
 from .utils import crear_imagen_petita
@@ -17,22 +18,26 @@ from stnb.institucions.models import Institucio
 
 class Membre(TranslatableModel):
     user = models.ForeignKey(User, unique=True)
-    nom = models.CharField(max_length=50, null=True)
-    cognoms = models.CharField(max_length=100, null=True)
+    nom = models.CharField(_('name'), max_length=50, null=True)
+    cognoms = models.CharField(_('surname'), max_length=100, null=True)
     slug = models.SlugField(max_length=160, unique=True, blank=True)
-    afiliacio = models.ForeignKey(Institucio, related_name='membres',
-                                  blank=True, null=True)
-    foto = models.ImageField(upload_to='membres/fotos/', blank=True, null=True)
-    enllac = models.CharField(max_length=250, blank=True, null=True)
-    membre_des_de = models.IntegerField(blank=True, null=True)
-    membre_actual = models.BooleanField(default=True)
-    amagar_perfil = models.BooleanField(default=False)
+    afiliacio = models.ForeignKey(Institucio, verbose_name=_('affiliation'),
+                                  related_name='membres', blank=True, null=True)
+    foto = models.ImageField(_('photo'), upload_to='membres/fotos/',
+                             blank=True, null=True)
+    enllac = models.CharField(_('link'), max_length=250, blank=True, null=True)
+    membre_des_de = models.IntegerField(_('member since'),
+                                        blank=True, null=True)
+    membre_actual = models.BooleanField(_('current member'), default=True)
+    amagar_perfil = models.BooleanField(_('hide profile'), default=False)
 
     translations = TranslatedFields(
-        text = models.TextField(blank=True, null=True),
+        text = models.TextField(_('biography'), blank=True, null=True),
     )
 
     class Meta:
+        verbose_name = _('member')
+        verbose_name_plural = _('members')
         ordering = ['cognoms', 'nom']
 
     def __unicode__(self):
@@ -40,7 +45,7 @@ class Membre(TranslatableModel):
         if nom_complet:
             return nom_complet
         else:
-            return _('Unnamed')
+            return _('unnamed')
 
     @permalink
     def get_absolute_url(self):

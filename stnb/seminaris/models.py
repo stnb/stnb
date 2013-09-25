@@ -6,7 +6,7 @@ import datetime
 from django.db import models
 from django.db.models import permalink
 from django.core.urlresolvers import reverse
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from hvad.models import TranslatableModel, TranslatedFields
 
 from .utils import persones_nom_cognoms, persones_html, persones_text
@@ -16,26 +16,31 @@ from stnb.membres.utils import cognoms_lexic
 from stnb.utils.text_processing import text_sense_accents
 
 class Seminari(TranslatableModel):
-    slug = models.SlugField(max_length=50)
-    data_inici = models.DateField()
-    data_finalizacio = models.DateField()
-    organitzadors = models.ManyToManyField(Membre, related_name='seminaris',
+    slug = models.SlugField(_('slug'), max_length=50)
+    data_inici = models.DateField(_('start date'))
+    data_finalizacio = models.DateField(_('end date'))
+    organitzadors = models.ManyToManyField(Membre, verbose_name=_('organisers'),
+                                           related_name='seminaris',
                                            blank=True, null=True)
-    altres_organitzadors = models.CharField(max_length=250, blank=True,
+    altres_organitzadors = models.CharField(_('other organisers'),
+                                            max_length=250, blank=True,
                                             null=True)
-    programa_pdf = models.FileField(upload_to='seminaris/programes',
-                                     blank=True, null=True)
-    publicacio = models.ForeignKey(Publicacio, related_name='seminaris',
+    programa_pdf = models.FileField(_('programme PDF'),
+                                    upload_to='seminaris/programes',
+                                    blank=True, null=True)
+    publicacio = models.ForeignKey(Publicacio, verbose_name=_('publication'),
+                                   related_name='seminaris',
                                    blank=True, null=True)
-    actiu = models.BooleanField(default=False)
+    actiu = models.BooleanField(_('active'), default=False)
     
     translations = TranslatedFields(
-        nom = models.CharField(max_length=50),
-        lloc = models.TextField(),
+        nom = models.CharField(_('name'), max_length=50),
+        lloc = models.TextField(_('location')),
     )
 
     class Meta:
-        verbose_name_plural = 'seminaris'
+        verbose_name = _('seminar')
+        verbose_name_plural = _('seminars')
         ordering = ['-data_inici']
 
     def __unicode__(self):
@@ -85,23 +90,28 @@ class Seminari(TranslatableModel):
 
 
 class Tema(TranslatableModel):
-    seminari = models.ForeignKey(Seminari, related_name='temes')
-    ordre = models.IntegerField(default=0)
-    organitzadors = models.ManyToManyField(Membre, related_name='temes',
+    seminari = models.ForeignKey(Seminari, verbose_name=_('seminar'),
+                                 related_name='temes')
+    ordre = models.IntegerField(_('order'), default=0)
+    organitzadors = models.ManyToManyField(Membre, verbose_name=_('organisers'),
+                                          related_name='temes',
                                           blank=True, null=True)
-    altres_organitzadors = models.CharField(max_length=250, blank=True,
+    altres_organitzadors = models.CharField(_('other organisers'),
+                                            max_length=250, blank=True,
                                             null=True)
-    publicacio = models.ForeignKey(Publicacio, related_name='temes',
+    publicacio = models.ForeignKey(Publicacio, verbose_name=_('publication'),
+                                   related_name='temes',
                                    blank=True, null=True)
-    referencies = models.TextField(blank=True, null=True)
+    referencies = models.TextField(_('references'), blank=True, null=True)
 
     translations = TranslatedFields(
-        titol = models.CharField(max_length=255),
-        descripcio = models.TextField(blank=True, null=True),
+        titol = models.CharField(_('title'), max_length=255),
+        descripcio = models.TextField(_('description'), blank=True, null=True),
     )
 
     class Meta:
-        verbose_name_plural = 'temes'
+        verbose_name = _('theme')
+        verbose_name_plural = _('themes')
         ordering = ['seminari', 'ordre']
 
     def __unicode__(self):
@@ -117,13 +127,15 @@ class Tema(TranslatableModel):
 
 
 class Dia(TranslatableModel):
-    data = models.DateField()
-    seminari = models.ForeignKey(Seminari, related_name='dies')
+    data = models.DateField(_('date'))
+    seminari = models.ForeignKey(Seminari, verbose_name=_('seminar'),
+                                 related_name='dies')
 
     translations = TranslatedFields()
 
     class Meta:
-        verbose_name_plural = 'dies'
+        verbose_name = _('day')
+        verbose_name_plural = _('days')
         ordering = ['seminari__data_inici', 'data',]
 
     def __unicode__(self):
@@ -152,26 +164,31 @@ def article_nom_fitxer(xerrada, nom):
     return fitxer_nom
 
 class Xerrada(TranslatableModel):
-    tema = models.ForeignKey(Tema, related_name='xerrades',
-                               blank=True, null=True)
-    ordre = models.IntegerField(default=0)
-    presentadors = models.ManyToManyField(Membre, related_name='xerrades',
+    tema = models.ForeignKey(Tema, verbose_name=_('theme'),
+                             related_name='xerrades',
+                             blank=True, null=True)
+    ordre = models.IntegerField(_('order'), default=0)
+    presentadors = models.ManyToManyField(Membre, verbose_name=_('presenter'),
+                                          related_name='xerrades',
                                           blank=True, null=True)
-    altres_presentadors = models.CharField(max_length=250, blank=True,
+    altres_presentadors = models.CharField(_('other presenters'),
+                                           max_length=250, blank=True,
                                            null=True)
 
-    presentacio = models.FileField(upload_to=presentacio_nom_fitxer,
+    presentacio = models.FileField(_('presentation'),
+                                   upload_to=presentacio_nom_fitxer,
                                    blank=True, null=True)
-    article = models.FileField(upload_to=article_nom_fitxer,
+    article = models.FileField(_('article'), upload_to=article_nom_fitxer,
                                blank=True, null=True)
 
     translations = TranslatedFields(
-        titol = models.CharField(max_length=255),
-        abstracte = models.TextField(blank=True, null=True),
+        titol = models.CharField(_('title'), max_length=255),
+        abstracte = models.TextField(_('abstract'), blank=True, null=True),
     )
 
     class Meta:
-        verbose_name_plural = 'xerrades'
+        verbose_name = _('talk')
+        verbose_name_plural = _('talks')
         ordering = ['tema', 'ordre']
 
     def __unicode__(self):
@@ -210,20 +227,23 @@ class Xerrada(TranslatableModel):
 
 
 class ItemPrograma(TranslatableModel):
-    xerrada = models.ForeignKey(Xerrada, related_name='items_programa',
-                                  blank=True, null=True)
-    dia = models.ForeignKey(Dia, related_name='items_programa')
-    hora_inici = models.TimeField()
-    hora_finalizacio = models.TimeField()
+    xerrada = models.ForeignKey(Xerrada, verbose_name=_('talk'),
+                                related_name='items_programa',
+                                blank=True, null=True)
+    dia = models.ForeignKey(Dia, verbose_name=_('day'),
+                            related_name='items_programa')
+    hora_inici = models.TimeField(_('start time'))
+    hora_finalizacio = models.TimeField(_('end time'))
 
     translations = TranslatedFields(
-        descripcio = models.CharField(help_text=_("Only necessary if a talk isn't chosen."),
-                                      max_length=255, blank=True, null=True),
+        descripcio = models.CharField(_('description'),
+                                      max_length=255, blank=True, null=True,
+            help_text=_("Only necessary if a talk isn't chosen.")),
     )
 
     class Meta:
-        verbose_name = 'ìtem del programa'
-        verbose_name_plural = 'ìtems del programa'
+        verbose_name = _('programme item')
+        verbose_name_plural = _('programme items')
         ordering = ['dia', 'hora_inici']
 
     def __unicode__(self):

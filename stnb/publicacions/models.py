@@ -2,7 +2,7 @@
 import os
 
 from django.db import models
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from hvad.models import TranslatableModel, TranslatedFields
 
 from stnb.membres.models import Membre
@@ -21,30 +21,34 @@ def publicacio_nom_fitxer(xerrada, nom):
     return fitxer_nom
 
 class Publicacio(TranslatableModel):
-    autors = models.ManyToManyField(Membre, related_name='publicacions',
+    autors = models.ManyToManyField(Membre, verbose_name=_('authors'),
+                                    related_name='publicacions',
                                     blank=True, null=True)
-    altres_autors = models.CharField(max_length=250, blank=True, null=True)
-    editors = models.ManyToManyField(Membre,
+    altres_autors = models.CharField(_('other authors'), max_length=250,
+                                     blank=True, null=True)
+    editors = models.ManyToManyField(Membre, verbose_name=_('editors'),
                                      related_name='publicacions_editades',
                                      blank=True, null=True)
-    altres_editors = models.CharField(max_length=250, blank=True, null=True)
+    altres_editors = models.CharField(_('other editors'), max_length=250,
+                                      blank=True, null=True)
     isbn = models.CharField('ISBN', max_length=20, blank=True, null=True)
-    data_publicacio = models.DateField(\
+    data_publicacio = models.DateField(_('publication date'),
             help_text=_('Only the month and year are displayed'),
             blank=True, null=True)
-    fitxer = models.FileField(upload_to=publicacio_nom_fitxer,
+    fitxer = models.FileField(_('file'), upload_to=publicacio_nom_fitxer,
                                blank=True, null=True)
 
     translations = TranslatedFields(
-        nom = models.CharField(help_text=_('Publication name'),
+        nom = models.CharField(_('name'), help_text=_('Publication name'),
                                max_length=128),
-        descripcio = models.CharField(help_text=_('A short description.'),
-                                      max_length=255, blank=True, null=True),
+        descripcio = models.CharField(_('description'), max_length=255,
+                                      help_text=_('A short description.'),
+                                      blank=True, null=True),
     )
 
     class Meta:
-        verbose_name = 'publicació'
-        verbose_name_plural = 'publicacions'
+        verbose_name = _('publication')
+        verbose_name_plural = _('publicacions')
         ordering = ['data_publicacio',]
 
     def __unicode__(self):
