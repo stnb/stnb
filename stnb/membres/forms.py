@@ -12,11 +12,11 @@ class MembreActualizarForm(TranslatableModelAllTranslationsForm):
     membre_des_de = forms.IntegerField(label=_('member since'), min_value=1900,
                                        max_value=2100, required=False,
             widget=forms.TextInput(attrs={'placeholder': _('year'),
-                                          'class': 'year-field'}))
+                                          'class': 'camp-any'}))
     text = forms.CharField(label=_('biography') + ' (%(language)s)', required=False,
                            widget=TinyMCE(attrs={'cols': 80, 'rows': 16}))
 
     class Meta:
         model = Membre
-        fields = ('nom', 'cognoms', 'foto', 'afiliacio', 'membre_des_de',
-                  'membre_actual', 'text', 'amagar_perfil', 'enllac',)
+        fields = ('nom', 'cognoms', 'membre_des_de', 'afiliacio', 'enllac',
+                   'amagar_perfil', 'membre_actual', 'foto', 'text',)

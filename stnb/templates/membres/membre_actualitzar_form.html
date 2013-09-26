@@ -7,12 +7,12 @@
 {% block titol-pagina %}{% trans "Update member profile" %}{% endblock titol-pagina %}
 
 {% block contingut %}
-<div class="compte">
+<div class="membre-actualitzar actualitzar">
 
 	<form method="post" action="{% url "membre-actualitzar" slug=form.instance.slug %}" enctype="multipart/form-data">
 		{% csrf_token %}
 
-    {{ form.as_p }}
+		{{ form.as_p }}
 
 		<div class="submit">
 			<input type="submit" value="{% trans "Update" %}" /> <a href="{% url "membre-detall" slug=form.instance.slug %}">Cancel</a>

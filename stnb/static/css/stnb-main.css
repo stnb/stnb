@@ -535,3 +535,86 @@ body  {
 }
 
 /* **** END: Member pages **** */
+
+/* **** BEGIN: Forms **** */
+
+.actualitzar p  {
+	margin: 14px 0 14px 0;
+}
+
+.actualitzar p.side-by  {
+	float: left;
+}
+
+.actualitzar p label, .actualitzar p input  {
+	display: block;
+}
+
+.actualitzar p label  {
+	font-size: 10.5pt;
+}
+
+.actualitzar p input  {
+	margin: 4px 0 4px 0;
+	
+	width: 340px;
+	height: 28px;
+	
+	font-size: 13pt;
+}
+
+.actualitzar  p input[type=file]  {
+	font-size: 12pt;
+}
+
+.actualitzar  .submit input  {
+	margin-top: 16px;
+	height: 40px;
+	
+	font-size: 14pt;
+}
+
+.actualitzar .errorlist  {
+	color: #A94F0D;
+}
+
+.actualitzar p  {
+	float: left;
+}
+
+/* **** END: Forms **** */
+
+/* **** BEGIN: Member form **** */
+
+.membre-actualitzar .submit  {
+	clear: left;
+}
+
+.membre-actualitzar p input, .membre-actualitzar p select  {
+	margin-right: 60px;
+}
+
+.membre-actualitzar p #id_nom, .membre-actualitzar p #id_cognoms  {
+	width: 280px;
+}
+
+.membre-actualitzar p #id_enllac  {
+	width: 308px;
+}
+
+.membre-actualitzar p label[for=id_amagar_perfil],
+.membre-actualitzar p #id_amagar_perfil,
+.membre-actualitzar p label[for=id_membre_actual],
+.membre-actualitzar p #id_membre_actual  {
+	display: inline;
+	height: auto;
+	width: auto;
+}
+
+
+.membre-actualitzar p input.camp-any  {
+	width: 100px;
+}
+
+
+/* **** END: Member form **** */
