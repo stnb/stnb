@@ -9,8 +9,17 @@
 {% block contingut %}
 <div class="membre-actualitzar actualitzar">
 
+	<div id="llengua-formulari">
+		<ul>
+			<a href="#"><li class="left">{% trans "Catalan" %}</li></a>
+			<a href="#"><li class="middle">{% trans "Spanish" %}</li></a>
+			<a href="#"><li class="right">{% trans "English" %}</li></a>
+		</ul>
+	</div>
+
 	<form method="post" action="{% url "membre-actualitzar" slug=form.instance.slug %}" enctype="multipart/form-data">
 		{% csrf_token %}
+
 
 		{{ form.as_p }}
 

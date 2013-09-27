@@ -618,3 +618,40 @@ body  {
 
 
 /* **** END: Member form **** */
+
+/* **** BEGIN: Form language select **** */
+
+#llengua-formulari a li  {
+	float: left;
+	width: 90px;
+	height: 18px;
+	padding-top: 2px;
+	margin: 4px 2px 0 0;
+	text-align: center;
+	color: #fff;
+	background: none #f60;
+	font-size: 90%;
+}
+
+#llengua-formulari a:hover li  {
+	background-color: #c63;
+}
+
+#llengua-formulari li.left  {
+	border-top-left-radius: 11px;
+	border-bottom-left-radius:  11px;
+}
+
+#llengua-formulari li.middle  {
+}
+
+#llengua-formulari li.right  {
+	border-top-right-radius: 11px;
+	border-bottom-right-radius:  11px;
+}
+
+.membre-actualitzar form  {
+	clear: left;
+}
+
+/* **** END: Form language select **** */
