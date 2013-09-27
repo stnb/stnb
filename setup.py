@@ -86,7 +86,7 @@ class easy_install(_easy_install):
 
 
 version = re.search("__version__\s*=\s*'(.*)'",
-                    open('digital/__init__.py').read(), re.M).group(1)
+                    open('stnb/__init__.py').read(), re.M).group(1)
 setup(
     name='stnb',
     version=version,
