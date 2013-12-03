@@ -272,6 +272,15 @@ body  {
 	background-color: #666666;
 }
 
+/* Language specific tweeks */
+.lleng-es #menu .publicacions  {
+	font-size: 70%;
+}
+
+.lleng-es #menu .arxiu-seminaris  {
+	font-size: 80%;
+}
+
 /* **** END: Navigation **** */
 
 /* **** BEGIN: Secondary Column **** */
