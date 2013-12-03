@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block extra-head %}{{ form.media }}{% endblock extra-head %}
+{% block extra-head %}{{ form.media }}<script type="text/javascript" src="{{ STATIC_URL }}/js/stnb.js"></script>{% endblock extra-head %}
 
 {% block titol-head %}{% trans "Update member profile" %}{% endblock titol-head %}
 {% block titol-pagina %}{% trans "Update member profile" %}{% endblock titol-pagina %}
@@ -11,15 +11,14 @@
 
 	<div id="llengua-formulari">
 		<ul>
-			<a href="#"><li class="left">{% trans "Catalan" %}</li></a>
-			<a href="#"><li class="middle">{% trans "Spanish" %}</li></a>
-			<a href="#"><li class="right">{% trans "English" %}</li></a>
+			<a id="editar-ca" class="editar-leng" href="javascript:EditarLlengua.canviar_lengua('ca')"><li class="left">{% trans "Catalan" %}</li></a>
+			<a id="editar-es" class="editar-leng" href="javascript:EditarLlengua.canviar_lengua('es')"><li class="middle">{% trans "Spanish" %}</li></a>
+			<a id="editar-en" class="editar-leng" href="javascript:EditarLlengua.canviar_lengua('en')"><li class="right">{% trans "English" %}</li></a>
 		</ul>
 	</div>
 
 	<form method="post" action="{% url "membre-actualitzar" slug=form.instance.slug %}" enctype="multipart/form-data">
 		{% csrf_token %}
-
 
 		{{ form.as_p }}
 

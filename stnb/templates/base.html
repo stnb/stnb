@@ -10,6 +10,7 @@
 		<title>STNB - {% trans "Seminari de Teoria de Nombres de Barcelona" %} - {% block titol-head %}2014{% endblock titol-head %}</title>
 		<link href='http://fonts.googleapis.com/css?family=Titillium+Web:300,700|Oswald:400,700' rel='stylesheet' type='text/css'>
 		{% block stylesheets %}<link rel="stylesheet" media="screen" type="text/css" href="{{ STATIC_URL }}css/stnb-main.css" />{% endblock stylesheets %}
+    <script type="text/javascript" src="{{ STATIC_URL }}/js/jquery-2.0.3.min.js"></script>
 		{% block extra-head %}{% endblock extra-head %}
 		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 			MathJax.Hub.Config({
@@ -113,9 +114,9 @@
 			<div id="language-chooser">
 				<div class="title">{% trans "Languages" %}:</div>
 				<ul>
-					<li><a{% if lang == "ca" %} class="current"{% endif %} href="/setlang/?language=ca&next={{ redirect_to }}">Català</a></li>
-					<li><a{% if lang == "es" %} class="current"{% endif %} href="/setlang/?language=es&next={{ redirect_to }}">Castellano</a></li>
-					<li><a{% if lang == "en" %} class="current"{% endif %} href="/setlang/?language=en&next={{ redirect_to }}">English</a></li>
+					<li><a class="llengua ca{% if lang == "ca" %} current{% endif %}" href="/setlang/?language=ca&next={{ redirect_to }}">Català</a></li>
+					<li><a class="llengua es{% if lang == "es" %} current{% endif %}" href="/setlang/?language=es&next={{ redirect_to }}">Castellano</a></li>
+					<li><a class="llengua en{% if lang == "en" %} current{% endif %}" href="/setlang/?language=en&next={{ redirect_to }}">English</a></li>
 				</ul>
 			</div>
 			
