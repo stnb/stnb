@@ -13,7 +13,8 @@ class MembreActualizarForm(TranslatableModelAllTranslationsForm):
                                        max_value=2100, required=False,
             widget=forms.TextInput(attrs={'placeholder': _('year'),
                                           'class': 'camp-any'}))
-    text = forms.CharField(label=_('biography').capitalize() + ' (%(language)s)', required=False,
+    text = forms.CharField(label=_('biography').capitalize()+' (%(language)s)',
+            required=False,
             widget=TinyMCE(attrs={'cols': 80, 'rows': 16, 'data-width': 580, 'data-height': 170}))
 
     class Meta:

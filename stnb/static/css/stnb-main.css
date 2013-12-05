@@ -547,23 +547,23 @@ body  {
 
 /* **** BEGIN: Forms **** */
 
-.actualitzar p  {
+.actualitzar form p  {
 	margin: 14px 0 14px 0;
 }
 
-.actualitzar p.side-by  {
+.actualitzar form p.side-by  {
 	float: left;
 }
 
-.actualitzar p label, .actualitzar p input  {
+.actualitzar form p label, .actualitzar form p input  {
 	display: block;
 }
 
-.actualitzar p label  {
+.actualitzar form p label  {
 	font-size: 10.5pt;
 }
 
-.actualitzar p input  {
+.actualitzar form p input  {
 	margin: 4px 0 4px 0;
 	
 	width: 340px;
@@ -572,11 +572,15 @@ body  {
 	font-size: 13pt;
 }
 
-.actualitzar  p input[type=file]  {
+.actualitzar form p input[type=file]  {
 	font-size: 12pt;
 }
 
-.actualitzar  .submit input  {
+.actualitzar form .submit  {
+	clear: left;
+}
+
+.actualitzar form .submit input  {
 	margin-top: 16px;
 	height: 40px;
 	
@@ -587,11 +591,19 @@ body  {
 	color: #A94F0D;
 }
 
-.actualitzar p  {
+.actualitzar form p  {
 	float: left;
 }
 
 /* **** END: Forms **** */
+
+/* **** BEGIN: Form tweeks **** */
+
+input.titol  {
+	width: 582px;
+}
+
+/* **** END: Form tweeks **** */
 
 /* **** BEGIN: Member form **** */
 
@@ -635,15 +647,19 @@ body  {
 	width: 90px;
 	height: 18px;
 	padding-top: 2px;
-	margin: 4px 2px 0 0;
+	margin: 4px 2px 16px 0;
 	text-align: center;
+	font-size: 90%;
 	color: #fff;
 	background: none #f60;
-	font-size: 90%;
 }
 
 #llengua-formulari a:hover li  {
 	background-color: #c63;
+}
+
+#llengua-formulari a.actiu li  {
+	background-color: #930;
 }
 
 #llengua-formulari li.left  {
@@ -657,6 +673,10 @@ body  {
 #llengua-formulari li.right  {
 	border-top-right-radius: 11px;
 	border-bottom-right-radius:  11px;
+}
+
+body.multillengua form  {
+	clear: left;
 }
 
 .membre-actualitzar form  {

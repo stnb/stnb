@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block extra-head %}{{ form.media }}<script type="text/javascript" src="{{ STATIC_URL }}/js/stnb.js"></script>{% endblock extra-head %}
+{% block extra-head %}{{ form.media }}{% include "formularis/_elegir_llengua_media.html" %}{% endblock extra-head %}
 
 {% block titol-head %}{% trans "Update member profile" %}{% endblock titol-head %}
 {% block titol-pagina %}{% trans "Update member profile" %}{% endblock titol-pagina %}
+
+{% block body-class %}{{ block.super }} multillengua{% endblock body-class %}
 
 {% block contingut %}
 <div class="membre-actualitzar actualitzar">
