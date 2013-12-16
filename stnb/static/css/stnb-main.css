@@ -591,6 +591,11 @@ body  {
 	color: #A94F0D;
 }
 
+.actualitzar form .helptext  {
+	display: block;
+	font-size: 70%;
+}
+
 .actualitzar form p  {
 	float: left;
 }

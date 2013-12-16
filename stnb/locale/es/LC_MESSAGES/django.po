@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-25 21:47+0200\n"
+"POT-Creation-Date: 2013-12-05 17:21+0100\n"
 "PO-Revision-Date: 2013-09-25 22:56+0100\n"
 "Last-Translator: Hayden Stainsby <hds@mat.uab.cat>\n"
 "Language-Team: STNB <stnbarcelona@gmail.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,15 +27,15 @@ msgstr "nombre"
 msgid "surname"
 msgstr "apellido"
 
-#: conf/settings/default.py:23
+#: conf/settings/default.py:23 templates/formularis/_elegir_llengua.html:5
 msgid "Catalan"
 msgstr "catalán"
 
-#: conf/settings/default.py:24
+#: conf/settings/default.py:24 templates/formularis/_elegir_llengua.html:6
 msgid "Spanish"
 msgstr "castellano"
 
-#: conf/settings/default.py:25
+#: conf/settings/default.py:25 templates/formularis/_elegir_llengua.html:7
 msgid "English"
 msgstr "inglés"
 
@@ -116,8 +117,8 @@ msgstr "creado"
 msgid "updated"
 msgstr "actualizado"
 
-#: noticies/models.py:18 pagines/models.py:16 seminaris/models.py:108
-#: seminaris/models.py:185
+#: noticies/models.py:18 pagines/models.py:16 seminaris/forms.py:10
+#: seminaris/models.py:108 seminaris/models.py:185
 msgid "title"
 msgstr "titulo"
 
@@ -196,6 +197,10 @@ msgstr "publicación"
 #: publicacions/models.py:51
 msgid "publicacions"
 msgstr "publicaciones"
+
+#: seminaris/forms.py:12 seminaris/models.py:186
+msgid "abstract"
+msgstr "resumen"
 
 #: seminaris/models.py:20
 msgid "start date"
@@ -279,7 +284,8 @@ msgid "days"
 msgstr "días"
 
 #: seminaris/models.py:171
-msgid "presenter"
+#, fuzzy
+msgid "presenters"
 msgstr "presentador"
 
 #: seminaris/models.py:174
@@ -293,10 +299,6 @@ msgstr "presentación"
 #: seminaris/models.py:181
 msgid "article"
 msgstr "artículo"
-
-#: seminaris/models.py:186
-msgid "abstract"
-msgstr "resumen"
 
 #: seminaris/models.py:190 seminaris/models.py:230
 msgid "talk"
@@ -346,7 +348,7 @@ msgstr "La página buscada no se ha podido encontrar."
 msgid "Return"
 msgstr "Volver"
 
-#: templates/404.html:12 templates/500.html:15 templates/base.html:34
+#: templates/404.html:12 templates/500.html:15 templates/base.html:35
 #: templates/inici/inici.html:5
 msgid "Home"
 msgstr "Inicio"
@@ -371,62 +373,62 @@ msgstr "Si el error persiste, por favor contacte con el"
 msgid "Seminari de Teoria de Nombres de Barcelona"
 msgstr "Seminari de Teoria de Nombres de Barcelona"
 
-#: templates/base.html:35
+#: templates/base.html:36
 msgid "Current<br />Seminar"
 msgstr "Seminario<br />Actual"
 
-#: templates/base.html:36
+#: templates/base.html:37
 msgid "Seminar<br />Archive"
 msgstr "Archivo de<br />Seminarios"
 
-#: templates/base.html:37
+#: templates/base.html:38
 msgid "Publications"
 msgstr "Publicaciones"
 
-#: templates/base.html:38
+#: templates/base.html:39
 msgid "About<br />STNB"
 msgstr "Sobre<br /> el STNB"
 
-#: templates/base.html:39
+#: templates/base.html:40
 msgid "Members"
 msgstr "Miembros"
 
-#: templates/base.html:87
+#: templates/base.html:88
 msgid "Account "
 msgstr "Cuenta "
 
-#: templates/base.html:90
+#: templates/base.html:91
 msgid "Profile page"
 msgstr "Perfil"
 
-#: templates/base.html:91
+#: templates/base.html:92
 msgid "Admin console"
 msgstr "Administración"
 
-#: templates/base.html:92
+#: templates/base.html:93
 msgid "Logout"
 msgstr "Salir"
 
-#: templates/base.html:94 templates/comptes/login.html:4
+#: templates/base.html:95 templates/comptes/login.html:4
 #: templates/comptes/login.html.py:15
 #: templates/comptes/password_reset_complete.html:13
 #: templates/comptes/registration_form.html:23
 msgid "Log in"
 msgstr "Iniciar sesión"
 
-#: templates/base.html:100
+#: templates/base.html:101
 msgid "Links"
 msgstr "Enlaces"
 
-#: templates/base.html:114
+#: templates/base.html:115
 msgid "Languages"
 msgstr "Idiomas"
 
-#: templates/base.html:123
+#: templates/base.html:124
 msgid "Copyright STNB"
 msgstr "Copyright STNB"
 
-#: templates/base.html:123
+#: templates/base.html:124
 msgid "some rights reserved"
 msgstr "algunos derechos reservados"
 
@@ -569,7 +571,8 @@ msgid "Update Profile"
 msgstr "Actualizar Perfil"
 
 #: templates/comptes/perfil_actualitzar.html:15
-#: templates/membres/membre_actualitzar_form.html:18
+#: templates/membres/membre_actualitzar_form.html:22
+#: templates/seminaris/xerrada_actualitzar_form.html:26
 #: templates/seminaris/xerrada_fitxer_actualitzar_form.html:22
 msgid "Update"
 msgstr "Actualizar"
@@ -798,6 +801,17 @@ msgstr "Referencias"
 msgid "Return to seminar"
 msgstr "Volver al seminario"
 
+#: templates/seminaris/xerrada_actualitzar_form.html:6
+#: templates/seminaris/xerrada_actualitzar_form.html:7
+#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:6
+#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:7
+msgid "Update talk files"
+msgstr "Actualizar ficheros de la charla"
+
+#: templates/seminaris/xerrada_actualitzar_form.html:16
+msgid "You can update this talk here."
+msgstr ""
+
 #: templates/seminaris/xerrada_detall.html:13
 msgid "Presenters"
 msgstr "Presentadores"
@@ -829,11 +843,6 @@ msgstr "Descargar artículo"
 #: templates/seminaris/xerrada_detall.html:46
 msgid "No files available for download"
 msgstr "No hay ficheros disponibles para descargar"
-
-#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:6
-#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:7
-msgid "Update talk files"
-msgstr "Actualizar ficheros de la charla"
 
 #: templates/seminaris/xerrada_fitxer_actualitzar_form.html:14
 msgid ""

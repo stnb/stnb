@@ -168,7 +168,7 @@ class Xerrada(TranslatableModel):
                              related_name='xerrades',
                              blank=True, null=True)
     ordre = models.IntegerField(_('order'), default=0)
-    presentadors = models.ManyToManyField(Membre, verbose_name=_('presenter'),
+    presentadors = models.ManyToManyField(Membre, verbose_name=_('presenters'),
                                           related_name='xerrades',
                                           blank=True, null=True)
     altres_presentadors = models.CharField(_('other presenters'),
