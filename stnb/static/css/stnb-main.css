@@ -110,7 +110,7 @@ body  {
 	width: 150px;
 }
 
-#content-wrap  {
+.content-wrap  {
 	width: 680px;
 	margin: 30px 20px 20px 20px;
 	padding: 0 40px 0 0;
@@ -132,7 +132,7 @@ body  {
 	background: none #5f5f5f;
 }*/
 
-#site-titles h1, #site-titles .year, #menu li, #content-wrap h2  {
+#site-titles h1, #site-titles .year, #menu li, .content-wrap h2  {
 	font-family: 'Oswald', sans-serif;
 }
 
@@ -178,23 +178,23 @@ body  {
 	color: #f26813;
 }
 
-#content-wrap h2, #content-wrap h3, #content-wrap h4  {
+.content-wrap h2, .content-wrap h3, .content-wrap h4  {
 	font-family: "Oswald";
 	font-weight: 700;
 	color: #333;
 }
 
-#content-wrap h2  {
+.content-wrap h2  {
 	font-size: 30px;
 	margin: 10px 0 30px 0;
 }
 
-#content-wrap h3  {
+.content-wrap h3  {
 	font-size: 18px;
 	margin: 34px 0 16px 0;
 }
 
-#content-wrap h4  {
+.content-wrap h4  {
 	font-size: 15px;
 	margin: 24px 0 14px 0;
 }
@@ -204,12 +204,12 @@ body  {
 
 /* **** BEGIN: Links **** */
 
-#content-wrap a, #secondary-column a  {
+.content-wrap a, #secondary-column a  {
 	color: #ff6600;
 	text-decoration: none;
 }
 
-#content-wrap a:hover, #secondary-column a:hover  {
+.content-wrap a:hover, #secondary-column a:hover  {
 	/*color: #6B7627;*/
 	text-decoration: underline;
 }
@@ -377,7 +377,7 @@ body  {
 
 /* **** BEGIN: Main Content **** */
 
-#content-wrap .microalertes  {
+.content-wrap .microalertes  {
 	background: #cc6633 none;
 	padding: 8px 4px 8px 4px;
 	margin: 10px 0 20px 0;
@@ -386,60 +386,60 @@ body  {
 	text-align: center;
 }
 
-#content-wrap p {
+.content-wrap p {
 	margin: 10px 0 6px 0;
 	line-height: 1.4;
 }
 
-#content-wrap strong  {
+.content-wrap strong  {
   font-weight: 700;
 }
 
-#content-wrap .extended-text p {
+.content-wrap .extended-text p {
 	margin: 20px 0 20px 0;
 }
 
-#content-wrap li  {
+.content-wrap li  {
 	margin: 14px 0 14px 0;
 }
 
-#content-wrap ol  {
+.content-wrap ol  {
 	list-style: decimal;
 	padding-left: 40px;
 }
 
-#content-wrap em  {
+.content-wrap em  {
 	font-style: italic;
 }
 
-#content-wrap .noticies  {
+.content-wrap .noticies  {
 	
 }
 
-#content-wrap .noticia h3  {
+.content-wrap .noticia h3  {
 	margin-bottom: 6px;
 }
 
-#content-wrap .noticia .data  {
+.content-wrap .noticia .data  {
 	color: #333;
 	font-size: 11px;
 }
 
-#content-wrap .noticia .descripcio  {
+.content-wrap .noticia .descripcio  {
 	margin: 10px 0 18px 0;
 	line-height: 16pt;
 }
 
-#content-wrap .noticia .descripcio li  {
+.content-wrap .noticia .descripcio li  {
 	margin: 6px 0 6px 0;
 }
 
-#content-wrap .noticia .descripcio ul  {
+.content-wrap .noticia .descripcio ul  {
 	list-style: disc;
 	padding-left: 40px;
 }
 
-#content-wrap .pagina-plana p  {
+.content-wrap .pagina-plana p  {
   margin: 10px 0 18px 0;
 }
 
@@ -500,15 +500,15 @@ body  {
 	color: #A94F0D;
 }
 
-#content-wrap .compte .edit  {
+.content-wrap .compte .edit  {
 	margin-top: 26px;
 }
 
-#content-wrap .back-link  {
+.content-wrap .back-link  {
 	margin-top: 30px;
 }
 
-#content-wrap .temes .organitzadors  {
+.content-wrap .temes .organitzadors  {
 	font-size: 11pt;
 }
 
@@ -535,11 +535,11 @@ body  {
 	margin-left: 20px;
 }
 
-#content-wrap .membre-llista .membre-info h4  {
+.content-wrap .membre-llista .membre-info h4  {
 	margin: 8px 0 8px 0;
 }
 
-#content-wrap .membre-llista .membre-info p  {
+.content-wrap .membre-llista .membre-info p  {
 	margin: 4px 0 4px 0;
 }
 
@@ -555,7 +555,8 @@ body  {
 	float: left;
 }
 
-.actualitzar form p label, .actualitzar form p input  {
+.actualitzar form p label,
+.actualitzar form p input  {
 	display: block;
 }
 
@@ -563,7 +564,7 @@ body  {
 	font-size: 10.5pt;
 }
 
-.actualitzar form p input  {
+.actualitzar form p input[type="text"]  {
 	margin: 4px 0 4px 0;
 	
 	width: 340px;
@@ -572,7 +573,7 @@ body  {
 	font-size: 13pt;
 }
 
-.actualitzar form p input[type=file]  {
+.actualitzar form p input[type="file"]  {
 	font-size: 12pt;
 }
 
@@ -589,6 +590,11 @@ body  {
 
 .actualitzar .errorlist  {
 	color: #A94F0D;
+	width: 582px;
+}
+
+.actualitzar .errorlist li  {
+	margin-bottom: -5px;
 }
 
 .actualitzar form .helptext  {
@@ -604,8 +610,12 @@ body  {
 
 /* **** BEGIN: Form tweeks **** */
 
-input.titol  {
+.actualitzar form p input.titol  {
 	width: 582px;
+}
+
+.actualitzar form p input.altres-presentadors  {
+	margin-right: 222px;
 }
 
 /* **** END: Form tweeks **** */
@@ -641,7 +651,6 @@ input.titol  {
 .membre-actualitzar p input.camp-any  {
 	width: 100px;
 }
-
 
 /* **** END: Member form **** */
 

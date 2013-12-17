@@ -46,6 +46,11 @@
 <p>{% trans "No files available for download" %}</p>
 {% endif %}
 
+{% if request.user|is_owner:xerrada %}
+<p><a href="{% url "seminari-xerrada-actualitzar" seminari_slug=seminari.slug xerrada_id=xerrada.id %}">{% trans "Edit talk" %}</a></p>
+{% endif %}
+
+
 <div class="back-link">
 	<p><a href="{{ seminari.get_absolute_url }}">{% trans "Return to seminar" %}</a></p>
 </div>

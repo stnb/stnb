@@ -120,7 +120,7 @@ class XerradaActualitzarView(UpdateView):
 
     def get_object(self, *args, **kwargs):
         obj = super(XerradaActualitzarView, self).get_object(*args, **kwargs)
-        if obj.is_owner(self.request.user) is False and self.request.user.is_staff is False:
+        if obj.is_owned_by(self.request.user) is False and self.request.user.is_staff is False:
             raise PermissionDenied
         return obj
 
@@ -155,7 +155,7 @@ class XerradaFitxerActualitzarView(UpdateView):
 
     def get_object(self, *args, **kwargs):
         obj = super(XerradaFitxerActualitzarView, self).get_object(*args, **kwargs)
-        if obj.is_owner(self.request.user) is False and self.request.user.is_staff is False:
+        if obj.is_owned_by(self.request.user) is False and self.request.user.is_staff is False:
             raise PermissionDenied
         return obj
 

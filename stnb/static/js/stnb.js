@@ -27,9 +27,11 @@ var EditarLlengua = {
 				}
 
 				camps_p.show();
+				camps_p.prev(".errorlist").show()
 			}
 			else  {
 				camps_p.hide();
+				camps_p.prev(".errorlist").hide()
 			}
 		}
 

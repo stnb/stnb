@@ -14,6 +14,8 @@ class XerradaForm(TranslatableModelAllTranslationsForm):
                             widget=TinyMCE(attrs={'cols': 80, 'rows': 16,
                                                   'data-width': 580,
                                                   'data-height': 170,}))
+    altres_presentadors = forms.CharField(widget=forms.TextInput(
+                              attrs={'class':'altres-presentadors'}))
 
     class Meta:
         model = Xerrada

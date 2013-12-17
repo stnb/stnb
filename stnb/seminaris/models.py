@@ -69,6 +69,13 @@ class Seminari(TranslatableModel):
                         'fmes': _(self.data_finalizacio.strftime('%B').decode('utf-8')),
                         'fany': self.data_finalizacio.year, }
 
+    def is_owned_by(self, user):
+        membre = user.get_profile()
+        if membre in self.organitzadors.all():
+            return True
+        else:
+            return False
+
     def organitzadors_html(self):
         return persones_html(list(self.organitzadors.all()) + persones_nom_cognoms(self.altres_organitzadors))
 
@@ -122,6 +129,15 @@ class Tema(TranslatableModel):
         return ('seminari-tema-detall', (), {'tema_id': self.pk,
             'seminari_slug': self.seminari.slug})
     
+    def is_owned_by(self, user):
+        owned_by = False
+        membre = user.get_profile()
+        if membre in self.organitzadors.all():
+            owned_by = True
+        elif self.seminari.is_owned_by(user):
+            owned_by = True
+        return owned_by
+
     def organitzadors_html(self):
         return persones_html(list(self.organitzadors.all()) + persones_nom_cognoms(self.altres_organitzadors))
 
@@ -208,16 +224,14 @@ class Xerrada(TranslatableModel):
         return seminari
     seminari.allow_tags = True
 
-    def is_owner(self, user):
-        is_owner = False
+    def is_owned_by(self, user):
+        owned_by = False
         membre = user.get_profile()
         if membre in self.presentadors.all():
-            is_owner = True
-        elif self.tema is not None and membre in self.tema.organitzadors.all():
-            is_owner = True
-        elif self.seminari() is not None and membre in self.seminari().organitzadors.all():
-            is_owner = True
-        return is_owner
+            owned_by = True
+        elif self.tema is not None and self.tema.is_owned_by(user):
+            owned_by = True
+        return owned_by
 
     def tots_presentadors(self):
         return persones_text(list(self.presentadors.all()) + persones_nom_cognoms(self.altres_presentadors))
