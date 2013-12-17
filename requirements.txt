@@ -1,11 +1,11 @@
 -e git+git://github.com/hds/django-hvad.git#egg=hvad
+git+git://github.com/jmoiron/johnny-cache.git@8aa94bea4aebd82785a425866c04a5dede39a5b4#egg=johnny-cache
 Django==1.5.4
 mysql-python
 pil
 pycrypto
 raven
 south
-django-admin-bootstrapped
 django-email-as-username
 django-tinymce
 gunicorn
