@@ -22,6 +22,10 @@
 
     {{ form.as_p }}
 
+		{% for trans_form in trans_forms %}
+			{{ trans_form.as_p }}
+		{% endfor %}
+
 		<div class="submit">
 			<input type="submit" value="{% trans "Update" %}" /> <a href="{% url "seminari-xerrada-detall" seminari_slug=seminari.slug xerrada_id=xerrada.id %}">Cancel</a>
 		</div>

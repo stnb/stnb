@@ -22,6 +22,24 @@ class XerradaForm(TranslatableModelAllTranslationsForm):
         fields = ('titol', 'abstracte', 'presentadors', 'altres_presentadors',
                   'presentacio', 'article',)
 
+class XerradaBaseForm(forms.ModelForm):
+    class Meta:
+        model = Xerrada
+        fields = ('presentadors', 'altres_presentadors',)
+
+class XerradaTranslationForm(forms.ModelForm):
+    titol = forms.CharField(label=_('title').capitalize(),
+                            widget=forms.TextInput(attrs={'class':'titol'}))
+    abstracte = forms.CharField(label=_('abstract').capitalize(),
+                            required=False,
+                            widget=TinyMCE(attrs={'cols': 80, 'rows': 16,
+                                                  'data-width': 580,
+                                                  'data-height': 170,}))
+    language_code = forms.CharField(widget=forms.HiddenInput())
+
+    class Meta:
+        model = Xerrada._meta.translations_model
+
 class XerradaFitxerForm(forms.ModelForm):
     
     class Meta:
