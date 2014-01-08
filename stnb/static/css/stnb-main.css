@@ -573,6 +573,11 @@ body  {
 	font-size: 13pt;
 }
 
+.actualitzar form p textarea  {
+	width: 582px;
+	height: 170px;
+}
+
 .actualitzar form p input[type="file"]  {
 	font-size: 12pt;
 }

@@ -116,9 +116,14 @@ class XerradaActualitzarView(TemplateView):
         form = self.get_shared_form(xerrada)
         trans_forms = self.get_translation_forms(xerrada)
 
-        if form.is_valid():
-            for tform in trans_forms:
-                print 'tform:', tform.has_changed()
+        forms_valid = True
+        if form.is_valid() is False:
+            forms_valid = False
+        for tform in trans_forms:
+            if tform.has_changed() is True and tform.is_valid() is False:
+                forms_valid = False
+
+        if forms_valid:
             return self.forms_valid(form, trans_forms)
         else:
             return self.forms_invalid(form, trans_forms)
@@ -139,7 +144,15 @@ class XerradaActualitzarView(TemplateView):
 
     def forms_valid(self, form, trans_forms):
         obj = form.save()
-        url = reverse('seminari-xerrada-actualitzar', kwargs={ 'seminari_slug': form.instance.seminari().slug, 'xerrada_id': form.instance.pk })
+        for tform in trans_forms:
+            if tform.has_changed():
+                trans = tform.save()
+                if trans.master_id is None:
+                    trans.master_id = obj.pk
+                    trans.save()
+        url = reverse('seminari-xerrada-actualitzar',
+                      kwargs={ 'seminari_slug': obj.seminari().slug,
+                               'xerrada_id': obj.pk })
         return HttpResponseRedirect(url)
 
     def forms_invalid(self, form, trans_forms):

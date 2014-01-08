@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block extra-head %}{{ form.media }}{% include "formularis/_elegir_llengua_media.html" %}{% endblock extra-head %}
+{% block extra-head %}{{ form.media }}{{ trans_forms.0.media }}{% include "formularis/_elegir_llengua_media.html" %}{% endblock extra-head %}
 
 {% block titol-head %}{% trans "Update talk files" %}{% endblock titol-head %}
 {% block titol-pagina %}{% trans "Update talk files" %}{% endblock titol-pagina %}
@@ -23,7 +23,9 @@
     {{ form.as_p }}
 
 		{% for trans_form in trans_forms %}
-			{{ trans_form.as_p }}
+      <div class="trans-{{ trans_form.language_code.value }}">
+        {{ trans_form.as_p }}
+      </div>
 		{% endfor %}
 
 		<div class="submit">

@@ -6,39 +6,37 @@ var EditarLlengua = {
 
 	canviar_llengua: function(lleng)  {
 		for (var i = 0; i < EditarLlengua.llengues.length; i++)  {
-			var	camps_p = null;
+			var lleng_div = null;
 
-			camps = $(".translation__" + EditarLlengua.llengues[i]);
-			camps_p = camps.parent();
-
+			lleng_div = $(".trans-" + EditarLlengua.llengues[i]);
 			if (lleng == EditarLlengua.llengues[i])  {
-				for (var j = 0; j < camps.length; j++)  {
-					var camp, camp_id, camp_width, camp_height;
-					camp = camps.eq(j);
-
-					camp_id = camp[0].id;
-					camp_width = camp.eq(0).attr('data-width');
-					camp_height = camp.eq(0).attr('data-height')
-
-					if (camp_width)
-						$('#'+camp_id+'_ifr').css('width', camp_width);
-					if (camp_height)
-						$('#'+camp_id+'_ifr').css('height', camp_height);
+				var areas = lleng_div.find("textarea");
+				for (var j = 0; j < areas.length; j++)  {
+					var ta = areas.eq(j);
+					console.log(ta.next());
+					if (ta.next(".mceEditor").length > 0)  {
+						$("#"+ta.attr("id")+"_tbl").css("width", ta.css("width"));
+						$("#"+ta.attr("id")+"_tbl").css("height", ta.css("height"));
+						$("#"+ta.attr("id")+"_ifr").css("height", "100%");
+					}
 				}
+				lleng_div.show();
+				var ta = lleng_div.find("textarea");
+				
+				console.log(ta);
+				console.log(ta.width());
+				console.log(ta.css("width"));
+				$("#"+ta.attr("id")+"_tbl").css("width", ta.css("width"));
 
-				camps_p.show();
-				camps_p.prev(".errorlist").show()
 			}
 			else  {
-				camps_p.hide();
-				camps_p.prev(".errorlist").hide()
+				lleng_div.hide();
 			}
 		}
 
 		// Canviar "class" per la llengua activa
 		$("#llengua-formulari .editar-lleng").removeClass("actiu");
 		$("#editar-"+lleng).addClass("actiu");
-
 	},
 
 	elegir_llengua_base: function()  {
