@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load l10n %}
+
+{% block titol-head %}{% trans "Error 403" %}{% endblock titol-head%}
+{% block titol-pagina %}{% trans "Error 403" %}{% endblock titol-pagina %}
+
+{% block contingut %}
+
+<h3>{% trans "Permission denied" %}</h3>
+
+<p>{% trans "You do not have permission to view this page." %} {% trans "Return" %} <a href="{% url "inici" %}">{% trans "Home" %}</a>.</p>
+
+{% endblock %}
+

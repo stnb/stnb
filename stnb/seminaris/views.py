@@ -9,6 +9,7 @@ from django.http import HttpResponseRedirect, Http404
 from hvad.utils import get_all_language_codes
 
 from stnb.comptes.decorators import login_required
+from stnb.utils.views import MultiTranslationFormView
 from .models import Seminari, Tema, Dia, Xerrada, ItemPrograma
 from .forms import XerradaForm, XerradaFitxerForm, XerradaBaseForm, XerradaTranslationForm
 
@@ -106,57 +107,26 @@ class XerradaDetallView(TemplateView):
         context.update({ 'seminari': seminari, 'xerrada': xerrada })
 
         return context
-   
-class XerradaActualitzarView(TemplateView):
+  
+class XerradaActualitzarView(MultiTranslationFormView):
     template_name = 'seminaris/xerrada_actualitzar_form.html'
+    model = Xerrada
+    shared_form_class = XerradaBaseForm
+    translation_form_class = XerradaTranslationForm
 
-    def post(self, request, *args, **kwargs):
-        seminari, xerrada = self.get_seminari_xerrada(**kwargs)
-
-        form = self.get_shared_form(xerrada)
-        trans_forms = self.get_translation_forms(xerrada)
-
-        forms_valid = True
-        if form.is_valid() is False:
-            forms_valid = False
-        for tform in trans_forms:
-            if tform.has_changed() is True and tform.is_valid() is False:
-                forms_valid = False
-
-        if forms_valid:
-            return self.forms_valid(form, trans_forms)
-        else:
-            return self.forms_invalid(form, trans_forms)
-
+    
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(XerradaActualitzarView, self).dispatch(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super(XerradaActualitzarView, self).get_context_data(**kwargs)
         
         seminari, xerrada = self.get_seminari_xerrada(**kwargs)
 
-        form = self.get_shared_form(xerrada)
-        trans_forms = self.get_translation_forms(xerrada)
-
-        context.update({ 'seminari': seminari, 'xerrada': xerrada,
-                         'form': form, 'trans_forms': trans_forms })
+        context.update({ 'seminari': seminari, 'xerrada': xerrada, })
 
         return context
-
-    def forms_valid(self, form, trans_forms):
-        obj = form.save()
-        for tform in trans_forms:
-            if tform.has_changed():
-                trans = tform.save()
-                if trans.master_id is None:
-                    trans.master_id = obj.pk
-                    trans.save()
-        url = reverse('seminari-xerrada-actualitzar',
-                      kwargs={ 'seminari_slug': obj.seminari().slug,
-                               'xerrada_id': obj.pk })
-        return HttpResponseRedirect(url)
-
-    def forms_invalid(self, form, trans_forms):
-        return self.render_to_response(self.get_context_data(xerrada_id=form.instance.pk, seminari_slug=form.instance.seminari().slug))
 
     def get_seminari_xerrada(self, **kwargs):
         seminari = get_object_or_404(Seminari, slug=kwargs['seminari_slug'])
@@ -166,47 +136,12 @@ class XerradaActualitzarView(TemplateView):
 
         return seminari, xerrada
 
-    def get_shared_form(self, shared_obj):
-        form_args = { }
-        if self.request.method in ('POST', 'PUT'):
-            form_args.update({ 'data': self.request.POST,
-                               'files': self.request.FILES })
-
-        form = XerradaBaseForm(instance=shared_obj, **form_args)
-        return form
-
-    def get_translation_forms(self, shared_obj):
-        trans_forms = [ ]
-
-        form_args = { }
-        if self.request.method in ('POST', 'PUT'):
-            form_args.update({ 'data': self.request.POST,
-                               'files': self.request.FILES })
-
-        for lang in get_all_language_codes():
-            trans = list(shared_obj.translations.filter(language_code=lang))
-            if len(trans) == 0:
-                print 'lang:', lang, 'trans:', None
-                trans_form = XerradaTranslationForm(
-                                 initial={'language_code':lang},
-                                 prefix='trans_'+lang,
-                                 **form_args)
-            else:
-                print 'lang:', lang, 'trans:', trans[0].titol
-                trans_form = XerradaTranslationForm(
-                                 instance=trans[0],
-                                 prefix='trans_'+lang,
-                                 **form_args)
-            trans_forms.append(trans_form)
-
-        return trans_forms
-
-#    def validate_translation_forms(self, trans_forms):
-#        for trans_form in trans_forms:
-#            print "Language:", trans_forms.cleaned_data['language_code']
-
-
-
+    def get_object(self):
+        seminari, xerrada = self.get_seminari_xerrada(**self.kwargs)
+        if xerrada.is_owned_by(self.request.user) is False and \
+                self.request.user.is_staff is False:
+            raise PermissionDenied
+        return xerrada
 
 ## class XerradaActualitzarView(UpdateView):
 ##     form_class = XerradaForm
