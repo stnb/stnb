@@ -625,27 +625,39 @@ body  {
 
 /* **** END: Form tweeks **** */
 
+/* **** BEGIN: Seminari form tweeks **** */
+
+.seminari-actualitzar #id_data_inici,
+.seminari-actualitzar #id_data_finalizacio  {
+	width: 280px;
+}
+
+/* **** END: Seminari form tweeks **** */
+
 /* **** BEGIN: Member form **** */
 
 .membre-actualitzar .submit  {
 	clear: left;
 }
 
-.membre-actualitzar p input, .membre-actualitzar p select  {
+.membre-actualitzar p input,
+.membre-actualitzar p input[type="text"],
+.membre-actualitzar p select  {
 	margin-right: 60px;
 }
 
 .membre-actualitzar p #id_nom, .membre-actualitzar p #id_cognoms  {
 	width: 280px;
+	margin-right: 20px;
 }
 
 .membre-actualitzar p #id_enllac  {
 	width: 308px;
 }
 
-.membre-actualitzar p label[for=id_amagar_perfil],
+.membre-actualitzar p label[for="id_amagar_perfil"],
 .membre-actualitzar p #id_amagar_perfil,
-.membre-actualitzar p label[for=id_membre_actual],
+.membre-actualitzar p label[for="id_membre_actual"],
 .membre-actualitzar p #id_membre_actual  {
 	display: inline;
 	height: auto;
@@ -653,8 +665,9 @@ body  {
 }
 
 
-.membre-actualitzar p input.camp-any  {
-	width: 100px;
+.membre-actualitzar p input.camp-any[type="text"]  {
+	width: 89px;
+	margin-right: 60px;
 }
 
 /* **** END: Member form **** */

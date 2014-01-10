@@ -69,7 +69,9 @@ class MultiTranslationFormView(TemplateView):
         return HttpResponseRedirect(url)
 
     def forms_invalid(self, form, trans_forms):
-        return self.render_to_response(self.get_context_data(xerrada_id=form.instance.pk, seminari_slug=form.instance.seminari().slug))
+        # FIXME: Remove Xerrada specific stuff out of here.
+        return ''
+        #return self.render_to_response(self.get_context_data(xerrada_id=form.instance.pk, seminari_slug=form.instance.seminari().slug))
 
     def get_shared_form_class(self):
         return self.shared_form_class

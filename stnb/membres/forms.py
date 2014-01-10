@@ -9,8 +9,9 @@ from .models import Membre
 
 #class MembreActualizarForm(TranslatableModelForm):
 class MembreActualizarForm(TranslatableModelAllTranslationsForm):
-    membre_des_de = forms.IntegerField(label=_('member since'), min_value=1900,
-                                       max_value=2100, required=False,
+    membre_des_de = forms.IntegerField(label=_('member since').capitalize(),
+                                       required=False,
+                                       min_value=1900, max_value=2100,
             widget=forms.TextInput(attrs={'placeholder': _('year'),
                                           'class': 'camp-any'}))
     text = forms.CharField(label=_('biography').capitalize()+' (%(language)s)',

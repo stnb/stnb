@@ -3,24 +3,22 @@
 
 {% block extra-head %}{{ form.media }}{{ trans_forms.0.media }}{% include "formularis/_elegir_llengua_media.html" %}{% endblock extra-head %}
 
-{% block titol-head %}{% trans "Update talk" %}{% endblock titol-head %}
-{% block titol-pagina %}{% trans "Update talk" %}{% endblock titol-pagina %}
+{% block titol-head %}{% trans "Update seminar" %}{% endblock titol-head %}
+{% block titol-pagina %}{% trans "Update seminar" %}{% endblock titol-pagina %}
 
 {% block body-class %}{{ block.super }} multillengua{% endblock body-class %}
 
 {% block contingut %}
-<div class="actualitzar">
+<div class="actualitzar seminari-actualitzar">
 
-  <h3>{{ xerrada.titol }}</h3>
+  <h3>{{ seminari.nom }}</h3>
 
   <p>{% blocktrans %}You can update this talk here.{% endblocktrans %}</p>
 
 	{% include "formularis/_elegir_llengua.html" %}
 
-	<form method="post" action="{% url "seminari-xerrada-actualitzar" seminari_slug=seminari.slug xerrada_id=xerrada.id %}" enctype="multipart/form-data">
+	<form method="post" action="{% url "seminari-actualitzar" seminari_slug=seminari.slug %}" enctype="multipart/form-data">
 		{% csrf_token %}
-
-    {{ form.as_p }}
 
 		{% for trans_form in trans_forms %}
       <div class="trans-{{ trans_form.language_code.value }}">
@@ -28,8 +26,10 @@
       </div>
 		{% endfor %}
 
+    {{ form.as_p }}
+
 		<div class="submit">
-			<input type="submit" value="{% trans "Update" %}" /> <a href="{% url "seminari-xerrada-detall" seminari_slug=seminari.slug xerrada_id=xerrada.id %}">Cancel</a>
+			<input type="submit" value="{% trans "Update" %}" /> <a href="{% url "seminari-detall" seminari_slug=seminari.slug  %}">Cancel</a>
 		</div>
 	</form>
 

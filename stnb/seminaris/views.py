@@ -11,7 +11,8 @@ from hvad.utils import get_all_language_codes
 from stnb.comptes.decorators import login_required
 from stnb.utils.views import MultiTranslationFormView
 from .models import Seminari, Tema, Dia, Xerrada, ItemPrograma
-from .forms import XerradaForm, XerradaFitxerForm, XerradaBaseForm, XerradaTranslationForm
+from .forms import XerradaFitxerForm, XerradaBaseForm, XerradaTranslationForm, \
+                   SeminariBaseForm, SeminariTranslationForm
 
 class SeminariActualView(RedirectView):
 
@@ -23,7 +24,8 @@ class SeminariActualView(RedirectView):
             seminari= Seminari.objects.filter(actiu=True)[0]
         except IndexError:
             raise Http404
-        return reverse('seminari-detall', kwargs={ 'slug': seminari.slug })
+        return reverse('seminari-detall',
+                       kwargs={ 'seminari_slug': seminari.slug })
 
 class SeminariListView(ListView):
     model = Seminari
@@ -108,6 +110,33 @@ class XerradaDetallView(TemplateView):
 
         return context
   
+class SeminariActualitzarView(MultiTranslationFormView):
+    template_name = 'seminaris/seminari_form.html'
+    model = Seminari
+    shared_form_class = SeminariBaseForm
+    translation_form_class = SeminariTranslationForm
+    
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(SeminariActualitzarView, self).dispatch(*args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        print "Get context data:", self.kwargs
+        context = super(SeminariActualitzarView, self).get_context_data(**kwargs)
+        
+        context.update({ 'seminari': context['object'] })
+
+        return context
+
+    def get_object(self):
+        print "Get object:", self.kwargs
+        seminari = get_object_or_404(Seminari,
+                                     slug=self.kwargs['seminari_slug'])
+        if seminari.is_owned_by(self.request.user) is False and \
+                self.request.user.is_staff is False:
+            raise PermissionDenied
+        return seminari
+
 class XerradaActualitzarView(MultiTranslationFormView):
     template_name = 'seminaris/xerrada_actualitzar_form.html'
     model = Xerrada

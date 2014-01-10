@@ -21,12 +21,12 @@ var EditarLlengua = {
 					}
 				}
 				lleng_div.show();
-				var ta = lleng_div.find("textarea");
-				
-				console.log(ta);
-				console.log(ta.width());
-				console.log(ta.css("width"));
-				$("#"+ta.attr("id")+"_tbl").css("width", ta.css("width"));
+//				var ta = lleng_div.find("textarea");
+//				
+//				console.log(ta);
+//				console.log(ta.width());
+//				console.log(ta.css("width"));
+//				$("#"+ta.attr("id")+"_tbl").css("width", ta.css("width"));
 
 			}
 			else  {
