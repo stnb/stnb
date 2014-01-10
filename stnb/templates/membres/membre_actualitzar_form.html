@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block extra-head %}{{ form.media }}{% include "formularis/_elegir_llengua_media.html" %}{% endblock extra-head %}
+{% block extra-head %}{{ form.media }}{{ trans_forms.0.media }}{% include "formularis/_elegir_llengua_media.html" %}{% endblock extra-head %}
 
 {% block titol-head %}{% trans "Update member profile" %}{% endblock titol-head %}
 {% block titol-pagina %}{% trans "Update member profile" %}{% endblock titol-pagina %}
@@ -17,6 +17,12 @@
 		{% csrf_token %}
 
 		{{ form.as_p }}
+		
+		{% for trans_form in trans_forms %}
+      <div class="trans-{{ trans_form.language_code.value }}">
+        {{ trans_form.as_p }}
+      </div>
+		{% endfor %}
 
 		<div class="submit">
 			<input type="submit" value="{% trans "Update" %}" /> <a href="{% url "membre-detall" slug=form.instance.slug %}">Cancel</a>

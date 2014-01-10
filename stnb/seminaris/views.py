@@ -121,7 +121,6 @@ class SeminariActualitzarView(MultiTranslationFormView):
         return super(SeminariActualitzarView, self).dispatch(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
-        print "Get context data:", self.kwargs
         context = super(SeminariActualitzarView, self).get_context_data(**kwargs)
         
         context.update({ 'seminari': context['object'] })
@@ -129,7 +128,6 @@ class SeminariActualitzarView(MultiTranslationFormView):
         return context
 
     def get_object(self):
-        print "Get object:", self.kwargs
         seminari = get_object_or_404(Seminari,
                                      slug=self.kwargs['seminari_slug'])
         if seminari.is_owned_by(self.request.user) is False and \
