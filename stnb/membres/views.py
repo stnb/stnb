@@ -9,7 +9,7 @@ from django.http import Http404
 
 from stnb.comptes.decorators import login_required
 from stnb.utils.views import MultiTranslationFormView
-from .forms import MembreBaseForm, MembreTranslationForm #MembreActualizarForm
+from .forms import MembreBaseForm, MembreTranslationForm
 from .models import Membre
 
 class MembreLlistaView(ListView):
@@ -34,11 +34,6 @@ class MembreDetallView(DetailView):
         if obj.amagar_perfil is True and obj.user != self.request.user:
             raise Http404
         return obj
-#    def get_object(self, queryset=None):
-#        if self.request.user.is_authenticated():
-#            return self.request.user
-#        else:
-#            return HttpResponseRedirect(reverse_lazy('inici'))
 
 class MembreActualitzarView(MultiTranslationFormView):
     template_name = 'membres/membre_actualitzar_form.html'
@@ -62,28 +57,4 @@ class MembreActualitzarView(MultiTranslationFormView):
         if membre.user != self.request.user:
             raise PermissionDenied
         return membre
-
-
-#class MembreActualizarView(UpdateView):
-#    form_class = MembreActualizarForm
-#    model = Membre
-#    template_name = 'membres/membre_actualitzar_form.html'
-#
-#    queryset = Membre.objects.all()
-#    slug_field = 'slug'
-#
-#    @method_decorator(login_required)
-#    def dispatch(self, *args, **kwargs):
-##        if len(args) > 0:
-##            request = args[0]
-##        if kwargs['slug'] != request.user.get_profile().slug:
-##            return HttpResponseForbidden()
-#        return super(MembreActualizarView, self).dispatch(*args, **kwargs)
-#
-#    def get_object(self, *args, **kwargs):
-#        obj = super(MembreActualizarView, self).get_object(*args, **kwargs)
-#        if obj.user != self.request.user:
-#            raise PermissionDenied
-#        return obj
-
 
