@@ -3,11 +3,13 @@ from django.http import HttpResponseRedirect, HttpResponseForbidden
 from django.core.exceptions import PermissionDenied
 from django.utils.decorators import method_decorator
 from django.core.urlresolvers import reverse_lazy
+from django.shortcuts import get_object_or_404
 from django.views.generic import UpdateView, DetailView, ListView
 from django.http import Http404
 
 from stnb.comptes.decorators import login_required
-from .forms import MembreActualizarForm
+from stnb.utils.views import MultiTranslationFormView
+from .forms import MembreBaseForm, MembreTranslationForm
 from .models import Membre
 
 class MembreLlistaView(ListView):
@@ -32,32 +34,27 @@ class MembreDetallView(DetailView):
         if obj.amagar_perfil is True and obj.user != self.request.user:
             raise Http404
         return obj
-#    def get_object(self, queryset=None):
-#        if self.request.user.is_authenticated():
-#            return self.request.user
-#        else:
-#            return HttpResponseRedirect(reverse_lazy('inici'))
 
-
-class MembreActualizarView(UpdateView):
-    form_class = MembreActualizarForm
-    model = Membre
+class MembreActualitzarView(MultiTranslationFormView):
     template_name = 'membres/membre_actualitzar_form.html'
-
-    queryset = Membre.objects.all()
-    slug_field = 'slug'
-
+    model = Membre
+    shared_form_class = MembreBaseForm
+    translation_form_class = MembreTranslationForm
+    
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
-#        if len(args) > 0:
-#            request = args[0]
-#        if kwargs['slug'] != request.user.get_profile().slug:
-#            return HttpResponseForbidden()
-        return super(MembreActualizarView, self).dispatch(*args, **kwargs)
+        return super(MembreActualitzarView, self).dispatch(*args, **kwargs)
 
-    def get_object(self, *args, **kwargs):
-        obj = super(MembreActualizarView, self).get_object(*args, **kwargs)
-        if obj.user != self.request.user:
+    def get_context_data(self, **kwargs):
+        context = super(MembreActualitzarView, self).get_context_data(**kwargs)
+        
+        context.update({ 'membre': context['object'] })
+
+        return context
+
+    def get_object(self):
+        membre = get_object_or_404(Membre, slug=self.kwargs['slug'])
+        if membre.user != self.request.user:
             raise PermissionDenied
-        return obj
+        return membre
 

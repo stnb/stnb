@@ -5,11 +5,14 @@ from django.core.exceptions import PermissionDenied
 from django.shortcuts import get_object_or_404
 from django.utils.decorators import method_decorator
 from django.core.urlresolvers import reverse
-from django.http import Http404
+from django.http import HttpResponseRedirect, Http404
+from hvad.utils import get_all_language_codes
 
 from stnb.comptes.decorators import login_required
+from stnb.utils.views import MultiTranslationFormView
 from .models import Seminari, Tema, Dia, Xerrada, ItemPrograma
-from .forms import XerradaFitxerForm
+from .forms import XerradaFitxerForm, XerradaBaseForm, XerradaTranslationForm, \
+                   SeminariBaseForm, SeminariTranslationForm
 
 class SeminariActualView(RedirectView):
 
@@ -21,7 +24,8 @@ class SeminariActualView(RedirectView):
             seminari= Seminari.objects.filter(actiu=True)[0]
         except IndexError:
             raise Http404
-        return reverse('seminari-detall', kwargs={ 'slug': seminari.slug })
+        return reverse('seminari-detall',
+                       kwargs={ 'slug': seminari.slug })
 
 class SeminariListView(ListView):
     model = Seminari
@@ -45,7 +49,7 @@ class TemaListView(ListView):
 
     # FIXME: Select only from *this* Seminari.
     queryset = Tema.objects.all()
-    slug_field = 'slug'
+    slug_field = 'seminari_slug'
 
 class TemaDetallView(TemplateView):
     template_name = 'seminaris/tema_detall.html'
@@ -105,8 +109,98 @@ class XerradaDetallView(TemplateView):
         context.update({ 'seminari': seminari, 'xerrada': xerrada })
 
         return context
+  
+class SeminariActualitzarView(MultiTranslationFormView):
+    template_name = 'seminaris/seminari_form.html'
+    model = Seminari
+    shared_form_class = SeminariBaseForm
+    translation_form_class = SeminariTranslationForm
+    
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(SeminariActualitzarView, self).dispatch(*args, **kwargs)
 
-class XerradaFixterActualitzarView(UpdateView):
+    def get_context_data(self, **kwargs):
+        context = super(SeminariActualitzarView, self).get_context_data(**kwargs)
+        
+        context.update({ 'seminari': context['object'] })
+
+        return context
+
+    def get_object(self):
+        seminari = get_object_or_404(Seminari,
+                                     slug=self.kwargs['seminari_slug'])
+        if seminari.is_owned_by(self.request.user) is False and \
+                self.request.user.is_staff is False:
+            raise PermissionDenied
+        return seminari
+
+class XerradaActualitzarView(MultiTranslationFormView):
+    template_name = 'seminaris/xerrada_actualitzar_form.html'
+    model = Xerrada
+    shared_form_class = XerradaBaseForm
+    translation_form_class = XerradaTranslationForm
+
+    
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super(XerradaActualitzarView, self).dispatch(*args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        context = super(XerradaActualitzarView, self).get_context_data(**kwargs)
+        
+        seminari, xerrada = self.get_seminari_xerrada(**kwargs)
+
+        context.update({ 'seminari': seminari, 'xerrada': xerrada, })
+
+        return context
+
+    def get_seminari_xerrada(self, **kwargs):
+        seminari = get_object_or_404(Seminari, slug=kwargs['seminari_slug'])
+        xerrada = get_object_or_404(Xerrada, pk=kwargs['xerrada_id'])
+        if xerrada.seminari() != seminari:
+            raise Http404
+
+        return seminari, xerrada
+
+    def get_object(self):
+        seminari, xerrada = self.get_seminari_xerrada(**self.kwargs)
+        if xerrada.is_owned_by(self.request.user) is False and \
+                self.request.user.is_staff is False:
+            raise PermissionDenied
+        return xerrada
+
+## class XerradaActualitzarView(UpdateView):
+##     form_class = XerradaForm
+##     model = Xerrada
+##     template_name = 'seminaris/xerrada_actualitzar_form.html'
+## 
+##     queryset = Xerrada.objects.all()
+##     pk_url_kwarg = 'xerrada_id'
+##     
+##     @method_decorator(login_required)
+##     def dispatch(self, *args, **kwargs):
+##         return super(XerradaActualitzarView, self).dispatch(*args, **kwargs)
+## 
+##     def get_object(self, *args, **kwargs):
+##         obj = super(XerradaActualitzarView, self).get_object(*args, **kwargs)
+##         if obj.is_owned_by(self.request.user) is False and self.request.user.is_staff is False:
+##             raise PermissionDenied
+##         return obj
+## 
+##     def get_context_data(self, **kwargs):
+##         context = super(XerradaActualitzarView, self).get_context_data(**kwargs)
+##         
+##         seminari = get_object_or_404(Seminari, slug=self.kwargs['seminari_slug'])
+##         xerrada = self.object
+##         if xerrada.seminari() != seminari:
+##             raise Http404
+## 
+##         context.update({ 'seminari': seminari, 'xerrada': xerrada })
+## 
+##         return context
+
+class XerradaFitxerActualitzarView(UpdateView):
     form_class = XerradaFitxerForm
     model = Xerrada
     template_name = 'seminaris/xerrada_fitxer_actualitzar_form.html'
@@ -116,11 +210,11 @@ class XerradaFixterActualitzarView(UpdateView):
     
     @method_decorator(login_required)
     def dispatch(self, *args, **kwargs):
-        return super(XerradaFixterActualitzarView, self).dispatch(*args, **kwargs)
+        return super(XerradaFitxerActualitzarView, self).dispatch(*args, **kwargs)
 
     def get_object(self, *args, **kwargs):
-        obj = super(XerradaFixterActualitzarView, self).get_object(*args, **kwargs)
-        if obj.is_owner(self.request.user) is False and self.request.user.is_staff is False:
+        obj = super(XerradaFitxerActualitzarView, self).get_object(*args, **kwargs)
+        if obj.is_owned_by(self.request.user) is False and self.request.user.is_staff is False:
             raise PermissionDenied
         return obj
 
@@ -130,7 +224,7 @@ class XerradaFixterActualitzarView(UpdateView):
 #        return self.render_to_response(self.get_context_data(form=form), **kwargs) 
 
     def get_context_data(self, **kwargs):
-        context = super(XerradaFixterActualitzarView, self).get_context_data(**kwargs)
+        context = super(XerradaFitxerActualitzarView, self).get_context_data(**kwargs)
         
         seminari = get_object_or_404(Seminari, slug=self.kwargs['seminari_slug'])
         xerrada = self.object

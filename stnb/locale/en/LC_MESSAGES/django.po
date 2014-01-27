@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-20 19:02+0200\n"
+"POT-Creation-Date: 2013-12-05 17:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,72 +18,307 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: comptes/forms.py:8
-msgid "First name"
+msgid "first name"
 msgstr ""
 
-#: comptes/forms.py:9
-msgid "Surname"
+#: comptes/forms.py:9 membres/models.py:22
+msgid "surname"
 msgstr ""
 
-#: conf/settings/default.py:23
+#: conf/settings/default.py:23 templates/formularis/_elegir_llengua.html:5
 msgid "Catalan"
 msgstr ""
 
-#: conf/settings/default.py:24
+#: conf/settings/default.py:24 templates/formularis/_elegir_llengua.html:6
 msgid "Spanish"
 msgstr ""
 
-#: conf/settings/default.py:25
+#: conf/settings/default.py:25 templates/formularis/_elegir_llengua.html:7
 msgid "English"
 msgstr ""
 
-#: membres/forms.py:12
-msgid "Year"
+#: institucions/models.py:7 membres/models.py:21 publicacions/models.py:42
+#: seminaris/models.py:37
+msgid "name"
 msgstr ""
 
-#: membres/models.py:43
-msgid "Unnamed"
+#: institucions/models.py:8
+msgid "short name"
 msgstr ""
 
-#: pagines/models.py:22
+#: institucions/models.py:12 noticies/models.py:19 pagines/models.py:17
+#: publicacions/models.py:44 seminaris/models.py:109 seminaris/models.py:239
+msgid "description"
+msgstr ""
+
+#: institucions/models.py:16
+msgid "institution"
+msgstr ""
+
+#: institucions/models.py:17
+msgid "institutions"
+msgstr ""
+
+#: membres/forms.py:12 membres/models.py:29
+msgid "member since"
+msgstr ""
+
+#: membres/forms.py:14
+msgid "year"
+msgstr ""
+
+#: membres/forms.py:16 membres/models.py:35
+msgid "biography"
+msgstr ""
+
+#: membres/models.py:24
+msgid "affiliation"
+msgstr ""
+
+#: membres/models.py:26
+msgid "photo"
+msgstr ""
+
+#: membres/models.py:28
+msgid "link"
+msgstr ""
+
+#: membres/models.py:31
+msgid "current member"
+msgstr ""
+
+#: membres/models.py:32
+msgid "hide profile"
+msgstr ""
+
+#: membres/models.py:39
+msgid "member"
+msgstr ""
+
+#: membres/models.py:40
+msgid "members"
+msgstr ""
+
+#: membres/models.py:48
+msgid "unnamed"
+msgstr ""
+
+#: noticies/models.py:12 noticies/models.py:31 seminaris/models.py:130
+msgid "date"
+msgstr ""
+
+#: noticies/models.py:14 noticies/models.py:33 pagines/models.py:12
+msgid "created"
+msgstr ""
+
+#: noticies/models.py:15 noticies/models.py:34 pagines/models.py:13
+msgid "updated"
+msgstr ""
+
+#: noticies/models.py:18 pagines/models.py:16 seminaris/forms.py:10
+#: seminaris/models.py:108 seminaris/models.py:185
+msgid "title"
+msgstr ""
+
+#: noticies/models.py:23
+msgid "news item"
+msgstr ""
+
+#: noticies/models.py:24
+msgid "news items"
+msgstr ""
+
+#: noticies/models.py:37
+msgid "alert"
+msgstr ""
+
+#: noticies/models.py:41
+msgid "microalert"
+msgstr ""
+
+#: noticies/models.py:42
+msgid "microalerts"
+msgstr ""
+
+#: pagines/models.py:11 seminaris/models.py:19
+msgid "slug"
+msgstr ""
+
+#: pagines/models.py:21
 msgid "flat page"
 msgstr ""
 
-#: pagines/models.py:23
+#: pagines/models.py:22
 msgid "flat pages"
 msgstr ""
 
-#: publicacions/models.py:33
+#: publicacions/models.py:24
+msgid "authors"
+msgstr ""
+
+#: publicacions/models.py:27
+msgid "other authors"
+msgstr ""
+
+#: publicacions/models.py:29
+msgid "editors"
+msgstr ""
+
+#: publicacions/models.py:32
+msgid "other editors"
+msgstr ""
+
+#: publicacions/models.py:35
+msgid "publication date"
+msgstr ""
+
+#: publicacions/models.py:36
 msgid "Only the month and year are displayed"
 msgstr ""
 
-#: publicacions/models.py:39
+#: publicacions/models.py:38
+msgid "file"
+msgstr ""
+
+#: publicacions/models.py:42
 msgid "Publication name"
 msgstr ""
 
-#: publicacions/models.py:41
+#: publicacions/models.py:45
 msgid "A short description."
 msgstr ""
 
-#: seminaris/models.py:52
+#: publicacions/models.py:50 seminaris/models.py:31 seminaris/models.py:102
+msgid "publication"
+msgstr ""
+
+#: publicacions/models.py:51
+msgid "publicacions"
+msgstr ""
+
+#: seminaris/forms.py:12 seminaris/models.py:186
+msgid "abstract"
+msgstr ""
+
+#: seminaris/models.py:20
+msgid "start date"
+msgstr ""
+
+#: seminaris/models.py:21
+msgid "end date"
+msgstr ""
+
+#: seminaris/models.py:22 seminaris/models.py:96
+msgid "organisers"
+msgstr ""
+
+#: seminaris/models.py:25 seminaris/models.py:99
+msgid "other organisers"
+msgstr ""
+
+#: seminaris/models.py:28
+msgid "programme PDF"
+msgstr ""
+
+#: seminaris/models.py:34
+msgid "active"
+msgstr ""
+
+#: seminaris/models.py:38
+msgid "location"
+msgstr ""
+
+#: seminaris/models.py:42 seminaris/models.py:93 seminaris/models.py:131
+msgid "seminar"
+msgstr ""
+
+#: seminaris/models.py:43
+msgid "seminars"
+msgstr ""
+
+#: seminaris/models.py:57
 #, python-format
 msgid "%(idia)s %(idata)d to %(fdia)s %(fdata)d %(imes)s, %(iany)d"
 msgstr ""
 
-#: seminaris/models.py:54
+#: seminaris/models.py:59
 #, python-format
 msgid "%(idia)s %(idata)d %(imes)s to %(fdia)s %(fdata)d %(fmes)s, %(iany)d"
 msgstr ""
 
-#: seminaris/models.py:56
+#: seminaris/models.py:61
 #, python-format
 msgid ""
 "%(idia)s %(idata)d %(imes)s, %(iany)s %(fdata)d to %(fdia)d %(fmes)s, "
 "%(fany)d"
 msgstr ""
 
-#: seminaris/models.py:220
+#: seminaris/models.py:95 seminaris/models.py:170
+msgid "order"
+msgstr ""
+
+#: seminaris/models.py:105
+msgid "references"
+msgstr ""
+
+#: seminaris/models.py:113 seminaris/models.py:167
+msgid "theme"
+msgstr ""
+
+#: seminaris/models.py:114
+msgid "themes"
+msgstr ""
+
+#: seminaris/models.py:137 seminaris/models.py:233
+msgid "day"
+msgstr ""
+
+#: seminaris/models.py:138
+msgid "days"
+msgstr ""
+
+#: seminaris/models.py:171
+msgid "presenters"
+msgstr ""
+
+#: seminaris/models.py:174
+msgid "other presenters"
+msgstr ""
+
+#: seminaris/models.py:178
+msgid "presentation"
+msgstr ""
+
+#: seminaris/models.py:181
+msgid "article"
+msgstr ""
+
+#: seminaris/models.py:190 seminaris/models.py:230
+msgid "talk"
+msgstr ""
+
+#: seminaris/models.py:191
+msgid "talks"
+msgstr ""
+
+#: seminaris/models.py:235
+msgid "start time"
+msgstr ""
+
+#: seminaris/models.py:236
+msgid "end time"
+msgstr ""
+
+#: seminaris/models.py:241
 msgid "Only necessary if a talk isn't chosen."
+msgstr ""
+
+#: seminaris/models.py:245
+msgid "programme item"
+msgstr ""
+
+#: seminaris/models.py:246
+msgid "programme items"
 msgstr ""
 
 #: seminaris/utils.py:56 seminaris/utils.py:72
@@ -323,7 +558,8 @@ msgid "Update Profile"
 msgstr ""
 
 #: templates/comptes/perfil_actualitzar.html:15
-#: templates/membres/membre_actualitzar_form.html:18
+#: templates/membres/membre_actualitzar_form.html:22
+#: templates/seminaris/xerrada_actualitzar_form.html:26
 #: templates/seminaris/xerrada_fitxer_actualitzar_form.html:22
 msgid "Update"
 msgstr ""
@@ -549,6 +785,17 @@ msgstr ""
 msgid "Return to seminar"
 msgstr ""
 
+#: templates/seminaris/xerrada_actualitzar_form.html:6
+#: templates/seminaris/xerrada_actualitzar_form.html:7
+#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:6
+#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:7
+msgid "Update talk files"
+msgstr ""
+
+#: templates/seminaris/xerrada_actualitzar_form.html:16
+msgid "You can update this talk here."
+msgstr ""
+
 #: templates/seminaris/xerrada_detall.html:13
 msgid "Presenters"
 msgstr ""
@@ -579,11 +826,6 @@ msgstr ""
 
 #: templates/seminaris/xerrada_detall.html:46
 msgid "No files available for download"
-msgstr ""
-
-#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:6
-#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:7
-msgid "Update talk files"
 msgstr ""
 
 #: templates/seminaris/xerrada_fitxer_actualitzar_form.html:14

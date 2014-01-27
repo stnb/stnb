@@ -8,77 +8,272 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-20 19:02+0200\n"
-"PO-Revision-Date: 2013-06-20 19:02+0100\n"
+"POT-Creation-Date: 2013-12-05 17:21+0100\n"
+"PO-Revision-Date: 2013-12-05 17:24+0100\n"
 "Last-Translator: Hayden Stainsby <hds@mat.uab.cat>\n"
 "Language-Team: STNB <stnbarcelona@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: comptes/forms.py:8
-msgid "First name"
+#, fuzzy
+msgid "first name"
 msgstr "Nom"
 
-#: comptes/forms.py:9
-msgid "Surname"
+#: comptes/forms.py:9 membres/models.py:22
+#, fuzzy
+msgid "surname"
 msgstr "Cognoms"
 
-#: conf/settings/default.py:23
+#: conf/settings/default.py:23 templates/formularis/_elegir_llengua.html:5
 msgid "Catalan"
 msgstr "català"
 
-#: conf/settings/default.py:24
+#: conf/settings/default.py:24 templates/formularis/_elegir_llengua.html:6
 msgid "Spanish"
 msgstr "castellà"
 
-#: conf/settings/default.py:25
+#: conf/settings/default.py:25 templates/formularis/_elegir_llengua.html:7
 msgid "English"
 msgstr "anglès"
 
-#: membres/forms.py:12
-msgid "Year"
-msgstr "Any"
+#: institucions/models.py:7 membres/models.py:21 publicacions/models.py:42
+#: seminaris/models.py:37
+#, fuzzy
+msgid "name"
+msgstr "Cognoms"
 
-#: membres/models.py:43
-msgid "Unnamed"
+#: institucions/models.py:8
+#, fuzzy
+msgid "short name"
+msgstr "Nom"
+
+#: institucions/models.py:12 noticies/models.py:19 pagines/models.py:17
+#: publicacions/models.py:44 seminaris/models.py:109 seminaris/models.py:239
+#, fuzzy
+msgid "description"
+msgstr "Descripció"
+
+#: institucions/models.py:16
+#, fuzzy
+msgid "institution"
+msgstr "Registre"
+
+#: institucions/models.py:17
+msgid "institutions"
+msgstr ""
+
+#: membres/forms.py:12 membres/models.py:29
+#, fuzzy
+msgid "member since"
+msgstr "Membre des de"
+
+#: membres/forms.py:14
+msgid "year"
+msgstr ""
+
+#: membres/forms.py:16 membres/models.py:35
+msgid "biography"
+msgstr ""
+
+#: membres/models.py:24
+#, fuzzy
+msgid "affiliation"
+msgstr "Publicacions"
+
+#: membres/models.py:26
+msgid "photo"
+msgstr ""
+
+#: membres/models.py:28
+msgid "link"
+msgstr ""
+
+#: membres/models.py:31
+msgid "current member"
+msgstr ""
+
+#: membres/models.py:32
+#, fuzzy
+msgid "hide profile"
+msgstr "Perfil de membre"
+
+#: membres/models.py:39
+#, fuzzy
+msgid "member"
+msgstr "Membres"
+
+#: membres/models.py:40
+#, fuzzy
+msgid "members"
+msgstr "Membres"
+
+#: membres/models.py:48
+#, fuzzy
+msgid "unnamed"
 msgstr "Sense nom"
 
-#: pagines/models.py:22
+#: noticies/models.py:12 noticies/models.py:31 seminaris/models.py:130
+#, fuzzy
+msgid "date"
+msgstr "Actualitzar"
+
+#: noticies/models.py:14 noticies/models.py:33 pagines/models.py:12
+msgid "created"
+msgstr ""
+
+#: noticies/models.py:15 noticies/models.py:34 pagines/models.py:13
+#, fuzzy
+msgid "updated"
+msgstr "Actualitzar"
+
+#: noticies/models.py:18 pagines/models.py:16 seminaris/forms.py:10
+#: seminaris/models.py:108 seminaris/models.py:185
+msgid "title"
+msgstr ""
+
+#: noticies/models.py:23
+msgid "news item"
+msgstr ""
+
+#: noticies/models.py:24
+msgid "news items"
+msgstr ""
+
+#: noticies/models.py:37
+msgid "alert"
+msgstr ""
+
+#: noticies/models.py:41
+msgid "microalert"
+msgstr ""
+
+#: noticies/models.py:42
+msgid "microalerts"
+msgstr ""
+
+#: pagines/models.py:11 seminaris/models.py:19
+msgid "slug"
+msgstr ""
+
+#: pagines/models.py:21
 msgid "flat page"
 msgstr "pàgina plana"
 
-#: pagines/models.py:23
+#: pagines/models.py:22
 msgid "flat pages"
 msgstr "pàgines planes"
 
-#: publicacions/models.py:33
+#: publicacions/models.py:24
+msgid "authors"
+msgstr ""
+
+#: publicacions/models.py:27
+msgid "other authors"
+msgstr ""
+
+#: publicacions/models.py:29
+#, fuzzy
+msgid "editors"
+msgstr "Coordinació"
+
+#: publicacions/models.py:32
+#, fuzzy
+msgid "other editors"
+msgstr "Coordinació"
+
+#: publicacions/models.py:35
+#, fuzzy
+msgid "publication date"
+msgstr "Data de publicació"
+
+#: publicacions/models.py:36
 msgid "Only the month and year are displayed"
 msgstr ""
 
-#: publicacions/models.py:39
+#: publicacions/models.py:38
+#, fuzzy
+msgid "file"
+msgstr "Perfil"
+
+#: publicacions/models.py:42
 msgid "Publication name"
 msgstr ""
 
-#: publicacions/models.py:41
+#: publicacions/models.py:45
 msgid "A short description."
 msgstr "Descripció breu."
 
-#: seminaris/models.py:52
+#: publicacions/models.py:50 seminaris/models.py:31 seminaris/models.py:102
+#, fuzzy
+msgid "publication"
+msgstr "Publicacions"
+
+#: publicacions/models.py:51
+#, fuzzy
+msgid "publicacions"
+msgstr "Publicacions"
+
+#: seminaris/forms.py:12 seminaris/models.py:186
+#, fuzzy
+msgid "abstract"
+msgstr "Resum"
+
+#: seminaris/models.py:20
+msgid "start date"
+msgstr ""
+
+#: seminaris/models.py:21
+msgid "end date"
+msgstr ""
+
+#: seminaris/models.py:22 seminaris/models.py:96
+msgid "organisers"
+msgstr ""
+
+#: seminaris/models.py:25 seminaris/models.py:99
+msgid "other organisers"
+msgstr ""
+
+#: seminaris/models.py:28
+msgid "programme PDF"
+msgstr ""
+
+#: seminaris/models.py:34
+msgid "active"
+msgstr ""
+
+#: seminaris/models.py:38
+#, fuzzy
+msgid "location"
+msgstr "Lloc"
+
+#: seminaris/models.py:42 seminaris/models.py:93 seminaris/models.py:131
+#, fuzzy
+msgid "seminar"
+msgstr "Seminaris relacionats"
+
+#: seminaris/models.py:43
+#, fuzzy
+msgid "seminars"
+msgstr "Seminaris relacionats"
+
+#: seminaris/models.py:57
 #, python-format
 msgid "%(idia)s %(idata)d to %(fdia)s %(fdata)d %(imes)s, %(iany)d"
 msgstr "del %(idia)s %(idata)d al %(fdia)s %(fdata)d %(imes)s, %(iany)d"
 
-#: seminaris/models.py:54
+#: seminaris/models.py:59
 #, python-format
 msgid "%(idia)s %(idata)d %(imes)s to %(fdia)s %(fdata)d %(fmes)s, %(iany)d"
 msgstr ""
 "del %(idia)s %(idata)d de %(imes)s al %(fdia)s %(fdata)d de %(fmes)s de "
 "%(iany)d"
 
-#: seminaris/models.py:56
+#: seminaris/models.py:61
 #, python-format
 msgid ""
 "%(idia)s %(idata)d %(imes)s, %(iany)s %(fdata)d to %(fdia)d %(fmes)s, "
@@ -87,9 +282,79 @@ msgstr ""
 "del %(idia)s %(idata)d de %(imes)s de %(iany)s al %(fdata)d %(fdia)d de "
 "%(fmes)s de %(fany)d"
 
-#: seminaris/models.py:220
+#: seminaris/models.py:95 seminaris/models.py:170
+msgid "order"
+msgstr ""
+
+#: seminaris/models.py:105
+#, fuzzy
+msgid "references"
+msgstr "Referències"
+
+#: seminaris/models.py:113 seminaris/models.py:167
+#, fuzzy
+msgid "theme"
+msgstr "Temes"
+
+#: seminaris/models.py:114
+#, fuzzy
+msgid "themes"
+msgstr "Temes"
+
+#: seminaris/models.py:137 seminaris/models.py:233
+msgid "day"
+msgstr ""
+
+#: seminaris/models.py:138
+msgid "days"
+msgstr ""
+
+#: seminaris/models.py:171
+msgid "presenters"
+msgstr "ponents"
+
+#: seminaris/models.py:174
+msgid "other presenters"
+msgstr "altres ponents"
+
+#: seminaris/models.py:178
+#, fuzzy
+msgid "presentation"
+msgstr "Descarregar presentació"
+
+#: seminaris/models.py:181
+#, fuzzy
+msgid "article"
+msgstr "Descarregar article"
+
+#: seminaris/models.py:190 seminaris/models.py:230
+msgid "talk"
+msgstr ""
+
+#: seminaris/models.py:191
+#, fuzzy
+msgid "talks"
+msgstr "Xerrades"
+
+#: seminaris/models.py:235
+msgid "start time"
+msgstr ""
+
+#: seminaris/models.py:236
+msgid "end time"
+msgstr ""
+
+#: seminaris/models.py:241
 msgid "Only necessary if a talk isn't chosen."
 msgstr "Necessari només si no s'ha seleccionat cap xerrada"
+
+#: seminaris/models.py:245
+msgid "programme item"
+msgstr ""
+
+#: seminaris/models.py:246
+msgid "programme items"
+msgstr ""
 
 #: seminaris/utils.py:56 seminaris/utils.py:72
 msgid "and"
@@ -335,7 +600,8 @@ msgid "Update Profile"
 msgstr "Actualitzar el perfil"
 
 #: templates/comptes/perfil_actualitzar.html:15
-#: templates/membres/membre_actualitzar_form.html:18
+#: templates/membres/membre_actualitzar_form.html:22
+#: templates/seminaris/xerrada_actualitzar_form.html:26
 #: templates/seminaris/xerrada_fitxer_actualitzar_form.html:22
 msgid "Update"
 msgstr "Actualitzar"
@@ -563,6 +829,17 @@ msgstr "Referències"
 msgid "Return to seminar"
 msgstr "Tornar al seminari"
 
+#: templates/seminaris/xerrada_actualitzar_form.html:6
+#: templates/seminaris/xerrada_actualitzar_form.html:7
+#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:6
+#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:7
+msgid "Update talk files"
+msgstr "Actualitzar fixters de la xerrada"
+
+#: templates/seminaris/xerrada_actualitzar_form.html:16
+msgid "You can update this talk here."
+msgstr ""
+
 #: templates/seminaris/xerrada_detall.html:13
 msgid "Presenters"
 msgstr "Ponents"
@@ -594,11 +871,6 @@ msgstr "Descarregar article"
 #: templates/seminaris/xerrada_detall.html:46
 msgid "No files available for download"
 msgstr "No hi ha fitxers per descarregar"
-
-#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:6
-#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:7
-msgid "Update talk files"
-msgstr "Actualitzar fixters de la xerrada"
 
 #: templates/seminaris/xerrada_fitxer_actualitzar_form.html:14
 msgid ""
@@ -633,3 +905,6 @@ msgid ""
 msgstr ""
 "\n"
 "Text de mostra.\n"
+
+#~ msgid "Year"
+#~ msgstr "Any"

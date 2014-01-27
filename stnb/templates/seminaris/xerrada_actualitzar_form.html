@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block extra-head %}{{ form.media }}{{ trans_forms.0.media }}{% include "formularis/_elegir_llengua_media.html" %}{% endblock extra-head %}
+
+{% block titol-head %}{% trans "Update talk" %}{% endblock titol-head %}
+{% block titol-pagina %}{% trans "Update talk" %}{% endblock titol-pagina %}
+
+{% block body-class %}{{ block.super }} multillengua{% endblock body-class %}
+
+{% block contingut %}
+<div class="actualitzar">
+
+  <h3>{{ xerrada.titol }}</h3>
+
+  <p>{% blocktrans %}You can update this talk here.{% endblocktrans %}</p>
+
+	{% include "formularis/_elegir_llengua.html" %}
+
+	<form method="post" action="{% url "seminari-xerrada-actualitzar" seminari_slug=seminari.slug xerrada_id=xerrada.id %}" enctype="multipart/form-data">
+		{% csrf_token %}
+
+    {{ form.as_p }}
+
+		{% for trans_form in trans_forms %}
+      <div class="trans-{{ trans_form.language_code.value }}">
+        {{ trans_form.as_p }}
+      </div>
+		{% endfor %}
+
+		<div class="submit">
+			<input type="submit" value="{% trans "Update" %}" /> <a href="{% url "seminari-xerrada-detall" seminari_slug=seminari.slug xerrada_id=xerrada.id %}">Cancel</a>
+		</div>
+	</form>
+
+</div>
+{% endblock contingut %}
+

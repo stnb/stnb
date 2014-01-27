@@ -1,44 +1,3 @@
-/* **** FONTS **** */
-
-/*@font-face {
-	font-family: Wire-One;
-	src: url('../fonts/wire-one/wire-one.ttf') format("truetype");
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: Ubuntu-Condensed;
-	src: url('../fonts/ubuntu/ubuntu-c.ttf') format("truetype");
-	font-weight: normal;
-	font-style: normal;
-}*/
-/*@font-face {
-	font-family: Averia;
-	src: url('../font-family/averia/Averia-Italic.ttf') format("truetype");
-	font-weight: normal;
-	font-style: italic;
-}
-@font-face {
-	font-family: Averia;
-	src: url('../font-family/averia/Averia-Bold.ttf') format("truetype");
-	font-weight: bold;
-	font-style: normal;
-}
-@font-face {
-	font-family: Averia;
-	src: url('../font-family/averia/Averia-BoldItalic.ttf') format("truetype");
-	font-weight: bold;
-	font-style: italic;
-}
-@font-face {
-	font-family: Averia;
-	src: url('../font-family/averia/Averia-FakeSmallCaps.ttf') format("truetype");
-	font-weight: 100;
-	font-style: normal;
-}*/
-
-
 /* **** BEGIN: Reset **** */
 
 html, body, div, span, applet, object, iframe,
@@ -90,11 +49,17 @@ table {
 /* **** BEGIN: Outer level **** */
 
 body  {
+	color: #333;
+	background: #e4e4e5 url(../img/background-dot.png) repeat-y 0 0;
+}
+
+body,
+form input,
+form select,
+form textarea  {
 	font-family: 'Titillium Web', sans-serif;
 	font-size: 12pt;
 	letter-spacing: 0.085em;
-	color: #333;
-	background: #e4e4e5 url(../img/background-dot.png) repeat-y 0 0;
 }
 
 #stnb-outer-wrap  {
@@ -110,7 +75,7 @@ body  {
 	width: 150px;
 }
 
-#content-wrap  {
+.content-wrap  {
 	width: 680px;
 	margin: 30px 20px 20px 20px;
 	padding: 0 40px 0 0;
@@ -132,7 +97,7 @@ body  {
 	background: none #5f5f5f;
 }*/
 
-#site-titles h1, #site-titles .year, #menu li, #content-wrap h2  {
+#site-titles h1, #site-titles .year, #menu li, .content-wrap h2  {
 	font-family: 'Oswald', sans-serif;
 }
 
@@ -178,23 +143,23 @@ body  {
 	color: #f26813;
 }
 
-#content-wrap h2, #content-wrap h3, #content-wrap h4  {
+.content-wrap h2, .content-wrap h3, .content-wrap h4  {
 	font-family: "Oswald";
 	font-weight: 700;
 	color: #333;
 }
 
-#content-wrap h2  {
+.content-wrap h2  {
 	font-size: 30px;
 	margin: 10px 0 30px 0;
 }
 
-#content-wrap h3  {
+.content-wrap h3  {
 	font-size: 18px;
 	margin: 34px 0 16px 0;
 }
 
-#content-wrap h4  {
+.content-wrap h4  {
 	font-size: 15px;
 	margin: 24px 0 14px 0;
 }
@@ -204,12 +169,12 @@ body  {
 
 /* **** BEGIN: Links **** */
 
-#content-wrap a, #secondary-column a  {
+.content-wrap a, #secondary-column a  {
 	color: #ff6600;
 	text-decoration: none;
 }
 
-#content-wrap a:hover, #secondary-column a:hover  {
+.content-wrap a:hover, #secondary-column a:hover  {
 	/*color: #6B7627;*/
 	text-decoration: underline;
 }
@@ -270,6 +235,15 @@ body  {
 
 #menu .miembres  {
 	background-color: #666666;
+}
+
+/* Language specific tweeks */
+.lleng-es #menu .publicacions  {
+	font-size: 70%;
+}
+
+.lleng-es #menu .arxiu-seminaris  {
+	font-size: 80%;
 }
 
 /* **** END: Navigation **** */
@@ -368,7 +342,7 @@ body  {
 
 /* **** BEGIN: Main Content **** */
 
-#content-wrap .microalertes  {
+.content-wrap .microalertes  {
 	background: #cc6633 none;
 	padding: 8px 4px 8px 4px;
 	margin: 10px 0 20px 0;
@@ -377,60 +351,60 @@ body  {
 	text-align: center;
 }
 
-#content-wrap p {
+.content-wrap p {
 	margin: 10px 0 6px 0;
 	line-height: 1.4;
 }
 
-#content-wrap strong  {
+.content-wrap strong  {
   font-weight: 700;
 }
 
-#content-wrap .extended-text p {
+.content-wrap .extended-text p {
 	margin: 20px 0 20px 0;
 }
 
-#content-wrap li  {
+.content-wrap li  {
 	margin: 14px 0 14px 0;
 }
 
-#content-wrap ol  {
+.content-wrap ol  {
 	list-style: decimal;
 	padding-left: 40px;
 }
 
-#content-wrap em  {
+.content-wrap em  {
 	font-style: italic;
 }
 
-#content-wrap .noticies  {
+.content-wrap .noticies  {
 	
 }
 
-#content-wrap .noticia h3  {
+.content-wrap .noticia h3  {
 	margin-bottom: 6px;
 }
 
-#content-wrap .noticia .data  {
+.content-wrap .noticia .data  {
 	color: #333;
 	font-size: 11px;
 }
 
-#content-wrap .noticia .descripcio  {
+.content-wrap .noticia .descripcio  {
 	margin: 10px 0 18px 0;
 	line-height: 16pt;
 }
 
-#content-wrap .noticia .descripcio li  {
+.content-wrap .noticia .descripcio li  {
 	margin: 6px 0 6px 0;
 }
 
-#content-wrap .noticia .descripcio ul  {
+.content-wrap .noticia .descripcio ul  {
 	list-style: disc;
 	padding-left: 40px;
 }
 
-#content-wrap .pagina-plana p  {
+.content-wrap .pagina-plana p  {
   margin: 10px 0 18px 0;
 }
 
@@ -491,15 +465,15 @@ body  {
 	color: #A94F0D;
 }
 
-#content-wrap .compte .edit  {
+.content-wrap .compte .edit  {
 	margin-top: 26px;
 }
 
-#content-wrap .back-link  {
+.content-wrap .back-link  {
 	margin-top: 30px;
 }
 
-#content-wrap .temes .organitzadors  {
+.content-wrap .temes .organitzadors  {
 	font-size: 11pt;
 }
 
@@ -526,12 +500,92 @@ body  {
 	margin-left: 20px;
 }
 
-#content-wrap .membre-llista .membre-info h4  {
+.content-wrap .membre-llista .membre-info h4  {
 	margin: 8px 0 8px 0;
 }
 
-#content-wrap .membre-llista .membre-info p  {
+.content-wrap .membre-llista .membre-info p  {
 	margin: 4px 0 4px 0;
 }
 
 /* **** END: Member pages **** */
+
+/* **** BEGIN: Forms **** */
+
+.actualitzar label,
+.actualitzar input[type="submit"],
+.actualitzar input[type="file"],
+.actualitzar input[type="checkbox"]  {
+	display: inline;
+}
+
+.actualitzar input,
+.actualitzar select,
+.actualitzar textarea  {
+	display: block;
+}
+
+.actualitzar p,
+.actualitzar label  {
+	font-size: 10.5pt;
+}
+
+.actualitzar input,
+.actualitzar select,
+.actualitzar a,
+.actualitzar textarea  {
+	font-size: 12pt;
+}
+
+
+.actualitzar textarea  {
+	width: 582px;
+	height: 294px;
+}
+
+/* **** END: Forms **** */
+
+/* **** BEGIN: Form language select **** */
+
+#llengua-formulari a li  {
+	float: left;
+	width: 90px;
+	height: 18px;
+	padding-top: 2px;
+	margin: 4px 2px 16px 0;
+	text-align: center;
+	font-size: 90%;
+	color: #fff;
+	background: none #f60;
+}
+
+#llengua-formulari a:hover li  {
+	background-color: #c63;
+}
+
+#llengua-formulari a.actiu li  {
+	background-color: #930;
+}
+
+#llengua-formulari li.left  {
+	border-top-left-radius: 11px;
+	border-bottom-left-radius:  11px;
+}
+
+#llengua-formulari li.middle  {
+}
+
+#llengua-formulari li.right  {
+	border-top-right-radius: 11px;
+	border-bottom-right-radius:  11px;
+}
+
+body.multillengua form  {
+	clear: left;
+}
+
+.membre-actualitzar form  {
+	clear: left;
+}
+
+/* **** END: Form language select **** */
