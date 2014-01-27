@@ -48,7 +48,7 @@ class Seminari(TranslatableModel):
 
     @permalink
     def get_absolute_url(self):
-        return ('seminari-detall', (), {'seminari_slug': self.slug})
+        return ('seminari-detall', (), {'slug': self.slug})
 
     def duracio(self):
         dstr = ''
