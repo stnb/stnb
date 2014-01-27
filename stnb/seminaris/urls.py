@@ -32,10 +32,10 @@ urlpatterns = patterns('',
         XerradaFitxerActualitzarView.as_view(),
         name='seminari-xerrada-fitxer-actualitzar'),
     
-    url(r'^(?P<seminari_slug>[a-z0-9\-]+)/$',
+    url(r'^(?P<slug>[a-z0-9\-]+)/$',
         SeminariDetailView.as_view(),
         name='seminari-detall'),
-    url(r'^(?P<seminari_slug>[a-z0-9\-]+)/actualitzar/$',
+    url(r'^(?P<slug>[a-z0-9\-]+)/actualitzar/$',
         SeminariActualitzarView.as_view(),
         name='seminari-actualitzar'),
 

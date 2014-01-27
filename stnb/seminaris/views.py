@@ -25,7 +25,7 @@ class SeminariActualView(RedirectView):
         except IndexError:
             raise Http404
         return reverse('seminari-detall',
-                       kwargs={ 'seminari_slug': seminari.slug })
+                       kwargs={ 'slug': seminari.slug })
 
 class SeminariListView(ListView):
     model = Seminari
@@ -49,7 +49,7 @@ class TemaListView(ListView):
 
     # FIXME: Select only from *this* Seminari.
     queryset = Tema.objects.all()
-    slug_field = 'slug'
+    slug_field = 'seminari_slug'
 
 class TemaDetallView(TemplateView):
     template_name = 'seminaris/tema_detall.html'
