@@ -1,44 +1,3 @@
-/* **** FONTS **** */
-
-/*@font-face {
-	font-family: Wire-One;
-	src: url('../fonts/wire-one/wire-one.ttf') format("truetype");
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: Ubuntu-Condensed;
-	src: url('../fonts/ubuntu/ubuntu-c.ttf') format("truetype");
-	font-weight: normal;
-	font-style: normal;
-}*/
-/*@font-face {
-	font-family: Averia;
-	src: url('../font-family/averia/Averia-Italic.ttf') format("truetype");
-	font-weight: normal;
-	font-style: italic;
-}
-@font-face {
-	font-family: Averia;
-	src: url('../font-family/averia/Averia-Bold.ttf') format("truetype");
-	font-weight: bold;
-	font-style: normal;
-}
-@font-face {
-	font-family: Averia;
-	src: url('../font-family/averia/Averia-BoldItalic.ttf') format("truetype");
-	font-weight: bold;
-	font-style: italic;
-}
-@font-face {
-	font-family: Averia;
-	src: url('../font-family/averia/Averia-FakeSmallCaps.ttf') format("truetype");
-	font-weight: 100;
-	font-style: normal;
-}*/
-
-
 /* **** BEGIN: Reset **** */
 
 html, body, div, span, applet, object, iframe,
@@ -90,11 +49,17 @@ table {
 /* **** BEGIN: Outer level **** */
 
 body  {
+	color: #333;
+	background: #e4e4e5 url(../img/background-dot.png) repeat-y 0 0;
+}
+
+body,
+form input,
+form select,
+form textarea  {
 	font-family: 'Titillium Web', sans-serif;
 	font-size: 12pt;
 	letter-spacing: 0.085em;
-	color: #333;
-	background: #e4e4e5 url(../img/background-dot.png) repeat-y 0 0;
 }
 
 #stnb-outer-wrap  {
@@ -547,130 +512,38 @@ body  {
 
 /* **** BEGIN: Forms **** */
 
-.actualitzar form p  {
-	margin: 14px 0 14px 0;
+.actualitzar label,
+.actualitzar input[type="submit"],
+.actualitzar input[type="file"],
+.actualitzar input[type="checkbox"]  {
+	display: inline;
 }
 
-.actualitzar form p.side-by  {
-	float: left;
-}
-
-.actualitzar form p label,
-.actualitzar form p input  {
+.actualitzar input,
+.actualitzar select,
+.actualitzar textarea  {
 	display: block;
 }
 
-.actualitzar form p label  {
+.actualitzar p,
+.actualitzar label  {
 	font-size: 10.5pt;
 }
 
-.actualitzar form p input[type="text"]  {
-	margin: 4px 0 4px 0;
-	
-	width: 340px;
-	height: 28px;
-	
-	font-size: 13pt;
-}
-
-.actualitzar form p textarea  {
-	width: 582px;
-	height: 170px;
-}
-
-.actualitzar form p input[type="file"]  {
+.actualitzar input,
+.actualitzar select,
+.actualitzar a,
+.actualitzar textarea  {
 	font-size: 12pt;
 }
 
-.actualitzar form .submit  {
-	clear: left;
-}
 
-.actualitzar form .submit input  {
-	margin-top: 16px;
-	height: 40px;
-	
-	font-size: 14pt;
-}
-
-.actualitzar .errorlist  {
-	color: #A94F0D;
+.actualitzar textarea  {
 	width: 582px;
-}
-
-.actualitzar .errorlist li  {
-	margin-bottom: -5px;
-}
-
-.actualitzar form .helptext  {
-	display: block;
-	font-size: 70%;
-}
-
-.actualitzar form p  {
-	float: left;
+	height: 294px;
 }
 
 /* **** END: Forms **** */
-
-/* **** BEGIN: Form tweeks **** */
-
-.actualitzar form p input.titol  {
-	width: 582px;
-}
-
-.actualitzar form p input.altres-presentadors  {
-	margin-right: 222px;
-}
-
-/* **** END: Form tweeks **** */
-
-/* **** BEGIN: Seminari form tweeks **** */
-
-.seminari-actualitzar #id_data_inici,
-.seminari-actualitzar #id_data_finalizacio  {
-	width: 280px;
-}
-
-/* **** END: Seminari form tweeks **** */
-
-/* **** BEGIN: Member form **** */
-
-.membre-actualitzar .submit  {
-	clear: left;
-}
-
-.membre-actualitzar p input,
-.membre-actualitzar p input[type="text"],
-.membre-actualitzar p select  {
-	margin-right: 60px;
-}
-
-.membre-actualitzar p #id_nom, .membre-actualitzar p #id_cognoms  {
-	width: 280px;
-	margin-right: 20px;
-}
-
-.membre-actualitzar p #id_enllac  {
-	width: 308px;
-}
-
-.membre-actualitzar p label[for="id_amagar_perfil"],
-.membre-actualitzar p #id_amagar_perfil,
-.membre-actualitzar p label[for="id_membre_actual"],
-.membre-actualitzar p #id_membre_actual  {
-	display: inline;
-	height: auto;
-	width: auto;
-}
-
-
-.membre-actualitzar p input.camp-any[type="text"]  {
-	width: 89px;
-	margin-right: 60px;
-}
-
-/* **** END: Member form **** */
 
 /* **** BEGIN: Form language select **** */
 
