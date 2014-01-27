@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.views.generic import TemplateView
 from django.http import HttpResponseRedirect
-from hvad.utils import get_all_language_codes
+from stnb.utils.utils import get_all_language_codes
 
 class MultiTranslationFormView(TemplateView):
     model = None

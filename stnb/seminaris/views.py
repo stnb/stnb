@@ -6,7 +6,6 @@ from django.shortcuts import get_object_or_404
 from django.utils.decorators import method_decorator
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, Http404
-from hvad.utils import get_all_language_codes
 
 from stnb.comptes.decorators import login_required
 from stnb.utils.views import MultiTranslationFormView
