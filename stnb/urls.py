@@ -45,7 +45,7 @@ urlpatterns += i18n_patterns('',
     url(r'^noticies/', include('stnb.noticies.urls')),
     url(r'^membres/', include('stnb.membres.urls')),
     url(r'^publicacions/', include('stnb.publicacions.urls')),
-    url(r'^(?P<slug>tema-per-a-stnb-2014)/$', PaginaPlanaDetallView.as_view(),
+    url(r'^(?P<slug>temes-stnb-2015)/$', PaginaPlanaDetallView.as_view(),
         name='pagina-plana'),
     
     url(r'^$', IniciView.as_view(), name='inici'),
