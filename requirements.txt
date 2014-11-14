@@ -1,8 +1,8 @@
 -e git+git://github.com/hds/django-hvad.git#egg=hvad
 git+git://github.com/jmoiron/johnny-cache.git@8aa94bea4aebd82785a425866c04a5dede39a5b4#egg=johnny-cache
-Django==1.5.4
+Django>=1.5,<1.6
 mysql-python
-pil
+Pillow
 pycrypto
 raven
 south

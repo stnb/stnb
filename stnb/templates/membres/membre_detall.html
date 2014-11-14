@@ -22,7 +22,7 @@
 
 	<h4>{% trans "Email" %}:</h4>
 
-	<p>{% if user.is_authenticated %}{{ membre.user.email }}{% else %}{% trans "Please log in to see member email addresses." %}{% endif %}</p>
+	<p>{% if user.is_authenticated %}<a href="mailto:{{ membre.user.email }}">{{ membre.user.email }}</a>{% else %}{% trans "Please log in to see member email addresses." %}{% endif %}</p>
 
 	{% if membre.enllac %}
 	<h4>{% trans "Link" %}</h4>
@@ -36,7 +36,30 @@
 	<p>{{ membre.text_qualsevol_llengua|safe }}</p>
 	{% endif %}
 
+	{% if membre.seminaris.count > 0 %}
+	<h4>{% trans "Seminars organised" %}</h4>
+	{% for seminari in membre.seminaris.all %}
+	<p><a href="{{ seminari.get_absolute_url }}">{{ seminari }}</a></p>
+	{% endfor %}
+	{% endif %}
+
+	{% if membre.temes.count > 0 %}
+	<h4>{% trans "Themes organised" %}</h4>
+	{% for tema in membre.temes.all %}
+	<p><a href="{{ tema.get_absolute_url }}">{{ tema }}</a></p>
+	{% endfor %}
+	{% endif %}
+
+	{% if membre.xerrades.count > 0 %}
+	<h4>{% trans "Talks" %}</h4>
+	{% for xerrada in membre.xerrades.all %}
+	<p><a href="{{ xerrada.get_absolute_url }}">{{ xerrada }}</a> - {{ xerrada.seminari }}</p>
+	{% endfor %}
+	{% endif %}
+
 	{% if user.get_profile == membre %}<p class="edit"><a href="{% url "membre-actualitzar" slug=membre.slug %}">{% trans "Edit your profile" %}</a>.</p>{% endif %}
+
+
 
 </div>
 {% endblock contingut %}

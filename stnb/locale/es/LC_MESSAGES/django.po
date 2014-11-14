@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-27 19:05+0100\n"
-"PO-Revision-Date: 2014-01-27 19:22+0100\n"
+"POT-Creation-Date: 2014-11-14 09:57+0100\n"
+"PO-Revision-Date: 2014-11-14 09:58+0100\n"
 "Last-Translator: Hayden Stainsby <hds@mat.uab.cat>\n"
 "Language-Team: STNB <stnbarcelona@gmail.com>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.6.10\n"
 
 #: comptes/forms.py:8
 msgid "first name"
@@ -61,11 +61,11 @@ msgstr "institución"
 msgid "institutions"
 msgstr "instituciones"
 
-#: membres/forms.py:11 membres/models.py:29
+#: membres/forms.py:10 membres/models.py:29
 msgid "member since"
 msgstr "miembre desde"
 
-#: membres/forms.py:14
+#: membres/forms.py:13
 msgid "year"
 msgstr "año"
 
@@ -117,7 +117,7 @@ msgstr "creado"
 msgid "updated"
 msgstr "actualizado"
 
-#: noticies/models.py:18 pagines/models.py:16 seminaris/forms.py:48
+#: noticies/models.py:18 pagines/models.py:16 seminaris/forms.py:29
 #: seminaris/models.py:115 seminaris/models.py:201
 msgid "title"
 msgstr "titulo"
@@ -198,7 +198,7 @@ msgstr "publicación"
 msgid "publicacions"
 msgstr "publicaciones"
 
-#: seminaris/forms.py:50 seminaris/models.py:202
+#: seminaris/forms.py:31 seminaris/models.py:202
 msgid "abstract"
 msgstr "resumen"
 
@@ -705,7 +705,22 @@ msgstr ""
 msgid "Link"
 msgstr "Enlace"
 
-#: templates/membres/membre_detall.html:39
+#: templates/membres/membre_detall.html:40
+msgid "Seminars organised"
+msgstr "Seminarios organizados"
+
+#: templates/membres/membre_detall.html:47
+msgid "Themes organised"
+msgstr "Temas organizados"
+
+#: templates/membres/membre_detall.html:54
+#: templates/seminaris/tema_detall.html:34
+#: templates/seminaris/xerrada_llista.html:5
+#: templates/seminaris/xerrada_llista.html:6
+msgid "Talks"
+msgstr "Charlas"
+
+#: templates/membres/membre_detall.html:60
 msgid "Edit your profile"
 msgstr "Actualizar tu perfil"
 
@@ -746,8 +761,8 @@ msgid "Co-ordinators"
 msgstr "Coordinación"
 
 #: templates/seminaris/_seminari_temes.html:13
-msgid "Full details"
-msgstr "Detalls complets"
+msgid "Details"
+msgstr "Detalles"
 
 #: templates/seminaris/seminari_detall.html:13
 #: templates/seminaris/seminari_detall.html:44
@@ -806,12 +821,6 @@ msgstr "Descargar publicaciones"
 #: templates/seminaris/tema_detall.html:27
 msgid "Description"
 msgstr "Descripción"
-
-#: templates/seminaris/tema_detall.html:34
-#: templates/seminaris/xerrada_llista.html:5
-#: templates/seminaris/xerrada_llista.html:6
-msgid "Talks"
-msgstr "Charlas"
 
 #: templates/seminaris/tema_detall.html:43
 msgid "References"
@@ -902,6 +911,10 @@ msgid ""
 msgstr ""
 "\n"
 "Más texto de prueba.\n"
+
+#, fuzzy
+#~ msgid "Talks given"
+#~ msgstr "Charlas"
 
 #~ msgid "Year"
 #~ msgstr "Año"

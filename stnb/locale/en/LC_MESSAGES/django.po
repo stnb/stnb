@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-27 19:05+0100\n"
+"POT-Creation-Date: 2014-11-14 09:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,11 +59,11 @@ msgstr ""
 msgid "institutions"
 msgstr ""
 
-#: membres/forms.py:11 membres/models.py:29
+#: membres/forms.py:10 membres/models.py:29
 msgid "member since"
 msgstr ""
 
-#: membres/forms.py:14
+#: membres/forms.py:13
 msgid "year"
 msgstr ""
 
@@ -115,7 +115,7 @@ msgstr ""
 msgid "updated"
 msgstr ""
 
-#: noticies/models.py:18 pagines/models.py:16 seminaris/forms.py:48
+#: noticies/models.py:18 pagines/models.py:16 seminaris/forms.py:29
 #: seminaris/models.py:115 seminaris/models.py:201
 msgid "title"
 msgstr ""
@@ -196,7 +196,7 @@ msgstr ""
 msgid "publicacions"
 msgstr ""
 
-#: seminaris/forms.py:50 seminaris/models.py:202
+#: seminaris/forms.py:31 seminaris/models.py:202
 msgid "abstract"
 msgstr ""
 
@@ -690,7 +690,22 @@ msgstr ""
 msgid "Link"
 msgstr ""
 
-#: templates/membres/membre_detall.html:39
+#: templates/membres/membre_detall.html:40
+msgid "Seminars organised"
+msgstr ""
+
+#: templates/membres/membre_detall.html:47
+msgid "Themes organised"
+msgstr ""
+
+#: templates/membres/membre_detall.html:54
+#: templates/seminaris/tema_detall.html:34
+#: templates/seminaris/xerrada_llista.html:5
+#: templates/seminaris/xerrada_llista.html:6
+msgid "Talks"
+msgstr ""
+
+#: templates/membres/membre_detall.html:60
 msgid "Edit your profile"
 msgstr ""
 
@@ -731,7 +746,7 @@ msgid "Co-ordinators"
 msgstr ""
 
 #: templates/seminaris/_seminari_temes.html:13
-msgid "Full details"
+msgid "Details"
 msgstr ""
 
 #: templates/seminaris/seminari_detall.html:13
@@ -790,12 +805,6 @@ msgstr ""
 
 #: templates/seminaris/tema_detall.html:27
 msgid "Description"
-msgstr ""
-
-#: templates/seminaris/tema_detall.html:34
-#: templates/seminaris/xerrada_llista.html:5
-#: templates/seminaris/xerrada_llista.html:6
-msgid "Talks"
 msgstr ""
 
 #: templates/seminaris/tema_detall.html:43
