@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-14 09:57+0100\n"
-"PO-Revision-Date: 2014-11-14 09:57+0100\n"
+"PO-Revision-Date: 2015-01-19 11:34+0100\n"
 "Last-Translator: Hayden Stainsby <hds@mat.uab.cat>\n"
 "Language-Team: STNB <stnbarcelona@gmail.com>\n"
 "Language: ca\n"
@@ -362,7 +362,7 @@ msgstr "Pàgina no encontrat"
 
 #: templates/404.html:12
 msgid "The page you are looking for could not be found."
-msgstr "La pàgina que busques no es va poder trobar."
+msgstr "La pàgina que busques no s'ha pogut trobar."
 
 #: templates/500.html:5 templates/500.html.py:7
 msgid "Error 500"
