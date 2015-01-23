@@ -15,7 +15,12 @@
 
 		<ol class="tema-xerrades">
 			{% for xerrada in tema.xerrades.all %}
-			<li><a href="{% url "seminari-xerrada-detall" seminari_slug=seminari.slug xerrada_id=xerrada.id %}">{{ xerrada.titol }}</a> ({{ xerrada.presentadors_html|safe }})</li>
+			<li><a class="titol" href="{% url "seminari-xerrada-detall" seminari_slug=seminari.slug xerrada_id=xerrada.id %}">{{ xerrada.titol }}</a><br />
+			<span class="icons-xerrada">
+				{% if xerrada.presentacio %}<a href="{{ MEDIA_URL }}{{ xerrada.presentacio }}" title="{% trans 'Download presentation' %}"><i class="fa fa-file-powerpoint-o"></i></a>{% endif %}
+				{% if xerrada.article %}<a href="{{ MEDIA_URL }}{{ xerrada.article }}" title="{% trans 'Download article' %}"><i class="fa fa-file-o"></i></a>{% endif %}
+			</span>
+			<span class="presentadors">{{ xerrada.presentadors_html|safe }}</span></li>
 			{% endfor %}
 		</ol>
 	</div>
