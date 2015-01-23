@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-14 09:57+0100\n"
-"PO-Revision-Date: 2014-11-14 09:58+0100\n"
+"POT-Creation-Date: 2015-01-23 09:02+0100\n"
+"PO-Revision-Date: 2015-01-23 09:04+0100\n"
 "Last-Translator: Hayden Stainsby <hds@mat.uab.cat>\n"
 "Language-Team: STNB <stnbarcelona@gmail.com>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.7.3\n"
 
 #: comptes/forms.py:8
 msgid "first name"
@@ -40,7 +40,7 @@ msgid "English"
 msgstr "inglés"
 
 #: institucions/models.py:7 membres/models.py:21 publicacions/models.py:42
-#: seminaris/models.py:37
+#: seminaris/models.py:39
 msgid "name"
 msgstr "nombre"
 
@@ -49,7 +49,7 @@ msgid "short name"
 msgstr "nombre curto"
 
 #: institucions/models.py:12 noticies/models.py:19 pagines/models.py:17
-#: publicacions/models.py:44 seminaris/models.py:116 seminaris/models.py:253
+#: publicacions/models.py:44 seminaris/models.py:118 seminaris/models.py:255
 msgid "description"
 msgstr "descripción"
 
@@ -105,7 +105,7 @@ msgstr "miembros"
 msgid "unnamed"
 msgstr "sin nombre"
 
-#: noticies/models.py:12 noticies/models.py:31 seminaris/models.py:146
+#: noticies/models.py:12 noticies/models.py:31 seminaris/models.py:148
 msgid "date"
 msgstr "fecha"
 
@@ -118,7 +118,7 @@ msgid "updated"
 msgstr "actualizado"
 
 #: noticies/models.py:18 pagines/models.py:16 seminaris/forms.py:29
-#: seminaris/models.py:115 seminaris/models.py:201
+#: seminaris/models.py:117 seminaris/models.py:203
 msgid "title"
 msgstr "titulo"
 
@@ -190,7 +190,7 @@ msgstr "Nombre de la publicación"
 msgid "A short description."
 msgstr "Una corta descripción."
 
-#: publicacions/models.py:50 seminaris/models.py:31 seminaris/models.py:109
+#: publicacions/models.py:50 seminaris/models.py:33 seminaris/models.py:111
 msgid "publication"
 msgstr "publicación"
 
@@ -198,7 +198,7 @@ msgstr "publicación"
 msgid "publicacions"
 msgstr "publicaciones"
 
-#: seminaris/forms.py:31 seminaris/models.py:202
+#: seminaris/forms.py:31 seminaris/models.py:204
 msgid "abstract"
 msgstr "resumen"
 
@@ -210,47 +210,51 @@ msgstr "fecha inicial"
 msgid "end date"
 msgstr "fecha final"
 
-#: seminaris/models.py:22 seminaris/models.py:103
+#: seminaris/models.py:22 seminaris/models.py:105
 msgid "organisers"
 msgstr "comité organizador"
 
-#: seminaris/models.py:25 seminaris/models.py:106
+#: seminaris/models.py:25 seminaris/models.py:108
 msgid "other organisers"
 msgstr "Otros organizadores"
 
 #: seminaris/models.py:28
+msgid "registration form"
+msgstr "formulario de inscripción"
+
+#: seminaris/models.py:30
 msgid "programme PDF"
 msgstr "PDF programa"
 
-#: seminaris/models.py:34
+#: seminaris/models.py:36
 msgid "active"
 msgstr "activo"
 
-#: seminaris/models.py:38
+#: seminaris/models.py:40
 msgid "location"
 msgstr "ubicación"
 
-#: seminaris/models.py:42 seminaris/models.py:100 seminaris/models.py:147
+#: seminaris/models.py:44 seminaris/models.py:102 seminaris/models.py:149
 msgid "seminar"
 msgstr "seminario"
 
-#: seminaris/models.py:43
+#: seminaris/models.py:45
 msgid "seminars"
 msgstr "seminarios"
 
-#: seminaris/models.py:57
+#: seminaris/models.py:59
 #, python-format
 msgid "%(idia)s %(idata)d to %(fdia)s %(fdata)d %(imes)s, %(iany)d"
 msgstr "del %(idia)s %(idata)d al %(fdia)s %(fdata)d %(imes)s, %(iany)d"
 
-#: seminaris/models.py:59
+#: seminaris/models.py:61
 #, python-format
 msgid "%(idia)s %(idata)d %(imes)s to %(fdia)s %(fdata)d %(fmes)s, %(iany)d"
 msgstr ""
 "del %(idia)s %(idata)d de %(imes)s al %(fdia)s %(fdata)d de %(fmes)s de "
 "%(iany)d"
 
-#: seminaris/models.py:61
+#: seminaris/models.py:63
 #, python-format
 msgid ""
 "%(idia)s %(idata)d %(imes)s, %(iany)s %(fdata)d to %(fdia)d %(fmes)s, "
@@ -259,71 +263,71 @@ msgstr ""
 "del %(idia)s %(idata)d de %(imes)s de %(iany)s al %(fdata)d %(fdia)d de "
 "%(fmes)s de %(fany)d"
 
-#: seminaris/models.py:102 seminaris/models.py:186
+#: seminaris/models.py:104 seminaris/models.py:188
 msgid "order"
 msgstr "orden"
 
-#: seminaris/models.py:112
+#: seminaris/models.py:114
 msgid "references"
 msgstr "referencias"
 
-#: seminaris/models.py:120 seminaris/models.py:183
+#: seminaris/models.py:122 seminaris/models.py:185
 msgid "theme"
 msgstr "tema"
 
-#: seminaris/models.py:121
+#: seminaris/models.py:123
 msgid "themes"
 msgstr "temas"
 
-#: seminaris/models.py:153 seminaris/models.py:247
+#: seminaris/models.py:155 seminaris/models.py:249
 msgid "day"
 msgstr "día"
 
-#: seminaris/models.py:154
+#: seminaris/models.py:156
 msgid "days"
 msgstr "días"
 
-#: seminaris/models.py:187
+#: seminaris/models.py:189
 msgid "presenters"
 msgstr "presentadores"
 
-#: seminaris/models.py:190
+#: seminaris/models.py:192
 msgid "other presenters"
 msgstr "otros presentadores"
 
-#: seminaris/models.py:194
+#: seminaris/models.py:196
 msgid "presentation"
 msgstr "presentación"
 
-#: seminaris/models.py:197
+#: seminaris/models.py:199
 msgid "article"
 msgstr "artículo"
 
-#: seminaris/models.py:206 seminaris/models.py:244
+#: seminaris/models.py:208 seminaris/models.py:246
 msgid "talk"
 msgstr "charla"
 
-#: seminaris/models.py:207
+#: seminaris/models.py:209
 msgid "talks"
 msgstr "charlas"
 
-#: seminaris/models.py:249
+#: seminaris/models.py:251
 msgid "start time"
 msgstr "hora inicial"
 
-#: seminaris/models.py:250
+#: seminaris/models.py:252
 msgid "end time"
 msgstr "hora final"
 
-#: seminaris/models.py:255
+#: seminaris/models.py:257
 msgid "Only necessary if a talk isn't chosen."
 msgstr "Necesario sólo si no se ha seleccionado ninguna charla"
 
-#: seminaris/models.py:259
+#: seminaris/models.py:261
 msgid "programme item"
 msgstr "ítem del programa"
 
-#: seminaris/models.py:260
+#: seminaris/models.py:262
 msgid "programme items"
 msgstr "ítemes del programa"
 
@@ -738,8 +742,8 @@ msgid "List of Publications"
 msgstr "Lista de Publicaciones"
 
 #: templates/publicacions/publicacio_llista.html:13
-#: templates/seminaris/seminari_detall.html:16
-#: templates/seminaris/seminari_detall.html:18
+#: templates/seminaris/seminari_detall.html:17
+#: templates/seminaris/seminari_detall.html:19
 msgid "Download publication"
 msgstr "Descargar publicación"
 
@@ -765,38 +769,42 @@ msgid "Details"
 msgstr "Detalles"
 
 #: templates/seminaris/seminari_detall.html:13
-#: templates/seminaris/seminari_detall.html:44
+#: templates/seminaris/seminari_detall.html:45
 msgid "Themes"
 msgstr "Temas"
 
 #: templates/seminaris/seminari_detall.html:14
-#: templates/seminaris/seminari_detall.html:53
+#: templates/seminaris/seminari_detall.html:54
 msgid "Calendar"
 msgstr "Calendario"
 
 #: templates/seminaris/seminari_detall.html:15
+msgid "Registration form"
+msgstr "Formulario de inscripción"
+
+#: templates/seminaris/seminari_detall.html:16
 msgid "Download programme"
 msgstr "Descargar programa"
 
-#: templates/seminaris/seminari_detall.html:23
+#: templates/seminaris/seminari_detall.html:24
 #: templates/seminaris/seminari_llista.html:13
 msgid "Dates"
 msgstr "Fechas"
 
-#: templates/seminaris/seminari_detall.html:30
+#: templates/seminaris/seminari_detall.html:31
 #: templates/seminaris/seminari_llista.html:14
 msgid "Location"
 msgstr "Ubicación"
 
-#: templates/seminaris/seminari_detall.html:37
+#: templates/seminaris/seminari_detall.html:38
 msgid "Organising committee"
 msgstr "Comité organizador"
 
-#: templates/seminaris/seminari_detall.html:49
+#: templates/seminaris/seminari_detall.html:50
 msgid "Themes have not yet been chosen."
 msgstr "Los temas todavía no han sido elegidos."
 
-#: templates/seminaris/seminari_detall.html:58
+#: templates/seminaris/seminari_detall.html:59
 msgid "The calendar has not yet been set."
 msgstr "El calendario todavía no está confirmado."
 
@@ -911,6 +919,10 @@ msgid ""
 msgstr ""
 "\n"
 "Más texto de prueba.\n"
+
+#, fuzzy
+#~ msgid "registration link"
+#~ msgstr "Registro"
 
 #, fuzzy
 #~ msgid "Talks given"

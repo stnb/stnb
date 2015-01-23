@@ -25,7 +25,7 @@ class Seminari(TranslatableModel):
     altres_organitzadors = models.CharField(_('other organisers'),
                                             max_length=250, blank=True,
                                             null=True)
-    enllac_inscripcio = models.CharField(_('registration link'),
+    enllac_inscripcio = models.CharField(_('registration form'),
                                          max_length=250, blank=True, null=True)
     programa_pdf = models.FileField(_('programme PDF'),
                                     upload_to='seminaris/programes',
