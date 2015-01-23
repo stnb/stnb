@@ -589,3 +589,8 @@ body.multillengua form  {
 }
 
 /* **** END: Form language select **** */
+
+
+#survey .sbody, .squestioninput table th, .squestioninput table td  {
+	background-color: transparent;
+}
