@@ -3,7 +3,7 @@
 <div class="xerrades">
 	<ul class="xerrades">
 		{% for xerrada in xerrades %}
-		<li><a href="{% url "seminari-xerrada-detall" seminari_slug=seminari.slug xerrada_id=xerrada.id %}">{{ xerrada.titol }}</a> ({{ xerrada.presentadors_html|safe }})</li>
+		<li><p><a href="{% url "seminari-xerrada-detall" seminari_slug=seminari.slug xerrada_id=xerrada.id %}">{{ xerrada.titol }}</a></p><p>{{ xerrada.presentadors_html|safe }})</></li>
 		{% endfor %}
 	</ul>
 </div>

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-14 09:57+0100\n"
-"PO-Revision-Date: 2014-11-14 09:57+0100\n"
+"POT-Creation-Date: 2015-01-23 09:02+0100\n"
+"PO-Revision-Date: 2015-01-23 09:03+0100\n"
 "Last-Translator: Hayden Stainsby <hds@mat.uab.cat>\n"
 "Language-Team: STNB <stnbarcelona@gmail.com>\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.7.3\n"
 
 #: comptes/forms.py:8
 msgid "first name"
@@ -40,7 +40,7 @@ msgid "English"
 msgstr "anglès"
 
 #: institucions/models.py:7 membres/models.py:21 publicacions/models.py:42
-#: seminaris/models.py:37
+#: seminaris/models.py:39
 msgid "name"
 msgstr "nom"
 
@@ -49,7 +49,7 @@ msgid "short name"
 msgstr "nom curt"
 
 #: institucions/models.py:12 noticies/models.py:19 pagines/models.py:17
-#: publicacions/models.py:44 seminaris/models.py:116 seminaris/models.py:253
+#: publicacions/models.py:44 seminaris/models.py:118 seminaris/models.py:255
 msgid "description"
 msgstr "descripció"
 
@@ -105,7 +105,7 @@ msgstr "membres"
 msgid "unnamed"
 msgstr "sense nom"
 
-#: noticies/models.py:12 noticies/models.py:31 seminaris/models.py:146
+#: noticies/models.py:12 noticies/models.py:31 seminaris/models.py:148
 msgid "date"
 msgstr "data"
 
@@ -118,7 +118,7 @@ msgid "updated"
 msgstr "actualitzat"
 
 #: noticies/models.py:18 pagines/models.py:16 seminaris/forms.py:29
-#: seminaris/models.py:115 seminaris/models.py:201
+#: seminaris/models.py:117 seminaris/models.py:203
 msgid "title"
 msgstr "títol"
 
@@ -190,7 +190,7 @@ msgstr "nom de publicació"
 msgid "A short description."
 msgstr "Descripció breu."
 
-#: publicacions/models.py:50 seminaris/models.py:31 seminaris/models.py:109
+#: publicacions/models.py:50 seminaris/models.py:33 seminaris/models.py:111
 msgid "publication"
 msgstr "publicació"
 
@@ -198,7 +198,7 @@ msgstr "publicació"
 msgid "publicacions"
 msgstr "publicacions"
 
-#: seminaris/forms.py:31 seminaris/models.py:202
+#: seminaris/forms.py:31 seminaris/models.py:204
 msgid "abstract"
 msgstr "resum"
 
@@ -210,47 +210,51 @@ msgstr "data d'inici"
 msgid "end date"
 msgstr "data de finalització"
 
-#: seminaris/models.py:22 seminaris/models.py:103
+#: seminaris/models.py:22 seminaris/models.py:105
 msgid "organisers"
 msgstr "organitzadors"
 
-#: seminaris/models.py:25 seminaris/models.py:106
+#: seminaris/models.py:25 seminaris/models.py:108
 msgid "other organisers"
 msgstr "altres organitzadors"
 
 #: seminaris/models.py:28
+msgid "registration form"
+msgstr "formulari d'inscripció"
+
+#: seminaris/models.py:30
 msgid "programme PDF"
 msgstr "programa PDF"
 
-#: seminaris/models.py:34
+#: seminaris/models.py:36
 msgid "active"
 msgstr "actiu"
 
-#: seminaris/models.py:38
+#: seminaris/models.py:40
 msgid "location"
 msgstr "lloc"
 
-#: seminaris/models.py:42 seminaris/models.py:100 seminaris/models.py:147
+#: seminaris/models.py:44 seminaris/models.py:102 seminaris/models.py:149
 msgid "seminar"
 msgstr "seminari"
 
-#: seminaris/models.py:43
+#: seminaris/models.py:45
 msgid "seminars"
 msgstr "seminaris"
 
-#: seminaris/models.py:57
+#: seminaris/models.py:59
 #, python-format
 msgid "%(idia)s %(idata)d to %(fdia)s %(fdata)d %(imes)s, %(iany)d"
 msgstr "del %(idia)s %(idata)d al %(fdia)s %(fdata)d %(imes)s, %(iany)d"
 
-#: seminaris/models.py:59
+#: seminaris/models.py:61
 #, python-format
 msgid "%(idia)s %(idata)d %(imes)s to %(fdia)s %(fdata)d %(fmes)s, %(iany)d"
 msgstr ""
 "del %(idia)s %(idata)d de %(imes)s al %(fdia)s %(fdata)d de %(fmes)s de "
 "%(iany)d"
 
-#: seminaris/models.py:61
+#: seminaris/models.py:63
 #, python-format
 msgid ""
 "%(idia)s %(idata)d %(imes)s, %(iany)s %(fdata)d to %(fdia)d %(fmes)s, "
@@ -259,71 +263,71 @@ msgstr ""
 "del %(idia)s %(idata)d de %(imes)s de %(iany)s al %(fdata)d %(fdia)d de "
 "%(fmes)s de %(fany)d"
 
-#: seminaris/models.py:102 seminaris/models.py:186
+#: seminaris/models.py:104 seminaris/models.py:188
 msgid "order"
 msgstr "ordenació"
 
-#: seminaris/models.py:112
+#: seminaris/models.py:114
 msgid "references"
 msgstr "referències"
 
-#: seminaris/models.py:120 seminaris/models.py:183
+#: seminaris/models.py:122 seminaris/models.py:185
 msgid "theme"
 msgstr "tema"
 
-#: seminaris/models.py:121
+#: seminaris/models.py:123
 msgid "themes"
 msgstr "temes"
 
-#: seminaris/models.py:153 seminaris/models.py:247
+#: seminaris/models.py:155 seminaris/models.py:249
 msgid "day"
 msgstr "dia"
 
-#: seminaris/models.py:154
+#: seminaris/models.py:156
 msgid "days"
 msgstr "dies"
 
-#: seminaris/models.py:187
+#: seminaris/models.py:189
 msgid "presenters"
 msgstr "ponents"
 
-#: seminaris/models.py:190
+#: seminaris/models.py:192
 msgid "other presenters"
 msgstr "altres ponents"
 
-#: seminaris/models.py:194
+#: seminaris/models.py:196
 msgid "presentation"
 msgstr "presentació"
 
-#: seminaris/models.py:197
+#: seminaris/models.py:199
 msgid "article"
 msgstr "article"
 
-#: seminaris/models.py:206 seminaris/models.py:244
+#: seminaris/models.py:208 seminaris/models.py:246
 msgid "talk"
 msgstr "xarrada"
 
-#: seminaris/models.py:207
+#: seminaris/models.py:209
 msgid "talks"
 msgstr "xerrades"
 
-#: seminaris/models.py:249
+#: seminaris/models.py:251
 msgid "start time"
 msgstr "hora d'inici"
 
-#: seminaris/models.py:250
+#: seminaris/models.py:252
 msgid "end time"
 msgstr "hora de finalització"
 
-#: seminaris/models.py:255
+#: seminaris/models.py:257
 msgid "Only necessary if a talk isn't chosen."
 msgstr "Necessari només si no s'ha seleccionat cap xerrada"
 
-#: seminaris/models.py:259
+#: seminaris/models.py:261
 msgid "programme item"
 msgstr "punt del programa"
 
-#: seminaris/models.py:260
+#: seminaris/models.py:262
 msgid "programme items"
 msgstr "punts del programa"
 
@@ -362,7 +366,7 @@ msgstr "Pàgina no encontrat"
 
 #: templates/404.html:12
 msgid "The page you are looking for could not be found."
-msgstr "La pàgina que busques no es va poder trobar."
+msgstr "La pàgina que busques no s'ha pogut trobar."
 
 #: templates/500.html:5 templates/500.html.py:7
 msgid "Error 500"
@@ -738,8 +742,8 @@ msgid "List of Publications"
 msgstr "Llista de publicacions"
 
 #: templates/publicacions/publicacio_llista.html:13
-#: templates/seminaris/seminari_detall.html:16
-#: templates/seminaris/seminari_detall.html:18
+#: templates/seminaris/seminari_detall.html:17
+#: templates/seminaris/seminari_detall.html:19
 msgid "Download publication"
 msgstr "Descarregar publicació"
 
@@ -765,38 +769,42 @@ msgid "Details"
 msgstr "Detalls"
 
 #: templates/seminaris/seminari_detall.html:13
-#: templates/seminaris/seminari_detall.html:44
+#: templates/seminaris/seminari_detall.html:45
 msgid "Themes"
 msgstr "Temes"
 
 #: templates/seminaris/seminari_detall.html:14
-#: templates/seminaris/seminari_detall.html:53
+#: templates/seminaris/seminari_detall.html:54
 msgid "Calendar"
 msgstr "Calendari"
 
 #: templates/seminaris/seminari_detall.html:15
+msgid "Registration form"
+msgstr "Formulari d'inscripció"
+
+#: templates/seminaris/seminari_detall.html:16
 msgid "Download programme"
 msgstr "Descarregar programa"
 
-#: templates/seminaris/seminari_detall.html:23
+#: templates/seminaris/seminari_detall.html:24
 #: templates/seminaris/seminari_llista.html:13
 msgid "Dates"
 msgstr "Dates"
 
-#: templates/seminaris/seminari_detall.html:30
+#: templates/seminaris/seminari_detall.html:31
 #: templates/seminaris/seminari_llista.html:14
 msgid "Location"
 msgstr "Lloc"
 
-#: templates/seminaris/seminari_detall.html:37
+#: templates/seminaris/seminari_detall.html:38
 msgid "Organising committee"
 msgstr "Comitè organitzador"
 
-#: templates/seminaris/seminari_detall.html:49
+#: templates/seminaris/seminari_detall.html:50
 msgid "Themes have not yet been chosen."
 msgstr "Els temes encara no s'han escollit"
 
-#: templates/seminaris/seminari_detall.html:58
+#: templates/seminaris/seminari_detall.html:59
 msgid "The calendar has not yet been set."
 msgstr "El calendari encara no s'ha confirmat."
 
@@ -911,6 +919,9 @@ msgid ""
 msgstr ""
 "\n"
 "Text de mostra.\n"
+
+#~ msgid "registration link"
+#~ msgstr "Enllaç d'inscripció"
 
 #, fuzzy
 #~ msgid "Talks given"

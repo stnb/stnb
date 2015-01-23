@@ -366,6 +366,17 @@ form textarea  {
 
 .content-wrap li  {
 	margin: 14px 0 14px 0;
+	font-size: 16px;
+	line-height: 21px;
+}
+
+.content-wrap li a.titol, .content-wrap .dia-items .titol  {
+	color: #333;
+}
+
+.content-wrap li .icons-xerrada  {
+	width: 44px;;
+	display: inline-block;
 }
 
 .content-wrap ol  {
