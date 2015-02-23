@@ -35,7 +35,7 @@ LOCALE_PATHS = (
 
 SECRET_KEY = 'f%-(30mhl1qlj$$ah808vn(!fo68pfo6ykwxo)wjzg4rz^psi#'
 
-ALLOWED_HOSTS = ['stnb.tk']
+ALLOWED_HOSTS = ['stnb.cat', 'stnb.tk']
 
 SITE_ID = 1
 GA_TRACKER = 'UA-36931377-1'
