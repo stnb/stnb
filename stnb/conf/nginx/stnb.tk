@@ -45,8 +45,8 @@ server  {
 	server_name	stnb.tk *.stnb.tk *.stnb.cat;
 
 	location ~ /google(?:[a-f0-9]+).html  {
-		root /var/www/google_verify/stnb.tk;
+		root /var/www/google_verify/stnb.cat;
 	}
 
-	rewrite ^/(.*) http://stnb.tk/$1 permanent;
+	rewrite ^/(.*) http://stnb.cat/$1 permanent;
 }
