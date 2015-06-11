@@ -74,8 +74,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'johnny.middleware.LocalStoreClearMiddleware',
-    'johnny.middleware.QueryCacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -88,14 +86,15 @@ MIDDLEWARE_CLASSES = (
 )
 
 
-CACHES = {
-    'default': {
-        'BACKEND': 'johnny.backends.memcached.MemcachedCache',
-        'LOCATION': ['127.0.0.1:11211'],
-        'JOHNNY_CACHE': True,
-    }
-}
-JOHNNY_MIDDLEWARE_KEY_PREFIX='jc_stnb'
+#CACHES = {
+#    'default': {
+#        'BACKEND': 'johnny.backends.memcached.MemcachedCache',
+#        'LOCATION': ['127.0.0.1:11211'],
+#        'JOHNNY_CACHE': True,
+#    }
+#}
+#JOHNNY_MIDDLEWARE_KEY_PREFIX='jc_stnb'
+CACHALOT_ENABLED = True
 
 
 AUTHENTICATION_BACKENDS = (
@@ -124,6 +123,7 @@ INSTALLED_APPS = (
     'hvad',
     'emailusernames',
     'tinymce',
+    'cachalot',
     'raven.contrib.django',
     'stnb.comptes',
     'stnb.institucions',

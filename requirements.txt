@@ -1,6 +1,6 @@
 -e git+git://github.com/hds/django-hvad.git#egg=hvad
-git+git://github.com/jmoiron/johnny-cache.git#egg=johnny-cache
-Django>=1.7,<1.8
+django-cachalot
+Django>=1.8,<1.9
 mysql-python
 Pillow
 pycrypto

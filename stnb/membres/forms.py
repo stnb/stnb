@@ -25,4 +25,5 @@ class MembreTranslationForm(forms.ModelForm):
 
     class Meta:
         model = Membre._meta.translations_model
+        fields = '__all__'
 

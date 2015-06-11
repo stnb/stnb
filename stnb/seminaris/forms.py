@@ -19,6 +19,7 @@ class SeminariTranslationForm(forms.ModelForm):
 
     class Meta:
         model = Seminari._meta.translations_model
+        fields = '__all__'
 
 class XerradaBaseForm(forms.ModelForm):
     class Meta:
@@ -38,6 +39,7 @@ class XerradaTranslationForm(forms.ModelForm):
 
     class Meta:
         model = Xerrada._meta.translations_model
+        fields = '__all__'
 
 class XerradaFitxerForm(forms.ModelForm):
     
