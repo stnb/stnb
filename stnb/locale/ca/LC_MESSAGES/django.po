@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-23 09:02+0100\n"
-"PO-Revision-Date: 2015-01-23 09:03+0100\n"
+"PO-Revision-Date: 2015-02-13 14:29+0100\n"
 "Last-Translator: Hayden Stainsby <hds@mat.uab.cat>\n"
 "Language-Team: STNB <stnbarcelona@gmail.com>\n"
 "Language: ca\n"
@@ -305,7 +305,7 @@ msgstr "article"
 
 #: seminaris/models.py:208 seminaris/models.py:246
 msgid "talk"
-msgstr "xarrada"
+msgstr "xerrada"
 
 #: seminaris/models.py:209
 msgid "talks"
@@ -816,7 +816,7 @@ msgstr "Actualitzar seminari"
 #: templates/seminaris/seminari_form.html:16
 #: templates/seminaris/xerrada_actualitzar_form.html:16
 msgid "You can update this talk here."
-msgstr "Podeu actualitzar aquesta xarrada aquí."
+msgstr "Podeu actualitzar aquesta xerrada aquí."
 
 #: templates/seminaris/seminari_llista.html:5
 msgid "Seminar archive"
@@ -843,7 +843,7 @@ msgstr "Tornar al seminari"
 #: templates/seminaris/xerrada_actualitzar_form.html:6
 #: templates/seminaris/xerrada_actualitzar_form.html:7
 msgid "Update talk"
-msgstr "Actualitzar xarrada"
+msgstr "Actualitzar xerrada"
 
 #: templates/seminaris/xerrada_detall.html:13
 msgid "Presenters"
@@ -863,7 +863,7 @@ msgstr "Fitxers"
 
 #: templates/seminaris/xerrada_detall.html:30
 msgid "Upload files"
-msgstr "Pujar fixters"
+msgstr "Pujar fitxers"
 
 #: templates/seminaris/xerrada_detall.html:36
 msgid "Download presentation"
@@ -879,7 +879,7 @@ msgstr "No hi ha fitxers per descarregar"
 
 #: templates/seminaris/xerrada_detall.html:50
 msgid "Edit talk"
-msgstr "Actualitzar xarrada"
+msgstr "Actualitzar xerrada"
 
 #: templates/seminaris/xerrada_fitxer_actualitzar_form.html:6
 #: templates/seminaris/xerrada_fitxer_actualitzar_form.html:7

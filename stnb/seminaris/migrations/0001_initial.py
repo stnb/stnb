@@ -1,337 +1,200 @@
 # -*- coding: utf-8 -*-
-import datetime
-from south.db import db
-from south.v2 import SchemaMigration
-from django.db import models
+from __future__ import unicode_literals
+
+from django.db import models, migrations
+import stnb.seminaris.models
 
 
-class Migration(SchemaMigration):
+class Migration(migrations.Migration):
 
-    def forwards(self, orm):
-        # Adding model 'SeminariTranslation'
-        db.create_table('seminaris_seminari_translation', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('nom', self.gf('django.db.models.fields.CharField')(max_length=50)),
-            ('lloc', self.gf('django.db.models.fields.TextField')()),
-            ('language_code', self.gf('django.db.models.fields.CharField')(max_length=15, db_index=True)),
-            ('master', self.gf('django.db.models.fields.related.ForeignKey')(related_name='translations', null=True, to=orm['seminaris.Seminari'])),
-        ))
-        db.send_create_signal('seminaris', ['SeminariTranslation'])
+    dependencies = [
+        ('publicacions', '0001_initial'),
+        ('membres', '0001_initial'),
+    ]
 
-        # Adding unique constraint on 'SeminariTranslation', fields ['language_code', 'master']
-        db.create_unique('seminaris_seminari_translation', ['language_code', 'master_id'])
-
-        # Adding model 'Seminari'
-        db.create_table('seminaris_seminari', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('slug', self.gf('django.db.models.fields.SlugField')(max_length=50)),
-            ('data_inici', self.gf('django.db.models.fields.DateField')()),
-            ('data_finalizacio', self.gf('django.db.models.fields.DateField')()),
-            ('actiu', self.gf('django.db.models.fields.BooleanField')(default=False)),
-        ))
-        db.send_create_signal('seminaris', ['Seminari'])
-
-        # Adding M2M table for field organitzadors on 'Seminari'
-        db.create_table('seminaris_seminari_organitzadors', (
-            ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
-            ('seminari', models.ForeignKey(orm['seminaris.seminari'], null=False)),
-            ('membre', models.ForeignKey(orm['membres.membre'], null=False))
-        ))
-        db.create_unique('seminaris_seminari_organitzadors', ['seminari_id', 'membre_id'])
-
-        # Adding model 'TemaTranslation'
-        db.create_table('seminaris_tema_translation', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('titol', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('descripcio', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
-            ('language_code', self.gf('django.db.models.fields.CharField')(max_length=15, db_index=True)),
-            ('master', self.gf('django.db.models.fields.related.ForeignKey')(related_name='translations', null=True, to=orm['seminaris.Tema'])),
-        ))
-        db.send_create_signal('seminaris', ['TemaTranslation'])
-
-        # Adding unique constraint on 'TemaTranslation', fields ['language_code', 'master']
-        db.create_unique('seminaris_tema_translation', ['language_code', 'master_id'])
-
-        # Adding model 'Tema'
-        db.create_table('seminaris_tema', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('seminari', self.gf('django.db.models.fields.related.ForeignKey')(related_name='temes', to=orm['seminaris.Seminari'])),
-            ('ordre', self.gf('django.db.models.fields.IntegerField')(default=0)),
-        ))
-        db.send_create_signal('seminaris', ['Tema'])
-
-        # Adding M2M table for field organitzadors on 'Tema'
-        db.create_table('seminaris_tema_organitzadors', (
-            ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
-            ('tema', models.ForeignKey(orm['seminaris.tema'], null=False)),
-            ('membre', models.ForeignKey(orm['membres.membre'], null=False))
-        ))
-        db.create_unique('seminaris_tema_organitzadors', ['tema_id', 'membre_id'])
-
-        # Adding model 'DiaTranslation'
-        db.create_table('seminaris_dia_translation', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('language_code', self.gf('django.db.models.fields.CharField')(max_length=15, db_index=True)),
-            ('master', self.gf('django.db.models.fields.related.ForeignKey')(related_name='translations', null=True, to=orm['seminaris.Dia'])),
-        ))
-        db.send_create_signal('seminaris', ['DiaTranslation'])
-
-        # Adding unique constraint on 'DiaTranslation', fields ['language_code', 'master']
-        db.create_unique('seminaris_dia_translation', ['language_code', 'master_id'])
-
-        # Adding model 'Dia'
-        db.create_table('seminaris_dia', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('data', self.gf('django.db.models.fields.DateField')()),
-            ('seminari', self.gf('django.db.models.fields.related.ForeignKey')(related_name='dies', to=orm['seminaris.Seminari'])),
-        ))
-        db.send_create_signal('seminaris', ['Dia'])
-
-        # Adding model 'XerradaTranslation'
-        db.create_table('seminaris_xerrada_translation', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('titol', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('abstracte', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
-            ('language_code', self.gf('django.db.models.fields.CharField')(max_length=15, db_index=True)),
-            ('master', self.gf('django.db.models.fields.related.ForeignKey')(related_name='translations', null=True, to=orm['seminaris.Xerrada'])),
-        ))
-        db.send_create_signal('seminaris', ['XerradaTranslation'])
-
-        # Adding unique constraint on 'XerradaTranslation', fields ['language_code', 'master']
-        db.create_unique('seminaris_xerrada_translation', ['language_code', 'master_id'])
-
-        # Adding model 'Xerrada'
-        db.create_table('seminaris_xerrada', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('tema', self.gf('django.db.models.fields.related.ForeignKey')(blank=True, related_name='xerrades', null=True, to=orm['seminaris.Tema'])),
-            ('ordre', self.gf('django.db.models.fields.IntegerField')(default=0)),
-            ('altres_presentadors', self.gf('django.db.models.fields.CharField')(max_length=100, null=True, blank=True)),
-            ('presentacio', self.gf('django.db.models.fields.files.FileField')(max_length=100, null=True, blank=True)),
-            ('article', self.gf('django.db.models.fields.files.FileField')(max_length=100, null=True, blank=True)),
-        ))
-        db.send_create_signal('seminaris', ['Xerrada'])
-
-        # Adding M2M table for field presentadors on 'Xerrada'
-        db.create_table('seminaris_xerrada_presentadors', (
-            ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
-            ('xerrada', models.ForeignKey(orm['seminaris.xerrada'], null=False)),
-            ('membre', models.ForeignKey(orm['membres.membre'], null=False))
-        ))
-        db.create_unique('seminaris_xerrada_presentadors', ['xerrada_id', 'membre_id'])
-
-        # Adding model 'ItemProgramaTranslation'
-        db.create_table('seminaris_itemprograma_translation', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('descripcio', self.gf('django.db.models.fields.CharField')(max_length=255, null=True, blank=True)),
-            ('language_code', self.gf('django.db.models.fields.CharField')(max_length=15, db_index=True)),
-            ('master', self.gf('django.db.models.fields.related.ForeignKey')(related_name='translations', null=True, to=orm['seminaris.ItemPrograma'])),
-        ))
-        db.send_create_signal('seminaris', ['ItemProgramaTranslation'])
-
-        # Adding unique constraint on 'ItemProgramaTranslation', fields ['language_code', 'master']
-        db.create_unique('seminaris_itemprograma_translation', ['language_code', 'master_id'])
-
-        # Adding model 'ItemPrograma'
-        db.create_table('seminaris_itemprograma', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('xerrada', self.gf('django.db.models.fields.related.ForeignKey')(blank=True, related_name='items_programa', null=True, to=orm['seminaris.Xerrada'])),
-            ('dia', self.gf('django.db.models.fields.related.ForeignKey')(related_name='items_programa', to=orm['seminaris.Dia'])),
-            ('hora_inici', self.gf('django.db.models.fields.TimeField')()),
-            ('hora_finalizacio', self.gf('django.db.models.fields.TimeField')()),
-        ))
-        db.send_create_signal('seminaris', ['ItemPrograma'])
-
-
-    def backwards(self, orm):
-        # Removing unique constraint on 'ItemProgramaTranslation', fields ['language_code', 'master']
-        db.delete_unique('seminaris_itemprograma_translation', ['language_code', 'master_id'])
-
-        # Removing unique constraint on 'XerradaTranslation', fields ['language_code', 'master']
-        db.delete_unique('seminaris_xerrada_translation', ['language_code', 'master_id'])
-
-        # Removing unique constraint on 'DiaTranslation', fields ['language_code', 'master']
-        db.delete_unique('seminaris_dia_translation', ['language_code', 'master_id'])
-
-        # Removing unique constraint on 'TemaTranslation', fields ['language_code', 'master']
-        db.delete_unique('seminaris_tema_translation', ['language_code', 'master_id'])
-
-        # Removing unique constraint on 'SeminariTranslation', fields ['language_code', 'master']
-        db.delete_unique('seminaris_seminari_translation', ['language_code', 'master_id'])
-
-        # Deleting model 'SeminariTranslation'
-        db.delete_table('seminaris_seminari_translation')
-
-        # Deleting model 'Seminari'
-        db.delete_table('seminaris_seminari')
-
-        # Removing M2M table for field organitzadors on 'Seminari'
-        db.delete_table('seminaris_seminari_organitzadors')
-
-        # Deleting model 'TemaTranslation'
-        db.delete_table('seminaris_tema_translation')
-
-        # Deleting model 'Tema'
-        db.delete_table('seminaris_tema')
-
-        # Removing M2M table for field organitzadors on 'Tema'
-        db.delete_table('seminaris_tema_organitzadors')
-
-        # Deleting model 'DiaTranslation'
-        db.delete_table('seminaris_dia_translation')
-
-        # Deleting model 'Dia'
-        db.delete_table('seminaris_dia')
-
-        # Deleting model 'XerradaTranslation'
-        db.delete_table('seminaris_xerrada_translation')
-
-        # Deleting model 'Xerrada'
-        db.delete_table('seminaris_xerrada')
-
-        # Removing M2M table for field presentadors on 'Xerrada'
-        db.delete_table('seminaris_xerrada_presentadors')
-
-        # Deleting model 'ItemProgramaTranslation'
-        db.delete_table('seminaris_itemprograma_translation')
-
-        # Deleting model 'ItemPrograma'
-        db.delete_table('seminaris_itemprograma')
-
-
-    models = {
-        'auth.group': {
-            'Meta': {'object_name': 'Group'},
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '80'}),
-            'permissions': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['auth.Permission']", 'symmetrical': 'False', 'blank': 'True'})
-        },
-        'auth.permission': {
-            'Meta': {'ordering': "('content_type__app_label', 'content_type__model', 'codename')", 'unique_together': "(('content_type', 'codename'),)", 'object_name': 'Permission'},
-            'codename': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'content_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']"}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '50'})
-        },
-        'auth.user': {
-            'Meta': {'object_name': 'User'},
-            'date_joined': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
-            'email': ('django.db.models.fields.EmailField', [], {'max_length': '75', 'blank': 'True'}),
-            'first_name': ('django.db.models.fields.CharField', [], {'max_length': '30', 'blank': 'True'}),
-            'groups': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['auth.Group']", 'symmetrical': 'False', 'blank': 'True'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'is_active': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
-            'is_staff': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
-            'is_superuser': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
-            'last_login': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now'}),
-            'last_name': ('django.db.models.fields.CharField', [], {'max_length': '30', 'blank': 'True'}),
-            'password': ('django.db.models.fields.CharField', [], {'max_length': '128'}),
-            'user_permissions': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['auth.Permission']", 'symmetrical': 'False', 'blank': 'True'}),
-            'username': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '30'})
-        },
-        'contenttypes.contenttype': {
-            'Meta': {'ordering': "('name',)", 'unique_together': "(('app_label', 'model'),)", 'object_name': 'ContentType', 'db_table': "'django_content_type'"},
-            'app_label': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'model': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '100'})
-        },
-        'institucions.institucio': {
-            'Meta': {'object_name': 'Institucio'},
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'nom': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
-            'nom_curt': ('django.db.models.fields.SlugField', [], {'max_length': '10'}),
-            'url': ('django.db.models.fields.CharField', [], {'max_length': '100'})
-        },
-        'membres.membre': {
-            'Meta': {'ordering': "['cognoms', 'nom']", 'object_name': 'Membre'},
-            'afiliacio': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'membres'", 'null': 'True', 'to': "orm['institucions.Institucio']"}),
-            'amagar_perfil': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
-            'cognoms': ('django.db.models.fields.CharField', [], {'max_length': '100', 'null': 'True'}),
-            'foto': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'membre_actual': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
-            'membre_des_de': ('django.db.models.fields.IntegerField', [], {'null': 'True', 'blank': 'True'}),
-            'nom': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True'}),
-            'slug': ('django.db.models.fields.SlugField', [], {'unique': 'True', 'max_length': '160', 'blank': 'True'}),
-            'user': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['auth.User']", 'unique': 'True'})
-        },
-        'seminaris.dia': {
-            'Meta': {'ordering': "['seminari__data_inici', 'data']", 'object_name': 'Dia'},
-            'data': ('django.db.models.fields.DateField', [], {}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'seminari': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'dies'", 'to': "orm['seminaris.Seminari']"})
-        },
-        'seminaris.diatranslation': {
-            'Meta': {'unique_together': "[('language_code', 'master')]", 'object_name': 'DiaTranslation', 'db_table': "'seminaris_dia_translation'"},
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'language_code': ('django.db.models.fields.CharField', [], {'max_length': '15', 'db_index': 'True'}),
-            'master': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'translations'", 'null': 'True', 'to': "orm['seminaris.Dia']"})
-        },
-        'seminaris.itemprograma': {
-            'Meta': {'ordering': "['dia', 'hora_inici']", 'object_name': 'ItemPrograma'},
-            'dia': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'items_programa'", 'to': "orm['seminaris.Dia']"}),
-            'hora_finalizacio': ('django.db.models.fields.TimeField', [], {}),
-            'hora_inici': ('django.db.models.fields.TimeField', [], {}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'xerrada': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'items_programa'", 'null': 'True', 'to': "orm['seminaris.Xerrada']"})
-        },
-        'seminaris.itemprogramatranslation': {
-            'Meta': {'unique_together': "[('language_code', 'master')]", 'object_name': 'ItemProgramaTranslation', 'db_table': "'seminaris_itemprograma_translation'"},
-            'descripcio': ('django.db.models.fields.CharField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'language_code': ('django.db.models.fields.CharField', [], {'max_length': '15', 'db_index': 'True'}),
-            'master': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'translations'", 'null': 'True', 'to': "orm['seminaris.ItemPrograma']"})
-        },
-        'seminaris.seminari': {
-            'Meta': {'ordering': "['-data_inici']", 'object_name': 'Seminari'},
-            'actiu': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
-            'data_finalizacio': ('django.db.models.fields.DateField', [], {}),
-            'data_inici': ('django.db.models.fields.DateField', [], {}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'organitzadors': ('django.db.models.fields.related.ManyToManyField', [], {'related_name': "'seminaris'", 'symmetrical': 'False', 'to': "orm['membres.Membre']"}),
-            'slug': ('django.db.models.fields.SlugField', [], {'max_length': '50'})
-        },
-        'seminaris.seminaritranslation': {
-            'Meta': {'unique_together': "[('language_code', 'master')]", 'object_name': 'SeminariTranslation', 'db_table': "'seminaris_seminari_translation'"},
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'language_code': ('django.db.models.fields.CharField', [], {'max_length': '15', 'db_index': 'True'}),
-            'lloc': ('django.db.models.fields.TextField', [], {}),
-            'master': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'translations'", 'null': 'True', 'to': "orm['seminaris.Seminari']"}),
-            'nom': ('django.db.models.fields.CharField', [], {'max_length': '50'})
-        },
-        'seminaris.tema': {
-            'Meta': {'ordering': "['seminari', 'ordre']", 'object_name': 'Tema'},
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'ordre': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
-            'organitzadors': ('django.db.models.fields.related.ManyToManyField', [], {'blank': 'True', 'related_name': "'temes'", 'null': 'True', 'symmetrical': 'False', 'to': "orm['membres.Membre']"}),
-            'seminari': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'temes'", 'to': "orm['seminaris.Seminari']"})
-        },
-        'seminaris.tematranslation': {
-            'Meta': {'unique_together': "[('language_code', 'master')]", 'object_name': 'TemaTranslation', 'db_table': "'seminaris_tema_translation'"},
-            'descripcio': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'language_code': ('django.db.models.fields.CharField', [], {'max_length': '15', 'db_index': 'True'}),
-            'master': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'translations'", 'null': 'True', 'to': "orm['seminaris.Tema']"}),
-            'titol': ('django.db.models.fields.CharField', [], {'max_length': '255'})
-        },
-        'seminaris.xerrada': {
-            'Meta': {'ordering': "['tema', 'ordre']", 'object_name': 'Xerrada'},
-            'altres_presentadors': ('django.db.models.fields.CharField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
-            'article': ('django.db.models.fields.files.FileField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'ordre': ('django.db.models.fields.IntegerField', [], {'default': '0'}),
-            'presentacio': ('django.db.models.fields.files.FileField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
-            'presentadors': ('django.db.models.fields.related.ManyToManyField', [], {'blank': 'True', 'related_name': "'xerrades'", 'null': 'True', 'symmetrical': 'False', 'to': "orm['membres.Membre']"}),
-            'tema': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'xerrades'", 'null': 'True', 'to': "orm['seminaris.Tema']"})
-        },
-        'seminaris.xerradatranslation': {
-            'Meta': {'unique_together': "[('language_code', 'master')]", 'object_name': 'XerradaTranslation', 'db_table': "'seminaris_xerrada_translation'"},
-            'abstracte': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'language_code': ('django.db.models.fields.CharField', [], {'max_length': '15', 'db_index': 'True'}),
-            'master': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'translations'", 'null': 'True', 'to': "orm['seminaris.Xerrada']"}),
-            'titol': ('django.db.models.fields.CharField', [], {'max_length': '255'})
-        }
-    }
-
-    complete_apps = ['seminaris']
+    operations = [
+        migrations.CreateModel(
+            name='Dia',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('data', models.DateField(verbose_name='date')),
+            ],
+            options={
+                'ordering': ['seminari__data_inici', 'data'],
+                'verbose_name': 'day',
+                'verbose_name_plural': 'days',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='DiaTranslation',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('language_code', models.CharField(max_length=15, db_index=True)),
+                ('master', models.ForeignKey(related_name='translations', editable=False, to='seminaris.Dia', null=True)),
+            ],
+            options={
+                'db_table': 'seminaris_dia_translation',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='ItemPrograma',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('hora_inici', models.TimeField(verbose_name='start time')),
+                ('hora_finalizacio', models.TimeField(verbose_name='end time')),
+                ('dia', models.ForeignKey(related_name='items_programa', verbose_name='day', to='seminaris.Dia')),
+            ],
+            options={
+                'ordering': ['dia', 'hora_inici'],
+                'verbose_name': 'programme item',
+                'verbose_name_plural': 'programme items',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='ItemProgramaTranslation',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('descripcio', models.CharField(help_text="Only necessary if a talk isn't chosen.", max_length=255, null=True, verbose_name='description', blank=True)),
+                ('language_code', models.CharField(max_length=15, db_index=True)),
+                ('master', models.ForeignKey(related_name='translations', editable=False, to='seminaris.ItemPrograma', null=True)),
+            ],
+            options={
+                'db_table': 'seminaris_itemprograma_translation',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='Seminari',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('slug', models.SlugField(verbose_name='slug')),
+                ('data_inici', models.DateField(verbose_name='start date')),
+                ('data_finalizacio', models.DateField(verbose_name='end date')),
+                ('altres_organitzadors', models.CharField(max_length=250, null=True, verbose_name='other organisers', blank=True)),
+                ('enllac_inscripcio', models.CharField(max_length=250, null=True, verbose_name='registration form', blank=True)),
+                ('programa_pdf', models.FileField(upload_to=b'seminaris/programes', null=True, verbose_name='programme PDF', blank=True)),
+                ('actiu', models.BooleanField(default=False, verbose_name='active')),
+                ('organitzadors', models.ManyToManyField(related_name='seminaris', null=True, verbose_name='organisers', to='membres.Membre', blank=True)),
+                ('publicacio', models.ForeignKey(related_name='seminaris', verbose_name='publication', blank=True, to='publicacions.Publicacio', null=True)),
+            ],
+            options={
+                'ordering': ['-data_inici'],
+                'verbose_name': 'seminar',
+                'verbose_name_plural': 'seminars',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='SeminariTranslation',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('nom', models.CharField(max_length=50, verbose_name='name')),
+                ('lloc', models.TextField(verbose_name='location')),
+                ('language_code', models.CharField(max_length=15, db_index=True)),
+                ('master', models.ForeignKey(related_name='translations', editable=False, to='seminaris.Seminari', null=True)),
+            ],
+            options={
+                'db_table': 'seminaris_seminari_translation',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='Tema',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('ordre', models.IntegerField(default=0, verbose_name='order')),
+                ('altres_organitzadors', models.CharField(max_length=250, null=True, verbose_name='other organisers', blank=True)),
+                ('referencies', models.TextField(null=True, verbose_name='references', blank=True)),
+                ('organitzadors', models.ManyToManyField(related_name='temes', null=True, verbose_name='organisers', to='membres.Membre', blank=True)),
+                ('publicacio', models.ForeignKey(related_name='temes', verbose_name='publication', blank=True, to='publicacions.Publicacio', null=True)),
+                ('seminari', models.ForeignKey(related_name='temes', verbose_name='seminar', to='seminaris.Seminari')),
+            ],
+            options={
+                'ordering': ['seminari', 'ordre'],
+                'verbose_name': 'theme',
+                'verbose_name_plural': 'themes',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='TemaTranslation',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('titol', models.CharField(max_length=255, verbose_name='title')),
+                ('descripcio', models.TextField(null=True, verbose_name='description', blank=True)),
+                ('language_code', models.CharField(max_length=15, db_index=True)),
+                ('master', models.ForeignKey(related_name='translations', editable=False, to='seminaris.Tema', null=True)),
+            ],
+            options={
+                'db_table': 'seminaris_tema_translation',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='Xerrada',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('ordre', models.IntegerField(default=0, verbose_name='order')),
+                ('altres_presentadors', models.CharField(max_length=250, null=True, verbose_name='other presenters', blank=True)),
+                ('presentacio', models.FileField(upload_to=stnb.seminaris.models.presentacio_nom_fitxer, null=True, verbose_name='presentation', blank=True)),
+                ('article', models.FileField(upload_to=stnb.seminaris.models.article_nom_fitxer, null=True, verbose_name='article', blank=True)),
+                ('presentadors', models.ManyToManyField(related_name='xerrades', null=True, verbose_name='presenters', to='membres.Membre', blank=True)),
+                ('tema', models.ForeignKey(related_name='xerrades', verbose_name='theme', blank=True, to='seminaris.Tema', null=True)),
+            ],
+            options={
+                'ordering': ['tema', 'ordre'],
+                'verbose_name': 'talk',
+                'verbose_name_plural': 'talks',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.CreateModel(
+            name='XerradaTranslation',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('titol', models.CharField(max_length=255, verbose_name='title')),
+                ('abstracte', models.TextField(null=True, verbose_name='abstract', blank=True)),
+                ('language_code', models.CharField(max_length=15, db_index=True)),
+                ('master', models.ForeignKey(related_name='translations', editable=False, to='seminaris.Xerrada', null=True)),
+            ],
+            options={
+                'db_table': 'seminaris_xerrada_translation',
+            },
+            bases=(models.Model,),
+        ),
+        migrations.AlterUniqueTogether(
+            name='xerradatranslation',
+            unique_together=set([('language_code', 'master')]),
+        ),
+        migrations.AlterUniqueTogether(
+            name='tematranslation',
+            unique_together=set([('language_code', 'master')]),
+        ),
+        migrations.AlterUniqueTogether(
+            name='seminaritranslation',
+            unique_together=set([('language_code', 'master')]),
+        ),
+        migrations.AlterUniqueTogether(
+            name='itemprogramatranslation',
+            unique_together=set([('language_code', 'master')]),
+        ),
+        migrations.AddField(
+            model_name='itemprograma',
+            name='xerrada',
+            field=models.ForeignKey(related_name='items_programa', verbose_name='talk', blank=True, to='seminaris.Xerrada', null=True),
+            preserve_default=True,
+        ),
+        migrations.AlterUniqueTogether(
+            name='diatranslation',
+            unique_together=set([('language_code', 'master')]),
+        ),
+        migrations.AddField(
+            model_name='dia',
+            name='seminari',
+            field=models.ForeignKey(related_name='dies', verbose_name='seminar', to='seminaris.Seminari'),
+            preserve_default=True,
+        ),
+    ]
