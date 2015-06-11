@@ -23,12 +23,12 @@ def publicacio_nom_fitxer(xerrada, nom):
 class Publicacio(TranslatableModel):
     autors = models.ManyToManyField(Membre, verbose_name=_('authors'),
                                     related_name='publicacions',
-                                    blank=True, null=True)
+                                    blank=True)
     altres_autors = models.CharField(_('other authors'), max_length=250,
                                      blank=True, null=True)
     editors = models.ManyToManyField(Membre, verbose_name=_('editors'),
                                      related_name='publicacions_editades',
-                                     blank=True, null=True)
+                                     blank=True)
     altres_editors = models.CharField(_('other editors'), max_length=250,
                                       blank=True, null=True)
     isbn = models.CharField('ISBN', max_length=20, blank=True, null=True)

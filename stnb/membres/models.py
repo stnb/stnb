@@ -17,7 +17,7 @@ from .utils import crear_imagen_petita
 from stnb.institucions.models import Institucio
 
 class Membre(TranslatableModel):
-    user = models.ForeignKey(User, unique=True)
+    user = models.OneToOneField(User)
     nom = models.CharField(_('name'), max_length=50, null=True)
     cognoms = models.CharField(_('surname'), max_length=100, null=True)
     slug = models.SlugField(max_length=160, unique=True, blank=True)

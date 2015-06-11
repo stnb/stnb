@@ -21,7 +21,7 @@ class Seminari(TranslatableModel):
     data_finalizacio = models.DateField(_('end date'))
     organitzadors = models.ManyToManyField(Membre, verbose_name=_('organisers'),
                                            related_name='seminaris',
-                                           blank=True, null=True)
+                                           blank=True)
     altres_organitzadors = models.CharField(_('other organisers'),
                                             max_length=250, blank=True,
                                             null=True)
@@ -104,7 +104,7 @@ class Tema(TranslatableModel):
     ordre = models.IntegerField(_('order'), default=0)
     organitzadors = models.ManyToManyField(Membre, verbose_name=_('organisers'),
                                           related_name='temes',
-                                          blank=True, null=True)
+                                          blank=True)
     altres_organitzadors = models.CharField(_('other organisers'),
                                             max_length=250, blank=True,
                                             null=True)
@@ -188,7 +188,7 @@ class Xerrada(TranslatableModel):
     ordre = models.IntegerField(_('order'), default=0)
     presentadors = models.ManyToManyField(Membre, verbose_name=_('presenters'),
                                           related_name='xerrades',
-                                          blank=True, null=True)
+                                          blank=True)
     altres_presentadors = models.CharField(_('other presenters'),
                                            max_length=250, blank=True,
                                            null=True)
