@@ -1,5 +1,5 @@
 -e git+git://github.com/hds/django-hvad.git#egg=hvad
-git+git://github.com/jmoiron/johnny-cache.git@8aa94bea4aebd82785a425866c04a5dede39a5b4#egg=johnny-cache
+git+git://github.com/jmoiron/johnny-cache.git#egg=johnny-cache
 Django>=1.7,<1.8
 mysql-python
 Pillow
