@@ -51,3 +51,11 @@ class Usuari(AbstractBaseUser, PermissionsMixin):
 
     def get_short_name(self):
         return email
+
+    def get_profile(self):
+        from stnb.membres.models import Membre
+        try:
+            membre = Membre.objects.get(user=self)
+        except Membre.NotFound as e:
+            membre = None
+        return membre
