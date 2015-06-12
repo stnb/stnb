@@ -4,11 +4,13 @@ from django.core.urlresolvers import reverse_lazy
 from django.views.generic import FormView, UpdateView, DetailView
 from django.contrib.auth import authenticate, login
 
-from emailusernames.forms import EmailUserCreationForm, EmailUserChangeForm
-from emailusernames.utils import create_user
+#from emailusernames.forms import EmailUserCreationForm, EmailUserChangeForm
+#from emailusernames.utils import create_user
 
 from stnb.membres.models import Membre
-from .forms import CrearUsuariForm
+from stnb.comptes.models import Usuari
+from stnb.comptes.forms import CrearUsuariForm
+from stnb.comptes.utils import create_user
 
 
 class RegistreView(FormView):
@@ -17,9 +19,9 @@ class RegistreView(FormView):
 
     def form_valid(self, form):
         usuari = create_user(form.cleaned_data['email'],
-                             form.cleaned_data['password1'])
-        usuari.is_active = True
-        usuari.save()
+                             form.cleaned_data['password1'],
+                             nom=form.cleaned_data['nom'],
+                             cognoms=form.cleaned_data['cognoms'])
 
         membre = Membre(user=usuari,
                         nom=form.cleaned_data['nom'],

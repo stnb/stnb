@@ -11,8 +11,7 @@ from .views import RegistreView
 
 urlpatterns = patterns('',
     url(r'^login/$', 'django.contrib.auth.views.login',
-        { 'template_name': 'comptes/login.html',
-          'authentication_form': EmailAuthenticationForm},
+        { 'template_name': 'comptes/login.html', },
         name='comptes-login'),
     url(r'^logout/$', 'django.contrib.auth.views.logout',
         {'template_name': 'comptes/logged_out.html'}, name='comptes-logout'),

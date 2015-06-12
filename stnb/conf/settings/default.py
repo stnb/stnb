@@ -97,9 +97,10 @@ MIDDLEWARE_CLASSES = (
 CACHALOT_ENABLED = True
 
 
-AUTHENTICATION_BACKENDS = (
-    'emailusernames.backends.EmailAuthBackend',
-)
+AUTH_USER_MODEL = 'comptes.Usuari'
+#AUTHENTICATION_BACKENDS = (
+#    'emailusernames.backends.EmailAuthBackend',
+#)
 
 AUTH_PROFILE_MODULE = 'membres.Membre'
 
@@ -121,7 +122,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'hvad',
-    'emailusernames',
+    #'emailusernames',
     'tinymce',
     'cachalot',
     'raven.contrib.django',

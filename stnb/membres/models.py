@@ -4,12 +4,12 @@ import re
 import uuid
 import unicodedata
 
+from django.conf import settings
 from django.db import models
 from django.db import IntegrityError
 from django.db.models import permalink
 from django.db.models import signals
 from django.conf import settings
-from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from hvad.models import TranslatableModel, TranslatedFields
 
@@ -17,7 +17,7 @@ from .utils import crear_imagen_petita
 from stnb.institucions.models import Institucio
 
 class Membre(TranslatableModel):
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
     nom = models.CharField(_('name'), max_length=50, null=True)
     cognoms = models.CharField(_('surname'), max_length=100, null=True)
     slug = models.SlugField(max_length=160, unique=True, blank=True)
