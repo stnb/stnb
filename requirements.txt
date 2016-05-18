@@ -5,9 +5,8 @@ mysql-python
 Pillow
 pycrypto
 raven
-south
-django-email-as-username
 django-tinymce
 gunicorn
 gevent
 python-memcached
+sqlparse

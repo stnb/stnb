@@ -47,10 +47,10 @@ class Usuari(AbstractBaseUser, PermissionsMixin):
         return self.email
 
     def get_full_name(self):
-        return email
+        return self.email
 
     def get_short_name(self):
-        return email
+        return self.email
 
     def get_profile(self):
         from stnb.membres.models import Membre
