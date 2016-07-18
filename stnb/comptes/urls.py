@@ -2,7 +2,6 @@
 from django.conf.urls import patterns, url
 from django.views.generic import TemplateView
 from django.core.urlresolvers import reverse
-from emailusernames.forms import EmailAuthenticationForm
 
 from .decorators import login_required
 #from django.contrib.auth.decorators import login_required

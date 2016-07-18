@@ -2,11 +2,11 @@ server  {
 	listen		80;
 	server_name	stnb.cat;
 
-	access_log	/var/log/nginx/stnb.tk/access.log;
-	error_log	/var/log/nginx/stnb.tk/error.log;
+	access_log	/var/log/nginx/stnb.cat/access.log;
+	error_log	/var/log/nginx/stnb.cat/error.log;
 
 	location /media/  {
-		alias	/var/www/stnb.tk/media/;
+		alias	/var/www/stnb.cat/media/;
 
 #		gzip		on;
 #		gzip_comp_level	7;
@@ -18,7 +18,7 @@ server  {
 	}
 
 	location /static/  {
-		alias	/var/www/stnb.tk/static/;
+		alias	/var/www/stnb.cat/static/;
 
 #		gzip		on;
 #		gzip_comp_level	7;
@@ -35,7 +35,7 @@ server  {
 		proxy_set_header	X-Forward-For	$proxy_add_x_forwarded_for;
 
 		# Port must match that in gunicorn config
-		proxy_pass		http://127.0.0.1:8181;
+		proxy_pass		http://127.0.0.1:8183;
 	}
 
 }
