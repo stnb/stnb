@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load l10n %}
+
+{% block titol-pagina %}{% trans "Archive" %}{% endblock titol-pagina %}
+
+{% block contingut %}
+<ul>
+    <li><a href="#seminaris">{% trans "Seminars" %}</a></li>
+    <li><a href="#esdeveniments">{% trans "Events" %}</a></li>
+    <li><a href="#publicacions">{% trans "Publications" %}</a></li>
+</ul>
+
+<a name="seminaris"></a>
+<h3>{% trans "Seminars" %}</h3>
+<div class="seminari-llista">
+{% for seminari in seminaris %}
+{% include "seminaris/_seminari_curt.html" with seminari=seminari %}
+{% endfor %}
+</div>
+
+<a name="esdeveniments"></a>
+<h3>{% trans "Events" %}</h3>
+<div class="esdeveniment-llista">
+{% for esdeveniment in esdeveniments %}
+{% include "esdeveniments/_esdeveniment_curt.html" with esdeveniment=esdeveniment %}
+{% endfor %}
+</div>
+
+<a name="publicacions"></a>
+<h3>{% trans "Publications" %}</h3>
+<div class="publicacio-llista">
+{% for publicacio in publicacions %}
+{% include "publicacions/_publicacio_curt.html" with publicacio=publicacio %}
+{% endfor %}
+</div>
+{% endblock %}

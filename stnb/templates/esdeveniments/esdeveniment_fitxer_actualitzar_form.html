@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block extra-head %}{{ form.media }}{% endblock extra-head %}
+
+{% block titol-head %}{% trans "Update event files" %}{% endblock titol-head %}
+{% block titol-pagina %}{% trans "Update event files" %}{% endblock titol-pagina %}
+
+{% block contingut %}
+<div class="compte">
+
+  <h3>{{ esdeveniment.titol }}</h3>
+
+  <p>{% blocktrans %}You can upload files of the presentation and a separate full length article for others to download.{% endblocktrans %}</p>
+
+	<form method="post" action="{% url "esdeveniment-fitxer-actualitzar" slug=esdeveniment.slug %}" enctype="multipart/form-data">
+		{% csrf_token %}
+
+    {{ form.as_p }}
+
+		<div class="submit">
+			<input type="submit" value="{% trans "Update" %}" /> <a href="{% url "esdeveniment-detall" slug=esdeveniment.slug %}">Cancel</a>
+		</div>
+	</form>
+
+</div>
+{% endblock contingut %}

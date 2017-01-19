@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-23 09:02+0100\n"
+"POT-Creation-Date: 2017-01-09 13:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,871 +17,994 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: comptes/forms.py:8
-msgid "first name"
+#: stnb/comptes/forms.py:8
+#: stnb/templates/comptes/password_reset_confirm.html:19
+msgid "Password"
 msgstr ""
 
-#: comptes/forms.py:9 membres/models.py:22
-msgid "surname"
+#: stnb/comptes/forms.py:10
+msgid "Password confirmation"
 msgstr ""
 
-#: conf/settings/default.py:23 templates/formularis/_elegir_llengua.html:5
-msgid "Catalan"
+#: stnb/comptes/forms.py:12
+msgid "Enter the same password as above, for verification."
 msgstr ""
 
-#: conf/settings/default.py:24 templates/formularis/_elegir_llengua.html:6
-msgid "Spanish"
+#: stnb/comptes/models.py:14
+msgid "email"
 msgstr ""
 
-#: conf/settings/default.py:25 templates/formularis/_elegir_llengua.html:7
-msgid "English"
-msgstr ""
-
-#: institucions/models.py:7 membres/models.py:21 publicacions/models.py:42
-#: seminaris/models.py:39
+#: stnb/comptes/models.py:15 stnb/esdeveniments/models.py:42
+#: stnb/institucions/models.py:7 stnb/membres/models.py:21
+#: stnb/publicacions/models.py:42 stnb/seminaris/models.py:39
 msgid "name"
 msgstr ""
 
-#: institucions/models.py:8
-msgid "short name"
+#: stnb/comptes/models.py:16 stnb/membres/models.py:22
+msgid "surname"
 msgstr ""
 
-#: institucions/models.py:12 noticies/models.py:19 pagines/models.py:17
-#: publicacions/models.py:44 seminaris/models.py:118 seminaris/models.py:255
-msgid "description"
+#: stnb/comptes/models.py:19
+msgid "staff status"
 msgstr ""
 
-#: institucions/models.py:16
-msgid "institution"
+#: stnb/comptes/models.py:22
+msgid "Designates whether the user can log into this admin site."
 msgstr ""
 
-#: institucions/models.py:17
-msgid "institutions"
-msgstr ""
-
-#: membres/forms.py:10 membres/models.py:29
-msgid "member since"
-msgstr ""
-
-#: membres/forms.py:13
-msgid "year"
-msgstr ""
-
-#: membres/models.py:24
-msgid "affiliation"
-msgstr ""
-
-#: membres/models.py:26
-msgid "photo"
-msgstr ""
-
-#: membres/models.py:28
-msgid "link"
-msgstr ""
-
-#: membres/models.py:31
-msgid "current member"
-msgstr ""
-
-#: membres/models.py:32
-msgid "hide profile"
-msgstr ""
-
-#: membres/models.py:35
-msgid "biography"
-msgstr ""
-
-#: membres/models.py:39
-msgid "member"
-msgstr ""
-
-#: membres/models.py:40
-msgid "members"
-msgstr ""
-
-#: membres/models.py:48
-msgid "unnamed"
-msgstr ""
-
-#: noticies/models.py:12 noticies/models.py:31 seminaris/models.py:148
-msgid "date"
-msgstr ""
-
-#: noticies/models.py:14 noticies/models.py:33 pagines/models.py:12
-msgid "created"
-msgstr ""
-
-#: noticies/models.py:15 noticies/models.py:34 pagines/models.py:13
-msgid "updated"
-msgstr ""
-
-#: noticies/models.py:18 pagines/models.py:16 seminaris/forms.py:29
-#: seminaris/models.py:117 seminaris/models.py:203
-msgid "title"
-msgstr ""
-
-#: noticies/models.py:23
-msgid "news item"
-msgstr ""
-
-#: noticies/models.py:24
-msgid "news items"
-msgstr ""
-
-#: noticies/models.py:37
-msgid "alert"
-msgstr ""
-
-#: noticies/models.py:41
-msgid "microalert"
-msgstr ""
-
-#: noticies/models.py:42
-msgid "microalerts"
-msgstr ""
-
-#: pagines/models.py:11 seminaris/models.py:19
-msgid "slug"
-msgstr ""
-
-#: pagines/models.py:21
-msgid "flat page"
-msgstr ""
-
-#: pagines/models.py:22
-msgid "flat pages"
-msgstr ""
-
-#: publicacions/models.py:24
-msgid "authors"
-msgstr ""
-
-#: publicacions/models.py:27
-msgid "other authors"
-msgstr ""
-
-#: publicacions/models.py:29
-msgid "editors"
-msgstr ""
-
-#: publicacions/models.py:32
-msgid "other editors"
-msgstr ""
-
-#: publicacions/models.py:35
-msgid "publication date"
-msgstr ""
-
-#: publicacions/models.py:36
-msgid "Only the month and year are displayed"
-msgstr ""
-
-#: publicacions/models.py:38
-msgid "file"
-msgstr ""
-
-#: publicacions/models.py:42
-msgid "Publication name"
-msgstr ""
-
-#: publicacions/models.py:45
-msgid "A short description."
-msgstr ""
-
-#: publicacions/models.py:50 seminaris/models.py:33 seminaris/models.py:111
-msgid "publication"
-msgstr ""
-
-#: publicacions/models.py:51
-msgid "publicacions"
-msgstr ""
-
-#: seminaris/forms.py:31 seminaris/models.py:204
-msgid "abstract"
-msgstr ""
-
-#: seminaris/models.py:20
-msgid "start date"
-msgstr ""
-
-#: seminaris/models.py:21
-msgid "end date"
-msgstr ""
-
-#: seminaris/models.py:22 seminaris/models.py:105
-msgid "organisers"
-msgstr ""
-
-#: seminaris/models.py:25 seminaris/models.py:108
-msgid "other organisers"
-msgstr ""
-
-#: seminaris/models.py:28
-msgid "registration form"
-msgstr ""
-
-#: seminaris/models.py:30
-msgid "programme PDF"
-msgstr ""
-
-#: seminaris/models.py:36
+#: stnb/comptes/models.py:26 stnb/seminaris/models.py:36
 msgid "active"
 msgstr ""
 
-#: seminaris/models.py:40
+#: stnb/comptes/models.py:29
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+#: stnb/comptes/models.py:33
+msgid "date joined"
+msgstr ""
+
+#: stnb/comptes/models.py:41
+msgid "user"
+msgstr ""
+
+#: stnb/comptes/models.py:42
+msgid "users"
+msgstr ""
+
+#: stnb/conf/settings/default.py:23
+#: stnb/templates/formularis/_elegir_llengua.html:5
+msgid "Catalan"
+msgstr ""
+
+#: stnb/conf/settings/default.py:24
+#: stnb/templates/formularis/_elegir_llengua.html:6
+msgid "Spanish"
+msgstr ""
+
+#: stnb/conf/settings/default.py:25
+#: stnb/templates/formularis/_elegir_llengua.html:7
+msgid "English"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:33 stnb/esdeveniments/models.py:73
+#: stnb/pagines/models.py:11 stnb/seminaris/models.py:19
+msgid "slug"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:34 stnb/seminaris/models.py:22
+#: stnb/seminaris/models.py:105
+msgid "organisers"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:37 stnb/seminaris/models.py:25
+#: stnb/seminaris/models.py:108
+msgid "other organisers"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:43 stnb/institucions/models.py:12
+#: stnb/noticies/models.py:19 stnb/pagines/models.py:17
+#: stnb/publicacions/models.py:44 stnb/seminaris/models.py:118
+#: stnb/seminaris/models.py:255
+msgid "description"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:47 stnb/esdeveniments/models.py:48
+msgid "series"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:74
+msgid "serie"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:76 stnb/noticies/models.py:12
+#: stnb/noticies/models.py:31 stnb/seminaris/models.py:148
+msgid "date"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:77 stnb/seminaris/models.py:251
+msgid "start time"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:78 stnb/seminaris/models.py:252
+msgid "end time"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:80
+msgid "hosts"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:83
+msgid "other hosts"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:85 stnb/seminaris/models.py:189
+msgid "presenters"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:89 stnb/seminaris/models.py:192
+msgid "other presenters"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:93 stnb/seminaris/models.py:196
+msgid "presentation"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:96 stnb/seminaris/models.py:199
+msgid "article"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:100 stnb/noticies/models.py:18
+#: stnb/pagines/models.py:16 stnb/seminaris/forms.py:30
+#: stnb/seminaris/models.py:117 stnb/seminaris/models.py:203
+msgid "title"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:101 stnb/seminaris/forms.py:32
+#: stnb/seminaris/models.py:204
+msgid "abstract"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:102 stnb/seminaris/models.py:40
 msgid "location"
 msgstr ""
 
-#: seminaris/models.py:44 seminaris/models.py:102 seminaris/models.py:149
+#: stnb/esdeveniments/models.py:106
+msgid "event"
+msgstr ""
+
+#: stnb/esdeveniments/models.py:107
+msgid "events"
+msgstr ""
+
+#: stnb/institucions/models.py:8
+msgid "short name"
+msgstr ""
+
+#: stnb/institucions/models.py:16
+msgid "institution"
+msgstr ""
+
+#: stnb/institucions/models.py:17
+msgid "institutions"
+msgstr ""
+
+#: stnb/membres/forms.py:10 stnb/membres/models.py:29
+msgid "member since"
+msgstr ""
+
+#: stnb/membres/forms.py:13
+msgid "year"
+msgstr ""
+
+#: stnb/membres/models.py:24
+msgid "affiliation"
+msgstr ""
+
+#: stnb/membres/models.py:26
+msgid "photo"
+msgstr ""
+
+#: stnb/membres/models.py:28
+msgid "link"
+msgstr ""
+
+#: stnb/membres/models.py:31
+msgid "current member"
+msgstr ""
+
+#: stnb/membres/models.py:32
+msgid "hide profile"
+msgstr ""
+
+#: stnb/membres/models.py:35
+msgid "biography"
+msgstr ""
+
+#: stnb/membres/models.py:39
+msgid "member"
+msgstr ""
+
+#: stnb/membres/models.py:40
+msgid "members"
+msgstr ""
+
+#: stnb/membres/models.py:48
+msgid "unnamed"
+msgstr ""
+
+#: stnb/noticies/models.py:14 stnb/noticies/models.py:33
+#: stnb/pagines/models.py:12
+msgid "created"
+msgstr ""
+
+#: stnb/noticies/models.py:15 stnb/noticies/models.py:34
+#: stnb/pagines/models.py:13
+msgid "updated"
+msgstr ""
+
+#: stnb/noticies/models.py:23
+msgid "news item"
+msgstr ""
+
+#: stnb/noticies/models.py:24
+msgid "news items"
+msgstr ""
+
+#: stnb/noticies/models.py:37
+msgid "alert"
+msgstr ""
+
+#: stnb/noticies/models.py:41
+msgid "microalert"
+msgstr ""
+
+#: stnb/noticies/models.py:42
+msgid "microalerts"
+msgstr ""
+
+#: stnb/pagines/models.py:21
+msgid "flat page"
+msgstr ""
+
+#: stnb/pagines/models.py:22
+msgid "flat pages"
+msgstr ""
+
+#: stnb/publicacions/models.py:24
+msgid "authors"
+msgstr ""
+
+#: stnb/publicacions/models.py:27
+msgid "other authors"
+msgstr ""
+
+#: stnb/publicacions/models.py:29
+msgid "editors"
+msgstr ""
+
+#: stnb/publicacions/models.py:32
+msgid "other editors"
+msgstr ""
+
+#: stnb/publicacions/models.py:35
+msgid "publication date"
+msgstr ""
+
+#: stnb/publicacions/models.py:36
+msgid "Only the month and year are displayed"
+msgstr ""
+
+#: stnb/publicacions/models.py:38
+msgid "file"
+msgstr ""
+
+#: stnb/publicacions/models.py:42
+msgid "Publication name"
+msgstr ""
+
+#: stnb/publicacions/models.py:45
+msgid "A short description."
+msgstr ""
+
+#: stnb/publicacions/models.py:50 stnb/seminaris/models.py:33
+#: stnb/seminaris/models.py:111
+msgid "publication"
+msgstr ""
+
+#: stnb/publicacions/models.py:51
+msgid "publicacions"
+msgstr ""
+
+#: stnb/seminaris/models.py:20
+msgid "start date"
+msgstr ""
+
+#: stnb/seminaris/models.py:21
+msgid "end date"
+msgstr ""
+
+#: stnb/seminaris/models.py:28
+msgid "registration form"
+msgstr ""
+
+#: stnb/seminaris/models.py:30
+msgid "programme PDF"
+msgstr ""
+
+#: stnb/seminaris/models.py:44 stnb/seminaris/models.py:102
+#: stnb/seminaris/models.py:149
 msgid "seminar"
 msgstr ""
 
-#: seminaris/models.py:45
+#: stnb/seminaris/models.py:45
 msgid "seminars"
 msgstr ""
 
-#: seminaris/models.py:59
+#: stnb/seminaris/models.py:59 stnb/seminaris/templatetags/seminari.py:18
 #, python-format
 msgid "%(idia)s %(idata)d to %(fdia)s %(fdata)d %(imes)s, %(iany)d"
 msgstr ""
 
-#: seminaris/models.py:61
+#: stnb/seminaris/models.py:61 stnb/seminaris/templatetags/seminari.py:20
 #, python-format
 msgid "%(idia)s %(idata)d %(imes)s to %(fdia)s %(fdata)d %(fmes)s, %(iany)d"
 msgstr ""
 
-#: seminaris/models.py:63
+#: stnb/seminaris/models.py:63 stnb/seminaris/templatetags/seminari.py:22
 #, python-format
 msgid ""
-"%(idia)s %(idata)d %(imes)s, %(iany)s %(fdata)d to %(fdia)d %(fmes)s, "
+"%(idia)s %(idata)d %(imes)s, %(iany)d to %(fdia)s %(fdata)d %(fmes)s, "
 "%(fany)d"
 msgstr ""
 
-#: seminaris/models.py:104 seminaris/models.py:188
+#: stnb/seminaris/models.py:104 stnb/seminaris/models.py:188
 msgid "order"
 msgstr ""
 
-#: seminaris/models.py:114
+#: stnb/seminaris/models.py:114
 msgid "references"
 msgstr ""
 
-#: seminaris/models.py:122 seminaris/models.py:185
+#: stnb/seminaris/models.py:122 stnb/seminaris/models.py:185
 msgid "theme"
 msgstr ""
 
-#: seminaris/models.py:123
+#: stnb/seminaris/models.py:123
 msgid "themes"
 msgstr ""
 
-#: seminaris/models.py:155 seminaris/models.py:249
+#: stnb/seminaris/models.py:155 stnb/seminaris/models.py:249
 msgid "day"
 msgstr ""
 
-#: seminaris/models.py:156
+#: stnb/seminaris/models.py:156
 msgid "days"
 msgstr ""
 
-#: seminaris/models.py:189
-msgid "presenters"
-msgstr ""
-
-#: seminaris/models.py:192
-msgid "other presenters"
-msgstr ""
-
-#: seminaris/models.py:196
-msgid "presentation"
-msgstr ""
-
-#: seminaris/models.py:199
-msgid "article"
-msgstr ""
-
-#: seminaris/models.py:208 seminaris/models.py:246
+#: stnb/seminaris/models.py:208 stnb/seminaris/models.py:246
 msgid "talk"
 msgstr ""
 
-#: seminaris/models.py:209
+#: stnb/seminaris/models.py:209
 msgid "talks"
 msgstr ""
 
-#: seminaris/models.py:251
-msgid "start time"
-msgstr ""
-
-#: seminaris/models.py:252
-msgid "end time"
-msgstr ""
-
-#: seminaris/models.py:257
+#: stnb/seminaris/models.py:257
 msgid "Only necessary if a talk isn't chosen."
 msgstr ""
 
-#: seminaris/models.py:261
+#: stnb/seminaris/models.py:261
 msgid "programme item"
 msgstr ""
 
-#: seminaris/models.py:262
+#: stnb/seminaris/models.py:262
 msgid "programme items"
 msgstr ""
 
-#: seminaris/utils.py:56 seminaris/utils.py:72
+#: stnb/seminaris/utils.py:56 stnb/seminaris/utils.py:72
 msgid "and"
 msgstr ""
 
-#: templates/403.html:5 templates/403.html.py:6
+#: stnb/templates/403.html:5 stnb/templates/403.html.py:6
 msgid "Error 403"
 msgstr ""
 
-#: templates/403.html:10
+#: stnb/templates/403.html:10
 msgid "Permission denied"
 msgstr ""
 
-#: templates/403.html:12
+#: stnb/templates/403.html:12
 msgid "You do not have permission to view this page."
 msgstr ""
 
-#: templates/403.html:12 templates/404.html:12 templates/500.html:15
+#: stnb/templates/403.html:12 stnb/templates/404.html:12
+#: stnb/templates/500.html:15
 msgid "Return"
 msgstr ""
 
-#: templates/403.html:12 templates/404.html:12 templates/500.html:15
-#: templates/base.html:35 templates/inici/inici.html:5
+#: stnb/templates/403.html:12 stnb/templates/404.html:12
+#: stnb/templates/500.html:15 stnb/templates/base.html:36
+#: stnb/templates/inici/inici.html:5
 msgid "Home"
 msgstr ""
 
-#: templates/404.html:5 templates/404.html.py:6
+#: stnb/templates/404.html:5 stnb/templates/404.html.py:6
 msgid "Error 404"
 msgstr ""
 
-#: templates/404.html:10
+#: stnb/templates/404.html:10
 msgid "Page not found"
 msgstr ""
 
-#: templates/404.html:12
+#: stnb/templates/404.html:12
 msgid "The page you are looking for could not be found."
 msgstr ""
 
-#: templates/500.html:5 templates/500.html.py:7
+#: stnb/templates/500.html:5 stnb/templates/500.html.py:7
 msgid "Error 500"
 msgstr ""
 
-#: templates/500.html:11
+#: stnb/templates/500.html:11
 msgid "Internal server error"
 msgstr ""
 
-#: templates/500.html:13
+#: stnb/templates/500.html:13
 msgid "An internal server error has occurred."
 msgstr ""
 
-#: templates/500.html:13
+#: stnb/templates/500.html:13
 msgid "If this error persists, please contact the"
 msgstr ""
 
-#: templates/base.html:10 templates/inici/inici.html:6
-msgid "Seminari de Teoria de Nombres de Barcelona"
+#: stnb/templates/arxiu/llista.html:5 stnb/templates/base.html:39
+msgid "Archive"
 msgstr ""
 
-#: templates/base.html:36
-msgid "Current<br />Seminar"
+#: stnb/templates/arxiu/llista.html:9 stnb/templates/arxiu/llista.html.py:15
+msgid "Seminars"
 msgstr ""
 
-#: templates/base.html:37
-msgid "Seminar<br />Archive"
+#: stnb/templates/arxiu/llista.html:10 stnb/templates/arxiu/llista.html:23
+msgid "Events"
 msgstr ""
 
-#: templates/base.html:38
+#: stnb/templates/arxiu/llista.html:11 stnb/templates/arxiu/llista.html:31
 msgid "Publications"
 msgstr ""
 
-#: templates/base.html:39
+#: stnb/templates/base.html:10 stnb/templates/inici/inici.html:6
+msgid "Seminari de Teoria de Nombres de Barcelona"
+msgstr ""
+
+#: stnb/templates/base.html:37
+msgid "Current<br />Seminar"
+msgstr ""
+
+#: stnb/templates/base.html:38 stnb/templates/calendari/llista.html:5
+#: stnb/templates/seminaris/seminari_detall.html:14
+#: stnb/templates/seminaris/seminari_detall.html:54
+msgid "Calendar"
+msgstr ""
+
+#: stnb/templates/base.html:40
 msgid "About<br />STNB"
 msgstr ""
 
-#: templates/base.html:40
+#: stnb/templates/base.html:41
 msgid "Members"
 msgstr ""
 
-#: templates/base.html:88
+#: stnb/templates/base.html:89
 msgid "Account "
 msgstr ""
 
-#: templates/base.html:91
+#: stnb/templates/base.html:92
 msgid "Profile page"
 msgstr ""
 
-#: templates/base.html:92
+#: stnb/templates/base.html:93
 msgid "Admin console"
 msgstr ""
 
-#: templates/base.html:93
+#: stnb/templates/base.html:94
 msgid "Logout"
 msgstr ""
 
-#: templates/base.html:95 templates/comptes/login.html:4
-#: templates/comptes/login.html.py:15
-#: templates/comptes/password_reset_complete.html:13
-#: templates/comptes/registration_form.html:23
+#: stnb/templates/base.html:96 stnb/templates/comptes/login.html:4
+#: stnb/templates/comptes/login.html:15
+#: stnb/templates/comptes/password_reset_complete.html:13
+#: stnb/templates/comptes/registration_form.html:23
 msgid "Log in"
 msgstr ""
 
-#: templates/base.html:101
+#: stnb/templates/base.html:102
 msgid "Links"
 msgstr ""
 
-#: templates/base.html:115
+#: stnb/templates/base.html:117
 msgid "Languages"
 msgstr ""
 
-#: templates/base.html:124
+#: stnb/templates/base.html:126
 msgid "Copyright STNB"
 msgstr ""
 
-#: templates/base.html:124
+#: stnb/templates/base.html:126
 msgid "some rights reserved"
 msgstr ""
 
-#: templates/comptes/logged_out.html:4
+#: stnb/templates/calendari/llista.html:8
+msgid "Upcoming"
+msgstr ""
+
+#: stnb/templates/comptes/logged_out.html:4
 msgid "Logged out"
 msgstr ""
 
-#: templates/comptes/logged_out.html:8
+#: stnb/templates/comptes/logged_out.html:8
 msgid "Successfully logged out"
 msgstr ""
 
-#: templates/comptes/logged_out.html:11
+#: stnb/templates/comptes/logged_out.html:11
 msgid "You have successfully logged out."
 msgstr ""
 
-#: templates/comptes/logged_out.html:11 templates/comptes/login.html:29
-#: templates/membres/membre_detall.html:20
+#: stnb/templates/comptes/logged_out.html:11
+#: stnb/templates/comptes/login.html:29
+#: stnb/templates/membres/membre_detall.html:20
 msgid "You can"
 msgstr ""
 
-#: templates/comptes/logged_out.html:11
+#: stnb/templates/comptes/logged_out.html:11
 msgid "log in again"
 msgstr ""
 
-#: templates/comptes/logged_out.html:11
+#: stnb/templates/comptes/logged_out.html:11
 msgid "or return to the"
 msgstr ""
 
-#: templates/comptes/logged_out.html:11
+#: stnb/templates/comptes/logged_out.html:11
 msgid "home page"
 msgstr ""
 
-#: templates/comptes/login.html:20
+#: stnb/templates/comptes/login.html:20
 msgid "Forgotten password?"
 msgstr ""
 
-#: templates/comptes/login.html:23
+#: stnb/templates/comptes/login.html:23
 msgid "If you've forgotten your password,"
 msgstr ""
 
-#: templates/comptes/login.html:23
+#: stnb/templates/comptes/login.html:23
 msgid "click here to reset it"
 msgstr ""
 
-#: templates/comptes/login.html:26
+#: stnb/templates/comptes/login.html:26
 msgid "Don't have an account?"
 msgstr ""
 
-#: templates/comptes/login.html:29
+#: stnb/templates/comptes/login.html:29
 msgid "sign up for an account"
 msgstr ""
 
-#: templates/comptes/login.html:29
+#: stnb/templates/comptes/login.html:29
 msgid "now"
 msgstr ""
 
-#: templates/comptes/password_reset_complete.html:4
-#: templates/comptes/password_reset_confirm.html:4
-#: templates/comptes/password_reset_done.html:4
-#: templates/comptes/password_reset_form.html:4
+#: stnb/templates/comptes/password_reset_complete.html:4
+#: stnb/templates/comptes/password_reset_confirm.html:4
+#: stnb/templates/comptes/password_reset_done.html:4
+#: stnb/templates/comptes/password_reset_form.html:4
 msgid "Reset password"
 msgstr ""
 
-#: templates/comptes/password_reset_complete.html:9
+#: stnb/templates/comptes/password_reset_complete.html:9
 msgid "Password reset complete"
 msgstr ""
 
-#: templates/comptes/password_reset_complete.html:11
+#: stnb/templates/comptes/password_reset_complete.html:11
 msgid "Your new password has been set. You may go ahead and log in now."
 msgstr ""
 
-#: templates/comptes/password_reset_confirm.html:9
+#: stnb/templates/comptes/password_reset_confirm.html:9
 msgid "Enter new password"
 msgstr ""
 
-#: templates/comptes/password_reset_confirm.html:9
+#: stnb/templates/comptes/password_reset_confirm.html:9
 msgid "Password reset unsuccessful"
 msgstr ""
 
-#: templates/comptes/password_reset_confirm.html:12
+#: stnb/templates/comptes/password_reset_confirm.html:12
 msgid ""
 "Please enter your new password twice so we can verify you typed it in "
 "correctly."
 msgstr ""
 
-#: templates/comptes/password_reset_confirm.html:19
-msgid "Password"
-msgstr ""
-
-#: templates/comptes/password_reset_confirm.html:22
+#: stnb/templates/comptes/password_reset_confirm.html:22
 msgid "New password:"
 msgstr ""
 
-#: templates/comptes/password_reset_confirm.html:26
+#: stnb/templates/comptes/password_reset_confirm.html:26
 msgid "Confirm password"
 msgstr ""
 
-#: templates/comptes/password_reset_confirm.html:29
+#: stnb/templates/comptes/password_reset_confirm.html:29
 msgid "Confirm password:"
 msgstr ""
 
-#: templates/comptes/password_reset_confirm.html:30
+#: stnb/templates/comptes/password_reset_confirm.html:30
 msgid "Change my password"
 msgstr ""
 
-#: templates/comptes/password_reset_confirm.html:33
+#: stnb/templates/comptes/password_reset_confirm.html:33
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
 "used. Please request a new password reset."
 msgstr ""
 
-#: templates/comptes/password_reset_done.html:9
+#: stnb/templates/comptes/password_reset_done.html:9
 msgid ""
 "We've e-mailed you instructions for setting your password to the e-mail "
 "address you submitted. You should be receiving it shortly."
 msgstr ""
 
-#: templates/comptes/password_reset_form.html:9
+#: stnb/templates/comptes/password_reset_form.html:9
 msgid "Forgotten your password?"
 msgstr ""
 
-#: templates/comptes/password_reset_form.html:11
+#: stnb/templates/comptes/password_reset_form.html:11
 msgid ""
 "Enter your e-mail address below, and we'll e-mail instructions for setting a "
 "new password."
 msgstr ""
 
-#: templates/comptes/password_reset_form.html:22
+#: stnb/templates/comptes/password_reset_form.html:22
 msgid "Reset my password"
 msgstr ""
 
-#: templates/comptes/perfil_actualitzar.html:4
+#: stnb/templates/comptes/perfil_actualitzar.html:4
 msgid "Update Profile"
 msgstr ""
 
-#: templates/comptes/perfil_actualitzar.html:15
-#: templates/membres/membre_actualitzar_form.html:28
-#: templates/seminaris/seminari_form.html:32
-#: templates/seminaris/xerrada_actualitzar_form.html:32
-#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:22
+#: stnb/templates/comptes/perfil_actualitzar.html:15
+#: stnb/templates/esdeveniments/esdeveniment_fitxer_actualitzar_form.html:22
+#: stnb/templates/membres/membre_actualitzar_form.html:28
+#: stnb/templates/seminaris/seminari_form.html:32
+#: stnb/templates/seminaris/xerrada_actualitzar_form.html:32
+#: stnb/templates/seminaris/xerrada_fitxer_actualitzar_form.html:22
 msgid "Update"
 msgstr ""
 
-#: templates/comptes/perfil_detall.html:4
-#: templates/membres/membre_detall.html:34
+#: stnb/templates/comptes/perfil_detall.html:4
+#: stnb/templates/membres/membre_detall.html:34
 msgid "Profile"
 msgstr ""
 
-#: templates/comptes/perfil_detall.html:10
+#: stnb/templates/comptes/perfil_detall.html:10
 msgid "Name"
 msgstr ""
 
-#: templates/comptes/perfil_detall.html:12
+#: stnb/templates/comptes/perfil_detall.html:12
 msgid "empty"
 msgstr ""
 
-#: templates/comptes/perfil_detall.html:12
+#: stnb/templates/comptes/perfil_detall.html:12
 msgid "Add your name"
 msgstr ""
 
-#: templates/comptes/perfil_detall.html:14
-#: templates/membres/membre_detall.html:23
+#: stnb/templates/comptes/perfil_detall.html:14
+#: stnb/templates/membres/membre_detall.html:23
 msgid "Email"
 msgstr ""
 
-#: templates/comptes/registration_form.html:4
+#: stnb/templates/comptes/registration_form.html:4
 msgid "Register"
 msgstr ""
 
-#: templates/comptes/registration_form.html:15
+#: stnb/templates/comptes/registration_form.html:15
 msgid "Sign up"
 msgstr ""
 
-#: templates/comptes/registration_form.html:20
+#: stnb/templates/comptes/registration_form.html:20
 msgid "Already have an account?"
 msgstr ""
 
-#: templates/comptes/registration_form.html:23
+#: stnb/templates/comptes/registration_form.html:23
 msgid "If you already have an account, you can,"
 msgstr ""
 
-#: templates/comptes/registre_fet.html:4
+#: stnb/templates/comptes/registre_fet.html:4
 msgid "Registration"
 msgstr ""
 
-#: templates/comptes/registre_fet.html:9
+#: stnb/templates/comptes/registre_fet.html:9
 msgid "Registration complete"
 msgstr ""
 
-#: templates/comptes/registre_fet.html:11
+#: stnb/templates/comptes/registre_fet.html:11
 msgid "You have registered successfully."
 msgstr ""
 
-#: templates/comptes/registre_fet.html:11
+#: stnb/templates/comptes/registre_fet.html:11
 msgid "Now would be a good time to"
 msgstr ""
 
-#: templates/comptes/registre_fet.html:11
+#: stnb/templates/comptes/registre_fet.html:11
 msgid "add your details"
 msgstr ""
 
-#: templates/inici/inici.html:14
-msgid ""
-"\n"
-"\tThis is a very brief introduction explaining what STNB is.\n"
+#: stnb/templates/esdeveniments/_esdeveniment_curt.html:6
+msgid "Speaker"
 msgstr ""
 
-#: templates/inici/inici.html:21
-#: templates/noticies/noticies_ultimes_llista.html:5
-#: templates/noticies/noticies_ultimes_llista.html:6
-msgid "Latest news"
+#: stnb/templates/esdeveniments/_esdeveniment_curt.html:7
+msgid "Date"
 msgstr ""
 
-#: templates/inici/inici.html:35
-msgid "There are currently no news items."
-msgstr ""
-
-#: templates/membres/membre_actualitzar_form.html:6
-#: templates/membres/membre_actualitzar_form.html:7
-msgid "Update member profile"
-msgstr ""
-
-#: templates/membres/membre_detall.html:4
-#: templates/membres/membre_detall.html:5
-msgid "Member profile"
-msgstr ""
-
-#: templates/membres/membre_detall.html:12
-#: templates/membres/membre_llista.html:14
-msgid "profile photo of"
-msgstr ""
-
-#: templates/membres/membre_detall.html:19
-msgid "This is you."
-msgstr ""
-
-#: templates/membres/membre_detall.html:20
-msgid "Your profile is hidden, only you can see it."
-msgstr ""
-
-#: templates/membres/membre_detall.html:20
-msgid "update your profile"
-msgstr ""
-
-#: templates/membres/membre_detall.html:20
-msgid "to change this."
-msgstr ""
-
-#: templates/membres/membre_detall.html:25
-msgid "Please log in to see member email addresses."
-msgstr ""
-
-#: templates/membres/membre_detall.html:28
-msgid "Link"
-msgstr ""
-
-#: templates/membres/membre_detall.html:40
-msgid "Seminars organised"
-msgstr ""
-
-#: templates/membres/membre_detall.html:47
-msgid "Themes organised"
-msgstr ""
-
-#: templates/membres/membre_detall.html:54
-#: templates/seminaris/tema_detall.html:34
-#: templates/seminaris/xerrada_llista.html:5
-#: templates/seminaris/xerrada_llista.html:6
-msgid "Talks"
-msgstr ""
-
-#: templates/membres/membre_detall.html:60
-msgid "Edit your profile"
-msgstr ""
-
-#: templates/membres/membre_llista.html:4
-#: templates/membres/membre_llista.html:5
-msgid "List of Members"
-msgstr ""
-
-#: templates/membres/membre_llista.html:22
-msgid "Member since"
-msgstr ""
-
-#: templates/publicacions/publicacio_llista.html:5
-msgid "List of Publications"
-msgstr ""
-
-#: templates/publicacions/publicacio_llista.html:13
-#: templates/seminaris/seminari_detall.html:17
-#: templates/seminaris/seminari_detall.html:19
-msgid "Download publication"
-msgstr ""
-
-#: templates/publicacions/publicacio_llista.html:14
-msgid "Publication Date"
-msgstr ""
-
-#: templates/publicacions/publicacio_llista.html:15
-msgid "ISBN"
-msgstr ""
-
-#: templates/publicacions/publicacio_llista.html:17
-msgid "Related seminars"
-msgstr ""
-
-#: templates/seminaris/_seminari_temes.html:9
-#: templates/seminaris/tema_detall.html:11
-msgid "Co-ordinators"
-msgstr ""
-
-#: templates/seminaris/_seminari_temes.html:13
-msgid "Details"
-msgstr ""
-
-#: templates/seminaris/seminari_detall.html:13
-#: templates/seminaris/seminari_detall.html:45
-msgid "Themes"
-msgstr ""
-
-#: templates/seminaris/seminari_detall.html:14
-#: templates/seminaris/seminari_detall.html:54
-msgid "Calendar"
-msgstr ""
-
-#: templates/seminaris/seminari_detall.html:15
-msgid "Registration form"
-msgstr ""
-
-#: templates/seminaris/seminari_detall.html:16
-msgid "Download programme"
-msgstr ""
-
-#: templates/seminaris/seminari_detall.html:24
-#: templates/seminaris/seminari_llista.html:13
-msgid "Dates"
-msgstr ""
-
-#: templates/seminaris/seminari_detall.html:31
-#: templates/seminaris/seminari_llista.html:14
+#: stnb/templates/esdeveniments/_esdeveniment_curt.html:8
+#: stnb/templates/seminaris/_seminari_curt.html:8
+#: stnb/templates/seminaris/seminari_detall.html:31
+#: stnb/templates/seminaris/seminari_llista.html:14
 msgid "Location"
 msgstr ""
 
-#: templates/seminaris/seminari_detall.html:38
-msgid "Organising committee"
-msgstr ""
-
-#: templates/seminaris/seminari_detall.html:50
-msgid "Themes have not yet been chosen."
-msgstr ""
-
-#: templates/seminaris/seminari_detall.html:59
-msgid "The calendar has not yet been set."
-msgstr ""
-
-#: templates/seminaris/seminari_form.html:6
-#: templates/seminaris/seminari_form.html:7
-msgid "Update seminar"
-msgstr ""
-
-#: templates/seminaris/seminari_form.html:16
-#: templates/seminaris/xerrada_actualitzar_form.html:16
-msgid "You can update this talk here."
-msgstr ""
-
-#: templates/seminaris/seminari_llista.html:5
-msgid "Seminar archive"
-msgstr ""
-
-#: templates/seminaris/tema_detall.html:18
-msgid "Publication download"
-msgstr ""
-
-#: templates/seminaris/tema_detall.html:27
-msgid "Description"
-msgstr ""
-
-#: templates/seminaris/tema_detall.html:43
-msgid "References"
-msgstr ""
-
-#: templates/seminaris/tema_detall.html:51
-#: templates/seminaris/xerrada_detall.html:55
-#: templates/seminaris/xerrada_llista.html:13
-msgid "Return to seminar"
-msgstr ""
-
-#: templates/seminaris/xerrada_actualitzar_form.html:6
-#: templates/seminaris/xerrada_actualitzar_form.html:7
-msgid "Update talk"
-msgstr ""
-
-#: templates/seminaris/xerrada_detall.html:13
+#: stnb/templates/esdeveniments/esdeveniment_detall.html:11
+#: stnb/templates/seminaris/xerrada_detall.html:13
 msgid "Presenters"
 msgstr ""
 
-#: templates/seminaris/xerrada_detall.html:17
+#: stnb/templates/esdeveniments/esdeveniment_detall.html:15
+#: stnb/templates/seminaris/xerrada_detall.html:17
 msgid "Abstract"
 msgstr ""
 
-#: templates/seminaris/xerrada_detall.html:23
+#: stnb/templates/esdeveniments/esdeveniment_detall.html:21
+#: stnb/templates/seminaris/xerrada_detall.html:23
 msgid "No abstract available"
 msgstr ""
 
-#: templates/seminaris/xerrada_detall.html:27
+#: stnb/templates/esdeveniments/esdeveniment_detall.html:25
+#: stnb/templates/seminaris/xerrada_detall.html:27
 msgid "Files"
 msgstr ""
 
-#: templates/seminaris/xerrada_detall.html:30
+#: stnb/templates/esdeveniments/esdeveniment_detall.html:28
+#: stnb/templates/seminaris/xerrada_detall.html:30
 msgid "Upload files"
 msgstr ""
 
-#: templates/seminaris/xerrada_detall.html:36
+#: stnb/templates/esdeveniments/esdeveniment_detall.html:34
+#: stnb/templates/seminaris/_seminari_temes.html:20
+#: stnb/templates/seminaris/xerrada_detall.html:36
 msgid "Download presentation"
 msgstr ""
 
-#: templates/seminaris/xerrada_detall.html:41
+#: stnb/templates/esdeveniments/esdeveniment_detall.html:39
+#: stnb/templates/seminaris/_seminari_temes.html:21
+#: stnb/templates/seminaris/xerrada_detall.html:41
 msgid "Download article"
 msgstr ""
 
-#: templates/seminaris/xerrada_detall.html:46
+#: stnb/templates/esdeveniments/esdeveniment_detall.html:44
+#: stnb/templates/seminaris/xerrada_detall.html:46
 msgid "No files available for download"
 msgstr ""
 
-#: templates/seminaris/xerrada_detall.html:50
-msgid "Edit talk"
+#: stnb/templates/esdeveniments/esdeveniment_fitxer_actualitzar_form.html:6
+#: stnb/templates/esdeveniments/esdeveniment_fitxer_actualitzar_form.html:7
+msgid "Update event files"
 msgstr ""
 
-#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:6
-#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:7
-msgid "Update talk files"
-msgstr ""
-
-#: templates/seminaris/xerrada_fitxer_actualitzar_form.html:14
+#: stnb/templates/esdeveniments/esdeveniment_fitxer_actualitzar_form.html:14
+#: stnb/templates/seminaris/xerrada_fitxer_actualitzar_form.html:14
 msgid ""
 "You can upload files of the presentation and a separate full length article "
 "for others to download."
 msgstr ""
 
-#: templates/sobre-stnb/sobre-stnb.html:4
+#: stnb/templates/inici/inici.html:14
+msgid ""
+"\n"
+"\tThis is a very brief introduction explaining what STNB is.\n"
+msgstr ""
+
+#: stnb/templates/inici/inici.html:21
+#: stnb/templates/noticies/noticies_ultimes_llista.html:5
+#: stnb/templates/noticies/noticies_ultimes_llista.html:6
+msgid "Latest news"
+msgstr ""
+
+#: stnb/templates/inici/inici.html:35
+msgid "There are currently no news items."
+msgstr ""
+
+#: stnb/templates/membres/membre_actualitzar_form.html:6
+#: stnb/templates/membres/membre_actualitzar_form.html:7
+msgid "Update member profile"
+msgstr ""
+
+#: stnb/templates/membres/membre_detall.html:4
+#: stnb/templates/membres/membre_detall.html:5
+msgid "Member profile"
+msgstr ""
+
+#: stnb/templates/membres/membre_detall.html:12
+#: stnb/templates/membres/membre_llista.html:14
+msgid "profile photo of"
+msgstr ""
+
+#: stnb/templates/membres/membre_detall.html:19
+msgid "This is you."
+msgstr ""
+
+#: stnb/templates/membres/membre_detall.html:20
+msgid "Your profile is hidden, only you can see it."
+msgstr ""
+
+#: stnb/templates/membres/membre_detall.html:20
+msgid "update your profile"
+msgstr ""
+
+#: stnb/templates/membres/membre_detall.html:20
+msgid "to change this."
+msgstr ""
+
+#: stnb/templates/membres/membre_detall.html:25
+msgid "Please log in to see member email addresses."
+msgstr ""
+
+#: stnb/templates/membres/membre_detall.html:28
+msgid "Link"
+msgstr ""
+
+#: stnb/templates/membres/membre_detall.html:40
+msgid "Seminars organised"
+msgstr ""
+
+#: stnb/templates/membres/membre_detall.html:47
+msgid "Themes organised"
+msgstr ""
+
+#: stnb/templates/membres/membre_detall.html:54
+#: stnb/templates/seminaris/tema_detall.html:34
+#: stnb/templates/seminaris/xerrada_llista.html:5
+#: stnb/templates/seminaris/xerrada_llista.html:6
+msgid "Talks"
+msgstr ""
+
+#: stnb/templates/membres/membre_detall.html:60
+msgid "Edit your profile"
+msgstr ""
+
+#: stnb/templates/membres/membre_llista.html:4
+#: stnb/templates/membres/membre_llista.html:5
+msgid "List of Members"
+msgstr ""
+
+#: stnb/templates/membres/membre_llista.html:22
+msgid "Member since"
+msgstr ""
+
+#: stnb/templates/publicacions/_publicacio_curt.html:6
+#: stnb/templates/publicacions/publicacio_llista.html:13
+#: stnb/templates/seminaris/seminari_detall.html:17
+#: stnb/templates/seminaris/seminari_detall.html:19
+msgid "Download publication"
+msgstr ""
+
+#: stnb/templates/publicacions/_publicacio_curt.html:7
+#: stnb/templates/publicacions/publicacio_llista.html:14
+msgid "Publication Date"
+msgstr ""
+
+#: stnb/templates/publicacions/_publicacio_curt.html:8
+#: stnb/templates/publicacions/publicacio_llista.html:15
+msgid "ISBN"
+msgstr ""
+
+#: stnb/templates/publicacions/_publicacio_curt.html:10
+#: stnb/templates/publicacions/publicacio_llista.html:17
+msgid "Related seminars"
+msgstr ""
+
+#: stnb/templates/publicacions/publicacio_llista.html:5
+msgid "List of Publications"
+msgstr ""
+
+#: stnb/templates/seminaris/_seminari_curt.html:7
+#: stnb/templates/seminaris/seminari_detall.html:24
+#: stnb/templates/seminaris/seminari_llista.html:13
+msgid "Dates"
+msgstr ""
+
+#: stnb/templates/seminaris/_seminari_temes.html:9
+#: stnb/templates/seminaris/tema_detall.html:11
+msgid "Co-ordinators"
+msgstr ""
+
+#: stnb/templates/seminaris/_seminari_temes.html:13
+msgid "Details"
+msgstr ""
+
+#: stnb/templates/seminaris/seminari_detall.html:13
+#: stnb/templates/seminaris/seminari_detall.html:45
+msgid "Themes"
+msgstr ""
+
+#: stnb/templates/seminaris/seminari_detall.html:15
+msgid "Registration form"
+msgstr ""
+
+#: stnb/templates/seminaris/seminari_detall.html:16
+msgid "Download programme"
+msgstr ""
+
+#: stnb/templates/seminaris/seminari_detall.html:38
+msgid "Organising committee"
+msgstr ""
+
+#: stnb/templates/seminaris/seminari_detall.html:50
+msgid "Themes have not yet been chosen."
+msgstr ""
+
+#: stnb/templates/seminaris/seminari_detall.html:59
+msgid "The calendar has not yet been set."
+msgstr ""
+
+#: stnb/templates/seminaris/seminari_form.html:6
+#: stnb/templates/seminaris/seminari_form.html:7
+msgid "Update seminar"
+msgstr ""
+
+#: stnb/templates/seminaris/seminari_form.html:16
+#: stnb/templates/seminaris/xerrada_actualitzar_form.html:16
+msgid "You can update this talk here."
+msgstr ""
+
+#: stnb/templates/seminaris/seminari_llista.html:5
+msgid "Seminar archive"
+msgstr ""
+
+#: stnb/templates/seminaris/tema_detall.html:18
+msgid "Publication download"
+msgstr ""
+
+#: stnb/templates/seminaris/tema_detall.html:27
+msgid "Description"
+msgstr ""
+
+#: stnb/templates/seminaris/tema_detall.html:43
+msgid "References"
+msgstr ""
+
+#: stnb/templates/seminaris/tema_detall.html:51
+#: stnb/templates/seminaris/xerrada_detall.html:55
+#: stnb/templates/seminaris/xerrada_llista.html:13
+msgid "Return to seminar"
+msgstr ""
+
+#: stnb/templates/seminaris/xerrada_actualitzar_form.html:6
+#: stnb/templates/seminaris/xerrada_actualitzar_form.html:7
+msgid "Update talk"
+msgstr ""
+
+#: stnb/templates/seminaris/xerrada_detall.html:50
+msgid "Edit talk"
+msgstr ""
+
+#: stnb/templates/seminaris/xerrada_fitxer_actualitzar_form.html:6
+#: stnb/templates/seminaris/xerrada_fitxer_actualitzar_form.html:7
+msgid "Update talk files"
+msgstr ""
+
+#: stnb/templates/sobre-stnb/sobre-stnb.html:4
 msgid "About STNB"
 msgstr ""
 
-#: templates/sobre-stnb/sobre-stnb.html:8
+#: stnb/templates/sobre-stnb/sobre-stnb.html:8
 msgid ""
 "\n"
 "This text is not the real copy, the real copy will be much better written "
@@ -891,7 +1014,7 @@ msgid ""
 "year.\n"
 msgstr ""
 
-#: templates/sobre-stnb/sobre-stnb.html:12
+#: stnb/templates/sobre-stnb/sobre-stnb.html:12
 msgid ""
 "\n"
 "A second paragraph may go into some depth on the fact that STNB is a "

@@ -60,7 +60,7 @@ class Seminari(TranslatableModel):
             else:
                 dstr= _('%(idia)s %(idata)d %(imes)s to %(fdia)s %(fdata)d %(fmes)s, %(iany)d')
         else:
-            dstr= _('%(idia)s %(idata)d %(imes)s, %(iany)s %(fdata)d to %(fdia)d %(fmes)s, %(fany)d')
+            dstr= _('%(idia)s %(idata)d %(imes)s, %(iany)d to %(fdia)s %(fdata)d %(fmes)s, %(fany)d')
 
         return dstr % { 'idia': _(self.data_inici.strftime('%A').decode('utf-8')),
                         'idata': self.data_inici.day,

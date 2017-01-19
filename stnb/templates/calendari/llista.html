@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load l10n %}
+
+{% block titol-pagina %}{% trans "Calendar" %}{% endblock titol-pagina %}
+
+{% block contingut %}
+<h3>{% trans "Upcoming" %}</h3>
+<div class="llista">
+{% for item in items %}
+{% if item.seminari %}
+{% include "seminaris/_seminari_curt.html" with seminari=item.seminari %}
+{% elif item.esdeveniment %}
+{% include "esdeveniments/_esdeveniment_curt.html" with esdeveniment=item.esdeveniment %}
+{% endif %}
+{% endfor %}
+</div>
+{% endblock contingut %}
+

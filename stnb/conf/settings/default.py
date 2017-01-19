@@ -129,6 +129,7 @@ INSTALLED_APPS = (
     'stnb.comptes',
     'stnb.institucions',
     'stnb.seminaris',
+    'stnb.esdeveniments',
     'stnb.noticies',
     'stnb.membres',
     'stnb.publicacions',

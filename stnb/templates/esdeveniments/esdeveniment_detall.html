@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load l10n %}
+{% load seminari %}
+
+{% block titol-head %}{{ esdeveniment.titol }}{% endblock titol-head %}
+{% block titol-pagina %}{{ esdeveniment.titol }}{% endblock titol-pagina %}
+
+{% block contingut %}
+
+<h4>{% trans "Presenters" %}</h4>
+
+<p>{{ esdeveniment.presentadors_html|safe }}</p>
+
+<h4>{% trans "Abstract" %}</h4>
+
+<p>
+{% if esdeveniment.abstracte %}
+	{{ esdeveniment.abstracte|safe }}
+{% else %}
+	<em>{% trans "No abstract available" %}</em>
+{% endif %}
+</p>
+
+<h4>{% trans "Files" %}</h4>
+
+{% if request.user|is_owner:esdeveniment %}
+<p><a href="{% url "esdeveniment-fitxer-actualitzar" slug=esdeveniment.slug %}">{% trans "Upload files" %}</a></p>
+{% endif %}
+
+{% if esdeveniment.article or esdeveniment.presentacio %}
+{% if esdeveniment.presentacio %}
+<p>
+<a href="{{ MEDIA_URL }}{{ esdeveniment.presentacio }}">{% trans "Download presentation" %}</a>.
+</p>
+{% endif %}
+{% if esdeveniment.article %}
+<p>
+<a href="{{ MEDIA_URL }}{{ esdeveniment.article }}">{% trans "Download article" %}</a>.
+</p>
+{% endif %}
+
+{% else %}
+<p>{% trans "No files available for download" %}</p>
+{% endif %}
+{% endblock contingut %}

@@ -38,16 +38,19 @@ urlpatterns += i18n_patterns('',
 
     url(r'^(?P<slug>sobre-stnb)/$', PaginaPlanaDetallView.as_view(),
         name='pagina-plana'),
-    
+
     url(r'^comptes/', include('stnb.comptes.urls')),
     url(r'^institucions/', include('stnb.institucions.urls')),
     url(r'^seminaris/', include('stnb.seminaris.urls')),
+    url(r'^esdeveniments/', include('stnb.esdeveniments.urls')),
     url(r'^noticies/', include('stnb.noticies.urls')),
     url(r'^membres/', include('stnb.membres.urls')),
     url(r'^publicacions/', include('stnb.publicacions.urls')),
+    url(r'^calendari/', include('stnb.calendari.urls')),
+    url(r'^arxiu/', include('stnb.arxiu.urls')),
     url(r'^(?P<slug>temes-stnb-2015)/$', PaginaPlanaDetallView.as_view(),
         name='pagina-plana'),
-    
+
     url(r'^$', IniciView.as_view(), name='inici'),
 )
 

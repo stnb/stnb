@@ -1,0 +1,21 @@
+{% load i18n %}
+
+<div class="publicacio">
+    <h3>{{ publicacio }}</h3>
+
+    <p><strong>{% trans "Download publication" %}</strong>: <a href="{{ MEDIA_URL }}{{ publicacio.fitxer }}">{{ publicacio.nom_fitxer }}</a></p>
+    {% if publicacio.data_publicacio %}<p><strong>{% trans "Publication Date" %}</strong>: {{ publicacio.mes_any_publicacio }}</p>{% endif %}
+    {% if publicacio.isbn %}<p><strong>{% trans "ISBN" %}</strong>: {{ publicacio.isbn }}</p>{% endif %}
+    {% if publicacio.temes.count > 0  or publicacio.seminaris.count > 0%}
+    <h4>{% trans "Related seminars" %}</h4>
+    <ul>
+    {% for seminari in publicacio.seminaris.all %}
+        <li><a href="{{ seminari.get_absolute_url }}">{{ seminari.nom }}</a></li>
+    {% endfor %}
+    {% for tema in publicacio.temes.all %}
+    <li><a href="{{ tema.get_absolute_url }}">{{ tema.titol }}</a> from <a href="{{ tema.seminari.get_absolute_url }}">{{ tema.seminari.nom }}</a></li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+

@@ -1,0 +1,9 @@
+{% load i18n %}
+{% load seminari %}
+
+<div class="seminari">
+    <h3><a href="{{ seminari.get_absolute_url }}">{{ seminari.nom }}</a></h3>
+
+    <p><strong>{% trans "Dates" %}</strong>: {{ seminari|duracio }}</p>	
+    <p><strong>{% trans "Location" %}</strong>: {{ seminari.lloc }}</p>	
+</div>
