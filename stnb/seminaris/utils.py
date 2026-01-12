@@ -6,7 +6,7 @@ from django.utils.translation import ugettext as _
 from stnb.membres.utils import cognoms_lexic
 
 def persones_nom_cognoms(persones_str):
-    if re.match(r'^\s*$', persones_str):
+    if persones_str is None or re.match(r'^\s*$', persones_str):
         return [ ]
     persones = [ ]
     for p in re.split(r'\s*,\s*', persones_str):
