@@ -70,13 +70,13 @@ class Membre(TranslatableModel):
         except IntegrityError, e:
             if nom_complet:
                 self.slug = re.sub(r'\s', '-', self.slug_de_nom_complet()+'-'+unicode(uuid.uuid4())[0:4]).lower()
+                obj = super(Membre, self).save(*args, **kwargs)
             else:
                 raise e
-        obj = super(Membre, self).save(*args, **kwargs)
-        
+
         if self.foto:
             self.crear_totes_fotos()
-        
+
         return obj
 
     def nom_complet(self):
