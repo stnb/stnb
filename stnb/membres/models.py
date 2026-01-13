@@ -7,22 +7,22 @@ import unicodedata
 from django.conf import settings
 from django.db import models
 from django.db import IntegrityError
-from django.db.models import permalink
-from django.db.models import signals
+from django.urls import reverse
 from django.conf import settings
-from django.utils.translation import ugettext_lazy as _
-from hvad.models import TranslatableModel, TranslatedFields
+from django.utils.translation import gettext_lazy as _
+from parler.models import TranslatableModel, TranslatedFields
 
 from .utils import crear_imagen_petita
 from stnb.institucions.models import Institucio
 
 class Membre(TranslatableModel):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     nom = models.CharField(_('name'), max_length=50, null=True)
     cognoms = models.CharField(_('surname'), max_length=100, null=True)
     slug = models.SlugField(max_length=160, unique=True, blank=True)
     afiliacio = models.ForeignKey(Institucio, verbose_name=_('affiliation'),
-                                  related_name='membres', blank=True, null=True)
+                                  related_name='membres', blank=True, null=True,
+                                  on_delete=models.SET_NULL)
     foto = models.ImageField(_('photo'), upload_to='membres/fotos/',
                              blank=True, null=True)
     enllac = models.CharField(_('link'), max_length=250, blank=True, null=True)
@@ -40,16 +40,15 @@ class Membre(TranslatableModel):
         verbose_name_plural = _('members')
         ordering = ['cognoms', 'nom']
 
-    def __unicode__(self):
+    def __str__(self):
         nom_complet = self.nom_complet()
         if nom_complet:
             return nom_complet
         else:
-            return _('unnamed')
+            return str(_('unnamed'))
 
-    @permalink
     def get_absolute_url(self):
-        return ('membre-detall', (), {'slug': self.slug})
+        return reverse('membre-detall', kwargs={'slug': self.slug})
 
     def slug_de_nom_complet(self):
         nom_complet = self.nom_complet()
@@ -64,12 +63,12 @@ class Membre(TranslatableModel):
         if nom_complet:
             self.slug = self.slug_de_nom_complet()
         elif not self.slug:
-            self.slug = uuid.uuid4()
+            self.slug = str(uuid.uuid4())
         try:
             obj = super(Membre, self).save(*args, **kwargs)
-        except IntegrityError, e:
+        except IntegrityError as e:
             if nom_complet:
-                self.slug = re.sub(r'\s', '-', self.slug_de_nom_complet()+'-'+unicode(uuid.uuid4())[0:4]).lower()
+                self.slug = re.sub(r'\s', '-', self.slug_de_nom_complet()+'-'+str(uuid.uuid4())[0:4]).lower()
                 obj = super(Membre, self).save(*args, **kwargs)
             else:
                 raise e
@@ -107,19 +106,19 @@ class Membre(TranslatableModel):
         return text
 
     def crear_foto_petita(self):
-        path_complet = os.path.join(settings.MEDIA_ROOT, unicode(self.foto))
+        path_complet = os.path.join(settings.MEDIA_ROOT, str(self.foto))
         crear_imagen_petita(path_complet, self.foto_petita(), 200)
 
     def foto_petita(self):
-        base, ext = os.path.splitext(unicode(self.foto))
+        base, ext = os.path.splitext(str(self.foto))
         return '%s-thumbnail.png' % (base,)
 
     def crear_foto_llista(self):
-        path_complet = os.path.join(settings.MEDIA_ROOT, unicode(self.foto))
+        path_complet = os.path.join(settings.MEDIA_ROOT, str(self.foto))
         crear_imagen_petita(path_complet, self.foto_llista(), 100)
 
     def foto_llista(self):
-        base, ext = os.path.splitext(unicode(self.foto))
+        base, ext = os.path.splitext(str(self.foto))
         return '%s-llista.png' % (base,)
 
     def crear_totes_fotos(self):
@@ -132,8 +131,3 @@ def user_post_save(sender, instance, created, *args, **kwargs):
     if created:
         nou_membre = Membre.objects.create(user=instance)
         nou_membre.save()
-
-#signals.post_save.connect(user_post_save, sender=User,
-#                          dispatch_uid='crear_nou_membre')
-
-#User.profile = property(lambda u: Membre.objects.get_or_create(user=u)[0])

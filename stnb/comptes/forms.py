@@ -2,7 +2,7 @@
 from django import forms
 from django.conf import settings
 from django.contrib.auth import get_user_model
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 
 class CrearUsuariForm(forms.ModelForm):
     password1 = forms.CharField(label=_("Password"),

@@ -2,10 +2,8 @@
 """
 Tests for the institucions (institutions) app.
 """
-from __future__ import unicode_literals
-
 from django.test import TestCase, Client
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 from stnb.institucions.models import Institucio
 
@@ -15,53 +13,62 @@ class InstitucioModelTest(TestCase):
 
     def test_create_institucio(self):
         """Test creating a basic institution."""
-        inst = Institucio.objects.language('ca').create(
+        inst = Institucio.objects.create(
             nom='University of Barcelona',
             nom_curt='UB',
             url='http://www.ub.edu',
-            descripcio='A major university in Barcelona.',
         )
+        inst.set_current_language('ca')
+        inst.descripcio = 'A major university in Barcelona.'
+        inst.save()
         self.assertEqual(inst.nom, 'University of Barcelona')
         self.assertEqual(inst.nom_curt, 'UB')
         self.assertEqual(inst.url, 'http://www.ub.edu')
 
-    def test_unicode_representation(self):
-        """Test unicode representation returns uppercase short name."""
-        inst = Institucio.objects.language('ca').create(
+    def test_str_representation(self):
+        """Test string representation returns uppercase short name."""
+        inst = Institucio.objects.create(
             nom='University of Barcelona',
             nom_curt='ub',
             url='http://www.ub.edu',
-            descripcio='A major university.',
         )
-        self.assertEqual(unicode(inst), 'UB')
+        inst.set_current_language('ca')
+        inst.descripcio = 'A major university.'
+        inst.save()
+        self.assertEqual(str(inst), 'UB')
 
     def test_institucio_with_translation(self):
         """Test institution with translation fields."""
-        inst = Institucio.objects.language('ca').create(
+        inst = Institucio.objects.create(
             nom='Universitat de Barcelona',
             nom_curt='UB',
             url='http://www.ub.edu',
-            descripcio='Una universitat a Barcelona.',
         )
+        inst.set_current_language('ca')
+        inst.descripcio = 'Una universitat a Barcelona.'
+        inst.save()
         self.assertEqual(inst.descripcio, 'Una universitat a Barcelona.')
 
     def test_multiple_translations(self):
         """Test institution with multiple language translations."""
-        inst = Institucio.objects.language('ca').create(
+        inst = Institucio.objects.create(
             nom='Universitat de Barcelona',
             nom_curt='UB',
             url='http://www.ub.edu',
-            descripcio='Una universitat a Barcelona.',
         )
-        inst.translate('es')
+        inst.set_current_language('ca')
+        inst.descripcio = 'Una universitat a Barcelona.'
+        inst.save()
+
+        inst.set_current_language('es')
         inst.descripcio = 'Una universidad en Barcelona.'
         inst.save()
 
-        inst_ca = Institucio.objects.language('ca').get(pk=inst.pk)
-        self.assertEqual(inst_ca.descripcio, 'Una universitat a Barcelona.')
+        inst.set_current_language('ca')
+        self.assertEqual(inst.descripcio, 'Una universitat a Barcelona.')
 
-        inst_es = Institucio.objects.language('es').get(pk=inst.pk)
-        self.assertEqual(inst_es.descripcio, 'Una universidad en Barcelona.')
+        inst.set_current_language('es')
+        self.assertEqual(inst.descripcio, 'Una universidad en Barcelona.')
 
 
 class InstitucioViewTest(TestCase):
@@ -69,12 +76,14 @@ class InstitucioViewTest(TestCase):
 
     def setUp(self):
         self.client = Client()
-        self.institucio = Institucio.objects.language('ca').create(
+        self.institucio = Institucio.objects.create(
             nom='Test University',
             nom_curt='TU',
             url='http://test.edu',
-            descripcio='A test institution.',
         )
+        self.institucio.set_current_language('ca')
+        self.institucio.descripcio = 'A test institution.'
+        self.institucio.save()
 
     def test_institucio_list_view(self):
         """Test institucio list view returns 200."""

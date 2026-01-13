@@ -1,37 +1,32 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 import os
 
-from django.utils.encoding import smart_bytes
+from django.utils.translation import gettext_lazy as _
 
 DJANGO_COMPONENT = os.environ.get('DJANGO_COMPONENT', 'site')
 FILESYSTEM_ROOT = os.path.abspath(
                    os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 DIRNAME = FILESYSTEM_ROOT
 
-ADMINS = (
+ADMINS = [
     ('Hayden Stainsby', 'hds@caffeineconcepts.com'),
-)
+]
 MANAGERS = ADMINS
-
-ugettext = lambda s: s
 
 TIME_ZONE = 'Europe/Madrid'
 LANGUAGE_CODE = 'ca'
-LANGUAGES = (
-    ('ca', ugettext('Catalan')),
-    ('es', ugettext('Spanish')),
-    ('en', ugettext('English')),
-)
+LANGUAGES = [
+    ('ca', _('Catalan')),
+    ('es', _('Spanish')),
+    ('en', _('English')),
+]
 
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-LOCALE_PATHS = (
-    #PROJECT_DIR.child(locale)
+LOCALE_PATHS = [
     os.path.join(DIRNAME, 'locale/'),
-)
+]
 
 SECRET_KEY = 'f%-(30mhl1qlj$$ah808vn(!fo68pfo6ykwxo)wjzg4rz^psi#'
 
@@ -44,36 +39,37 @@ SERVE_MEDIA = False
 MEDIA_ROOT = ''
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = '' #os.path.join(DIRNAME, 'static/')
+STATIC_ROOT = ''
 STATIC_URL = '/static/'
 
-# Additional locations of static files
-STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+STATICFILES_DIRS = [
     os.path.join(DIRNAME, 'static/'),
-)
+]
 
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
-)
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.contrib.auth.context_processors.auth',
-    'django.core.context_processors.request',
-    'django.core.context_processors.debug',
-    'django.core.context_processors.i18n',
-    'django.core.context_processors.media',
-    'django.core.context_processors.static',
-    'django.core.context_processors.tz',
-    'django.contrib.messages.context_processors.messages',
-    'stnb.utils.context_processors.ganalytics_js',
-)
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(DIRNAME, 'templates/')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.request',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+                'stnb.utils.context_processors.ganalytics_js',
+            ],
+        },
+    },
+]
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -81,39 +77,17 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    # Uncomment the next line for simple clickjacking protection:
-    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
-)
+]
 
-
-#CACHES = {
-#    'default': {
-#        'BACKEND': 'johnny.backends.memcached.MemcachedCache',
-#        'LOCATION': ['127.0.0.1:11211'],
-#        'JOHNNY_CACHE': True,
-#    }
-#}
-#JOHNNY_MIDDLEWARE_KEY_PREFIX='jc_stnb'
 CACHALOT_ENABLED = True
 
-
 AUTH_USER_MODEL = 'comptes.Usuari'
-#AUTHENTICATION_BACKENDS = (
-#    'emailusernames.backends.EmailAuthBackend',
-#)
-
-AUTH_PROFILE_MODULE = 'membres.Membre'
 
 ROOT_URLCONF = 'stnb.urls'
 
-# Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'stnb.wsgi.application'
 
-TEMPLATE_DIRS = (
-    os.path.join(DIRNAME, 'templates/'),
-)
-
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -121,11 +95,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'hvad',
-    #'emailusernames',
+    'parler',
     'tinymce',
     'cachalot',
-    'raven.contrib.django',
     'stnb.comptes',
     'stnb.institucions',
     'stnb.seminaris',
@@ -135,37 +107,36 @@ INSTALLED_APPS = (
     'stnb.publicacions',
     'stnb.pagines',
     'gunicorn',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
-)
+]
 
-STATICFILES_FINDERS = (
+STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-)
+]
 
-#TINYMCE_JS_URL = MEDIA_URL + 'js/tiny_mce/tiny_mce.js'
+# Parler configuration (replacing hvad)
+PARLER_LANGUAGES = {
+    SITE_ID: (
+        {'code': 'ca'},
+        {'code': 'es'},
+        {'code': 'en'},
+    ),
+    'default': {
+        'fallbacks': ['ca'],
+        'hide_untranslated': False,
+    }
+}
+
 TINYMCE_DEFAULT_CONFIG = {
-    'theme': 'advanced',
+    'theme': 'silver',
     'relative_urls': False,
-    'invalid_elements': 'span',
-    'theme_advanced_toolbar_location': 'top',
-    'theme_advanced_toolbar_align': 'center',
-    'theme_advanced_buttons1': 'bold,italic,underline,strikethrough,separator,bullist,numlist,link,unlink,separator,undo,redo',
-    'plugins': 'inlinepopups',
+    'menubar': False,
+    'toolbar': 'bold italic underline strikethrough | bullist numlist | link unlink | undo redo',
+    'plugins': 'link lists',
     'content_css': STATIC_URL + '/css/stnb-editor.css',
     'body_id': 'editor-content',
-    
 }
-#}
 
-
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error when DEBUG=False.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -189,5 +160,3 @@ LOGGING = {
         },
     }
 }
-
-TEST_RUNNER = 'django.test.runner.DiscoverRunner'

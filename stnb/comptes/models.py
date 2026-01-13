@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db import models
 from django.utils import timezone
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from stnb.comptes.managers import UsuariGerent
 
@@ -56,6 +54,6 @@ class Usuari(AbstractBaseUser, PermissionsMixin):
         from stnb.membres.models import Membre
         try:
             membre = Membre.objects.get(user=self)
-        except Membre.NotFound as e:
+        except Membre.DoesNotExist:
             membre = None
         return membre

@@ -2,10 +2,9 @@
 import datetime
 
 from django.db import models
-from django.db.models import permalink
-from django.core.urlresolvers import reverse
-from django.utils.translation import ugettext_lazy as _
-from hvad.models import TranslatableModel, TranslatedFields
+from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
+from parler.models import TranslatableModel, TranslatedFields
 
 
 class Noticia(TranslatableModel):
@@ -24,7 +23,7 @@ class Noticia(TranslatableModel):
         verbose_name_plural = _('news items')
         ordering = ['-data']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.titol
 
 class MicroAlerta(TranslatableModel):
@@ -42,7 +41,5 @@ class MicroAlerta(TranslatableModel):
         verbose_name_plural = _('microalerts')
         ordering = ['-data']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.alerta
-
-

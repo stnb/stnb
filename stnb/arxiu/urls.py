@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from django.conf.urls import patterns, url
+from django.urls import re_path
 
 from .views import ArxiuListView
 
-urlpatterns = patterns('',
-    url(r'^$', ArxiuListView.as_view(), name='arxiu'),
-)
+urlpatterns = [
+    re_path(r'^$', ArxiuListView.as_view(), name='arxiu'),
+]

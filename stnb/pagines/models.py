@@ -2,10 +2,9 @@
 import datetime
 
 from django.db import models
-from django.db.models import permalink
-from django.core.urlresolvers import reverse
-from django.utils.translation import ugettext_lazy as _
-from hvad.models import TranslatableModel, TranslatedFields
+from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
+from parler.models import TranslatableModel, TranslatedFields
 
 class PaginaPlana(TranslatableModel):
     slug = models.SlugField(_('slug'), max_length=50)
@@ -22,6 +21,5 @@ class PaginaPlana(TranslatableModel):
         verbose_name_plural = _('flat pages')
         ordering = ['slug']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.titol
-

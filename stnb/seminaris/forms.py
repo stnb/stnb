@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django import forms
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 from tinymce.widgets import TinyMCE
 
 from .models import Seminari, Xerrada
@@ -18,7 +18,7 @@ class SeminariTranslationForm(forms.ModelForm):
     language_code = forms.CharField(widget=forms.HiddenInput())
 
     class Meta:
-        model = Seminari._meta.translations_model
+        model = Seminari._parler_meta.root.model
         fields = '__all__'
 
 class XerradaBaseForm(forms.ModelForm):
@@ -38,7 +38,7 @@ class XerradaTranslationForm(forms.ModelForm):
     language_code = forms.CharField(widget=forms.HiddenInput())
 
     class Meta:
-        model = Xerrada._meta.translations_model
+        model = Xerrada._parler_meta.root.model
         fields = '__all__'
 
 class XerradaFitxerForm(forms.ModelForm):

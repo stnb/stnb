@@ -2,8 +2,6 @@
 """
 Base test utilities and helper functions for the STNB test suite.
 """
-from __future__ import unicode_literals
-
 import datetime
 
 from django.test import TestCase, Client
@@ -34,12 +32,14 @@ class BaseTestCase(TestCase):
     def create_institucio(self, nom='Test University', nom_curt='TU',
                           url='http://test.edu', descripcio='A test institution'):
         """Create a test institution."""
-        inst = Institucio.objects.language('en').create(
+        inst = Institucio.objects.create(
             nom=nom,
             nom_curt=nom_curt,
             url=url,
-            descripcio=descripcio,
         )
+        inst.set_current_language('ca')
+        inst.descripcio = descripcio
+        inst.save()
         return inst
 
     def create_membre(self, user=None, nom='Test', cognoms='Member',
@@ -49,7 +49,7 @@ class BaseTestCase(TestCase):
             user = self.create_user(
                 email='%s.%s@example.com' % (nom.lower(), cognoms.lower())
             )
-        membre = Membre.objects.language('en').create(
+        membre = Membre.objects.create(
             user=user,
             nom=nom,
             cognoms=cognoms,

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from django.utils.translation import ugettext as _
-from hvad.admin import TranslatableAdmin, TranslatableStackedInline, \
+from django.utils.translation import gettext as _
+from parler.admin import TranslatableAdmin, TranslatableStackedInline, \
                        TranslatableTabularInline
 from tinymce.widgets import TinyMCE
 
@@ -30,16 +30,15 @@ class SeminariSenseTraduccioAdmin(admin.ModelAdmin):
     ]
 
 class SeminariAdmin(TranslatableAdmin):
-    list_display = ('__unicode__', 'data_inici', 'actiu',)
+    list_display = ('__str__', 'data_inici', 'actiu',)
     filter_horizontal = ['organitzadors']
     inlines = [
         TemaInline,
     ]
 
 class TemaAdmin(TranslatableAdmin):
-    list_display = ('__unicode__', 'seminari',)
+    list_display = ('__str__', 'seminari',)
     filter_horizontal = ['organitzadors']
-    #fields = ('seminari', 'translations__titol', 'order', 'organitzadors', 'translations__descripcio', 'referencies',)
 
     def formfield_for_dbfield(self, db_field, **kwargs):
         if db_field.name in ['descripcio', 'referencies']:
@@ -52,7 +51,7 @@ class ItemProgramaInline(TranslatableTabularInline):
     model = ItemPrograma
 
 class DiaAdmin(TranslatableAdmin):
-    list_display = ('__unicode__', 'seminari',)
+    list_display = ('__str__', 'seminari',)
     list_filter = ('seminari',)
     fields = ('seminari', 'modifica_seminari', 'data',)
     readonly_fields = ('seminari', 'modifica_seminari', 'data',)
@@ -63,7 +62,7 @@ class DiaAdmin(TranslatableAdmin):
 
 class XerradaAdmin(TranslatableAdmin):
     filter_horizontal = ['presentadors']
-    list_display = ('__unicode__', 'tema', 'tots_presentadors', 'seminari',)
+    list_display = ('__str__', 'tema', 'tots_presentadors', 'seminari',)
     list_filter = ('tema',)
 
     def formfield_for_dbfield(self, db_field, **kwargs):
@@ -77,7 +76,6 @@ class ItemProgramaAdmin(TranslatableAdmin):
     pass
 
 admin.site.register(Seminari, SeminariAdmin)
-#admin.site.register(Seminari, SeminariSenseTraduccioAdmin)
 admin.site.register(Tema, TemaAdmin)
 admin.site.register(Dia, DiaAdmin)
 admin.site.register(Xerrada, XerradaAdmin)

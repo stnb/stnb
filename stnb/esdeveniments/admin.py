@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from django.utils.translation import ugettext as _
-from hvad.admin import TranslatableAdmin, TranslatableStackedInline
+from django.utils.translation import gettext as _
+from parler.admin import TranslatableAdmin, TranslatableStackedInline
 from tinymce.widgets import TinyMCE
 
 from .models import Serie, Esdeveniment
 
 class EsdevenimentAdmin(TranslatableAdmin):
-    list_display = ('__unicode__', 'data', 'serie',)
+    list_display = ('__str__', 'data', 'serie',)
     readonly_fields = ('slug',)
     filter_horizontal = ['amfitrions', 'presentadors']
 
@@ -26,7 +26,7 @@ class EsdevenimnetInline(TranslatableStackedInline):
                 .formfield_for_dbfield(db_field, **kwargs)
 
 class SerieAdmin(TranslatableAdmin):
-    list_display = ('__unicode__', 'nombre_de_esdeveniments')
+    list_display = ('__str__', 'nombre_de_esdeveniments')
     readonly_fields = ('slug',)
     filter_horizontal = ['organitzadors']
     inlines = [

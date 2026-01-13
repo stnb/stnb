@@ -64,7 +64,7 @@ class MultiTranslationFormView(TemplateView):
                 if trans.master_id is None:
                     trans.master_id = obj.pk
                     trans.save()
-        print self.request.path
+        # Debug: print(self.request.path)
         url = self.get_success_url()
         return HttpResponseRedirect(url)
 

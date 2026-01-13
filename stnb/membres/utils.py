@@ -9,7 +9,7 @@ def cognoms_lexic(membre_o_dict):
     if isinstance(membre_o_dict, dict):
         cognoms = membre_o_dict['cognoms']
     else:
-        cognoms = unicode(membre_o_dict.cognoms)
+        cognoms = str(membre_o_dict.cognoms) if membre_o_dict.cognoms else ''
 
     regexp = r'^(((de|von|van|a)\s+)|a\')'
     cognoms = re.sub(regexp, '', cognoms)
@@ -22,7 +22,6 @@ def comparar_cognoms(membre_o_dict_a, membre_o_dict_b):
 def crear_imagen_petita(path_orig, path_dest, ample):
         file, ext = os.path.splitext(path_orig)
         im = Image.open(path_orig)
-        alcada = im.size[1] * ample / im.size[0]
-        im.thumbnail((ample, alcada), Image.ANTIALIAS)
+        alcada = im.size[1] * ample // im.size[0]
+        im.thumbnail((ample, alcada), Image.Resampling.LANCZOS)
         im.save(os.path.join(settings.MEDIA_ROOT, path_dest), "PNG")
-

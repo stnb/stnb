@@ -1,12 +1,30 @@
--e git+git://github.com/hds/django-hvad.git#egg=hvad
-Django>=1.8,<1.9
-django-cachalot==1.2.1
-django-tinymce==2.3.0
-MySQL-python==1.2.5
-gunicorn==19.6.0
-gevent==1.1.1
-python-memcached==1.57
-Pillow==2.8.2
-pycrypto==2.6.1
-raven==5.18.0
-sqlparse==0.1.19
+# Django and core dependencies
+Django>=5.0,<5.2
+
+# MySQL client (optional - install only if needed for production)
+# mysqlclient>=2.2.0
+
+# Translation support (replacing django-hvad)
+django-parler>=2.3
+
+# Other Django apps
+django-tinymce>=4.0.0
+
+# Caching
+django-cachalot>=2.6.0
+python-memcached>=1.62
+
+# Image processing
+Pillow>=10.0.0
+
+# WSGI server
+gunicorn>=21.0.0
+
+# Cryptography
+pycryptodome>=3.19.0
+
+# SQL parsing
+sqlparse>=0.5.0
+
+# Sentry error tracking (updated package name)
+sentry-sdk>=1.39.0

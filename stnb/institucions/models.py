@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
-from hvad.models import TranslatableModel, TranslatedFields
+from django.utils.translation import gettext_lazy as _
+from parler.models import TranslatableModel, TranslatedFields
 
 class Institucio(TranslatableModel):
     nom = models.CharField(_('name'), max_length=50)
@@ -16,5 +16,5 @@ class Institucio(TranslatableModel):
         verbose_name = _('institution')
         verbose_name_plural = _('institutions')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.nom_curt.upper()

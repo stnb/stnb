@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.views.generic import ListView, DetailView, TemplateView
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.http import Http404
 from django.core.exceptions import ObjectDoesNotExist
 

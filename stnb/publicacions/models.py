@@ -2,8 +2,8 @@
 import os
 
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
-from hvad.models import TranslatableModel, TranslatedFields
+from django.utils.translation import gettext_lazy as _
+from parler.models import TranslatableModel, TranslatedFields
 
 from stnb.membres.models import Membre
 from stnb.seminaris.utils import persones_nom_cognoms, persones_html, \
@@ -51,11 +51,11 @@ class Publicacio(TranslatableModel):
         verbose_name_plural = _('publicacions')
         ordering = ['data_publicacio',]
 
-    def __unicode__(self):
+    def __str__(self):
         return self.nom
 
     def mes_any_publicacio(self):
-        return _(self.data_publicacio.strftime('%B').decode('utf-8')) + ' ' + unicode(self.data_publicacio.year)
+        return _(self.data_publicacio.strftime('%B')) + ' ' + str(self.data_publicacio.year)
 
     def nom_fitxer(self):
         return os.path.basename(self.fitxer.name)
@@ -65,5 +65,3 @@ class Publicacio(TranslatableModel):
 
     def editors_html(self):
         return persones_html(list(self.editors.all()) + persones_nom_cognoms(self.altres_editors))
-
-

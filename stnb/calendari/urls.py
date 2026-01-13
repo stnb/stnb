@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-from django.conf.urls import patterns, url
+from django.urls import re_path
 
 from .views import CalendariListView
 
-urlpatterns = patterns('',
-    url(r'^$', CalendariListView.as_view(), name='calendari'),
-)
-
+urlpatterns = [
+    re_path(r'^$', CalendariListView.as_view(), name='calendari'),
+]

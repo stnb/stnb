@@ -4,10 +4,9 @@ import os
 import datetime
 
 from django.db import models
-from django.db.models import permalink
-from django.core.urlresolvers import reverse
-from django.utils.translation import ugettext_lazy as _
-from hvad.models import TranslatableModel, TranslatedFields
+from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
+from parler.models import TranslatableModel, TranslatedFields
 
 from .utils import persones_nom_cognoms, persones_html, persones_text
 from stnb.membres.models import Membre
@@ -32,9 +31,10 @@ class Seminari(TranslatableModel):
                                     blank=True, null=True)
     publicacio = models.ForeignKey(Publicacio, verbose_name=_('publication'),
                                    related_name='seminaris',
-                                   blank=True, null=True)
+                                   blank=True, null=True,
+                                   on_delete=models.SET_NULL)
     actiu = models.BooleanField(_('active'), default=False)
-    
+
     translations = TranslatedFields(
         nom = models.CharField(_('name'), max_length=50),
         lloc = models.TextField(_('location')),
@@ -45,12 +45,11 @@ class Seminari(TranslatableModel):
         verbose_name_plural = _('seminars')
         ordering = ['-data_inici']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.nom
 
-    @permalink
     def get_absolute_url(self):
-        return ('seminari-detall', (), {'slug': self.slug})
+        return reverse('seminari-detall', kwargs={'slug': self.slug})
 
     def duracio(self):
         dstr = ''
@@ -62,13 +61,13 @@ class Seminari(TranslatableModel):
         else:
             dstr= _('%(idia)s %(idata)d %(imes)s, %(iany)d to %(fdia)s %(fdata)d %(fmes)s, %(fany)d')
 
-        return dstr % { 'idia': _(self.data_inici.strftime('%A').decode('utf-8')),
+        return dstr % { 'idia': _(self.data_inici.strftime('%A')),
                         'idata': self.data_inici.day,
-                        'imes': _(self.data_inici.strftime('%B').decode('utf-8')),
+                        'imes': _(self.data_inici.strftime('%B')),
                         'iany': self.data_inici.year,
-                        'fdia': _(self.data_finalizacio.strftime('%A').decode('utf-8')),
+                        'fdia': _(self.data_finalizacio.strftime('%A')),
                         'fdata': self.data_finalizacio.day,
-                        'fmes': _(self.data_finalizacio.strftime('%B').decode('utf-8')),
+                        'fmes': _(self.data_finalizacio.strftime('%B')),
                         'fany': self.data_finalizacio.year, }
 
     def is_owned_by(self, user):
@@ -100,7 +99,7 @@ class Seminari(TranslatableModel):
 
 class Tema(TranslatableModel):
     seminari = models.ForeignKey(Seminari, verbose_name=_('seminar'),
-                                 related_name='temes')
+                                 related_name='temes', on_delete=models.CASCADE)
     ordre = models.IntegerField(_('order'), default=0)
     organitzadors = models.ManyToManyField(Membre, verbose_name=_('organisers'),
                                           related_name='temes',
@@ -110,7 +109,8 @@ class Tema(TranslatableModel):
                                             null=True)
     publicacio = models.ForeignKey(Publicacio, verbose_name=_('publication'),
                                    related_name='temes',
-                                   blank=True, null=True)
+                                   blank=True, null=True,
+                                   on_delete=models.SET_NULL)
     referencies = models.TextField(_('references'), blank=True, null=True)
 
     translations = TranslatedFields(
@@ -123,14 +123,13 @@ class Tema(TranslatableModel):
         verbose_name_plural = _('themes')
         ordering = ['seminari', 'ordre']
 
-    def __unicode__(self):
+    def __str__(self):
         return '%s (%s)' % (self.titol, self.seminari.nom,)
-    
-    @permalink
+
     def get_absolute_url(self):
-        return ('seminari-tema-detall', (), {'tema_id': self.pk,
+        return reverse('seminari-tema-detall', kwargs={'tema_id': self.pk,
             'seminari_slug': self.seminari.slug})
-    
+
     def is_owned_by(self, user):
         owned_by = False
         membre = user.get_profile()
@@ -147,7 +146,7 @@ class Tema(TranslatableModel):
 class Dia(TranslatableModel):
     data = models.DateField(_('date'))
     seminari = models.ForeignKey(Seminari, verbose_name=_('seminar'),
-                                 related_name='dies')
+                                 related_name='dies', on_delete=models.CASCADE)
 
     translations = TranslatedFields()
 
@@ -156,9 +155,8 @@ class Dia(TranslatableModel):
         verbose_name_plural = _('days')
         ordering = ['seminari__data_inici', 'data',]
 
-    def __unicode__(self):
-        return _(self.data.strftime('%A').decode('utf-8')) + ' ' + unicode(self.data.day)
-        #return str(self.data.day)
+    def __str__(self):
+        return _(self.data.strftime('%A')) + ' ' + str(self.data.day)
 
     def modifica_seminari(self):
         admin_url = reverse('admin:seminaris_seminari_change',
@@ -184,7 +182,8 @@ def article_nom_fitxer(xerrada, nom):
 class Xerrada(TranslatableModel):
     tema = models.ForeignKey(Tema, verbose_name=_('theme'),
                              related_name='xerrades',
-                             blank=True, null=True)
+                             blank=True, null=True,
+                             on_delete=models.SET_NULL)
     ordre = models.IntegerField(_('order'), default=0)
     presentadors = models.ManyToManyField(Membre, verbose_name=_('presenters'),
                                           related_name='xerrades',
@@ -209,12 +208,11 @@ class Xerrada(TranslatableModel):
         verbose_name_plural = _('talks')
         ordering = ['tema', 'ordre']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.titol
 
-    @permalink
     def get_absolute_url(self):
-        return ('seminari-xerrada-detall', (), {'xerrada_id': self.pk,
+        return reverse('seminari-xerrada-detall', kwargs={'xerrada_id': self.pk,
             'seminari_slug': self.seminari().slug})
 
     def seminari(self):
@@ -245,9 +243,11 @@ class Xerrada(TranslatableModel):
 class ItemPrograma(TranslatableModel):
     xerrada = models.ForeignKey(Xerrada, verbose_name=_('talk'),
                                 related_name='items_programa',
-                                blank=True, null=True)
+                                blank=True, null=True,
+                                on_delete=models.SET_NULL)
     dia = models.ForeignKey(Dia, verbose_name=_('day'),
-                            related_name='items_programa')
+                            related_name='items_programa',
+                            on_delete=models.CASCADE)
     hora_inici = models.TimeField(_('start time'))
     hora_finalizacio = models.TimeField(_('end time'))
 
@@ -262,10 +262,10 @@ class ItemPrograma(TranslatableModel):
         verbose_name_plural = _('programme items')
         ordering = ['dia', 'hora_inici']
 
-    def __unicode__(self):
+    def __str__(self):
         duracio = self.duracio()
         if duracio:
-            return '%s (%s): %s' % (unicode(self.dia), duracio, self.titol(),)
+            return '%s (%s): %s' % (str(self.dia), duracio, self.titol(),)
         else:
             return '<ItemPrograma>'
 
@@ -285,4 +285,3 @@ class ItemPrograma(TranslatableModel):
             duracio = '%s - %s' % (self.hora_inici.strftime('%H.%M'),
                                    self.hora_finalizacio.strftime('%H.%M'),)
         return duracio
-

@@ -4,7 +4,7 @@ from django.views.generic import ListView, DetailView, TemplateView, \
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import get_object_or_404
 from django.utils.decorators import method_decorator
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.http import HttpResponseRedirect, Http404
 
 from stnb.comptes.decorators import login_required

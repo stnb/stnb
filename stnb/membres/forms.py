@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django import forms
-from django.utils.translation import ugettext as _
-from hvad.forms import TranslatableModelForm
+from django.utils.translation import gettext as _
+from parler.forms import TranslatableModelForm
 from tinymce.widgets import TinyMCE
 
 from .models import Membre
@@ -24,6 +24,5 @@ class MembreTranslationForm(forms.ModelForm):
     language_code = forms.CharField(widget=forms.HiddenInput())
 
     class Meta:
-        model = Membre._meta.translations_model
+        model = Membre._parler_meta.root.model
         fields = '__all__'
-

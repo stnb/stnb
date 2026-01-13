@@ -1,23 +1,23 @@
 # -*- coding: utf-8 -*-
 import re
 
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 
 from stnb.membres.utils import cognoms_lexic
 
 def persones_nom_cognoms(persones_str):
     if persones_str is None or re.match(r'^\s*$', persones_str):
-        return [ ]
-    persones = [ ]
+        return []
+    persones = []
     for p in re.split(r'\s*,\s*', persones_str):
         div = re.split(r'\s+', p)
-        if len(div) == 2: # Fàcil
+        if len(div) == 2:  # Facil
             persones.append({'nom': div[0],
                              'cognoms': div[1],})
         else:
             persones.append({'nom': div[0],
                              'cognoms': ' '.join(div[1:])})
-    
+
     return persones
 
 def persona_html(p):
@@ -50,10 +50,10 @@ def persones_html(persones):
         html = persona_html(persones[0])
     else:
         persones.sort(key=lambda p: cognoms_lexic(p))
-        persones_html = [ persona_html(p) for p in persones ]
-       
-        html = '%s %s %s' % (', '.join(persones_html[0:-1]),
-                             _('and'), persones_html[-1],)
+        persones_html_list = [persona_html(p) for p in persones]
+
+        html = '%s %s %s' % (', '.join(persones_html_list[0:-1]),
+                             _('and'), persones_html_list[-1],)
 
     return html
 
@@ -66,10 +66,9 @@ def persones_text(persones):
         text = persona_text(persones[0])
     else:
         persones.sort(key=lambda p: cognoms_lexic(p))
-        persones_text = [ persona_text(p) for p in persones ]
-       
-        text = '%s %s %s' % (', '.join(persones_text[0:-1]),
-                             _('and'), persones_text[-1],)
+        persones_text_list = [persona_text(p) for p in persones]
+
+        text = '%s %s %s' % (', '.join(persones_text_list[0:-1]),
+                             _('and'), persones_text_list[-1],)
 
     return text
-

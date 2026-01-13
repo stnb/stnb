@@ -1,56 +1,42 @@
 # -*- coding: utf-8 -*-
-from django.conf.urls import patterns, include, url
+from django.urls import path, re_path, include
 from django.conf.urls.i18n import i18n_patterns
 from django.views.generic import TemplateView
 from django.contrib import admin
 from django.conf import settings
+from django.views.static import serve
 
 from stnb.noticies.views import IniciView
 from stnb.pagines.views import PaginaPlanaDetallView
+from stnb.i18n.views import set_language
 
-admin.autodiscover()
-
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'stnb.views.home', name='home'),
-    # url(r'^stnb/', include('stnb.foo.urls')),
-    #url(r'^seminaris/', include('stnb.seminaris.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    url(r'^setlang/', 'stnb.i18n.views.set_language', name='set-language'),
-    (r'^i18n/', include('django.conf.urls.i18n')),
-    (r'^tinymce/', include('tinymce.urls')),
-    # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
-)
+urlpatterns = [
+    re_path(r'^setlang/', set_language, name='set-language'),
+    re_path(r'^i18n/', include('django.conf.urls.i18n')),
+    re_path(r'^tinymce/', include('tinymce.urls')),
+    path('admin/', admin.site.urls),
+]
 
 if settings.SERVE_MEDIA is True:
-    urlpatterns += patterns('',
-        (r'media/(?P<path>.*)$', 'django.views.static.serve',
-            { 'document_root': settings.MEDIA_ROOT }),
-    )
+    urlpatterns += [
+        re_path(r'media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    ]
 
-urlpatterns += i18n_patterns('',
-    #url(r'^$', TemplateView.as_view(template_name='base.html'), name='inici'),
-    
-
-    url(r'^(?P<slug>sobre-stnb)/$', PaginaPlanaDetallView.as_view(),
+urlpatterns += i18n_patterns(
+    re_path(r'^(?P<slug>sobre-stnb)/$', PaginaPlanaDetallView.as_view(),
         name='pagina-plana'),
 
-    url(r'^comptes/', include('stnb.comptes.urls')),
-    url(r'^institucions/', include('stnb.institucions.urls')),
-    url(r'^seminaris/', include('stnb.seminaris.urls')),
-    url(r'^esdeveniments/', include('stnb.esdeveniments.urls')),
-    url(r'^noticies/', include('stnb.noticies.urls')),
-    url(r'^membres/', include('stnb.membres.urls')),
-    url(r'^publicacions/', include('stnb.publicacions.urls')),
-    url(r'^calendari/', include('stnb.calendari.urls')),
-    url(r'^arxiu/', include('stnb.arxiu.urls')),
-    url(r'^(?P<slug>temes-stnb-2015)/$', PaginaPlanaDetallView.as_view(),
+    re_path(r'^comptes/', include('stnb.comptes.urls')),
+    re_path(r'^institucions/', include('stnb.institucions.urls')),
+    re_path(r'^seminaris/', include('stnb.seminaris.urls')),
+    re_path(r'^esdeveniments/', include('stnb.esdeveniments.urls')),
+    re_path(r'^noticies/', include('stnb.noticies.urls')),
+    re_path(r'^membres/', include('stnb.membres.urls')),
+    re_path(r'^publicacions/', include('stnb.publicacions.urls')),
+    re_path(r'^calendari/', include('stnb.calendari.urls')),
+    re_path(r'^arxiu/', include('stnb.arxiu.urls')),
+    re_path(r'^(?P<slug>temes-stnb-2015)/$', PaginaPlanaDetallView.as_view(),
         name='pagina-plana'),
 
-    url(r'^$', IniciView.as_view(), name='inici'),
+    re_path(r'^$', IniciView.as_view(), name='inici'),
 )
-

@@ -4,11 +4,10 @@ import os
 import datetime
 
 from django.db import models
-from django.db.models import permalink
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.template.defaultfilters import slugify
-from django.utils.translation import ugettext_lazy as _
-from hvad.models import TranslatableModel, TranslatedFields
+from django.utils.translation import gettext_lazy as _
+from parler.models import TranslatableModel, TranslatedFields
 
 from stnb.seminaris.utils import persones_nom_cognoms, persones_html, \
                                  persones_text
@@ -47,7 +46,7 @@ class Serie(TranslatableModel):
         verbose_name = _('series')
         verbose_name_plural = _('series')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.nom
 
     def is_owned_by(self, user):
@@ -66,13 +65,15 @@ class Serie(TranslatableModel):
                      persones_nom_cognoms(self.altres_organitzadors))
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.nom)
+        if self.has_translation():
+            self.slug = slugify(self.nom)
         super(Serie, self).save(*args, **kwargs)
 
 class Esdeveniment(TranslatableModel):
     slug = models.SlugField(_('slug'), max_length=100, blank=True)
     serie = models.ForeignKey(Serie, verbose_name=_('serie'), blank=True,
-                              null=True, related_name='esdeveniments')
+                              null=True, related_name='esdeveniments',
+                              on_delete=models.SET_NULL)
     data = models.DateField(_('date'))
     hora_inici = models.TimeField(_('start time'), null=True, blank=True)
     hora_finalizacio = models.TimeField(_('end time'), null=True, blank=True)
@@ -107,12 +108,11 @@ class Esdeveniment(TranslatableModel):
         verbose_name_plural = _('events')
         ordering = ['-data']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.titol
 
-    @permalink
     def get_absolute_url(self):
-        return ('esdeveniment-detall', (), {'slug': self.slug})
+        return reverse('esdeveniment-detall', kwargs={'slug': self.slug})
 
     def is_owned_by(self, user):
         owned_by = False
@@ -136,6 +136,6 @@ class Esdeveniment(TranslatableModel):
                      persones_nom_cognoms(self.altres_presentadors))
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.titol)
+        if self.has_translation():
+            self.slug = slugify(self.titol)
         super(Esdeveniment, self).save(*args, **kwargs)
-

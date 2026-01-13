@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.utils.safestring import mark_safe
-from django.contrib.sites.models import get_current_site
+from django.contrib.sites.shortcuts import get_current_site
 
 def ganalytics_js(request):
     """
